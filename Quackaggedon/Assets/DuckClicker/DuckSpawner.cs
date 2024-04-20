@@ -8,6 +8,35 @@ namespace DuckClicker
         public Transform[] spawnPoints;
         public float spawnRadius = 1.0f;
         
+        public float spawnInterval = 0.3f;
+        private float spawnTimer = 0.0f;
+        public bool isSpawning = false;
+
+        public void StartSpawn()
+        {
+            isSpawning = true;
+            spawnTimer = 0.0f;
+        }
+        
+        public void StopSpawn()
+        {
+            isSpawning = false;
+            SpawnDuck();
+        }
+        
+        void Update()
+        {
+            if (isSpawning)
+            {
+                spawnTimer += Time.deltaTime;
+                if (spawnTimer >= spawnInterval)
+                {
+                    spawnTimer = 0.0f;
+                    SpawnDuck();
+                }
+            }
+        }
+        
         public void SpawnDuck()
         {
             GameObject duck = GameObject.Instantiate(duckPrefab);
