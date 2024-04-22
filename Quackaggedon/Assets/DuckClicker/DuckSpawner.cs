@@ -11,20 +11,31 @@ namespace DuckClicker
         public float spawnInterval = 0.3f;
         private float spawnTimer = 0.0f;
         public bool isSpawning = false;
+        
+        public float quacksPerDuckPerSecond = 1.0f;
 
+        private float ducksSpawned;
+        private float quacks;
+        
         public void StartSpawn()
         {
             isSpawning = true;
             spawnTimer = 0.0f;
+            SpawnDuck();
         }
         
         public void StopSpawn()
         {
             isSpawning = false;
-            SpawnDuck();
         }
         
         void Update()
+        {
+            CheckSpawn();
+            IncreaseQuacks();
+        }
+
+        private void CheckSpawn()
         {
             if (isSpawning)
             {
@@ -36,12 +47,18 @@ namespace DuckClicker
                 }
             }
         }
-        
+
         public void SpawnDuck()
         {
             GameObject duck = GameObject.Instantiate(duckPrefab);
-            Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length - 1)].position;
+            Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
             duck.transform.position = spawnPoint + Random.insideUnitSphere * spawnRadius;
+            ducksSpawned++;
+        }
+        
+        private void IncreaseQuacks()
+        {
+            quacks += ducksSpawned * quacksPerDuckPerSecond * Time.deltaTime;
         }
     }
 }
