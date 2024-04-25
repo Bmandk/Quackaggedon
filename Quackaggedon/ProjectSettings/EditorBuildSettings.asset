@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Racing/RacingScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/DuckClickerScene.unity
+    guid: cbffda6b5fa09445faa6c62d6656a1fa
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b48d08119d5b9b740bf91f5b90eead10
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 983f364c9cd07c044be8f6d02de28781
   m_configObjects: {}
