@@ -9,28 +9,25 @@ namespace DuckClicker
         private DuckController _selectedDuck;
         
         private DuckFeeder _feeder;
-        private DuckSpawner _spawner;
         
         private void Awake()
         {
             _feeder = FindObjectOfType<DuckFeeder>();
-            _spawner = FindObjectOfType<DuckSpawner>();
         }
         
         private void Update()
         {
+            // Only allow feeding if we're not hovering over a duck
             bool hitDuck = CheckDuck();
             if (!hitDuck)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
                     _feeder.ToggleFeeding(true);
-                    _spawner.StartSpawn();
                 }
                 else if (Input.GetMouseButtonUp(0))
                 {
                     _feeder.ToggleFeeding(false);
-                    _spawner.StopSpawn();
                 }
             }
         }
