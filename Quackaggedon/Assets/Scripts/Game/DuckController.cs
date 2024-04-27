@@ -22,6 +22,9 @@ namespace DuckClicker
         
         private bool _isHovered = false;
         private bool _isSelected = false;
+        
+        [SerializeField]
+        private float _currencyPerSecond = 1.0f;
 
         private void Awake()
         {
@@ -32,6 +35,11 @@ namespace DuckClicker
         void Start()
         {
             StartCoroutine(GrowDuck());
+        }
+        
+        void Update()
+        {
+            CurrencyController.AddCurrency(_currencyPerSecond * Time.deltaTime);
         }
 
         public IEnumerator GrowDuck()

@@ -12,7 +12,7 @@ namespace DuckClicker
         public int foodAmount = 10;
         public float foodUsePerSecond = 3.0f;
         public int foodPerDuck = 10;
-        public int foodCost = 10;
+        public float foodCost = 10f;
         
         private bool _isFeeding = false;
         private int _foodUntilNextDuck = 0;

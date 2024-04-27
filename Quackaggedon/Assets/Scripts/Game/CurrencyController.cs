@@ -4,24 +4,24 @@ namespace DuckClicker
 {
     public static class CurrencyController
     {
-        public static int CurrencyAmount { get; private set; }
+        public static float CurrencyAmount { get; private set; }
 
         public static void Reset()
         {
             CurrencyAmount = 0;
         }
         
-        public static void AddCurrency(int amount)
+        public static void AddCurrency(float amount)
         {
             CurrencyAmount += amount;
         }
         
-        public static void RemoveCurrency(int amount)
+        public static void RemoveCurrency(float amount)
         {
             CurrencyAmount -= amount;
         }
         
-        public static bool CanAfford(int amount)
+        public static bool CanAfford(float amount)
         {
             return CurrencyAmount >= amount;
         }

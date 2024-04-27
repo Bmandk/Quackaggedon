@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 namespace DuckClicker
 {
@@ -17,26 +19,36 @@ namespace DuckClicker
         
         private void Update()
         {
+            if (ButtonBlocker.IsBlocked)
+            {
+                return;
+            }
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 1000f);
+            if (hit.collider == null)
+            {
+                Debug.Log("No collider hit");
+                return;
+            }
             // Only allow feeding if we're not hovering over a duck
-            bool hitDuck = CheckDuck();
-            if (!hitDuck)
+            CheckDuck(hit);
+            bool hitBackplane = hit.collider.CompareTag("Backplane");
+            if (hitBackplane)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
                     _feeder.ToggleFeeding(true);
                 }
-                else if (Input.GetMouseButtonUp(0))
-                {
-                    _feeder.ToggleFeeding(false);
-                }
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                _feeder.ToggleFeeding(false);
             }
         }
 
-        private bool CheckDuck()
+        private bool CheckDuck(RaycastHit2D hit)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var hit = Physics2D.Raycast(ray.origin, ray.direction);
-            bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
+            bool hitDuck = hit.collider.CompareTag("Duck");
             if (hitDuck)
             {
                 if (hit.collider.CompareTag("Duck"))
