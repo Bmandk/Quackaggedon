@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2575206898438303472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96da55f0b50145cea70cc5bb56b0c96c, type: 3}
+  m_Script: {fileID: 11500000, guid: 397b3f76f3eaa4a47bbbc65ebafa375a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startGrowingCurve:
@@ -150,7 +150,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  targetScale: 0.4
+  targetScale: 1
   _hoverColor: {r: 1, g: 0, b: 0, a: 1}
   _selectColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &8848143201788042294
