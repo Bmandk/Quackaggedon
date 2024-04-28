@@ -28,4 +28,9 @@ public class MainMenuPlayQuack : MonoBehaviour
     {
         MainMenuUISoundHandler.Instance.PlayHiss();
     }
+
+    public void PlayMunchFoodSound()
+    {
+        MainMenuUISoundHandler.Instance.PlayMunchFoodSound();
+    }
 }

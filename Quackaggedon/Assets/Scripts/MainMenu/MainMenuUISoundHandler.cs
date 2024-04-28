@@ -36,6 +36,8 @@ public class MainMenuUISoundHandler : MonoBehaviour
     public AudioSource grassRustle1AS;
     public AudioSource grassRustle2AS;
     public AudioSource hissAS;
+
+    public AudioSource munchFoodAS;
     public enum Quack
     {
         Quack1,
@@ -111,5 +113,10 @@ public class MainMenuUISoundHandler : MonoBehaviour
     public void PlayHiss()
     {
         hissAS.Play();
+    }
+
+    public void PlayMunchFoodSound()
+    {
+        munchFoodAS.Play();
     }
 }
