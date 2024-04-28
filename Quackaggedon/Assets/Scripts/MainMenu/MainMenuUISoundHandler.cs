@@ -32,6 +32,10 @@ public class MainMenuUISoundHandler : MonoBehaviour
     public AudioSource quack5AS;
 
     public AudioSource tapAS;
+
+    public AudioSource grassRustle1AS;
+    public AudioSource grassRustle2AS;
+    public AudioSource hissAS;
     public enum Quack
     {
         Quack1,
@@ -90,5 +94,22 @@ public class MainMenuUISoundHandler : MonoBehaviour
     {
         tapAS.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
         tapAS.Play();
+    }
+
+    public void PlayGrass1()
+    {
+        grassRustle1AS.pitch = UnityEngine.Random.Range(0.8f, 1.3f);
+        grassRustle1AS.Play();
+    }
+
+    public void PlayGrass2()
+    {
+        grassRustle2AS.pitch = UnityEngine.Random.Range(0.8f, 1.3f);
+        grassRustle2AS.Play();
+    }
+
+    public void PlayHiss()
+    {
+        hissAS.Play();
     }
 }
