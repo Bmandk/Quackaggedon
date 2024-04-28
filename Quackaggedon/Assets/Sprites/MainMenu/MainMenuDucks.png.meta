@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 6ff38ea0363aa6d4d81d665ea7089261
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeftDuck
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3532
+        width: 1744
+        height: 1353
+      alignment: 9
+      pivot: {x: 0.07945185, y: 0.3964562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0756d5a04551fdc41bd5e8765200df85
+      internalID: -192744892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenBeak2
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 4252
+        width: 545
+        height: 642
+      alignment: 9
+      pivot: {x: 0.3336708, y: 0.64119846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddfc95cc1621354790230f3f2fa690b
+      internalID: -271292547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClosedBeak2
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 4451
+        width: 546
+        height: 438
+      alignment: 9
+      pivot: {x: 0.37925503, y: 0.57525885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6826a072280bf42a24403387afe70a
+      internalID: -1517904798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZoomedInDuck
+      rect:
+        serializedVersion: 2
+        x: 4068
+        y: 3806
+        width: 1726
+        height: 1162
+      alignment: 9
+      pivot: {x: 0.48090187, y: 0.8333217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea6c497373aa38488f7bfe9bdcc550d
+      internalID: 1780574689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpsideDownDuck
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1779
+        width: 1257
+        height: 1577
+      alignment: 9
+      pivot: {x: 0.4803321, y: 0.8553443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edd19bb1fcbc94469c18de6ccd582e6
+      internalID: 1628253831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenBeak1
+      rect:
+        serializedVersion: 2
+        x: 3322
+        y: 2705
+        width: 444
+        height: 545
+      alignment: 9
+      pivot: {x: 0.68560463, y: 0.65120816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd93c7331015d964c9162d86992d7e68
+      internalID: -1577182681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightDuck
+      rect:
+        serializedVersion: 2
+        x: 3913
+        y: 1746
+        width: 2097
+        height: 1924
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82989d2a06a74564c8a8fef12c12d29c
+      internalID: 60914230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpsideDownBeak
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 1906
+        width: 366
+        height: 456
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26506364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90476af51d673ed4c8ea3af49f6eaae3
+      internalID: 275739265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClosedBeak1
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 2165
+        width: 381
+        height: 459
+      alignment: 9
+      pivot: {x: 0.6730361, y: 0.6974927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59055ec41e62c024e833e7663d3f9b1b
+      internalID: -116288651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DuckHead
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 164
+        width: 1210
+        height: 1460
+      alignment: 9
+      pivot: {x: 0.47275755, y: 0.11617918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e4cccd87e374e468ca1a648c627d45
+      internalID: -647556420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DuckBody
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 163
+        width: 2793
+        height: 1214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b9d73a8ff7b6c4c8e887ac5abdde78
+      internalID: -1189066593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PatheticBeak
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 1399
+        width: 563
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e8e015eeca40449848f36f0a3a3572
+      internalID: 1549609591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LowerRightDuck
+      rect:
+        serializedVersion: 2
+        x: 4614
+        y: 0
+        width: 1393
+        height: 1669
+      alignment: 9
+      pivot: {x: 0.6301499, y: 0.2234944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9099e37403d924d91532a1446d6a1c
+      internalID: 1087088782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ClosedBeak1: -116288651
+      ClosedBeak2: -1517904798
+      DuckBody: -1189066593
+      DuckHead: -647556420
+      LeftDuck: -192744892
+      LowerRightDuck: 1087088782
+      OpenBeak1: -1577182681
+      OpenBeak2: -271292547
+      PatheticBeak: 1549609591
+      RightDuck: 60914230
+      UpsideDownBeak: 275739265
+      UpsideDownDuck: 1628253831
+      ZoomedInDuck: 1780574689
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
