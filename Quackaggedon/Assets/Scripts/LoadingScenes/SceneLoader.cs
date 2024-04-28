@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
 
-    //Used by the loading screen to load and unload scenes correctly
+    //Variables are used by the loading screen to load and unload scenes correctly
     public static string SceneToLoad { get; private set; }
     public static string SceneToUnload { get; private set; }
 

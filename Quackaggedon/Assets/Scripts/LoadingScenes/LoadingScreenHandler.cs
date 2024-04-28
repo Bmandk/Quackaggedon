@@ -27,8 +27,8 @@ public class LoadingScreenHandler : MonoBehaviour
 
         sceneCanvasGroup.alpha = to;
 
-        SceneManager.UnloadSceneAsync(SceneHandler.SceneToUnload);
-        SceneManager.LoadSceneAsync(SceneHandler.SceneToLoad, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(SceneLoader.SceneToUnload);
+        SceneManager.LoadSceneAsync(SceneLoader.SceneToLoad, LoadSceneMode.Additive);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(FadeOutLoadingScreen(0.5f));
 
@@ -47,6 +47,6 @@ public class LoadingScreenHandler : MonoBehaviour
         }
 
         sceneCanvasGroup.alpha = 0;
-        SceneManager.UnloadSceneAsync(SceneHandler.GetSceneName(SceneHandler.Scene.LoadingScreen));
+        SceneManager.UnloadSceneAsync(SceneLoader.GetSceneName(SceneLoader.Scene.LoadingScreen));
     }
 }

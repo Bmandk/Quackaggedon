@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class IntroSceneHandler : MonoBehaviour
 {
-    public SceneHandler sceneHandler;
+    public SceneLoader sceneHandler;
     public void LoadGameScene()
     {
-        sceneHandler.LoadNewScene(SceneHandler.Scene.GameScene, SceneHandler.Scene.Intro);
+        sceneHandler.LoadNewScene(SceneLoader.Scene.GameScene, SceneLoader.Scene.Intro);
     }
 }

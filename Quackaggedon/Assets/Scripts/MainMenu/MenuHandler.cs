@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 public class MenuHandler : MonoBehaviour
 {
     public Animator animator;
-    public SceneHandler sceneHandler;
+    public SceneLoader sceneHandler;
 
     public void ContinueGame()
     {
-        LoadPondLevel(SceneHandler.Scene.GameScene);
+        LoadPondLevel(SceneLoader.Scene.GameScene);
     }
 
     public void StartGame()
     {
-        LoadPondLevel(SceneHandler.Scene.Intro);
+        LoadPondLevel(SceneLoader.Scene.Intro);
     }
 
     public void QuitGame()
@@ -23,16 +23,16 @@ public class MenuHandler : MonoBehaviour
         Application.Quit();
     }
 
-    private void LoadPondLevel(SceneHandler.Scene level)
+    private void LoadPondLevel(SceneLoader.Scene level)
     {
         StartCoroutine(LoadLevelAfterBite(level));
     }
 
-    IEnumerator LoadLevelAfterBite(SceneHandler.Scene level)
+    IEnumerator LoadLevelAfterBite(SceneLoader.Scene level)
     {
         animator.SetBool("Eat", true);
         yield return new WaitForSeconds(0.6f);
-        sceneHandler.LoadNewScene(level, SceneHandler.Scene.MainMenu);
+        sceneHandler.LoadNewScene(level, SceneLoader.Scene.MainMenu);
     }
 
 }
