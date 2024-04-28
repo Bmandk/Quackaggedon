@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 public class MenuHandler : MonoBehaviour
 {
     public Animator animator;
+    public SceneHandler sceneHandler;
 
     public void ContinueGame()
     {
-        LoadPondLevel("DuckClickerScene");
+        LoadPondLevel(SceneHandler.Scene.GameScene);
     }
 
     public void StartGame()
     {
-        LoadPondLevel("Intro");
+        LoadPondLevel(SceneHandler.Scene.Intro);
     }
 
     public void QuitGame()
@@ -22,16 +23,16 @@ public class MenuHandler : MonoBehaviour
         Application.Quit();
     }
 
-    private void LoadPondLevel(string level)
+    private void LoadPondLevel(SceneHandler.Scene level)
     {
         StartCoroutine(LoadLevelAfterBite(level));
     }
 
-    IEnumerator LoadLevelAfterBite(string level)
+    IEnumerator LoadLevelAfterBite(SceneHandler.Scene level)
     {
         animator.SetBool("Eat", true);
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(level, LoadSceneMode.Single);
+        yield return new WaitForSeconds(0.6f);
+        sceneHandler.LoadNewScene(level, SceneHandler.Scene.MainMenu);
     }
 
 }
