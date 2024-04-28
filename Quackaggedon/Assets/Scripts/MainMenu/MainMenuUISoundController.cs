@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class MainMenuUISoundHandler : MonoBehaviour
+public class MainMenuUISoundController : MonoBehaviour
 {
-    private static MainMenuUISoundHandler _instance;
+    private static MainMenuUISoundController _instance;
 
-    public static MainMenuUISoundHandler Instance { get { return _instance; } }
+    public static MainMenuUISoundController Instance { get { return _instance; } }
 
 
     private void Awake()
@@ -38,6 +39,8 @@ public class MainMenuUISoundHandler : MonoBehaviour
     public AudioSource hissAS;
 
     public AudioSource munchFoodAS;
+
+    public AudioMixerGroup mixerGroup;
     public enum Quack
     {
         Quack1,
@@ -47,6 +50,29 @@ public class MainMenuUISoundHandler : MonoBehaviour
         Quack5
 
     }
+
+    private void Start()
+    {
+        StartCoroutine(FadeInSound(0.6f)); 
+    }
+
+    IEnumerator FadeInSound(float duration)
+    {
+        float elapsedTime = 0;
+        float startValue = -80;
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            elapsedTime += Time.deltaTime;
+            if (mixerGroup != null)
+                mixerGroup.audioMixer.SetFloat("volume", Mathf.Lerp(startValue, 0, t / duration));
+            yield return null;
+        }
+
+        if (mixerGroup != null)
+            mixerGroup.audioMixer.SetFloat("volume", 0);
+    }
+
+
     public void PlayPressUI()
     {
         uiButtonPressedAS.Play();

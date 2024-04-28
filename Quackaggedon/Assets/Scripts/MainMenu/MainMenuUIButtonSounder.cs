@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenuUIButtonSounder : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
-    public MainMenuUISoundHandler mainMenuUISoundHandler;
+    public MainMenuUISoundController mainMenuUISoundHandler;
     public void OnPointerClick(PointerEventData eventData)
     {
         mainMenuUISoundHandler.PlayPressUI();

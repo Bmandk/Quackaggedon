@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -31,10 +32,30 @@ public class SceneLoader : MonoBehaviour
         { Scene.GameScene, "DuckClickerScene" },
     };
 
-    public void LoadNewScene(Scene sceneToLoad, Scene sceneToUnload)
+    public void LoadNewScene(Scene sceneToLoad, Scene sceneToUnload, AudioMixerGroup audioToSilence = null)
     {
+        if (audioToSilence != null)
+        {
+            StartCoroutine(FadeSound(0.5f, audioToSilence));
+        }
+
         SceneToLoad = sceneNames[sceneToLoad];
         SceneToUnload = sceneNames[sceneToUnload];
         SceneManager.LoadScene(sceneNames[Scene.LoadingScreen], LoadSceneMode.Additive);
+    }
+
+    IEnumerator FadeSound(float duration, AudioMixerGroup audioToSilence)
+    {
+        float elapsedTime = 0;
+        float startValue;
+        audioToSilence.audioMixer.GetFloat("volume", out startValue);
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            elapsedTime += Time.deltaTime;
+            audioToSilence.audioMixer.SetFloat("volume", Mathf.Lerp(startValue, -80, t / duration));
+            yield return null;
+        }
+
+        audioToSilence.audioMixer.SetFloat("volume", -80);
     }
 }

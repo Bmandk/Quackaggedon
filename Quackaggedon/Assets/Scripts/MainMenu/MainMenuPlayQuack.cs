@@ -6,31 +6,31 @@ public class MainMenuPlayQuack : MonoBehaviour
 {
     public void PlayRandomQuack()
     {
-        MainMenuUISoundHandler.Instance.PlayRandomQuack();
+        MainMenuUISoundController.Instance.PlayRandomQuack();
     }
 
     public void PlayRandomTap()
     {
-        MainMenuUISoundHandler.Instance.PlayRandomTap();
+        MainMenuUISoundController.Instance.PlayRandomTap();
     }
 
     public void PlayGrassRustle1()
     {
-        MainMenuUISoundHandler.Instance.PlayGrass1();
+        MainMenuUISoundController.Instance.PlayGrass1();
     }
 
     public void PlayGrassRustle2()
     {
-        MainMenuUISoundHandler.Instance.PlayGrass2();
+        MainMenuUISoundController.Instance.PlayGrass2();
     }
 
     public void PlayHiss()
     {
-        MainMenuUISoundHandler.Instance.PlayHiss();
+        MainMenuUISoundController.Instance.PlayHiss();
     }
 
     public void PlayMunchFoodSound()
     {
-        MainMenuUISoundHandler.Instance.PlayMunchFoodSound();
+        MainMenuUISoundController.Instance.PlayMunchFoodSound();
     }
 }
