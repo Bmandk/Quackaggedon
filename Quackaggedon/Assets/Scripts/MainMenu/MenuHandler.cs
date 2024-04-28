@@ -29,7 +29,7 @@ public class MenuHandler : MonoBehaviour
 
     IEnumerator LoadLevelAfterBite(string level)
     {
-        animator.SetBool("bite", true);
+        animator.SetBool("Eat", true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
