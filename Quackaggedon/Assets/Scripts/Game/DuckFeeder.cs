@@ -1,6 +1,8 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace DuckClicker
 {
@@ -13,14 +15,34 @@ namespace DuckClicker
         public float foodUsePerSecond = 3.0f;
         public int foodPerDuck = 10;
         public float foodCost = 10f;
+        public bool selectedFromStart = false;
+        public GameObject duckPrefab;
         
         private bool _isFeeding = false;
         private int _foodUntilNextDuck = 0;
         private DuckSpawner _duckSpawner;
+        public static DuckFeeder SelectedFeeder { get; private set; }
+        private Button _button;
+        private TMP_Text _foodText;
+
+        private void Awake()
+        {
+            _button = GetComponent<Button>();
+            _foodText = GetComponentInChildren<TMP_Text>();
+            if (selectedFromStart)
+            {
+                Select();
+            }
+        }
 
         private void Start()
         {
             _duckSpawner = FindObjectOfType<DuckSpawner>();
+        }
+
+        private void Update()
+        {
+            _foodText.text = $"Select Food {transform.GetSiblingIndex() + 1}\nAmount: {foodAmount}";
         }
 
         public void ToggleFeeding(bool isFeeding)
@@ -45,8 +67,26 @@ namespace DuckClicker
             if (_foodUntilNextDuck >= foodPerDuck)
             {
                 _foodUntilNextDuck -= foodPerDuck;
-                _duckSpawner.SpawnDuck();
+                _duckSpawner.SpawnDuck(duckPrefab);
             }
+        }
+        
+        public void Select()
+        {
+            if (SelectedFeeder != null)
+            {
+                SelectedFeeder.Deselect();
+            }
+            
+            SelectedFeeder = this;
+            _button.interactable = false;
+        }
+        
+        public void Deselect()
+        {
+            SelectedFeeder = null;
+            _button.interactable = true;
+            ToggleFeeding(false);
         }
     }
 }

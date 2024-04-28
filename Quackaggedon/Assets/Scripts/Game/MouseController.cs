@@ -10,13 +10,6 @@ namespace DuckClicker
         private DuckController _hoveredDuck;
         private DuckController _selectedDuck;
         
-        private DuckFeeder _feeder;
-        
-        private void Awake()
-        {
-            _feeder = FindObjectOfType<DuckFeeder>();
-        }
-        
         private void Update()
         {
             if (ButtonBlocker.IsBlocked)
@@ -37,12 +30,12 @@ namespace DuckClicker
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    _feeder.ToggleFeeding(true);
+                    DuckFeeder.SelectedFeeder.ToggleFeeding(true);
                 }
             }
             if (Input.GetMouseButtonUp(0))
             {
-                _feeder.ToggleFeeding(false);
+                DuckFeeder.SelectedFeeder.ToggleFeeding(false);
             }
         }
 

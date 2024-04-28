@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7328267091235931995}
   - component: {fileID: -2689218998471967382}
   m_Layer: 0
-  m_Name: Duck
+  m_Name: Duck 2
   m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,10 +150,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  targetScale: 0.3
+  targetScale: 1
   _hoverColor: {r: 1, g: 0, b: 0, a: 1}
   _selectColor: {r: 0, g: 1, b: 0, a: 1}
-  _currencyPerSecond: 1
+  _currencyPerSecond: 75
 --- !u!1 &8848143201788042294
 GameObject:
   m_ObjectHideFlags: 0
