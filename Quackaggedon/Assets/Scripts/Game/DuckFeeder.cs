@@ -16,8 +16,7 @@ namespace DuckClicker
         public int foodPerDuck = 10;
         public float foodCost = 10f;
         public bool selectedFromStart = false;
-        public GameObject duckPrefab;
-        
+        public GameObject duckPrefab;        
         private bool _isFeeding = false;
         private int _foodUntilNextDuck = 0;
         private DuckSpawner _duckSpawner;
