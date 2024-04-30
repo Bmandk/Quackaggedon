@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2689218998471967382, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: targetScale
-      value: 0.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2689218998471967382, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: _currencyPerSecond
-      value: 75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2575206898438303472, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_Name
-      value: Duck 3
+      value: Duck Win
       objectReference: {fileID: 0}
     - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,5 +63,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2575206898438303472, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6974377077077169244}
   m_SourcePrefab: {fileID: 100100000, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+--- !u!1 &7187474574542107855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2575206898438303472, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+  m_PrefabInstance: {fileID: 4612797679900498495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6974377077077169244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187474574542107855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0917d591d84ac3a1de425526089f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winTime: 3
