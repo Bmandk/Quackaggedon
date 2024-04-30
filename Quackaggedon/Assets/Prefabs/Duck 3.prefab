@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2689218998471967382, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      propertyPath: targetScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2689218998471967382, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      propertyPath: _currencyPerSecond
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2575206898438303472, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_Name
-      value: DuckBase
+      value: Duck 3
       objectReference: {fileID: 0}
     - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_LocalPosition.x
