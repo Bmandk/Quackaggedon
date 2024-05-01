@@ -25,5 +25,10 @@ namespace DuckClicker
         {
             return CurrencyAmount >= amount;
         }
+
+        public static void SetCurrency(float amount)
+        {
+            CurrencyAmount = amount;
+        }
     }
 }

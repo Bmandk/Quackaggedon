@@ -34,7 +34,7 @@ public class MainMenuController : MonoBehaviour
     {
         animator.SetBool("Eat", true);
         yield return new WaitForSeconds(0.6f);
-        sceneHandler.LoadNewScene(level, SceneLoader.Scene.WinScreen, soundToSilence);
+        sceneHandler.LoadNewScene(level, SceneLoader.Scene.MainMenu, soundToSilence);
     }
 
 }

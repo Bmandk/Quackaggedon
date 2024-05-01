@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a95307acd5d564c956f92f87c2bfc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  discoverNewDuckPopUp: {fileID: 0}
 --- !u!1 &280231773
 GameObject:
   m_ObjectHideFlags: 0
@@ -26899,6 +26900,52 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1927926446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927926447}
+  - component: {fileID: 1927926448}
+  m_Layer: 0
+  m_Name: CheatController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1927926447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927926446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111610293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1927926448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927926446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0efb1ec9a29114db5ebd454c4e576d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyToHaveViaCheat: 500000
+  updateCurrencyToCheatValue: 0
 --- !u!1 &1931159217
 GameObject:
   m_ObjectHideFlags: 0
@@ -28170,6 +28217,7 @@ Transform:
   - {fileID: 275579208}
   - {fileID: 1990911834}
   - {fileID: 99645779}
+  - {fileID: 1927926447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128286899
