@@ -10,9 +10,11 @@ public class UiButtonSounder : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public AudioClip uiClickSound;
     public AudioClip uiHoverSound;
 
+    public Button button;
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (uiSoundAS.isActiveAndEnabled)
+        if (uiSoundAS.isActiveAndEnabled && button.interactable)
         {
             uiSoundAS.clip = uiClickSound;
             uiSoundAS.Play();
@@ -21,7 +23,7 @@ public class UiButtonSounder : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (uiSoundAS.isActiveAndEnabled)
+        if (uiSoundAS.isActiveAndEnabled && button.interactable)
         {
             uiSoundAS.clip = uiHoverSound;
             uiSoundAS.Play();
