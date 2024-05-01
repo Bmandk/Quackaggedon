@@ -41,7 +41,7 @@ namespace DuckClicker
 
         private void Update()
         {
-            _foodText.text = $"Select Food {transform.GetSiblingIndex() + 1}\nAmount: {foodAmount}";
+            _foodText.text = $"{foodAmount}";
         }
 
         public void ToggleFeeding(bool isFeeding)
