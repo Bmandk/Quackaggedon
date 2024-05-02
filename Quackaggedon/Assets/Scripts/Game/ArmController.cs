@@ -8,5 +8,6 @@ public class ArmController : MonoBehaviour
     public void OnThrow()
     {
         DuckFeeder.SelectedFeeder.ThrowBread();
+        AudioController.Instance.PlayThrowSound();
     }
 }
