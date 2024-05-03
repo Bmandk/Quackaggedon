@@ -24,7 +24,9 @@ namespace DuckClicker
         private bool _isSelected = false;
         
         [SerializeField]
-        private float _currencyPerSecond = 1.0f;
+        private float _currencyBase = 1.0f;
+        [SerializeField]
+        private float _timeMultiplier = 1.0f;
 
         private void Awake()
         {
@@ -39,7 +41,7 @@ namespace DuckClicker
         
         void Update()
         {
-            CurrencyController.AddCurrency(_currencyPerSecond * Time.deltaTime);
+            CurrencyController.AddCurrency(_currencyBase * _timeMultiplier * Time.deltaTime);
         }
 
         public IEnumerator GrowDuck()
@@ -81,6 +83,7 @@ namespace DuckClicker
         {
             _spriteRenderer.material.SetColor(OutlineColor, _selectColor);
             _isSelected = true;
+            CurrencyController.AddCurrency(_currencyBase);
         }
         
         public void Deselect()

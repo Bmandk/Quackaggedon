@@ -8,21 +8,35 @@ namespace DuckClicker
 {
     public class DuckFeeder : MonoBehaviour
     {
+        [Serializable]
+        public struct DuckCost
+        {
+            public float baseFoodPerDuck;
+            public float growthRate;
+            
+            public int CalculateCost(int ducksSpawned)
+            {
+                return Mathf.RoundToInt(baseFoodPerDuck * Mathf.Pow(growthRate, ducksSpawned));
+            }
+        }
         public Animator arm;
         public ParticleSystem breadParticles;
         public int breadPerThrow = 1;
         public int foodAmount = 10;
         public float foodUsePerSecond = 3.0f;
-        public int foodPerDuck = 10;
+        public DuckCost duckCost;
         public float foodCost = 10f;
         public bool selectedFromStart = false;
         public GameObject duckPrefab;        
         private bool _isFeeding = false;
-        private int _foodUntilNextDuck = 0;
+        private int _foodThrown = 0;
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
+        private int ducksSpawned = 0;
+        [SerializeField]
+        private int _nextDuckCost = 0;
 
         private void Awake()
         {
@@ -37,6 +51,7 @@ namespace DuckClicker
         private void Start()
         {
             _duckSpawner = FindObjectOfType<DuckSpawner>();
+            _nextDuckCost = duckCost.CalculateCost(ducksSpawned);
         }
 
         private void Update()
@@ -61,12 +76,14 @@ namespace DuckClicker
             foodAmount -= breadThisThrow;
             breadParticles.Emit(breadThisThrow);
             
-            _foodUntilNextDuck += breadThisThrow;
+            _foodThrown += breadThisThrow;
             
-            if (_foodUntilNextDuck >= foodPerDuck)
+            while (_foodThrown >= _nextDuckCost)
             {
-                _foodUntilNextDuck -= foodPerDuck;
+                ducksSpawned++;
                 _duckSpawner.SpawnDuck(duckPrefab);
+                _foodThrown -= _nextDuckCost;
+                _nextDuckCost = duckCost.CalculateCost(ducksSpawned);
             }
         }
         

@@ -7567,12 +7567,15 @@ MonoBehaviour:
   arm: {fileID: 708378625}
   breadParticles: {fileID: 1920369677}
   breadPerThrow: 1
-  foodAmount: 10
+  foodAmount: 5
   foodUsePerSecond: 3
-  foodPerDuck: 10
+  duckCost:
+    baseFoodPerDuck: 5
+    growthRate: 1.2
   foodCost: 10
   selectedFromStart: 1
   duckPrefab: {fileID: 7187474574542107855, guid: cf17a733bfd98f74e8bca2585d9b9489, type: 3}
+  _nextDuckCost: 0
 --- !u!114 &557957255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15026,83 +15029,6 @@ MonoBehaviour:
   parentCanvas: {fileID: 1416414416}
   toolTip: {fileID: 1421641782}
   toolTipText: {fileID: 1973881302}
---- !u!1 &1161689813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1161689815}
-  - component: {fileID: 1161689814}
-  m_Layer: 0
-  m_Name: BackPlane
-  m_TagString: Backplane
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1161689814
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161689813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 50, y: 50}
-  m_EdgeRadius: 0
---- !u!4 &1161689815
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161689813}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1456840233}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166919767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
@@ -15125,10 +15051,13 @@ MonoBehaviour:
   breadPerThrow: 1
   foodAmount: 0
   foodUsePerSecond: 3
-  foodPerDuck: 10
+  duckCost:
+    baseFoodPerDuck: 0
+    growthRate: 0
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: c858fd70f42e8f643b4f70532f8152ab, type: 3}
+  _nextDuckCost: 0
 --- !u!114 &1166919776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20521,10 +20450,13 @@ MonoBehaviour:
   breadPerThrow: 1
   foodAmount: 10
   foodUsePerSecond: 3
-  foodPerDuck: 10
+  duckCost:
+    baseFoodPerDuck: 0
+    growthRate: 0
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: 5c6f52ec637d0a849a60b7c8876dd36d, type: 3}
+  _nextDuckCost: 0
 --- !u!114 &1232565636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21800,7 +21732,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1522018535}
-  - {fileID: 1161689815}
   - {fileID: 1465912145}
   - {fileID: 1008531217}
   m_Father: {fileID: 0}
@@ -28069,10 +28000,13 @@ MonoBehaviour:
   breadPerThrow: 1
   foodAmount: 0
   foodUsePerSecond: 3
-  foodPerDuck: 10
+  duckCost:
+    baseFoodPerDuck: 0
+    growthRate: 0
   foodCost: 100
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: a0f265f1b337b9742bd4d5d44a1cf8d4, type: 3}
+  _nextDuckCost: 0
 --- !u!114 &1724448107
 MonoBehaviour:
   m_ObjectHideFlags: 0
