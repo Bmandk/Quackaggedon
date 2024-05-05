@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Body_Clothes
+    m_Hash: 235138942
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Dress
+      m_Hash: 694510331
+      m_Sprite: {fileID: -9083530175240256666, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -9083530175240256666, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    - m_Name: ChefApron
+      m_Hash: 344803595
+      m_Sprite: {fileID: 232854424805701276, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 232854424805701276, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Holding_With_Wing
+    m_Hash: 142421981
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Spoon
+      m_Hash: 424302000
+      m_Sprite: {fileID: -3067123721822770483, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3067123721822770483, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    - m_Name: Book
+      m_Hash: 735513615
+      m_Sprite: {fileID: -5138692470070819499, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5138692470070819499, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Eyes
+    m_Hash: 120101800
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: MaffiaEyes
+      m_Hash: 284288441
+      m_Sprite: {fileID: 7248101482582081391, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7248101482582081391, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+    - m_Name: DefaultEyes
+      m_Hash: 582516392
+      m_Sprite: {fileID: 7161146282327865707, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7161146282327865707, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    - m_Name: PrincessEyes
+      m_Hash: 183592707
+      m_Sprite: {fileID: -2490089340508448996, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2490089340508448996, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+    - m_Name: BreadEyes
+      m_Hash: 685802310
+      m_Sprite: {fileID: -9120632037510724260, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -9120632037510724260, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  - m_Name: Chest_Decoration
+    m_Hash: 239277151
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: 5245697714964655612, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5245697714964655612, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    - m_Name: MaffiaTie
+      m_Hash: 380928844
+      m_Sprite: {fileID: -8012601927415897680, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8012601927415897680, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+    - m_Name: SmartTie
+      m_Hash: 308256167
+      m_Sprite: {fileID: 7355619785990847080, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7355619785990847080, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  - m_Name: Hair_Back
+    m_Hash: 289233255
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SmartHair
+      m_Hash: 482369752
+      m_Sprite: {fileID: 6339192595283703482, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6339192595283703482, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+    - m_Name: PrincessHair
+      m_Hash: 823931532
+      m_Sprite: {fileID: -807062153637180987, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -807062153637180987, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Hat
+    m_Hash: 709290665
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ChefHat
+      m_Hash: 380657396
+      m_Sprite: {fileID: -8519964817516008341, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8519964817516008341, guid: f1f265d17f6b79940bee8f17c32a309b, type: 3}
+    - m_Name: Crown
+      m_Hash: 297308896
+      m_Sprite: {fileID: 934644466527251008, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 934644466527251008, guid: 7cb690c97bf33674f99571b3dd687eb0, type: 3}
+    - m_Name: MaffiaHat
+      m_Hash: 568423330
+      m_Sprite: {fileID: 660523374823195542, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 660523374823195542, guid: 3426b64ddf360b149b1ab9f62a150f51, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638505335275318698
+  m_Version: 1
