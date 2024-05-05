@@ -46,6 +46,7 @@ public class AreaSettings : MonoBehaviour
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
         ArmController.Instance.transform.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
-        DuckFeeder.SelectedFeeder.Refresh();
+        if (DuckFeeder.SelectedFeeder != null)
+            DuckFeeder.SelectedFeeder.Refresh();
     }
 }

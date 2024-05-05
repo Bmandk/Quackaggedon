@@ -40,16 +40,16 @@ namespace DuckClicker
             ducksSpawned = new int[3];
             _button = GetComponent<Button>();
             _foodText = GetComponentInChildren<TMP_Text>();
-            if (selectedFromStart)
-            {
-                Select();
-            }
         }
 
         private void Start()
         {
             _duckSpawner = FindObjectOfType<DuckSpawner>();
             _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
+            if (selectedFromStart)
+            {
+                Select();
+            }
         }
 
         private void Update()
