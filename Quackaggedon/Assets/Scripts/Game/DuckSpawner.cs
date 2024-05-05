@@ -12,7 +12,6 @@ namespace DuckClicker
             Transform[] spawnPoints = AreaSettings.CurrentArea.SpawnPoints;
             Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
             duck.transform.position = spawnPoint + Random.insideUnitSphere * spawnRadius;
-            Debug.Log(duck.transform.position);
         }
     }
 }

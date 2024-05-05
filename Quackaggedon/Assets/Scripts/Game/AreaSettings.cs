@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DuckClicker;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class AreaSettings : MonoBehaviour
 {
+    [SerializeField]
+    private int areaIndex = 0;
     [SerializeField]
     private bool isStartingArea = false;
     [SerializeField]
@@ -13,6 +16,7 @@ public class AreaSettings : MonoBehaviour
     [SerializeField]
     private Transform[] spawnPoints;
     
+    public int AreaIndex => areaIndex;
     public float CameraSize => cameraSize;
     public Transform[] SpawnPoints => spawnPoints;
     
@@ -20,7 +24,7 @@ public class AreaSettings : MonoBehaviour
 
     private static float _startSizeReference;
 
-    private void Awake()
+    private void Start()
     {
         if (isStartingArea)
         {
@@ -42,5 +46,6 @@ public class AreaSettings : MonoBehaviour
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
         ArmController.Instance.transform.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
+        DuckFeeder.SelectedFeeder.Refresh();
     }
 }

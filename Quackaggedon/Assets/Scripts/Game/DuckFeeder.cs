@@ -32,11 +32,12 @@ namespace DuckClicker
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
-        private int ducksSpawned = 0;
+        private int[] ducksSpawned;
         private int _nextDuckCost = 0;
 
         private void Awake()
         {
+            ducksSpawned = new int[3];
             _button = GetComponent<Button>();
             _foodText = GetComponentInChildren<TMP_Text>();
             if (selectedFromStart)
@@ -48,7 +49,7 @@ namespace DuckClicker
         private void Start()
         {
             _duckSpawner = FindObjectOfType<DuckSpawner>();
-            _nextDuckCost = duckCost.CalculateCost(ducksSpawned);
+            _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
         }
 
         private void Update()
@@ -76,10 +77,10 @@ namespace DuckClicker
             
             while (_foodThrown >= _nextDuckCost)
             {
-                ducksSpawned++;
+                ducksSpawned[AreaSettings.CurrentArea.AreaIndex]++;
                 _duckSpawner.SpawnDuck(duckPrefab);
                 _foodThrown -= _nextDuckCost;
-                _nextDuckCost = duckCost.CalculateCost(ducksSpawned);
+                _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
             }
         }
         
@@ -92,6 +93,13 @@ namespace DuckClicker
             
             SelectedFeeder = this;
             _button.interactable = false;
+            
+            _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
+        }
+
+        public void Refresh()
+        {
+            _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
         }
         
         public void Deselect()
