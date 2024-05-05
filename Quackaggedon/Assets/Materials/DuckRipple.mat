@@ -7,11 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Default
+  m_Name: DuckRipple
   m_Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - DISTORT_ON
+  - ROUNDWAVEUV_ON
   m_InvalidKeywords:
   - ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -104,9 +106,9 @@ Material:
     - _ColorSwapRedLuminosity: 0.5
     - _Contrast: 1
     - _CullingOption: 0
-    - _DistortAmount: 0.5
-    - _DistortTexXSpeed: 5
-    - _DistortTexYSpeed: 5
+    - _DistortAmount: 0.17
+    - _DistortTexXSpeed: -2
+    - _DistortTexYSpeed: 0.3
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
@@ -195,8 +197,8 @@ Material:
     - _RandomSeed: 0
     - _RectSize: 1
     - _RotateUvAmount: 2.5
-    - _RoundWaveSpeed: 0.77
-    - _RoundWaveStrength: 0.043
+    - _RoundWaveSpeed: 0.22
+    - _RoundWaveStrength: 0.102
     - _ShadowAlpha: 0.5
     - _ShadowX: 0.1
     - _ShadowY: -0.05
@@ -213,11 +215,11 @@ Material:
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
     - _TwistUvRadius: 0.75
-    - _WaveAmount: 7
+    - _WaveAmount: 9.1
     - _WaveSpeed: 10
-    - _WaveStrength: 7.5
+    - _WaveStrength: 4.9
     - _WaveX: 0
-    - _WaveY: 0.5
+    - _WaveY: 0.538
     - _ZTestMode: 4
     - _ZWrite: 0
     - _ZoomUvAmount: 0.5
