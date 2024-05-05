@@ -7836,14 +7836,12 @@ MonoBehaviour:
   breadParticles: {fileID: 1920369677}
   breadPerThrow: 1
   foodAmount: 5
-  foodUsePerSecond: 3
   duckCost:
     baseFoodPerDuck: 5
     growthRate: 1.2
   foodCost: 10
   selectedFromStart: 1
   duckPrefab: {fileID: 7187474574542107855, guid: cf17a733bfd98f74e8bca2585d9b9489, type: 3}
-  _nextDuckCost: 0
 --- !u!114 &557957255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20929,14 +20927,12 @@ MonoBehaviour:
   breadParticles: {fileID: 1564230758}
   breadPerThrow: 1
   foodAmount: 0
-  foodUsePerSecond: 3
   duckCost:
     baseFoodPerDuck: 0
     growthRate: 0
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: c858fd70f42e8f643b4f70532f8152ab, type: 3}
-  _nextDuckCost: 0
 --- !u!114 &1166919776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26426,14 +26422,12 @@ MonoBehaviour:
   breadParticles: {fileID: 38230078}
   breadPerThrow: 1
   foodAmount: 10
-  foodUsePerSecond: 3
   duckCost:
     baseFoodPerDuck: 0
     growthRate: 0
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: 5c6f52ec637d0a849a60b7c8876dd36d, type: 3}
-  _nextDuckCost: 0
 --- !u!114 &1232565636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28309,10 +28303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848f1e64912a36145962b87dd74895ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 2035683863}
-  - {fileID: 689231962}
-  - {fileID: 183728080}
   spawnRadius: 1
 --- !u!4 &1520362445
 Transform:
@@ -34244,14 +34234,12 @@ MonoBehaviour:
   breadParticles: {fileID: 786869608}
   breadPerThrow: 1
   foodAmount: 0
-  foodUsePerSecond: 3
   duckCost:
     baseFoodPerDuck: 0
     growthRate: 0
   foodCost: 100
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: a0f265f1b337b9742bd4d5d44a1cf8d4, type: 3}
-  _nextDuckCost: 0
 --- !u!114 &1724448107
 MonoBehaviour:
   m_ObjectHideFlags: 0
