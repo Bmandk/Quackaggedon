@@ -27,6 +27,8 @@ namespace DuckClicker
         private float _currencyBase = 1.0f;
         [SerializeField]
         private float _timeMultiplier = 1.0f;
+        
+        private float _calculatedCurrencyPerSecond = 0.0f;
 
         private void Awake()
         {
@@ -37,11 +39,24 @@ namespace DuckClicker
         void Start()
         {
             StartCoroutine(GrowDuck());
+            
+            UpdateCurrency();
         }
         
-        void Update()
+        public float CalculateCurrency()
         {
-            CurrencyController.AddCurrency(_currencyBase * _timeMultiplier * Time.deltaTime);
+            return _currencyBase * _timeMultiplier;
+        }
+
+        private void UpdateCurrency()
+        {
+            float currency = CalculateCurrency();
+            
+            if (currency != _calculatedCurrencyPerSecond)
+            {
+                CurrencyController.AddCurrencyPerSecond(currency - _calculatedCurrencyPerSecond);
+                _calculatedCurrencyPerSecond = currency;
+            }
         }
 
         public IEnumerator GrowDuck()

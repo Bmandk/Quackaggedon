@@ -12,7 +12,7 @@ namespace DuckClicker
 
         private void Update()
         {
-            
+            CurrencyController.Update();
         }
     }
 }

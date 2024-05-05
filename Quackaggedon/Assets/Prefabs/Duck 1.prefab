@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2575206898438303472, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_Name
-      value: DuckBase
+      value: Duck 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8007288242634425894, guid: a92e61920f1b1ef4d8edd36fc4e62e71, type: 3}
       propertyPath: m_LocalPosition.x

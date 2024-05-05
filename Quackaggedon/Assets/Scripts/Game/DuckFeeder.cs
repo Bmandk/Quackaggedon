@@ -23,19 +23,16 @@ namespace DuckClicker
         public ParticleSystem breadParticles;
         public int breadPerThrow = 1;
         public int foodAmount = 10;
-        public float foodUsePerSecond = 3.0f;
         public DuckCost duckCost;
         public float foodCost = 10f;
         public bool selectedFromStart = false;
-        public GameObject duckPrefab;        
-        private bool _isFeeding = false;
+        public GameObject duckPrefab;
         private int _foodThrown = 0;
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
         private int ducksSpawned = 0;
-        [SerializeField]
         private int _nextDuckCost = 0;
 
         private void Awake()
@@ -61,7 +58,6 @@ namespace DuckClicker
 
         public void ToggleFeeding(bool isFeeding)
         {
-            _isFeeding = isFeeding;
             arm.SetBool("Throwing", isFeeding);
         }
 
