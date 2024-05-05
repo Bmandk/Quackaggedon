@@ -5,15 +5,27 @@ namespace DuckClicker
     public static class CurrencyController
     {
         public static float CurrencyAmount { get; private set; }
+        public static float CurrencyPerSecond { get; private set; }
 
         public static void Reset()
         {
-            CurrencyAmount = 0;
+            CurrencyAmount = 10;
+            CurrencyPerSecond = 0;
+        }
+
+        public static void Update()
+        {
+            AddCurrency(CurrencyPerSecond * Time.deltaTime);
         }
         
         public static void AddCurrency(float amount)
         {
             CurrencyAmount += amount;
+        }
+        
+        public static void AddCurrencyPerSecond(float amount)
+        {
+            CurrencyPerSecond += amount;
         }
         
         public static void RemoveCurrency(float amount)
