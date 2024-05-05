@@ -15,6 +15,8 @@ public class AreaSettings : MonoBehaviour
     private float cameraSize = 5f;
     [SerializeField]
     private Transform[] spawnPoints;
+    [SerializeField]
+    private int duckLimit = 50;
     
     public int AreaIndex => areaIndex;
     public float CameraSize => cameraSize;
@@ -23,6 +25,10 @@ public class AreaSettings : MonoBehaviour
     public static AreaSettings CurrentArea { get; private set; }
 
     private static float _startSizeReference;
+    
+    private int _currentDuckCount = 0;
+    
+    public bool CanSpawnDuck => _currentDuckCount < duckLimit;
 
     private void Start()
     {
@@ -48,5 +54,10 @@ public class AreaSettings : MonoBehaviour
         ArmController.Instance.transform.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
         if (DuckFeeder.SelectedFeeder != null)
             DuckFeeder.SelectedFeeder.Refresh();
+    }
+    
+    public void AddDuck()
+    {
+        _currentDuckCount++;
     }
 }

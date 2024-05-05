@@ -64,7 +64,7 @@ namespace DuckClicker
 
         public void ThrowBread()
         {
-            if (foodAmount <= 0)
+            if (foodAmount <= 0 || !AreaSettings.CurrentArea.CanSpawnDuck)
             {
                 return;
             }
