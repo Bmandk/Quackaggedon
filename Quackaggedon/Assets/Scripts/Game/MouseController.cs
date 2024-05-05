@@ -24,12 +24,8 @@ namespace DuckClicker
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    DuckFeeder.SelectedFeeder.ToggleFeeding(true);
+                    DuckFeeder.SelectedFeeder.PerformFeedingHandAnimation();
                 }
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                DuckFeeder.SelectedFeeder.ToggleFeeding(false);
             }
         }
 

@@ -57,9 +57,10 @@ namespace DuckClicker
             _foodText.text = $"{foodAmount}";
         }
 
-        public void ToggleFeeding(bool isFeeding)
+        public void PerformFeedingHandAnimation()
         {
-            arm.SetBool("Throwing", isFeeding);
+            //arm.SetBool("Throwing", isFeeding);
+            arm.SetTrigger("Throwing");
         }
 
         public void ThrowBread()
@@ -106,7 +107,7 @@ namespace DuckClicker
         {
             SelectedFeeder = null;
             _button.interactable = true;
-            ToggleFeeding(false);
+            //PerformFeedingHandAnimation(false);
         }
     }
 }
