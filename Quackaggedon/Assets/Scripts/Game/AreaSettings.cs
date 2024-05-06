@@ -50,8 +50,8 @@ public class AreaSettings : MonoBehaviour
         CurrentArea = this;
         Camera.main.orthographicSize = CameraSize;
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-        ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
-        ArmController.Instance.transform.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
+        //ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
+        ArmController.Instance.transform.parent.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
         if (DuckFeeder.SelectedFeeder != null)
             DuckFeeder.SelectedFeeder.Refresh();
     }
