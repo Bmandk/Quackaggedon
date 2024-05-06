@@ -6,16 +6,18 @@ namespace DuckClicker
     {
         public static float CurrencyAmount { get; private set; }
         public static float CurrencyPerSecond { get; private set; }
+        public static int QuackMultiplier { get; private set; }
 
         public static void Reset()
         {
             CurrencyAmount = 10;
             CurrencyPerSecond = 0;
+            QuackMultiplier = 1;
         }
 
         public static void Update()
         {
-            AddCurrency(CurrencyPerSecond * Time.deltaTime);
+            AddCurrency(CurrencyPerSecond * Time.deltaTime * QuackMultiplier);
         }
         
         public static void AddCurrency(float amount)
@@ -41,6 +43,11 @@ namespace DuckClicker
         public static void SetCurrency(float amount)
         {
             CurrencyAmount = amount;
+        }
+
+        public static void AddMultiplier()
+        {
+            QuackMultiplier++;
         }
     }
 }

@@ -12,12 +12,11 @@ public class DuckSimple : MonoBehaviour, IDuck
     
     public void OnClick()
     {
-        CurrencyController.AddCurrency(_currencyBase);
+        CurrencyController.AddCurrency(_currencyBase * CurrencyController.QuackMultiplier);
     }
     
     void Start()
     {
-            
         UpdateCurrency();
     }
         
