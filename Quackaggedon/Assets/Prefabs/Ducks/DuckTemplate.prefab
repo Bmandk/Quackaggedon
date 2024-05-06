@@ -327,7 +327,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2625156538610567063}
-  - component: {fileID: 9057249948486349452}
   - component: {fileID: 8673439769453325277}
   - component: {fileID: 8621015434323504909}
   m_Layer: 0
@@ -354,47 +353,6 @@ Transform:
   - {fileID: 1088175675618203017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9057249948486349452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7365654089787025506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397b3f76f3eaa4a47bbbc65ebafa375a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startGrowingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  targetScale: 0.3
-  _hoverColor: {r: 1, g: 0, b: 0, a: 1}
-  _selectColor: {r: 0, g: 1, b: 0, a: 1}
-  _currencyBase: 1
-  _timeMultiplier: 1
 --- !u!210 &8673439769453325277
 SortingGroup:
   m_ObjectHideFlags: 0

@@ -34,17 +34,19 @@ namespace DuckClicker
             bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
             if (hitDuck)
             {
-                DuckController duck = hit.collider.GetComponentInParent<DuckController>();
+                IDuck duck = hit.collider.GetComponentInParent<IDuck>();
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (_selectedDuck != null)
+                    /*if (_selectedDuck != null)
                     {
                         _selectedDuck.Deselect();
                     }
                     _selectedDuck = duck;
-                    _selectedDuck.Select();
+                    _selectedDuck.Select();*/
+                    
+                    duck.OnClick();
                 }
-                else
+                /*else
                 {
                     if (_hoveredDuck != duck)
                     {
@@ -55,16 +57,16 @@ namespace DuckClicker
                         _hoveredDuck = duck;
                         _hoveredDuck.Hover();
                     }
-                }
+                }*/
             }
-            else
+            /*else
             {
                 if (_hoveredDuck != null)
                 {
                     _hoveredDuck.Unhover();
                     _hoveredDuck = null;
                 }
-            }
+            }*/
             
             return hitDuck;
         }
