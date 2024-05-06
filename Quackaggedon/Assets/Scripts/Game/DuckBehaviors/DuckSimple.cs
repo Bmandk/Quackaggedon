@@ -7,8 +7,11 @@ public class DuckSimple : MonoBehaviour, IDuck
     private float _currencyBase = 1.0f;
     [SerializeField]
     private float _timeMultiplier = 1.0f;
+    [SerializeField]
+    private bool _givesPassiveIncome = false;
         
     private float _calculatedCurrencyPerSecond = 0.0f;
+    
     
     public void OnClick()
     {
@@ -17,7 +20,10 @@ public class DuckSimple : MonoBehaviour, IDuck
     
     void Start()
     {
-        UpdateCurrency();
+        if (_givesPassiveIncome)
+        {
+            UpdateCurrency();
+        }
     }
         
     public float CalculateCurrency()

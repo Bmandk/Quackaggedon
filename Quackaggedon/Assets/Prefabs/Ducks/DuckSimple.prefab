@@ -48,34 +48,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5626157276542117115, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: _givesPassiveIncome
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Name
       value: DuckSimple
       objectReference: {fileID: 0}
+    - target: {fileID: 8673439769453325277, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_SortAtRoot
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5963183400453851616}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
---- !u!1 &4336387930949136916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
-  m_PrefabInstance: {fileID: 6491374296662481526}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5963183400453851616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4336387930949136916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f3c5c85b7044ecb9bf7fc5eebfc72c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currencyBase: 1
-  _timeMultiplier: 1
