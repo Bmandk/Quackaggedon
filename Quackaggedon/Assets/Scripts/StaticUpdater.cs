@@ -8,6 +8,7 @@ namespace DuckClicker
         private void Awake()
         {
             CurrencyController.Reset();
+            DuckSmart.smartDuckCount = 0;
         }
 
         private void Update()

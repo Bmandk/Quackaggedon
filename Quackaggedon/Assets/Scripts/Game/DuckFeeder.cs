@@ -69,8 +69,9 @@ namespace DuckClicker
             {
                 return;
             }
-            
-            int breadThisThrow = Mathf.Min(foodAmount, breadPerThrow);
+
+            Debug.Log(DuckSmart.smartDuckCount);
+            int breadThisThrow = Mathf.Min(foodAmount, Mathf.Max(1, DuckSmart.smartDuckCount + 1));
             foodAmount -= breadThisThrow;
             breadParticles.Emit(breadThisThrow);
             
