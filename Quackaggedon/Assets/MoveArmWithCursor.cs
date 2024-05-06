@@ -8,6 +8,18 @@ public class MoveArmWithCursor : MonoBehaviour
     private Vector3 mousePosition;
     public float offset;
     public float maxY;
+    public static MoveArmWithCursor Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()

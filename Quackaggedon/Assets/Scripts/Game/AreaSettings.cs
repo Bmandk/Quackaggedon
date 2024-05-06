@@ -25,6 +25,7 @@ public class AreaSettings : MonoBehaviour
     public static AreaSettings CurrentArea { get; private set; }
 
     private static float _startSizeReference;
+    private static float _startArmOffsetReference;
     
     private int _currentDuckCount = 0;
     
@@ -35,6 +36,7 @@ public class AreaSettings : MonoBehaviour
         if (isStartingArea)
         {
             _startSizeReference = CameraSize;
+            _startArmOffsetReference = MoveArmWithCursor.Instance.offset;
             SelectArea();
         }
     }
@@ -51,7 +53,8 @@ public class AreaSettings : MonoBehaviour
         Camera.main.orthographicSize = CameraSize;
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         //ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
-        ArmController.Instance.transform.parent.parent.localScale = Vector3.one * (CameraSize / _startSizeReference);
+        MoveArmWithCursor.Instance.transform.localScale = Vector3.one * (CameraSize / _startSizeReference);
+        MoveArmWithCursor.Instance.offset = _startArmOffsetReference * (CameraSize / _startSizeReference);
         if (DuckFeeder.SelectedFeeder != null)
             DuckFeeder.SelectedFeeder.Refresh();
     }
