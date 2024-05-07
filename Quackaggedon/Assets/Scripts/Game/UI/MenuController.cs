@@ -19,6 +19,7 @@ public class MenuController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        SaveManager.Save();
         sceneLoader.LoadNewScene(SceneLoader.Scene.MainMenu, SceneLoader.Scene.GameScene);
     }
 }

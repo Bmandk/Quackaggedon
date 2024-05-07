@@ -6,10 +6,10 @@ namespace DuckClicker
     {
         public float spawnRadius = 1.0f;
 
-        public void SpawnDuck(GameObject duckPrefab)
+        public void SpawnDuck(GameObject duckPrefab, AreaSettings areaSettings)
         {
             GameObject duck = GameObject.Instantiate(duckPrefab);
-            Transform[] spawnPoints = AreaSettings.CurrentArea.SpawnPoints;
+            Transform[] spawnPoints = areaSettings.SpawnPoints;
             Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
             duck.transform.position = spawnPoint + Random.insideUnitSphere * spawnRadius;
             AreaSettings.CurrentArea.AddDuck();

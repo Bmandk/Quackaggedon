@@ -17,6 +17,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
+        SaveManager.DeleteSave();
         LoadPondLevel(SceneLoader.Scene.Intro, mixerGroup);
     }
 

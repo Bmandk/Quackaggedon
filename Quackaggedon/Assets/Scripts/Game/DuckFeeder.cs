@@ -1,12 +1,14 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DuckClicker
 {
-    public class DuckFeeder : MonoBehaviour
+    public class DuckFeeder : MonoBehaviour, ISaveable
     {
         [Serializable]
         public struct DuckCost
@@ -40,11 +42,11 @@ namespace DuckClicker
             ducksSpawned = new int[3];
             _button = GetComponent<Button>();
             _foodText = GetComponentInChildren<TMP_Text>();
+            _duckSpawner = FindObjectOfType<DuckSpawner>();
         }
 
         private void Start()
         {
-            _duckSpawner = FindObjectOfType<DuckSpawner>();
             _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
             if (selectedFromStart)
             {
@@ -70,7 +72,6 @@ namespace DuckClicker
                 return;
             }
 
-            Debug.Log(DuckSmart.smartDuckCount);
             int breadThisThrow = Mathf.Min(foodAmount, Mathf.Max(1, DuckSmart.smartDuckCount + 1));
             foodAmount -= breadThisThrow;
             breadParticles.Emit(breadThisThrow);
@@ -79,13 +80,18 @@ namespace DuckClicker
             
             while (_foodThrown >= _nextDuckCost)
             {
-                ducksSpawned[AreaSettings.CurrentArea.AreaIndex]++;
-                _duckSpawner.SpawnDuck(duckPrefab);
+                SpawnDuck(AreaSettings.CurrentArea);
                 _foodThrown -= _nextDuckCost;
-                _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
             }
         }
-        
+
+        private void SpawnDuck(AreaSettings area)
+        {
+            ducksSpawned[AreaSettings.CurrentArea.AreaIndex]++;
+            _duckSpawner.SpawnDuck(duckPrefab, area);
+            _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
+        }
+
         public void Select()
         {
             if (SelectedFeeder != null)
@@ -109,6 +115,43 @@ namespace DuckClicker
             SelectedFeeder = null;
             _button.interactable = true;
             //PerformFeedingHandAnimation(false);
+        }
+
+        public void Save(Dictionary<string, JToken> saveData)
+        {
+            var duckData = new Dictionary<string, JToken>
+            {
+                {"foodAmount", foodAmount},
+                {"ducksSpawned", new JArray(ducksSpawned)},
+                {"foodThrown", _foodThrown}
+            };
+
+            saveData[duckPrefab.name] = JObject.FromObject(duckData);
+        }
+
+        public void Load(Dictionary<string, JToken> saveData)
+        {
+            if (saveData.TryGetValue(duckPrefab.name, out JToken data))
+            {
+                Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
+                foodAmount = (int) duckFeederData["foodAmount"];
+                _foodThrown = (int) duckFeederData["foodThrown"];
+
+                List<AreaSettings> areaSettings = FindObjectsOfType<AreaSettings>().ToList();
+                
+                if (duckFeederData.TryGetValue("ducksSpawned", out JToken ducksSpawnedData))
+                {
+                    int[] ducksSpawnedDataArray = ducksSpawnedData.ToObject<int[]>();
+                    for (int i = 0; i < areaSettings.Count; i++)
+                    {
+                        int ducksSpawnedCount = ducksSpawnedDataArray.Length > i ? ducksSpawnedDataArray[areaSettings[i].AreaIndex] : 0;
+                        for (int j = 0; j < ducksSpawnedCount; j++)
+                        {
+                            SpawnDuck(areaSettings[i]);
+                        }
+                    }
+                }
+            }
         }
     }
 }
