@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 8673439769453325277}
   - component: {fileID: 8621015434323504909}
   - component: {fileID: 5626157276542117115}
+  - component: {fileID: 7694124237500641161}
   m_Layer: 0
   m_Name: DuckTemplate
   m_TagString: Duck
@@ -408,6 +409,21 @@ MonoBehaviour:
   _currencyBase: 1
   _timeMultiplier: 1
   _givesPassiveIncome: 0
+--- !u!114 &7694124237500641161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365654089787025506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47465e8e8a2714a42acc1839facf8776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckType: 0
+  duckDisplayName: 
+  duckDisplayIcon: {fileID: 0}
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0

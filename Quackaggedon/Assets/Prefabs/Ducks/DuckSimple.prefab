@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DuckSimple
       objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayIcon
+      value: 
+      objectReference: {fileID: 229418256, guid: cc5a9e2b03a8d1f40b8648022e46318b, type: 3}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayName
+      value: Simple Duck
+      objectReference: {fileID: 0}
     - target: {fileID: 8673439769453325277, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_SortAtRoot
       value: 0

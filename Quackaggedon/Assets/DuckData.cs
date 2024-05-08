@@ -10,9 +10,10 @@ public class DuckData : MonoBehaviour
         Chef,
         Mafia,
         Bread,
-        Princess,
+        Magical,
         Muscle,
         Clever,
+        LunchLady,
     }
 
     public DuckType duckType;
