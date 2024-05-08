@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using DuckClicker;
 using UnityEngine;
 
-public class DuckSmart : MonoBehaviour, IDuck
+public class DuckMultiplier : MonoBehaviour, IDuck
 {
-    public static int smartDuckCount = 0;
-    
     public void OnClick()
     {
         
@@ -14,6 +12,6 @@ public class DuckSmart : MonoBehaviour, IDuck
 
     private void Start()
     {
-        smartDuckCount++;
+        CurrencyController.AddMultiplier();
     }
 }
