@@ -659,6 +659,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1413705997346320206, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: arm
+      value: 
+      objectReference: {fileID: 14607773}
+    - target: {fileID: 1413705997346320206, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: breadParticles
+      value: 
+      objectReference: {fileID: 38230078}
     - target: {fileID: 2097929137786549943, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
       propertyPath: arm
       value: 
@@ -695,6 +703,14 @@ PrefabInstance:
       propertyPath: breadParticles
       value: 
       objectReference: {fileID: 786869608}
+    - target: {fileID: 4400017340912698349, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: arm
+      value: 
+      objectReference: {fileID: 14607773}
+    - target: {fileID: 4400017340912698349, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: breadParticles
+      value: 
+      objectReference: {fileID: 786869608}
     - target: {fileID: 5969472607406261847, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
       propertyPath: m_Name
       value: UI
@@ -719,6 +735,14 @@ PrefabInstance:
       propertyPath: breadParticles
       value: 
       objectReference: {fileID: 38230078}
+    - target: {fileID: 8521522107378584840, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: arm
+      value: 
+      objectReference: {fileID: 14607773}
+    - target: {fileID: 8521522107378584840, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+      propertyPath: breadParticles
+      value: 
+      objectReference: {fileID: 1564230758}
     - target: {fileID: 8734846131065657866, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

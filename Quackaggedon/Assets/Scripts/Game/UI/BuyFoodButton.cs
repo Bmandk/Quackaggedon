@@ -29,15 +29,11 @@ public class BuyFoodButton : MonoBehaviour
         }
     }
 
-    public void BuyFood()
+    public void OnClick()
     {
         if (duckFeeder != null)
         {
-            if (CurrencyController.CanAfford(duckFeeder.foodCost))
-            {
-                CurrencyController.RemoveCurrency(duckFeeder.foodCost);
-                duckFeeder.foodAmount++;
-            }
+            duckFeeder.BuyFood();
         }
     }
 }

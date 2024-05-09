@@ -38,6 +38,7 @@ namespace DuckClicker
         private int _nextDuckCost = 0;
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
+        private float _autoBuyTimer;
 
         private void Awake()
         {
@@ -61,6 +62,9 @@ namespace DuckClicker
             _foodText.text = $"{foodAmount}";
             if (useForAutoThrow && DuckThrower.speed > 0)
                 CheckAutoThrower();
+            
+            if (useForAutoThrow && DuckBuyer.speed > 0)
+                CheckAutoBuyer();
         }
 
         private void CheckAutoThrower()
@@ -73,6 +77,19 @@ namespace DuckClicker
             else
             {
                 _autoThrowTimer -= Time.deltaTime;
+            }
+        }
+        
+        private void CheckAutoBuyer()
+        {
+            if (_autoBuyTimer <= 0)
+            {
+                BuyFood();
+                _autoBuyTimer = 1f / DuckBuyer.speed;
+            }
+            else
+            {
+                _autoBuyTimer -= Time.deltaTime;
             }
         }
 
@@ -132,6 +149,15 @@ namespace DuckClicker
             SelectedFeeder = null;
             _button.interactable = true;
             //PerformFeedingHandAnimation(false);
+        }
+        
+        public void BuyFood()
+        {
+            if (CurrencyController.CanAfford(foodCost))
+            {
+                CurrencyController.RemoveCurrency(foodCost);
+                foodAmount++;
+            }
         }
 
         public void Save(Dictionary<string, JToken> saveData)
