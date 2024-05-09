@@ -10,6 +10,7 @@ namespace DuckClicker
         {
             CurrencyController.Reset();
             DuckFoodAmount.smartDuckCount = 0;
+            DuckThrower.SetDuckAmount(0);
         }
 
         private void Start()

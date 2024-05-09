@@ -7928,6 +7928,7 @@ MonoBehaviour:
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 1740002534649050372, guid: b60dc557770882b46b3ed3ee05bd0e73, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &202296884278382098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8113,6 +8114,7 @@ MonoBehaviour:
   foodCost: 100
   selectedFromStart: 0
   duckPrefab: {fileID: 7876175925764743311, guid: 4e9b6fc97a9f5904e96581a78a92b236, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &3772834672604896865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8298,6 +8300,7 @@ MonoBehaviour:
   foodCost: 10
   selectedFromStart: 1
   duckPrefab: {fileID: 4336387930949136916, guid: 57e7d329f79bf7340b6c3079ee931f99, type: 3}
+  useForAutoThrow: 1
 --- !u!114 &7426072118798675493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9082,6 +9085,7 @@ MonoBehaviour:
   foodCost: 100
   selectedFromStart: 0
   duckPrefab: {fileID: 7461941693037766528, guid: 739a86bdb4fbffc489c629f0947b24ab, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &885930295224957450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9440,6 +9444,7 @@ MonoBehaviour:
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 6946598372639025392, guid: 0ec55d5211ddff14e9425b93a7dc4aef, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &8838006584440108265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9927,6 +9932,7 @@ MonoBehaviour:
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 7187474574542107855, guid: 5c6f52ec637d0a849a60b7c8876dd36d, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &6616654983957990165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10112,6 +10118,7 @@ MonoBehaviour:
   foodCost: 1000
   selectedFromStart: 0
   duckPrefab: {fileID: 5043935212796080820, guid: 50978a02812a62243be05b77b06f1952, type: 3}
+  useForAutoThrow: 0
 --- !u!114 &2248065637475554714
 MonoBehaviour:
   m_ObjectHideFlags: 0

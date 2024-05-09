@@ -36,6 +36,8 @@ namespace DuckClicker
         private TMP_Text _foodText;
         private int[] ducksSpawned;
         private int _nextDuckCost = 0;
+        [SerializeField] private bool useForAutoThrow;
+        private float _autoThrowTimer;
 
         private void Awake()
         {
@@ -57,6 +59,21 @@ namespace DuckClicker
         private void Update()
         {
             _foodText.text = $"{foodAmount}";
+            if (useForAutoThrow && DuckThrower.speed > 0)
+                CheckAutoThrower();
+        }
+
+        private void CheckAutoThrower()
+        {
+            if (_autoThrowTimer <= 0)
+            {
+                ThrowBread();
+                _autoThrowTimer = 1f / DuckThrower.speed;
+            }
+            else
+            {
+                _autoThrowTimer -= Time.deltaTime;
+            }
         }
 
         public void PerformFeedingHandAnimation()
