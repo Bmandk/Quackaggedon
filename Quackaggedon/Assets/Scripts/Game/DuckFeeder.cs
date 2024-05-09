@@ -72,7 +72,7 @@ namespace DuckClicker
             if (_autoThrowTimer <= 0)
             {
                 ThrowBread();
-                _autoThrowTimer = 1f / DuckThrower.speed;
+                _autoThrowTimer = 1f / (DuckThrower.speed * DuckBonus.AmountOfDucks);
             }
             else
             {
@@ -85,7 +85,7 @@ namespace DuckClicker
             if (_autoBuyTimer <= 0)
             {
                 BuyFood();
-                _autoBuyTimer = 1f / DuckBuyer.speed;
+                _autoBuyTimer = 1f / (DuckBuyer.speed * DuckBonus.AmountOfDucks);
             }
             else
             {
@@ -106,7 +106,7 @@ namespace DuckClicker
                 return;
             }
 
-            int breadThisThrow = Mathf.Min(foodAmount, Mathf.Max(1, DuckFoodAmount.smartDuckCount + 1));
+            int breadThisThrow = Mathf.Min(foodAmount, Mathf.Max(1, DuckFoodAmount.smartDuckCount * DuckBonus.AmountOfDucks + 1));
             foodAmount -= breadThisThrow;
             breadParticles.Emit(breadThisThrow);
             

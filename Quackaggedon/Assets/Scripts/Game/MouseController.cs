@@ -34,7 +34,7 @@ namespace DuckClicker
             bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
             if (hitDuck)
             {
-                IDuck duck = hit.collider.GetComponentInParent<IDuck>();
+                DuckSimple duck = hit.collider.GetComponentInParent<DuckSimple>();
                 if (Input.GetMouseButtonDown(0))
                 {
                     /*if (_selectedDuck != null)
