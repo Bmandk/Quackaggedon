@@ -17,7 +17,7 @@ namespace DuckClicker
 
         public static void Update()
         {
-            AddCurrency(CurrencyPerSecond * Time.deltaTime * QuackMultiplier * DuckBonus.AmountOfDucks);
+            AddCurrency(CurrencyPerSecond * Time.deltaTime * QuackMultiplier * (DuckBonus.AmountOfDucks + 1));
         }
         
         public static void AddCurrency(float amount)
