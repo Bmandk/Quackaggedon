@@ -59,10 +59,16 @@ PrefabInstance:
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayIcon
       value: 
-      objectReference: {fileID: 229418256, guid: cc5a9e2b03a8d1f40b8648022e46318b, type: 3}
+      objectReference: {fileID: 1725673300, guid: 88797474a3ef7b040b9747997e374178, type: 3}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayName
       value: Simple Duck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckEffectDescription
+      value: 'Aww, it''s so cute!
+
+        It quacks'
       objectReference: {fileID: 0}
     - target: {fileID: 8673439769453325277, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_SortAtRoot

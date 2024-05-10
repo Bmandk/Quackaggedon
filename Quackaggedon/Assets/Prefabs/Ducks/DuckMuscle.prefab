@@ -74,27 +74,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364511737572877506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
-      value: 0.23529413
+      value: 0.7882353
       objectReference: {fileID: 0}
     - target: {fileID: 3364511737572877506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.g
-      value: 0.69803923
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 3364511737572877506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.r
-      value: 0.9803922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4012318431127087379, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
-      value: 0.23529413
+      value: 0.7882353
       objectReference: {fileID: 0}
     - target: {fileID: 4012318431127087379, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.g
-      value: 0.69803923
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 4012318431127087379, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.r
-      value: 0.9803922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441939501155371483, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_IsActive
@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7349416747079258965, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Name
       value: DuckMuscle
@@ -143,22 +147,26 @@ PrefabInstance:
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayIcon
       value: 
-      objectReference: {fileID: -889567348, guid: cc5a9e2b03a8d1f40b8648022e46318b, type: 3}
+      objectReference: {fileID: -359591448, guid: 88797474a3ef7b040b9747997e374178, type: 3}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayName
-      value: GigaDuck
+      value: Giga Duck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckEffectDescription
+      value: 'Finally, the legendary Giga Duck! '
       objectReference: {fileID: 0}
     - target: {fileID: 7733746474354657962, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
-      value: 0.23529413
+      value: 0.7882353
       objectReference: {fileID: 0}
     - target: {fileID: 7733746474354657962, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.g
-      value: 0.69803923
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 7733746474354657962, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.r
-      value: 0.9803922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8694051214637262210, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b

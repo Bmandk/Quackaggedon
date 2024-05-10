@@ -179,10 +179,14 @@ PrefabInstance:
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayIcon
       value: 
-      objectReference: {fileID: -889567348, guid: cc5a9e2b03a8d1f40b8648022e46318b, type: 3}
+      objectReference: {fileID: 1731627473, guid: 88797474a3ef7b040b9747997e374178, type: 3}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayName
       value: Chef Duck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckEffectDescription
+      value: The rare chef duck dedicates its life to making food.
       objectReference: {fileID: 0}
     - target: {fileID: 7733746474354657962, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
