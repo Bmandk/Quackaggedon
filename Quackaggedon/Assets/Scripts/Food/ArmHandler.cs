@@ -30,8 +30,4 @@ public class ArmHandler : MonoBehaviour
         transform.position = newPos;
     }
 
-    public void ThrowFood(FoodType foodType)
-    {
-
-    }
 }

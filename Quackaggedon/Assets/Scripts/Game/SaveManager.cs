@@ -13,7 +13,8 @@ public static class SaveManager
         Dictionary<string, JToken> saveData = new Dictionary<string, JToken>();
         
         saveData.Add("Currency", CurrencyController.CurrencyAmount);
-        
+        SaveMetaSaveData(saveData);
+
         IEnumerable<ISaveable> dataPersistanceObjects = GetRunDataPersistanceObjects();
         
         foreach (var dataPersistanceObject in dataPersistanceObjects)
@@ -43,6 +44,8 @@ public static class SaveManager
         {
             CurrencyController.SetCurrency((float) currency.ToObject<float>());
         }
+
+        LoadMetaSaveData(saveData);
         
         IEnumerable<ISaveable> dataPersistanceObjects = GetRunDataPersistanceObjects();
         
@@ -65,6 +68,40 @@ public static class SaveManager
     {
         PlayerPrefs.DeleteKey("SaveData");
         PlayerPrefs.Save();
+    }
+
+    private static void SaveMetaSaveData(Dictionary<string, JToken> saveData)
+    {
+        saveData.Add("FoodRevealedCount", DiscoveredObjects.FoodTypesSeen.Count);
+        for (int i = 0; i < DiscoveredObjects.FoodTypesSeen.Count; i++)
+        {
+            saveData.Add($"FoodRevealed{i}", (int) DiscoveredObjects.FoodTypesSeen[i]);
+        }
+        saveData.Add("DuckRevealedCount", DiscoveredObjects.DuckTypesSeen.Count);
+        for (int i = 0; i < DiscoveredObjects.DuckTypesSeen.Count; i++)
+        {
+            saveData.Add($"DuckRevealed{i}", (int)DiscoveredObjects.DuckTypesSeen[i]);
+        }
+    }
+
+    private static void LoadMetaSaveData(Dictionary<string, JToken> saveData)
+    {
+        if (saveData.TryGetValue("FoodRevealedCount", out JToken foodRevealedCount))
+        {
+            for (int i = 0; i < foodRevealedCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"FoodRevealed{i}", out JToken foodValue);
+                DiscoveredObjects.AddSeenFood((FoodType) foodValue.ToObject<int>());
+            }
+        }
+        if (saveData.TryGetValue("DuckRevealedCount", out JToken duckRevealedCount))
+        {
+            for (int i = 0; i < (int)duckRevealedCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"DuckRevealed{i}", out JToken duckValue);
+                DiscoveredObjects.AddSeenDuck((DuckType)duckValue.ToObject<int>());
+            }
+        }
     }
 }
 

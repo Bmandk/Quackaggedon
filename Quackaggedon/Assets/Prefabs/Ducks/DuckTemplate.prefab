@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ff7f64a591bff4cb1230244d592730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisDuckData: {fileID: 7694124237500641161}
   duckImages:
   - {fileID: 5968007137671925125}
   - {fileID: 6349166179430634162}
@@ -423,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duckType: 0
   duckDisplayName: 
+  duckEffectDescription: 
   duckDisplayIcon: {fileID: 0}
   duckPrefab: {fileID: 7365654089787025506}
 --- !u!1 &7571399224012105678

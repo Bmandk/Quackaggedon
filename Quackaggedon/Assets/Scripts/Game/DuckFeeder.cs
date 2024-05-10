@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
@@ -21,16 +23,16 @@ namespace DuckClicker
                 return Mathf.RoundToInt(baseFoodPerDuck * Mathf.Pow(growthRate, ducksSpawned));
             }
         }
-        public Animator arm;
-        //public ParticleSystem breadParticles;
+
+        public FoodType foodToThrow;
         public int breadPerThrow = 1;
         public int foodAmount = 10;
-        public DuckCost duckCost;
         public float foodCost = 10f;
         public bool selectedFromStart = false;
-        public FoodType foodToThrow;
+
         public DuckType duckTypeToSpawn;
-        //private GameObject duckPrefab;
+        public DuckCost duckCost;
+
         private int _foodThrown = 0;
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
@@ -97,8 +99,7 @@ namespace DuckClicker
 
         public void PerformFeedingHandAnimation()
         {
-            //arm.SetBool("Throwing", isFeeding);
-            arm.SetTrigger("Throwing");
+            ArmController.Instance.PerformFeedingHandAnimation();
         }
 
         public void ThrowBread()
@@ -129,9 +130,33 @@ namespace DuckClicker
 
         private void SpawnDuck(AreaSettings area)
         {
+            DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
             ducksSpawned[AreaSettings.CurrentArea.AreaIndex]++;
-            _duckSpawner.SpawnDuck(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab, area);
+            _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
             _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
+
+            PlayFancyRevealIfFirstTimeSpawn();
+        }
+
+        private void PlayFancyRevealIfFirstTimeSpawn()
+        {
+            DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
+            if (DiscoveredObjects.DuckTypesSeen.Contains(duckTypeSpawning.duckType))
+            {
+                return;
+            }
+            else
+            {
+                DiscoveredObjects.DuckTypesSeen.Add(duckTypeSpawning.duckType);
+                StartCoroutine(RevealAfterDelay(1f, duckTypeSpawning));
+            }
+        }
+
+        IEnumerator RevealAfterDelay(float delay, DuckData duckData)
+        {
+            yield return new WaitForSeconds(delay);
+            UIHandler.Instance.ShowRevealUI(duckData);
+            AudioController.Instance.PlayRevealSounds();
         }
 
         public void Select()
