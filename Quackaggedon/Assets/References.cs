@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,10 +23,66 @@ public class References : MonoBehaviour
         {
             _instance = this;
         }
+
+        PopulateDuckDataDictionary();
+        PopulateFoodDataDictionary();
     }
 
     [SerializeField]
-    private GameObject duckPrefabs;
-    
-    public void GetDuckData(){}
+    private GameObject[] duckPrefabs;
+
+    [SerializeField]
+    private GameObject[] foodPrefabs;
+
+
+    private void PopulateFoodDataDictionary()
+    {
+        foreach (var food in foodPrefabs)
+        {
+            FoodData foodData = food.GetComponent<FoodData>();
+            allFoodData.Add(foodData.foodType, foodData);
+        }
+    }
+
+    private void PopulateDuckDataDictionary()
+    {
+        foreach (var duck in duckPrefabs)
+        {
+            DuckData duckData = duck.GetComponent<DuckData>();
+            allDuckData.Add(duckData.duckType, duckData);
+        }
+    }
+
+    private Dictionary<DuckType, DuckData> allDuckData = new Dictionary<DuckType, DuckData>();
+    private Dictionary<FoodType, FoodData> allFoodData = new Dictionary<FoodType, FoodData>();
+
+    public DuckData GetDuckData(DuckType duckType)
+    {
+        bool succesfullyRetrieved = allDuckData.TryGetValue(duckType, out DuckData duckData);
+
+        if (succesfullyRetrieved)
+        {
+            return duckData;
+        }
+        else 
+        {
+            Debug.LogWarning($"Ducktype {duckType} didn't exist in the list of ducks in the dictionary. Have you forgotten to add its duck-prefab to existing the duckPrefab list?");
+            return null; 
+        }
+    }
+
+    public FoodData GetFoodData(FoodType foodType)
+    {
+        bool succesfullyRetrieved = allFoodData.TryGetValue(foodType, out FoodData foodData);
+
+        if (succesfullyRetrieved)
+        {
+            return foodData;
+        }
+        else
+        {
+            Debug.LogWarning($"Foodtype {foodType} didn't exist in the list of foods in the dictionary. Have you forgotten to add its food-prefab to existing the foodPrefab list?");
+            return null;
+        }
+    }
 }

@@ -22,13 +22,15 @@ namespace DuckClicker
             }
         }
         public Animator arm;
-        public ParticleSystem breadParticles;
+        //public ParticleSystem breadParticles;
         public int breadPerThrow = 1;
         public int foodAmount = 10;
         public DuckCost duckCost;
         public float foodCost = 10f;
         public bool selectedFromStart = false;
-        public GameObject duckPrefab;
+        public FoodType foodToThrow;
+        public DuckType duckTypeToSpawn;
+        //private GameObject duckPrefab;
         private int _foodThrown = 0;
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
@@ -108,7 +110,12 @@ namespace DuckClicker
 
             int breadThisThrow = Mathf.Min(foodAmount, Mathf.Max(1, DuckFoodAmount.smartDuckCount * DuckBonus.AmountOfDucks + 1));
             foodAmount -= breadThisThrow;
-            breadParticles.Emit(breadThisThrow);
+
+            var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
+            var inst = Instantiate(foodPrefab);
+            inst.GetComponent<ParticleSystem>().Emit(breadThisThrow);
+
+            //breadParticles.Emit(breadThisThrow);
             
             _foodThrown += breadThisThrow;
             
@@ -122,7 +129,7 @@ namespace DuckClicker
         private void SpawnDuck(AreaSettings area)
         {
             ducksSpawned[AreaSettings.CurrentArea.AreaIndex]++;
-            _duckSpawner.SpawnDuck(duckPrefab, area);
+            _duckSpawner.SpawnDuck(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab, area);
             _nextDuckCost = duckCost.CalculateCost(ducksSpawned[AreaSettings.CurrentArea.AreaIndex]);
         }
 
@@ -169,12 +176,12 @@ namespace DuckClicker
                 {"foodThrown", _foodThrown}
             };
 
-            saveData[duckPrefab.name] = JObject.FromObject(duckData);
+            saveData[References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name] = JObject.FromObject(duckData);
         }
 
         public void Load(Dictionary<string, JToken> saveData)
         {
-            if (saveData.TryGetValue(duckPrefab.name, out JToken data))
+            if (saveData.TryGetValue(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name, out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
                 foodAmount = (int) duckFeederData["foodAmount"];
