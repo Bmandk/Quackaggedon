@@ -48,9 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4075513937338379101, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Volume
+      value: 0.059
+      objectReference: {fileID: 0}
     - target: {fileID: 5626157276542117115, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: _givesPassiveIncome
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505956811530159181, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Volume
+      value: 0.059
       objectReference: {fileID: 0}
     - target: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Name

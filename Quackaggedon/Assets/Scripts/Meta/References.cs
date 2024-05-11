@@ -34,6 +34,8 @@ public class References : MonoBehaviour
     [SerializeField]
     private GameObject[] foodPrefabs;
 
+    public Collider2D pondCollider;
+
 
     private void PopulateFoodDataDictionary()
     {

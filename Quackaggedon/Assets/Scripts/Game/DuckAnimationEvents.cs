@@ -8,7 +8,10 @@ public class DuckAnimationEvents : MonoBehaviour
 {
     public void PlayRandomQuack()
     {
-        AudioController.Instance.PlayRandomQuack();
+        if (Time.timeSinceLevelLoad > 1f)
+        {
+            AudioController.Instance.PlayRandomQuack();
+        }
     }
 
     public SpriteRenderer[] duckImages;
@@ -27,4 +30,5 @@ public class DuckAnimationEvents : MonoBehaviour
             duckImage.maskInteraction = SpriteMaskInteraction.None;
         }
     }
+
 }
