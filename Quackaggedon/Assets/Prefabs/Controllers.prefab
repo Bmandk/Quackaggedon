@@ -39,6 +39,7 @@ Transform:
   - {fileID: 1875728380685930491}
   - {fileID: 7525859885000648660}
   - {fileID: 6810965266918239084}
+  - {fileID: 5802142709886596855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113357385728640164
@@ -130,7 +131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ddfdbd22155053458e11e92d321ecde, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.684
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -386,7 +387,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 46f3dd0a06e97284ab84c5efbc8b3627, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.684
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -642,7 +643,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a89e9a5cb0886224d89aafc7f72a9226, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.684
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -770,7 +771,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 65c4eeda932cdd64c9e737ba00713c19, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.684
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -988,7 +989,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4202446234433870568, guid: 22cd5c53e462f01499758fc9ee2349f2, type: 2}
   m_audioClip: {fileID: 8300000, guid: a2687c5b17abdd540852e98c99656513, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.254
+  m_Volume: 0.353
   m_Pitch: 0.95
   Loop: 1
   Mute: 0
@@ -1402,7 +1403,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7ff6c31102cc31d40ad7f9b66b2e7911, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.684
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2091,6 +2092,8 @@ MonoBehaviour:
   - {fileID: 3875076348029535354, guid: fc75406704b0e1c409839ad194d9ef94, type: 3}
   - {fileID: 4850720924671599326, guid: 030d7f5bfe34f524babdbcd31cb042df, type: 3}
   - {fileID: 943111270430071975, guid: 5d23afab8ecda7248afab8aa4a9650cb, type: 3}
+  pondCollider: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!1 &8119703028260408488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2222,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8587787956134398008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5802142709886596855}
+  - component: {fileID: 3369197559682778044}
+  m_Layer: 0
+  m_Name: DuckClickerFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5802142709886596855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587787956134398008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2722170788483435434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3369197559682778044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587787956134398008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59e04fdafe7c4f9f9d127b10f8e6b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckClickUiFxs: {fileID: 8755027209695903013, guid: 717c4f901a0c42f4bb32d256e46de994, type: 3}
+  duckClickCursorFx: {fileID: 5650528170924732938, guid: 0d0bf3163d90e3f40beabf5f074cee49, type: 3}
+  uiParent: {fileID: 0}
 --- !u!1001 &7760258447083930062
 PrefabInstance:
   m_ObjectHideFlags: 0

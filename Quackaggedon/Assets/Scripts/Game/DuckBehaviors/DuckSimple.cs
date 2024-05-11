@@ -21,7 +21,7 @@ public class DuckSimple : MonoBehaviour, IDuck
         float addAmount = _currencyBase * CurrencyController.QuackMultiplier;
         CurrencyController.AddCurrency(addAmount);
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(addAmount);
-        //if (_quackCoroutine == null)
+        if (_quackCoroutine == null)
         {
             _quackCoroutine = StartCoroutine(QuackThenDelay());
         }
@@ -31,7 +31,7 @@ public class DuckSimple : MonoBehaviour, IDuck
     {
         duckAnim.SetTrigger("Quack");
         yield return new WaitForSeconds(1);
-        //_quackCoroutine = null;
+        _quackCoroutine = null;
     }
     
     void Start()

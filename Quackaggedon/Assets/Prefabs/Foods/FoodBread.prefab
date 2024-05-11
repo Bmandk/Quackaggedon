@@ -61,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6462159456596468169, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462159456596468169, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
       objectReference: {fileID: -1992918543, guid: ba35167779df26f48a19e024b13d76ef, type: 3}
