@@ -5,10 +5,18 @@ using UnityEngine;
 
 public class ClickDuckUiPopup : MonoBehaviour
 {
-    public TextMeshProUGUI quacksReceived;
+    [SerializeField]
+    private TextMeshProUGUI quacksReceived;
+    [SerializeField]
+    private GameObject toDestroyWhenFxsDone;
 
     public void SetQuacksReceievedOnClick(float amount)
     {
         quacksReceived.text = amount.ToString();
+    }
+
+    public void DestroyUponCompletion()
+    {
+        Destroy(toDestroyWhenFxsDone.gameObject);
     }
 }

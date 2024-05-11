@@ -36,6 +36,20 @@ public class References : MonoBehaviour
 
     public Collider2D pondCollider;
 
+    public Camera mainCam;
+
+    public Vector3 mouseWorldPos { get; private set; }
+    public Vector3 mouseScreenPos { get; private set; }
+
+
+    private void Update()
+    {
+        var screenPoint = Input.mousePosition;
+        screenPoint.z = -mainCam.transform.position.z; //distance of the plane from the camera.
+
+        mouseWorldPos = mainCam.ScreenToWorldPoint(screenPoint);
+        mouseScreenPos = screenPoint;
+    }
 
     private void PopulateFoodDataDictionary()
     {
