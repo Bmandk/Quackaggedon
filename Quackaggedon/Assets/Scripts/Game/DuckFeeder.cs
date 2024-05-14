@@ -38,6 +38,7 @@ namespace DuckClicker
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
+        public Image progressImage;
         private int[] ducksSpawned;
         private int _nextDuckCost = 0;
         [SerializeField] private bool useForAutoThrow;
@@ -123,9 +124,11 @@ namespace DuckClicker
             
             while (_foodThrown >= _nextDuckCost)
             {
-                SpawnDuck(AreaSettings.CurrentArea);
                 _foodThrown -= _nextDuckCost;
+                SpawnDuck(AreaSettings.CurrentArea);
             }
+            
+            UpdateProgress();
         }
 
         private void SpawnDuck(AreaSettings area)
@@ -192,6 +195,11 @@ namespace DuckClicker
                 foodAmount++;
             }
         }
+        
+        private void UpdateProgress()
+        {
+            progressImage.fillAmount = (float) _foodThrown / _nextDuckCost;
+        }
 
         public void Save(Dictionary<string, JToken> saveData)
         {
@@ -227,6 +235,8 @@ namespace DuckClicker
                         }
                     }
                 }
+                
+                UpdateProgress();
             }
         }
     }

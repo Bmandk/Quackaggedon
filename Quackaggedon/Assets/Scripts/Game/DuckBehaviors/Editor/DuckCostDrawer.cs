@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 [CustomPropertyDrawer(typeof(DuckFeeder.DuckCost))]
 public class DuckCostDrawer : PropertyDrawer
 {
-    public const int k_PrecalculatedCosts = 20;
+    private const int k_PrecalculatedCosts = 20;
+    private TextField[] m_CostFields = new TextField[k_PrecalculatedCosts];
     
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
     {
@@ -21,6 +22,7 @@ public class DuckCostDrawer : PropertyDrawer
         DuckFeeder feeder = (DuckFeeder) property.serializedObject.targetObject;
         VisualElement costs = new VisualElement();
         costs.style.flexDirection = FlexDirection.Row;
+        m_CostFields = new TextField[k_PrecalculatedCosts];
         
         for (int i = 0; i < k_PrecalculatedCosts; i++)
         {
@@ -29,6 +31,7 @@ public class DuckCostDrawer : PropertyDrawer
             textField.value = cost.ToString();
             textField.SetEnabled(false);
             
+            m_CostFields[i] = textField;
             costs.Add(textField);
         }
         
@@ -44,8 +47,7 @@ public class DuckCostDrawer : PropertyDrawer
             for (int i = 0; i < k_PrecalculatedCosts; i++)
             {
                 int cost = feeder.duckCost.CalculateCost(i);
-                TextField textField = (TextField) costs.ElementAt(i);
-                textField.value = cost.ToString();
+                m_CostFields[i].value = cost.ToString();
             }
         }
         
