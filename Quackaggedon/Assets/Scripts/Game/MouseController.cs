@@ -7,8 +7,8 @@ namespace DuckClicker
 {
     public class MouseController : MonoBehaviour
     {
-        private DuckController _hoveredDuck;
-        private DuckController _selectedDuck;
+        private DuckSelector _hoveredDuck;
+        private DuckSelector _selectedDuck;
         
         private void Update()
         {
@@ -32,21 +32,28 @@ namespace DuckClicker
         private bool CheckDuck(RaycastHit2D hit)
         {
             bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
+            if (hit.collider != null)
+                Debug.Log(hit.collider.name, hit.collider.gameObject);
+            else
+            {
+                Debug.Log("No collider hit");
+            }
             if (hitDuck)
             {
                 DuckSimple duck = hit.collider.GetComponentInParent<DuckSimple>();
+                DuckSelector duckSelector = hit.collider.GetComponentInParent<DuckSelector>();
                 if (Input.GetMouseButtonDown(0))
                 {
-                    /*if (_selectedDuck != null)
+                    if (_selectedDuck != null)
                     {
                         _selectedDuck.Deselect();
                     }
-                    _selectedDuck = duck;
-                    _selectedDuck.Select();*/
+                    _selectedDuck = duckSelector;
+                    _selectedDuck.Select();
                     
                     duck.OnClick();
                 }
-                /*else
+                else
                 {
                     if (_hoveredDuck != duck)
                     {
@@ -54,19 +61,19 @@ namespace DuckClicker
                         {
                             _hoveredDuck.Unhover();
                         }
-                        _hoveredDuck = duck;
+                        _hoveredDuck = duckSelector;
                         _hoveredDuck.Hover();
                     }
-                }*/
+                }
             }
-            /*else
+            else
             {
                 if (_hoveredDuck != null)
                 {
                     _hoveredDuck.Unhover();
                     _hoveredDuck = null;
                 }
-            }*/
+            }
             
             return hitDuck;
         }
