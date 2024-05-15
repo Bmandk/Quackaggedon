@@ -6,8 +6,33 @@ using Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
 
+[InitializeOnLoad]
 public static class SaveManager
 {
+    private static bool _deleteSave = false;
+    private const string _menuName = "Save/Delete Save On Start";
+    
+    static SaveManager()
+    {
+        EditorApplication.playModeStateChanged += state => {
+            if (state == PlayModeStateChange.ExitingEditMode)
+            {
+                if (_deleteSave)
+                {
+                    DeleteSave();
+                }
+            }
+        };
+        _deleteSave = EditorPrefs.GetBool(_menuName, false);
+
+        /// Delaying until first editor tick so that the menu
+        /// will be populated before setting check state, and
+        /// re-apply correct action
+        EditorApplication.delayCall += () => {
+            PerformAction(_deleteSave);
+        };
+    }
+    
     public static void Save()
     {
         Dictionary<string, JToken> saveData = new Dictionary<string, JToken>();
@@ -68,6 +93,19 @@ public static class SaveManager
     {
         PlayerPrefs.DeleteKey("SaveData");
         PlayerPrefs.Save();
+    }
+    
+    [MenuItem(_menuName)]
+    public static void ToggleDeleteSave()
+    {
+        PerformAction(!_deleteSave);
+    }
+    
+    private static void PerformAction(bool deleteSave)
+    {
+        _deleteSave = deleteSave;
+        EditorPrefs.SetBool(_menuName, _deleteSave);
+        Menu.SetChecked(_menuName, _deleteSave);
     }
 
     private static void SaveMetaSaveData(Dictionary<string, JToken> saveData)
