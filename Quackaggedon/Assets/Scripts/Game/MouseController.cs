@@ -32,12 +32,6 @@ namespace DuckClicker
         private bool CheckDuck(RaycastHit2D hit)
         {
             bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
-            if (hit.collider != null)
-                Debug.Log(hit.collider.name, hit.collider.gameObject);
-            else
-            {
-                Debug.Log("No collider hit");
-            }
             if (hitDuck)
             {
                 DuckSimple duck = hit.collider.GetComponentInParent<DuckSimple>();
