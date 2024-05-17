@@ -5,7 +5,9 @@ using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 namespace DuckClicker
@@ -38,7 +40,7 @@ namespace DuckClicker
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
-        public Image progressImage;
+        public Slider progressSlider;
         private int[] ducksSpawned;
         private int _nextDuckCost = 0;
         [SerializeField] private bool useForAutoThrow;
@@ -198,7 +200,80 @@ namespace DuckClicker
         
         private void UpdateProgress()
         {
-            progressImage.fillAmount = (float) _foodThrown / _nextDuckCost;
+            var newVal = (float)_foodThrown / _nextDuckCost;
+            if (newVal == 0)
+            {
+                FinishThisProgressLevel();
+            }
+            else
+            {
+
+                SetProgress(newVal);
+            } 
+        }
+
+        private float _targetProgress;
+        private float _timeScale = 0;
+        private bool _lerpingProgress = false;
+        private float _fillSpeed = 3;
+        private Coroutine _progressLerp;
+
+        public void FinishThisProgressLevel()
+        {
+            _timeScale = 0;
+
+            if (_progressLerp != null)
+            {
+                StopCoroutine(_progressLerp);
+                _lerpingProgress = false;
+            }
+            if (!_lerpingProgress)
+                _progressLerp = StartCoroutine(LerpProgressToFinish());
+        }
+
+        public void SetProgress(float progress)
+        {
+            _targetProgress = progress;
+            _timeScale = 0;
+
+            if (_progressLerp != null)
+            {
+                StopCoroutine(_progressLerp);
+                _lerpingProgress = false;
+            }
+            if (!_lerpingProgress)
+                _progressLerp = StartCoroutine(LerpProgress());
+        }
+
+        private IEnumerator LerpProgress()
+        {
+            float startHealth = progressSlider.value;
+
+            _lerpingProgress = true;
+
+            while (_timeScale < 1)
+            {
+                _timeScale += Time.deltaTime * _fillSpeed;
+                progressSlider.value = Mathf.Lerp(startHealth, _targetProgress, _timeScale);
+                yield return null;
+            }
+            _lerpingProgress = false;
+        }
+
+        private IEnumerator LerpProgressToFinish()
+        {
+            float startHealth = progressSlider.value;
+
+            _lerpingProgress = true;
+
+            while (_timeScale < 1)
+            {
+                _timeScale += Time.deltaTime * _fillSpeed;
+                progressSlider.value = Mathf.Lerp(startHealth, 1, _timeScale);
+                yield return null;
+            }
+            progressSlider.value = 0;
+            _lerpingProgress = false;
         }
 
         public void Save(Dictionary<string, JToken> saveData)
