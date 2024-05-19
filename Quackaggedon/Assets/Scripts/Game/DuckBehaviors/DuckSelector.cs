@@ -5,7 +5,7 @@ public class DuckSelector : MonoBehaviour
 {
     public void Select()
     {
-        Destroy(gameObject);
+        
     }
     
     public void Deselect()
