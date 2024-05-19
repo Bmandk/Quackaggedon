@@ -29,6 +29,9 @@ public class AreaSettings : MonoBehaviour
     
     private int _currentDuckCount = 0;
     
+    public int CurrentDuckCount => _currentDuckCount;
+    public int DuckLimit => duckLimit;
+    
     public bool CanSpawnDuck => _currentDuckCount < duckLimit;
 
     private void Start()
