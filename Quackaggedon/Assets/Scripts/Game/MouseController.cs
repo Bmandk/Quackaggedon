@@ -49,7 +49,7 @@ namespace DuckClicker
                 }
                 else
                 {
-                    if (_hoveredDuck != duck)
+                    if (_hoveredDuck != duckSelector)
                     {
                         if (_hoveredDuck != null)
                         {
