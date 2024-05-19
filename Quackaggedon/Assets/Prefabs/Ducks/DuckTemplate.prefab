@@ -395,6 +395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab57ef62df54209bf525e92f6793fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultMat: {fileID: 2100000, guid: 19f4d0a0996cb4419a95d0a4d8adac69, type: 2}
+  _highlightMat: {fileID: 2100000, guid: ff4e4bcd3e7454ec9a7440af47843b5d, type: 2}
+  _selectMat: {fileID: 2100000, guid: a60692303181a4aaf988127a9b789070, type: 2}
+  _duckSprites:
+  - {fileID: 7267704866713133080}
+  - {fileID: 7728361238407215716}
+  - {fileID: 3568773770112852827}
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0

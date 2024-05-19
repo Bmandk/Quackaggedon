@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568773770112852827, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19f4d0a0996cb4419a95d0a4d8adac69, type: 2}
     - target: {fileID: 4075513937338379101, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Volume
       value: 0.059
@@ -60,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.059
       objectReference: {fileID: 0}
+    - target: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19f4d0a0996cb4419a95d0a4d8adac69, type: 2}
     - target: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Name
       value: DuckSimple
@@ -78,6 +86,10 @@ PrefabInstance:
 
         It quacks, you like quacks'
       objectReference: {fileID: 0}
+    - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19f4d0a0996cb4419a95d0a4d8adac69, type: 2}
     - target: {fileID: 8673439769453325277, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_SortAtRoot
       value: 0
