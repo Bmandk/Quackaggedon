@@ -6643,7 +6643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
       propertyPath: foodCost
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
       propertyPath: foodToThrow
@@ -6660,6 +6660,10 @@ PrefabInstance:
     - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
       propertyPath: selectedFromStart
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+      propertyPath: duckCost.baseFoodPerDuck
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

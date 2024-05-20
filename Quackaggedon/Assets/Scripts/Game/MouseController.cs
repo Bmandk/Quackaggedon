@@ -49,7 +49,7 @@ namespace DuckClicker
                 }
                 else
                 {
-                    if (_hoveredDuck != duckSelector)
+                    if (_hoveredDuck != duckSelector && _selectedDuck != duckSelector)
                     {
                         if (_hoveredDuck != null)
                         {
@@ -62,7 +62,7 @@ namespace DuckClicker
             }
             else
             {
-                if (_hoveredDuck != null)
+                if (_hoveredDuck != null && _hoveredDuck != _selectedDuck)
                 {
                     _hoveredDuck.Unhover();
                     _hoveredDuck = null;
