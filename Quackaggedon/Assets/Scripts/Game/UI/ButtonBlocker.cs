@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ButtonBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -11,6 +12,11 @@ public class ButtonBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        IsBlocked = false;
+    }
+
+    private void OnDisable()
     {
         IsBlocked = false;
     }
