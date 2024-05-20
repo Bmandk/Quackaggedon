@@ -13,7 +13,10 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenWarningMenu()
     {
-        warningMenu.SetActive(true);
+        if (SaveManager.DoesSaveExist())
+            warningMenu.SetActive(true);
+        else
+            StartGame();
     }
 
     public void CloseWarningMenu()

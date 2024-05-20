@@ -95,6 +95,11 @@ public static class SaveManager
         PlayerPrefs.Save();
     }
     
+    public static bool DoesSaveExist()
+    {
+        return PlayerPrefs.HasKey("SaveData");
+    }
+
     [MenuItem(_menuName)]
     public static void ToggleDeleteSave()
     {
