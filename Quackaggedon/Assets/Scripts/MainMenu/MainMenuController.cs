@@ -9,6 +9,17 @@ public class MainMenuController : MonoBehaviour
     public Animator animator;
     public SceneLoader sceneHandler;
     public AudioMixerGroup mixerGroup;
+    public GameObject warningMenu;
+
+    public void OpenWarningMenu()
+    {
+        warningMenu.SetActive(true);
+    }
+
+    public void CloseWarningMenu()
+    {
+        warningMenu?.SetActive(false);
+    }
 
     public void ContinueGame()
     {
