@@ -58,7 +58,7 @@ public class IntroSceneController : MonoBehaviour
         {
             if (completedText)
             {
-                if (sceneIndex <= scenes.Length)
+                if (sceneIndex < scenes.Length)
                     scenes[sceneIndex].SetActive(false);
                 sceneIndex++;
                 if (sceneIndex < scenes.Length)

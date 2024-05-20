@@ -4808,8 +4808,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I won't let this break us. I'll make a new home for you where you'll be
-    safe and hidden from these <shake a=0.5>capitalistic swine</shake> .
+  m_text: I won't let this break us. I'll make a new home for you safe from these
+    <shake a=0.5><b>capitalistic swines</b></shake>.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
   m_sharedMaterial: {fileID: -680080995421439120, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
@@ -11258,8 +11258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255.85915, y: -432.3393}
-  m_SizeDelta: {x: 793.051, y: 153.956}
+  m_AnchoredPosition: {x: 263.103, y: -414.4}
+  m_SizeDelta: {x: 807.538, y: 189.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697587678
 MonoBehaviour:
@@ -15240,7 +15240,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: I know of an abandoned mansion bathroom hidden among the cliffs... Come
-    find me again my darlings.
+    find me there my ducklings, one day we'll get <wiggle a=0.1>vengence</wiggle>!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
   m_sharedMaterial: {fileID: -680080995421439120, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
@@ -31980,8 +31980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599.672, y: 115.62}
-  m_SizeDelta: {x: 573.042, y: 262.725}
+  m_AnchoredPosition: {x: -608.6, y: 130.396}
+  m_SizeDelta: {x: 555.19, y: 233.174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798166484
 MonoBehaviour:
@@ -34204,8 +34204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Please, stop! Don't dump garbage here, <shake a=0.3>ducks</shake> live
-    here.
+  m_text: Please, don't dump garbage here! <shake a=0.3>Ducks</shake> live here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
   m_sharedMaterial: {fileID: -680080995421439120, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
