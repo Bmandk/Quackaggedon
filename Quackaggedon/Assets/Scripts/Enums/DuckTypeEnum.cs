@@ -1,11 +1,11 @@
 public enum DuckType
 {
-    Simple,
-    Chef,
+    Simple, // Gives quacks
+    Chef, // Buys food
     Mafia,
-    Bread,
-    Magical,
-    Muscle,
-    Clever,
-    LunchLady,
+    Bread, // Gives multiplier
+    Magical, // Gives ALL multipliers
+    Muscle, // Wins the game
+    Clever, // Boosts food thrown
+    LunchLady, // Throws food
 }

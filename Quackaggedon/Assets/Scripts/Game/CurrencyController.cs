@@ -5,29 +5,25 @@ namespace DuckClicker
     public static class CurrencyController
     {
         public static float CurrencyAmount { get; private set; }
-        public static float CurrencyPerSecond { get; private set; }
         public static int QuackMultiplier { get; private set; }
 
         public static void Reset()
         {
-            CurrencyAmount = 10;
-            CurrencyPerSecond = 0;
+            CurrencyAmount = 10;    
             QuackMultiplier = 1;
         }
 
         public static void Update()
         {
-            AddCurrency(CurrencyPerSecond * Time.deltaTime * QuackMultiplier * (DuckBonus.AmountOfDucks + 1));
+            for (int i = 0; i < 3; i++)
+            {
+                AddCurrency(DuckAmounts.duckCounts[DuckType.Simple][i] * (1 + DuckAmounts.duckCounts[DuckType.Bread][i]) * Time.deltaTime);
+            }
         }
         
         public static void AddCurrency(float amount)
         {
             CurrencyAmount += amount;
-        }
-        
-        public static void AddCurrencyPerSecond(float amount)
-        {
-            CurrencyPerSecond += amount;
         }
         
         public static void RemoveCurrency(float amount)
@@ -43,11 +39,6 @@ namespace DuckClicker
         public static void SetCurrency(float amount)
         {
             CurrencyAmount = amount;
-        }
-
-        public static void AddMultiplier()
-        {
-            QuackMultiplier++;
         }
     }
 }

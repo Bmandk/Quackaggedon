@@ -8,11 +8,9 @@ namespace DuckClicker
     {
         private void Awake()
         {
+            DuckAmounts.Reset();
             CurrencyController.Reset();
             DiscoveredObjects.Reset();
-            DuckFoodAmount.smartDuckCount = 0;
-            DuckThrower.SetDuckAmount(0);
-            DuckBuyer.SetDuckAmount(0);
         }
 
         private void Start()

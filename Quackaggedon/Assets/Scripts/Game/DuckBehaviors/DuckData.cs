@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DuckClicker;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,4 +13,14 @@ public class DuckData : MonoBehaviour
     public string duckEffectDescription;
     public Sprite duckDisplayIcon;
     public GameObject duckPrefab;
+
+    private void OnDestroy()
+    {
+        DuckAmounts.duckCounts[duckType][0]--;
+        
+        foreach (DuckFeeder duckFeeder in FindObjectsOfType<DuckFeeder>())
+        {
+            duckFeeder.Refresh();
+        }
+    }
 }
