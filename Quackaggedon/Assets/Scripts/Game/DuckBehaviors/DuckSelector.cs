@@ -17,6 +17,7 @@ public class DuckSelector : MonoBehaviour
     
     [SerializeField]
     private SpriteRenderer[] _duckSprites;
+    [SerializeField]
     private Animator duckAnim;
     private Coroutine _quackCoroutine;
 
