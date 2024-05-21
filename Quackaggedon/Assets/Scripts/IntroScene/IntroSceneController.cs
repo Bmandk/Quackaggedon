@@ -8,6 +8,27 @@ using UnityEngine;
 
 public class IntroSceneController : MonoBehaviour
 {
+
+    private static IntroSceneController _instance;
+
+    public static IntroSceneController Instance
+    {
+        get { return _instance; }
+    }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+
     public GameObject[] scenes;
     private int sceneIndex = 0;
 
