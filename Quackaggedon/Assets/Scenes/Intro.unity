@@ -15070,8 +15070,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I'll make a safe home for you in my bathroom, the Mega Corp will never
-    get in there... Come find me there my ducklings, one day we'll get <wiggle a=0.1>vengence</wiggle>!
+  m_text: I'll make a safe home for you in my bathroom, they will never fin us there...
+    Come find me again my ducklings, one day we'll get <wiggle a=0.1>vengence</wiggle>!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
   m_sharedMaterial: {fileID: -680080995421439120, guid: 7ec5de6e04413164192b89d79d19f860, type: 2}
@@ -32831,6 +32831,7 @@ GameObject:
   - component: {fileID: 1934207125}
   - component: {fileID: 1934207124}
   - component: {fileID: 1934207126}
+  - component: {fileID: 1934207127}
   m_Layer: 5
   m_Name: FadeBlack
   m_TagString: Untagged
@@ -32916,6 +32917,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1934207127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934207122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84358ed72269f24da6bfadcbe7f59e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1945018926
 GameObject:
   m_ObjectHideFlags: 0
