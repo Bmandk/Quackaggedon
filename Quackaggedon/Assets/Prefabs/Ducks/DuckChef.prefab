@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.86666673
       objectReference: {fileID: 0}
+    - target: {fileID: 3568773770112852827, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4012318431127087379, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
       value: 0.6745098
@@ -191,6 +195,10 @@ PrefabInstance:
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
       value: The rare chef duck dedicates its life to making food.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7733746474354657962, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b

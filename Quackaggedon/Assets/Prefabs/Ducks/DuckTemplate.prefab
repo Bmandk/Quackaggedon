@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &186887272003196632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5723751875090673005}
+  m_Layer: 6
+  m_Name: DuckScaler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5723751875090673005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186887272003196632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08, y: -1.06, z: 0}
+  m_LocalScale: {x: 0.304123, y: 0.304123, z: 0.304123}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1088175675618203017}
+  m_Father: {fileID: 2625156538610567063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614328917307999654
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3273825171161998151}
   - component: {fileID: 8298616756839004622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Duck
   m_Icon: {fileID: 0}
@@ -26,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 614328917307999654}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,9 +96,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35, y: 3.27}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.83
+  m_Radius: 0.005
 --- !u!1 &3256302473932032237
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4340424512324725720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DuckArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +144,7 @@ GameObject:
   - component: {fileID: 1088175675618203017}
   - component: {fileID: 864956059973319289}
   - component: {fileID: 7858460505364087236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3875884330271059232}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -136,7 +168,7 @@ Transform:
   - {fileID: 4383918903036869096}
   - {fileID: 5613833546521846676}
   - {fileID: 2855061433099555862}
-  m_Father: {fileID: 2625156538610567063}
+  m_Father: {fileID: 5723751875090673005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &864956059973319289
 Animator:
@@ -173,6 +205,98 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duckImages:
   - {fileID: 7267704866713133080}
+--- !u!1 &4772306112238173421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4949855124177161268}
+  - component: {fileID: 481973765483685015}
+  m_Layer: 7
+  m_Name: SelectorCollider
+  m_TagString: DuckSelector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4949855124177161268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772306112238173421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2625156538610567063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &481973765483685015
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772306112238173421}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7429798, y: 0.45498163}
+      - {x: 0.21631509, y: 0.522545}
+      - {x: -0.10590866, y: 0.44231135}
+      - {x: -0.047745615, y: 0.7970811}
+      - {x: -0.17321421, y: 1.0059425}
+      - {x: -0.4983189, y: 1.072973}
+      - {x: -0.7297541, y: 0.8422462}
+      - {x: -0.77517414, y: 0.54713005}
+      - {x: -0.6036421, y: 0.341246}
+      - {x: -0.7362013, y: -0.120693624}
+      - {x: -0.6071816, y: -0.2986639}
+      - {x: -0.38486633, y: -0.47479773}
+      - {x: 0.36099365, y: -0.49867046}
+      - {x: 0.76527685, y: -0.17375398}
+      - {x: 0.9510565, y: 0.30901712}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6890209180811185361
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8516717424495797321}
   - component: {fileID: 7728361238407215716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DuckFeetL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +395,8 @@ GameObject:
   - component: {fileID: 7694124237500641161}
   - component: {fileID: 7258025461571551465}
   - component: {fileID: 485111888139877661}
-  m_Layer: 0
+  - component: {fileID: 2330681344349673124}
+  m_Layer: 6
   m_Name: DuckTemplate
   m_TagString: Duck
   m_Icon: {fileID: 0}
@@ -288,11 +413,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.30412295, y: 0.30412295, z: 0.30412295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3273825171161998151}
-  - {fileID: 1088175675618203017}
+  - {fileID: 4949855124177161268}
+  - {fileID: 5723751875090673005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &8673439769453325277
@@ -315,7 +441,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7365654089787025506}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -386,6 +512,21 @@ MonoBehaviour:
   - {fileID: 7728361238407215716}
   - {fileID: 3568773770112852827}
   duckAnim: {fileID: 864956059973319289}
+--- !u!114 &2330681344349673124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365654089787025506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd82d474582b594f9364f46858e4800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckHolder: {fileID: 3875884330271059232}
+  randomPosition: {x: 0, y: 0, z: 0}
+  maxSwimSpeed: 1
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2855061433099555862}
   - component: {fileID: 5956234557296902345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8434049686684578342}
   - component: {fileID: 3568773770112852827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DuckFeetR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2447360924445980576}
   - component: {fileID: 7267704866713133080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DuckBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830757568619997197}
   - component: {fileID: 882729287152035961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SplashSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4383918903036869096}
   - component: {fileID: 5597004443198067477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water_Ripples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,6 +1041,14 @@ PrefabInstance:
     - target: {fileID: 1725855644823463935, guid: 5cfbcef4fb783a3408d02f82d611378e, type: 3}
       propertyPath: m_Name
       value: DuckRevealFx
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725855644823463935, guid: 5cfbcef4fb783a3408d02f82d611378e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531189746057645603, guid: 5cfbcef4fb783a3408d02f82d611378e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

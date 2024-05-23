@@ -17,7 +17,8 @@ namespace DuckClicker
                 return;
             }
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 1000f);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 1000f, 1000, LayerMask.GetMask("DuckSelector"));
+
             // Only allow feeding if we're not hovering over a duck
             bool hitDuck = CheckDuck(hit);
             if (!hitDuck)
@@ -31,7 +32,7 @@ namespace DuckClicker
 
         private bool CheckDuck(RaycastHit2D hit)
         {
-            bool hitDuck = hit.collider != null && hit.collider.CompareTag("Duck");
+            bool hitDuck = hit.collider != null && hit.collider.CompareTag("DuckSelector");
             if (hitDuck)
             {
                 DuckSelector duckSelector = hit.collider.GetComponentInParent<DuckSelector>();
