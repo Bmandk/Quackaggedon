@@ -25,7 +25,7 @@ namespace DuckClicker
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    DuckFeeder.SelectedFeeder.PerformFeedingHandAnimation();
+                    //DuckFeeder.SelectedFeeder.PerformFeedingHandAnimation();
                 }
             }
         }

@@ -28,7 +28,7 @@ public class DuckSelector : MonoBehaviour
         ChangeDuckMaterial(_selectMat);
         SellButton.Instance.SetDuck(gameObject);
 
-        float addAmount = DuckAmounts.GetTotalDucks() * Mathf.Pow(2, DuckAmounts.GetTotalDucks(DuckType.Bread));
+        float addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
         CurrencyController.AddCurrency(addAmount);
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(addAmount);
         if (_quackCoroutine == null)

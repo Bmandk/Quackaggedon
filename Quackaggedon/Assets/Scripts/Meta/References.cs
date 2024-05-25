@@ -40,6 +40,8 @@ public class References : MonoBehaviour
 
     public Vector3 mouseWorldPos { get; private set; }
     public Vector3 mouseScreenPos { get; private set; }
+    
+    public DuckStats duckStats;
 
 
     private void Update()

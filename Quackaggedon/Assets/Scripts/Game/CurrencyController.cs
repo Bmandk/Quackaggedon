@@ -9,7 +9,7 @@ namespace DuckClicker
 
         public static void Reset()
         {
-            CurrencyAmount = 10;    
+            CurrencyAmount = 20;    
             QuackMultiplier = 1;
         }
 
@@ -17,7 +17,7 @@ namespace DuckClicker
         {
             for (int i = 0; i < 3; i++)
             {
-                AddCurrency(DuckAmounts.duckCounts[DuckType.Simple][i] * (1 + DuckAmounts.duckCounts[DuckType.Bread][i]) * Time.deltaTime);
+                AddCurrency((DuckAmounts.duckCounts[DuckType.Simple][i] * References.Instance.duckStats.simpleDuckStats.quacksPerSecond) * (1 + DuckAmounts.duckCounts[DuckType.Bread][i]) * Time.deltaTime);
             }
         }
         

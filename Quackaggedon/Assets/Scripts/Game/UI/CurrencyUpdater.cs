@@ -15,6 +15,9 @@ public class CurrencyUpdater : MonoBehaviour
     
     private void Update()
     {
-        currencyText.text = $"Quacks: {CurrencyController.CurrencyAmount:0.0}";
+        // Round down to 1 decimal place
+        // If we simply round, the currency could round up, but the player still cannot afford food
+        float currencyAmount = Mathf.Floor(CurrencyController.CurrencyAmount * 10) / 10;
+        currencyText.text = $"Quacks: {currencyAmount:0.0}";
     }
 }

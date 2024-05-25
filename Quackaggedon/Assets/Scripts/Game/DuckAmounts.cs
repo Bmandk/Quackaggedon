@@ -43,4 +43,15 @@ public static class DuckAmounts
 
         return total;
     }
+    
+    public static int GetTotalDucks(int area)
+    {
+        int total = 0;
+        foreach (var duckType in duckCounts)
+        {
+            total += duckType.Value[area];
+        }
+
+        return total;
+    }
 }

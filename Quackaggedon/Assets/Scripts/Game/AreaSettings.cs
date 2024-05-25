@@ -27,12 +27,9 @@ public class AreaSettings : MonoBehaviour
     private static float _startSizeReference;
     private static float _startArmOffsetReference;
     
-    private int _currentDuckCount = 0;
-    
-    public int CurrentDuckCount => _currentDuckCount;
     public int DuckLimit => duckLimit;
     
-    public bool CanSpawnDuck => _currentDuckCount < duckLimit;
+    public bool CanSpawnDuck => DuckAmounts.GetTotalDucks(AreaIndex) < DuckLimit;
 
     private void Start()
     {
@@ -60,10 +57,5 @@ public class AreaSettings : MonoBehaviour
         ArmHandler.Instance.offset = _startArmOffsetReference * (CameraSize / _startSizeReference);
         if (DuckFeeder.SelectedFeeder != null)
             DuckFeeder.SelectedFeeder.Refresh();
-    }
-    
-    public void AddDuck()
-    {
-        _currentDuckCount++;
     }
 }

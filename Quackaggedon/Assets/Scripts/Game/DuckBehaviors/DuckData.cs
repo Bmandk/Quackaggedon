@@ -16,7 +16,7 @@ public class DuckData : MonoBehaviour
 
     private void OnDestroy()
     {
-        DuckAmounts.duckCounts[duckType][0]--;
+        DuckAmounts.duckCounts[duckType][AreaSettings.CurrentArea.AreaIndex]--;
         
         foreach (DuckFeeder duckFeeder in FindObjectsOfType<DuckFeeder>())
         {
