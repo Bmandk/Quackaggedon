@@ -6,10 +6,13 @@ public class DuckMovementHandler : MonoBehaviour
 {
     public GameObject duckHolder;
     public Vector3 randomPosition;
-
     public float maxSwimSpeed = 1;
+    public float minSwimSpeed = 0.1f;
+    public float decelerationRadius = 2.0f;  // The radius within which the duck starts decelerating
+    public float minWaitTime = 0.5f;  // Minimum wait time before changing position
+    public float maxWaitTime = 2.0f;  // Maximum wait time before changing position
 
-    private Vector2 worldPosition;
+    private bool isWaiting = false;
 
     private void Start()
     {
@@ -19,15 +22,7 @@ public class DuckMovementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = References.Instance.mainCam.nearClipPlane;
-        worldPosition = References.Instance.mainCam.ScreenToWorldPoint(mousePos);
-
-        //if (Input.GetMouseButton(0) && Vector2.Distance(transform.position, worldPosition) < Common.Instance.maxDistanceToFood)
-        {
-           // MoveDuckToCursor();
-        }
-        //else
+        if (!isWaiting)
         {
             SmoothRandomMovement();
         }
@@ -35,22 +30,31 @@ public class DuckMovementHandler : MonoBehaviour
 
     public void SmoothRandomMovement()
     {
-        if (Vector2.Distance(transform.position, randomPosition) < 0.5f)
-        {
-            randomPosition = Common.Instance.RandomPos(transform.position);
-        }
+        float distance = Vector2.Distance(transform.position, randomPosition);
 
-        Vector2 dir = (randomPosition - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, randomPosition, Common.Instance.duckRelaxSpeed * Time.deltaTime);
-        FlipToMovementDirection(dir);
+        // Smoothly decelerate as the duck gets closer to the target
+        float speed = Mathf.Lerp(minSwimSpeed, maxSwimSpeed, distance / decelerationRadius);
+        speed = Mathf.Clamp(speed, minSwimSpeed, maxSwimSpeed);
+
+        if (distance < 0.5f)
+        {
+            StartCoroutine(WaitAndChangePosition());
+        }
+        else
+        {
+            Vector2 dir = (randomPosition - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
+            FlipToMovementDirection(dir);
+        }
     }
 
-    private void MoveDuckToCursor()
+    private IEnumerator WaitAndChangePosition()
     {
-        var step = Common.Instance.duckGetFoodSpeed * Time.deltaTime;
-        Vector2 dir = (worldPosition - (Vector2)transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, worldPosition, step);
-        FlipToMovementDirection(dir);
+        isWaiting = true;
+        float waitTime = Random.Range(minWaitTime, maxWaitTime);
+        yield return new WaitForSeconds(waitTime);
+        randomPosition = Common.Instance.RandomPos(transform.position);
+        isWaiting = false;
     }
 
     private void FlipToMovementDirection(Vector2 direction)
