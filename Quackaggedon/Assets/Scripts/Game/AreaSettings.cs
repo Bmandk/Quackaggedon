@@ -31,6 +31,11 @@ public class AreaSettings : MonoBehaviour
     
     public bool CanSpawnDuck => DuckAmounts.GetTotalDucks(AreaIndex) < DuckLimit;
 
+    private void Awake()
+    {
+        CurrentArea = this;
+    }
+
     private void Start()
     {
         if (isStartingArea)
