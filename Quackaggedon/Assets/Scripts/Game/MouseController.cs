@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -27,7 +28,25 @@ namespace DuckClicker
             {
                 SelectDucks(hit);
             }
+            else
+            {
+                FeedDucksOnClick(hit);
+            }
         }
+
+        private void FeedDucksOnClick(RaycastHit2D hit)
+        {
+            bool hitDuck = hit.collider != null && hit.collider.CompareTag("DuckSelector");
+            if (hitDuck)
+            {
+                DuckSelector duckSelector = hit.collider.GetComponentInParent<DuckSelector>();
+                if (Input.GetMouseButtonDown(0) && duckSelector != null)
+                {
+                    duckSelector.Feed();
+                }
+            }
+        }
+
 
         private bool SelectDucks(RaycastHit2D hit)
         {

@@ -26,8 +26,11 @@ public class DuckSelector : MonoBehaviour
     {
         isSelected = true;
         ChangeDuckMaterial(_selectMat);
-        //SellButton.Instance.SetDuck(gameObject);
+    }
 
+
+    public void Feed()
+    {
         float addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
         CurrencyController.AddCurrency(addAmount);
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(addAmount);

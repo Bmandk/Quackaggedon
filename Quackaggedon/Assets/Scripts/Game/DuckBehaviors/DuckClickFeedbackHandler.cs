@@ -32,8 +32,8 @@ public class DuckClickFeedbackHandler : MonoBehaviour
         var worldPositionOfDuck = References.Instance.mouseWorldPos;
 
         Vector3 screenPosition = References.Instance.mouseScreenPos; // Camera.main.WorldToScreenPoint(worldPositionOfDuck);
-        var inst = Instantiate(duckClickUiFxs, screenPosition, duckClickUiFxs.transform.rotation, uiParent.transform);
-        var inst2 = Instantiate(duckClickCursorFx, worldPositionOfDuck, duckClickCursorFx.transform.rotation);
+        var inst = Instantiate(duckClickUiFxs, screenPosition - new Vector3(0, -10,0), duckClickUiFxs.transform.rotation, uiParent.transform);
+        var inst2 = Instantiate(duckClickCursorFx, worldPositionOfDuck - new Vector3(0, -0.3f, 0), duckClickCursorFx.transform.rotation);
         inst.GetComponent<ClickDuckUiPopup>().SetQuacksReceievedOnClick(amountReceived);
 
     }
