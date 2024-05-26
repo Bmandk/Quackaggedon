@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShowTooltip : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
+public class ShowTooltipButton : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField]
     private string _toolTipText;
