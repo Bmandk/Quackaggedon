@@ -4,24 +4,24 @@ namespace DuckClicker
 {
     public static class CurrencyController
     {
-        public static float CurrencyAmount { get; private set; }
+        public static double CurrencyAmount { get; private set; }
         public static int QuackMultiplier { get; private set; }
+
+        private static DuckStats duckStats;
 
         public static void Reset()
         {
             CurrencyAmount = 20;    
             QuackMultiplier = 1;
+            duckStats = References.Instance.duckStats;
         }
 
         public static void Update()
         {
-            for (int i = 0; i < 3; i++)
-            {
-                AddCurrency((DuckAmounts.duckCounts[DuckType.Simple][i] * References.Instance.duckStats.simpleDuckStats.quacksPerSecond) * (1 + DuckAmounts.duckCounts[DuckType.Bread][i]) * Time.deltaTime);
-            }
+            AddCurrency(System.Math.Pow(DuckAmounts.duckCounts[DuckType.Simple][1] * duckStats.simpleDuckStats.quacksPerSecond, 1 + (DuckAmounts.duckCounts[DuckType.Bread][1] * duckStats.breadDuckStats.growthMultiplier)) * Time.deltaTime);
         }
         
-        public static void AddCurrency(float amount)
+        public static void AddCurrency(double amount)
         {
             CurrencyAmount += amount;
         }

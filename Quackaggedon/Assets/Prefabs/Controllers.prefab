@@ -1186,8 +1186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0efb1ec9a29114db5ebd454c4e576d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyToHaveViaCheat: 500000
-  updateCurrencyToCheatValue: 0
+  currencyToHaveViaCheat: 2500
+  updateCurrencyToCheatValue: 1
 --- !u!1 &5192049876544123529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,6 +1971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 0}
+  expandSellUI: {fileID: 0}
   sceneLoader: {fileID: 296053733487592818}
 --- !u!1 &7534910057563947699
 GameObject:
@@ -2136,6 +2137,7 @@ MonoBehaviour:
   pondCollider: {fileID: 0}
   mainCam: {fileID: 0}
   duckStats: {fileID: 11400000, guid: 038c79a6979436244859ab846727f8d8, type: 2}
+  mouseController: {fileID: 9212089533670726958}
 --- !u!1 &8119703028260408488
 GameObject:
   m_ObjectHideFlags: 0

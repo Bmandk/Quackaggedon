@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: duckDisplayName
       value: Clever Duck
       objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckEffectDescription
+      value: The clever duck has figured out a way to throw more food
+      objectReference: {fileID: 0}
     - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.b
       value: 0.14901961

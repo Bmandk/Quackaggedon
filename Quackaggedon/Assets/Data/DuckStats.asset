@@ -21,14 +21,15 @@ MonoBehaviour:
     quacksPerClick: 1
   cleverDuckStats:
     duckFeederStats:
-      baseFoodPerDuck: 1
-      growthRate: 3
+      baseFoodPerDuck: 1.49
+      growthRate: 1.2
       foodCost: 500
   breadDuckStats:
     duckFeederStats:
-      baseFoodPerDuck: 1
-      growthRate: 3
+      baseFoodPerDuck: 1.49
+      growthRate: 5
       foodCost: 2500
+    growthMultiplier: 0.25
   lunchLadyDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1

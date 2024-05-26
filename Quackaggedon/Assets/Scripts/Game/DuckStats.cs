@@ -67,6 +67,7 @@ public struct SimpleDuckStats
 public struct BreadDuckStats
 {
     public DuckFeederStats duckFeederStats;
+    public float growthMultiplier;
 }
 
 [Serializable]
