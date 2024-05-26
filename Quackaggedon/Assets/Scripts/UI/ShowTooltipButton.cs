@@ -23,4 +23,10 @@ public class ShowTooltipButton : MonoBehaviour, IPointerExitHandler, IPointerEnt
             ToolTipController.showToolTip = true;
         }
     }
+
+    private void OnDisable()
+    {
+        ToolTipController.toolTipInfo = "";
+        ToolTipController.showToolTip = false;
+    }
 }

@@ -26,7 +26,7 @@ public class DuckSelector : MonoBehaviour
     {
         isSelected = true;
         ChangeDuckMaterial(_selectMat);
-        SellButton.Instance.SetDuck(gameObject);
+        //SellButton.Instance.SetDuck(gameObject);
 
         float addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
         CurrencyController.AddCurrency(addAmount);
@@ -41,17 +41,18 @@ public class DuckSelector : MonoBehaviour
     {
         isSelected = false;
         ChangeDuckMaterial(_defaultMat);
-        SellButton.Instance.SetDuck(null);
+        //SellButton.Instance.SetDuck(null);
     }
     
     public void Hover()
     {
-        ChangeDuckMaterial(_highlightMat);
+        if (!MouseController._selectedDucks.Contains(this))
+            ChangeDuckMaterial(_highlightMat);
     }
     
     public void Unhover()
     {
-        if (!isSelected)
+        if (!MouseController._selectedDucks.Contains(this))
             ChangeDuckMaterial(_defaultMat);
     }
 
@@ -59,7 +60,10 @@ public class DuckSelector : MonoBehaviour
     {
         foreach (var sprite in _duckSprites)
         {
-            sprite.material = newMaterial;
+            if (sprite != null)
+            {
+                sprite.material = newMaterial;
+            }
         }   
     }
     

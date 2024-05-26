@@ -27,9 +27,11 @@ public class SellButton : MonoBehaviour
     
     public void SellDuck()
     {
-        if (_currentDuck != null)
+        var selectedDucks = References.Instance.mouseController.GetAllSelectedDucks();
+
+        foreach (var duck in selectedDucks)
         {
-            Destroy(_currentDuck);
+            Destroy(duck);
         }
     }
 }

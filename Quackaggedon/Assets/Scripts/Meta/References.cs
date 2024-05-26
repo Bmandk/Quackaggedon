@@ -1,3 +1,4 @@
+using DuckClicker;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,6 +44,7 @@ public class References : MonoBehaviour
     
     public DuckStats duckStats;
 
+    public MouseController mouseController;
 
     private void Update()
     {

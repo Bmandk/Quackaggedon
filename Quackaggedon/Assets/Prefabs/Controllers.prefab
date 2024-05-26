@@ -40,6 +40,7 @@ Transform:
   - {fileID: 7525859885000648660}
   - {fileID: 6810965266918239084}
   - {fileID: 5802142709886596855}
+  - {fileID: 3197091111501620566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113357385728640164
@@ -1789,7 +1790,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentCanvas: {fileID: 0}
   toolTip: {fileID: 0}
-  toolTipText: {fileID: 0}
+  toolTip_UR: {fileID: 0}
+  toolTip_UL: {fileID: 0}
+  toolTip_LL: {fileID: 0}
+  toolTip_LR: {fileID: 0}
+  toolTipText_UR: {fileID: 0}
+  toolTipText_UL: {fileID: 0}
+  toolTipText_LL: {fileID: 0}
+  toolTipText_LR: {fileID: 0}
 --- !u!1 &7202698130378679545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +1981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3483968043730301432}
-  - component: {fileID: 8408137513038228281}
+  - component: {fileID: 8730684489612941480}
   m_Layer: 0
   m_Name: WaterClickCollider
   m_TagString: ClickableWater
@@ -1990,14 +1998,14 @@ Transform:
   m_GameObject: {fileID: 7534910057563947699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0.66}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.34767, y: -0.25, z: 0.66}
+  m_LocalScale: {x: 1.11078, y: 1.11078, z: 1.11078}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6810965266918239084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &8408137513038228281
-CapsuleCollider2D:
+--- !u!60 &8730684489612941480
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2025,12 +2033,45 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 13.59, y: 6.33}
-  m_Direction: 1
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.2135205, y: -3.2097073}
+      - {x: 5.4279437, y: -3.118968}
+      - {x: 6.9515014, y: -1.8485688}
+      - {x: 7.2386274, y: -0.4220913}
+      - {x: 6.4465938, y: 0.3309629}
+      - {x: 6.827788, y: 0.7897957}
+      - {x: 5.696616, y: 1.4330895}
+      - {x: 5.683976, y: 2.368094}
+      - {x: 4.5113254, y: 2.4100337}
+      - {x: 4.364142, y: 2.964439}
+      - {x: 3.5987108, y: 3.2846138}
+      - {x: -0.031574607, y: 3.2837195}
+      - {x: -3.69449, y: 3.5491064}
+      - {x: -5.825425, y: 2.807776}
+      - {x: -6.489271, y: 1.9643135}
+      - {x: -6.7102222, y: 0.86958116}
+      - {x: -6.269357, y: -0.24054283}
+      - {x: -6.919612, y: -1.427315}
+      - {x: -6.3564005, y: -2.531464}
+      - {x: -4.547452, y: -3.1772003}
+      - {x: -2.079034, y: -3.0625143}
+      - {x: 0.14727914, y: -3.30901}
+      - {x: 1.9210103, y: -3.25427}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7944097887478878056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2264,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8389508822577209028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3197091111501620566}
+  - component: {fileID: 6325220376650614825}
+  m_Layer: 0
+  m_Name: Common
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3197091111501620566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389508822577209028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2722170788483435434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6325220376650614825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389508822577209028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db14e999a24a6fc4496f05bb33296c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistToSwim: 4
+  maxDistanceToFood: 8
+  left: {fileID: 0}
+  right: {fileID: 0}
+  upper: {fileID: 0}
+  bottom: {fileID: 0}
+  duckRelaxSpeed: 0.8
+  duckGetFoodSpeed: 1
 --- !u!1 &8587787956134398008
 GameObject:
   m_ObjectHideFlags: 0

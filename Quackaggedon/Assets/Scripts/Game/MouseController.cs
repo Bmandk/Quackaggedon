@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -9,7 +10,10 @@ namespace DuckClicker
     {
         private DuckSelector _hoveredDuck;
         private DuckSelector _selectedDuck;
-        
+        public static List<DuckSelector> _selectedDucks = new List<DuckSelector>();
+
+        public static bool selectingDucks; //Miro: 🤮🤮🤮 hahahah trying your type of comments Jonathan!
+
         private void Update()
         {
             if (ButtonBlocker.IsBlocked)
@@ -19,61 +23,79 @@ namespace DuckClicker
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 1000f, 1000, LayerMask.GetMask("DuckSelector"));
 
-            // Only allow feeding if we're not hovering over a duck
-            bool hitDuck = CheckDuck(hit);
-            if (!hitDuck)
+            if (selectingDucks)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    //DuckFeeder.SelectedFeeder.PerformFeedingHandAnimation();
-                }
+                SelectDucks(hit);
             }
         }
 
-        private bool CheckDuck(RaycastHit2D hit)
+        private bool SelectDucks(RaycastHit2D hit)
         {
             bool hitDuck = hit.collider != null && hit.collider.CompareTag("DuckSelector");
             if (hitDuck)
             {
                 DuckSelector duckSelector = hit.collider.GetComponentInParent<DuckSelector>();
+                
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (_selectedDuck != null)
+                    if (_selectedDucks.Contains(duckSelector))
                     {
-                        _selectedDuck.Deselect();
+                        duckSelector.Deselect();
+                        _selectedDucks.Remove(duckSelector);
+                        _selectedDuck = null;
                     }
-                    _selectedDuck = duckSelector;
-                    _selectedDuck.Select();
+                    else if (duckSelector != null)
+                    {
+                        _selectedDuck = duckSelector;
+                        _selectedDuck.Select();
+                        _selectedDucks.Add(_selectedDuck);
+                    }
                 }
                 else
                 {
-                    if (_hoveredDuck != duckSelector && _selectedDuck != duckSelector)
+                    if (duckSelector != _hoveredDuck)
                     {
                         if (_hoveredDuck != null)
-                        {
-                            _hoveredDuck.Unhover();
-                        }
+                            _hoveredDuck.Unhover();                        
                         _hoveredDuck = duckSelector;
-                        _hoveredDuck.Hover();
+                        duckSelector.Hover();
+                    }
+                    else if (duckSelector == null)
+                    {
+                        duckSelector.Unhover();
+                        _hoveredDuck = null;
                     }
                 }
+
             }
             else
             {
-                if (Input.GetMouseButtonDown(0) && _selectedDuck != null)
-                {
-                    _selectedDuck.Deselect();
-                    _selectedDuck = null;
-                }
-                
-                if (_hoveredDuck != null && _hoveredDuck != _selectedDuck)
+                if (_hoveredDuck != null && !_selectedDucks.Contains(_selectedDuck))
                 {
                     _hoveredDuck.Unhover();
                     _hoveredDuck = null;
-                }
+                }                           
             }
-            
             return hitDuck;
+        }
+
+        public List<DuckSelector> GetAllSelectedDucks()
+        {
+            return _selectedDucks;
+        }
+
+        public void DeselectAllDucks()
+        {
+            foreach (var duck in _selectedDucks)
+            {
+                duck.Deselect();
+            }
+            _selectedDucks.Clear();
+        }
+
+        public void ResetAllSelectedDucks()
+        {
+            _selectedDucks.Clear();
         }
     }
 }
