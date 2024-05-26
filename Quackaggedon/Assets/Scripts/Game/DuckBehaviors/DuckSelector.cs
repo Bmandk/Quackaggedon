@@ -72,8 +72,10 @@ public class DuckSelector : MonoBehaviour
     
     IEnumerator QuackThenDelay()
     {
+        duckAnim.SetBool("Happy", true);
         duckAnim.SetTrigger("Quack");
         yield return new WaitForSeconds(1);
+        duckAnim.SetBool("Happy", false);
         _quackCoroutine = null;
     }
 }
