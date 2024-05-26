@@ -28,7 +28,7 @@ public class ArmController : MonoBehaviour
     }
 
     [SerializeField]
-    private Animator armAnimator;
+    public Animator armAnimator;
 
     public void PerformFeedingHandAnimation()
     {
