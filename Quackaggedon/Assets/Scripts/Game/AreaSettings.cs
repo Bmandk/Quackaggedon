@@ -26,10 +26,6 @@ public class AreaSettings : MonoBehaviour
 
     private static float _startSizeReference;
     private static float _startArmOffsetReference;
-    
-    public int DuckLimit => duckLimit;
-    
-    public bool CanSpawnDuck => DuckAmounts.GetTotalDucks(AreaIndex) < DuckLimit;
 
     private void Awake()
     {

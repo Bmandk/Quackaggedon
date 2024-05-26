@@ -82,7 +82,7 @@ namespace DuckClicker
         {
             int attemptedBreadThisThrow = Mathf.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
                 (DuckAmounts.GetTotalDucks(DuckType.Magical) + 1) + 1);
-            int breadThisThrow = Mathf.Min(attemptedBreadThisThrow, (int)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost, AreaSettings.CurrentArea.DuckLimit - DuckAmounts.GetTotalDucks(AreaSettings.CurrentArea.AreaIndex));
+            int breadThisThrow = Mathf.Min(attemptedBreadThisThrow, (int)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
             CurrencyController.RemoveCurrency(breadThisThrow * _duckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;

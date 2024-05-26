@@ -18,7 +18,7 @@ public class DuckLimitUpdater : MonoBehaviour
     {
         if (AreaSettings.CurrentArea != null)
         {
-            text.text = $"{DuckAmounts.GetTotalDucks(AreaSettings.CurrentArea.AreaIndex)}/{AreaSettings.CurrentArea.DuckLimit}";
+            text.text = $"{DuckAmounts.GetTotalDucks(AreaSettings.CurrentArea.AreaIndex)}";
         }
     }
 }
