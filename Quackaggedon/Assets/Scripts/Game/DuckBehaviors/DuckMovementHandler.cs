@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DuckMovementHandler : MonoBehaviour
 {
+    public Animator duckAnim;
     public GameObject duckHolder;
     public Vector3 randomPosition;
     public float maxSwimSpeed = 1;
@@ -24,7 +25,11 @@ public class DuckMovementHandler : MonoBehaviour
     {
         if (!isWaiting)
         {
+            duckAnim.SetBool("Swim", true);
             SmoothRandomMovement();
+        } else
+        {
+            duckAnim.SetBool("Swim", false);
         }
     }
 
@@ -54,6 +59,7 @@ public class DuckMovementHandler : MonoBehaviour
         float waitTime = Random.Range(minWaitTime, maxWaitTime);
         yield return new WaitForSeconds(waitTime);
         randomPosition = Common.Instance.RandomPos(transform.position);
+        duckAnim.SetTrigger("Flip");
         isWaiting = false;
     }
 

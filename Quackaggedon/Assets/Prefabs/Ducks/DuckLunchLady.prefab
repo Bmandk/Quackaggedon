@@ -40,6 +40,18 @@ PrefabInstance:
       propertyPath: m_CategoryHash
       value: 1.7667347e-13
       objectReference: {fileID: 0}
+    - target: {fileID: 2014579785347126536, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014579785347126536, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014579785347126536, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2586611030697346897, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -168,6 +180,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.56136525
       objectReference: {fileID: 0}
+    - target: {fileID: 4078482903607390865, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078482903607390865, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078482903607390865, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4117259137995831026, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_labelHash
       value: 0.000000002272972
@@ -255,7 +279,19 @@ PrefabInstance:
     - target: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -359591448, guid: 88797474a3ef7b040b9747997e374178, type: 3}
+      objectReference: {fileID: 1761076634, guid: 10e2183e9eef17148b520947aeaeec2e, type: 3}
+    - target: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7365654089787025506, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Name
       value: DuckLunchLady
