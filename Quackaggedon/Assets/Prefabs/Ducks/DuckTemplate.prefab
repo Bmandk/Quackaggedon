@@ -29,76 +29,10 @@ Transform:
   m_LocalScale: {x: 0.304123, y: 0.304123, z: 0.304123}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4949855124177161268}
   - {fileID: 1088175675618203017}
   m_Father: {fileID: 2625156538610567063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &614328917307999654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3273825171161998151}
-  - component: {fileID: 8298616756839004622}
-  m_Layer: 6
-  m_Name: Collider
-  m_TagString: Duck
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3273825171161998151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614328917307999654}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2625156538610567063}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8298616756839004622
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614328917307999654}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.005
 --- !u!1 &3256302473932032237
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,12 +164,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4772306112238173421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26305145, y: 3.4854317, z: 0}
+  m_LocalScale: {x: 3.2881432, y: 3.2881432, z: 3.2881432}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2625156538610567063}
+  m_Father: {fileID: 5723751875090673005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &481973765483685015
 PolygonCollider2D:
@@ -391,7 +325,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2625156538610567063}
   - component: {fileID: 8673439769453325277}
-  - component: {fileID: 8621015434323504909}
   - component: {fileID: 7694124237500641161}
   - component: {fileID: 7258025461571551465}
   - component: {fileID: 485111888139877661}
@@ -416,8 +349,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3273825171161998151}
-  - {fileID: 4949855124177161268}
   - {fileID: 5723751875090673005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,33 +364,6 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_SortAtRoot: 0
---- !u!50 &8621015434323504909
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7365654089787025506}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0.5
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &7694124237500641161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +431,10 @@ MonoBehaviour:
   duckHolder: {fileID: 3875884330271059232}
   randomPosition: {x: 0, y: 0, z: 0}
   maxSwimSpeed: 1
+  minSwimSpeed: 0.1
+  decelerationRadius: 2
+  minWaitTime: 0.5
+  maxWaitTime: 2
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0
