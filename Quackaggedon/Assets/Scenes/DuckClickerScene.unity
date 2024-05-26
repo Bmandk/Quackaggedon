@@ -2088,6 +2088,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420487485757149477, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 433004950450525178, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 754019994519171164, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 4228561162349265501, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
       propertyPath: m_Name
       value: Environment
