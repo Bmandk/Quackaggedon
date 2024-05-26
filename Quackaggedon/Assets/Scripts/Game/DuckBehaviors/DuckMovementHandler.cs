@@ -23,11 +23,11 @@ public class DuckMovementHandler : MonoBehaviour
         mousePos.z = References.Instance.mainCam.nearClipPlane;
         worldPosition = References.Instance.mainCam.ScreenToWorldPoint(mousePos);
 
-        if (Input.GetMouseButton(0) && Vector2.Distance(transform.position, worldPosition) < Common.Instance.maxDistanceToFood)
+        //if (Input.GetMouseButton(0) && Vector2.Distance(transform.position, worldPosition) < Common.Instance.maxDistanceToFood)
         {
-            MoveDuckToCursor();
+           // MoveDuckToCursor();
         }
-        else
+        //else
         {
             SmoothRandomMovement();
         }
