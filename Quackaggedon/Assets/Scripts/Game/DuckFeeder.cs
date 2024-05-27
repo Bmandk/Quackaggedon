@@ -33,6 +33,9 @@ namespace DuckClicker
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
         private float _autoBuyTimer;
+        
+        [SerializeField] private int _cheatDucksToSpawn = 0;
+        [SerializeField] private bool _cheatSpawnDucks = false;
 
         private void Awake()
         {
@@ -58,6 +61,15 @@ namespace DuckClicker
             
             if (useForAutoThrow && DuckAmounts.duckCounts[DuckType.Chef][AreaSettings.CurrentArea.AreaIndex] > 0)
                 CheckAutoBuyer();
+
+            if (_cheatSpawnDucks)
+            {
+                _cheatSpawnDucks = false;
+                for (int i = 0; i < _cheatDucksToSpawn; i++)
+                {
+                    SpawnDuck(AreaSettings.CurrentArea);
+                }
+            }
         }
 
         private void CheckAutoBuyer()
