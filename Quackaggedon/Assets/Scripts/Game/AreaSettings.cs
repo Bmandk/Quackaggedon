@@ -16,7 +16,7 @@ public class AreaSettings : MonoBehaviour
     [SerializeField]
     private Transform[] spawnPoints;
     [SerializeField]
-    private int duckLimit = 50;
+    //private int duckLimit = 50;
     
     public int AreaIndex => areaIndex;
     public float CameraSize => cameraSize;

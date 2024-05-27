@@ -46,6 +46,8 @@ public class References : MonoBehaviour
 
     public MouseController mouseController;
 
+    public DuckopediaHandler duckopediaHandler; 
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;
@@ -75,6 +77,11 @@ public class References : MonoBehaviour
 
     private Dictionary<DuckType, DuckData> allDuckData = new Dictionary<DuckType, DuckData>();
     private Dictionary<FoodType, FoodData> allFoodData = new Dictionary<FoodType, FoodData>();
+
+    public Dictionary<DuckType, DuckData> GetAllDuckData()
+    {
+        return allDuckData;
+    }
 
     public DuckData GetDuckData(DuckType duckType)
     {

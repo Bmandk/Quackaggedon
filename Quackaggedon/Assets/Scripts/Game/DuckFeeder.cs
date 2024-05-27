@@ -134,6 +134,7 @@ namespace DuckClicker
             else
             {
                 DiscoveredObjects.DuckTypesSeen.Add(duckTypeSpawning.duckType);
+                References.Instance.duckopediaHandler.RefreshDuckopedia();
                 StartCoroutine(RevealAfterDelay(1f, duckTypeSpawning));
             }
         }

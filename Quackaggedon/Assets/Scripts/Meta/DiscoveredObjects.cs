@@ -23,4 +23,14 @@ public static class DiscoveredObjects
     {
         FoodTypesSeen.Add(type);
     }
+
+    public static bool HasSeenDuck(DuckType type)
+    {
+        return DuckTypesSeen.Contains(type);
+    }
+
+    public static bool HasSeenFood(FoodType type)
+    {
+        return FoodTypesSeen.Contains(type);
+    }
 }

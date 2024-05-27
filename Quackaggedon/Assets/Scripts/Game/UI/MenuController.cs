@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuUI;
     public GameObject expandSellUI;
     public SceneLoader sceneLoader;
+    public GameObject duckopediaUI;
 
     public void OpenSellMenu()
     {
@@ -43,11 +44,22 @@ public class MenuController : MonoBehaviour
     public void CloseMenu()
     {
         menuUI.SetActive(false);
+        CloseDuckopedia();
     }
 
     public void GoToMainMenu()
     {
         SaveManager.Save();
         sceneLoader.LoadNewScene(SceneLoader.Scene.MainMenu, SceneLoader.Scene.GameScene);
+    }
+
+    public void OpenDuckopedia()
+    {
+        duckopediaUI.SetActive(true);
+    }
+
+    public void CloseDuckopedia()
+    {
+        duckopediaUI.SetActive(false);
     }
 }
