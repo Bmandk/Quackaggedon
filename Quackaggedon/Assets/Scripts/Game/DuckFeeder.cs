@@ -35,6 +35,7 @@ namespace DuckClicker
         
         [SerializeField] private int _cheatDucksToSpawn = 0;
         [SerializeField] private bool _cheatSpawnDucks = false;
+        [SerializeField] private bool _cheatThrowAllFood = false;
 
         private void Awake()
         {
@@ -73,6 +74,7 @@ namespace DuckClicker
 
         private void CheckAutoBuyer()
         {
+            return; // Disabled for now
             if (_autoBuyTimer <= 0)
             {
                 OnClick();
@@ -94,6 +96,14 @@ namespace DuckClicker
             long attemptedBreadThisThrow = System.Math.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
                 (DuckAmounts.GetTotalDucks(DuckType.Magical) + 1) + 1);
             long breadThisThrow = System.Math.Min(attemptedBreadThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+            
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            if (_cheatThrowAllFood)
+            {
+                breadThisThrow = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
+            }
+            #endif
+            
             CurrencyController.RemoveCurrency(breadThisThrow * _duckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
