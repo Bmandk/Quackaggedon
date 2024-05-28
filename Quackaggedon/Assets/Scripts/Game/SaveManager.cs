@@ -3,15 +3,19 @@ using System.Linq;
 using DuckClicker;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
+#if UNITY_EDITOR
 [InitializeOnLoad]
+#endif
 public static class SaveManager
 {
     private static bool _deleteSave = false;
     private const string _menuName = "Save/Delete Save On Start";
-    
+    #if UNITY_EDITOR
     static SaveManager()
     {
         EditorApplication.playModeStateChanged += state => {
@@ -32,6 +36,7 @@ public static class SaveManager
             PerformAction(_deleteSave);
         };
     }
+    #endif
     
     public static void Save()
     {
@@ -88,7 +93,9 @@ public static class SaveManager
         return dataPersistanceObjects;
     }
     
+    #if UNITY_EDITOR
     [MenuItem("Save/Delete Save")]
+    #endif
     public static void DeleteSave()
     {
         PlayerPrefs.DeleteKey("SaveData");
@@ -100,6 +107,7 @@ public static class SaveManager
         return PlayerPrefs.HasKey("SaveData");
     }
 
+    #if UNITY_EDITOR
     [MenuItem(_menuName)]
     public static void ToggleDeleteSave()
     {
@@ -112,7 +120,8 @@ public static class SaveManager
         EditorPrefs.SetBool(_menuName, _deleteSave);
         Menu.SetChecked(_menuName, _deleteSave);
     }
-
+    #endif
+    
     private static void SaveMetaSaveData(Dictionary<string, JToken> saveData)
     {
         saveData.Add("FoodRevealedCount", DiscoveredObjects.FoodTypesSeen.Count);
