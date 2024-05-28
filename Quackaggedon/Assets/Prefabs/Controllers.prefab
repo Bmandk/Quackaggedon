@@ -41,6 +41,7 @@ Transform:
   - {fileID: 6810965266918239084}
   - {fileID: 5802142709886596855}
   - {fileID: 3197091111501620566}
+  - {fileID: 5291224419686732953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113357385728640164
@@ -1488,6 +1489,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6445826830118249749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5291224419686732953}
+  - component: {fileID: 2461820195091784945}
+  m_Layer: 0
+  m_Name: DuckopediaHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5291224419686732953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445826830118249749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2722170788483435434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2461820195091784945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445826830118249749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12a3dbe9b162074796181e635fcbe6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckEntryParent: {fileID: 0}
+  duckEntryPrefab: {fileID: 8999440128136020255, guid: 8913befb6e8a51e4cbc659fdd77bb684, type: 3}
 --- !u!1 &6879701091240024254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,6 +2020,7 @@ MonoBehaviour:
   menuUI: {fileID: 0}
   expandSellUI: {fileID: 0}
   sceneLoader: {fileID: 296053733487592818}
+  duckopediaUI: {fileID: 0}
 --- !u!1 &7534910057563947699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,6 +2186,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   duckStats: {fileID: 11400000, guid: 038c79a6979436244859ab846727f8d8, type: 2}
   mouseController: {fileID: 9212089533670726958}
+  duckopediaHandler: {fileID: 2461820195091784945}
 --- !u!1 &8119703028260408488
 GameObject:
   m_ObjectHideFlags: 0
