@@ -14,8 +14,6 @@ namespace DuckClicker
 {
     public class DuckFeeder : MonoBehaviour, ISaveable
     {
-
-
         public FoodType foodToThrow;
         public int breadPerThrow = 1;
         public bool selectedFromStart = false;
@@ -23,16 +21,17 @@ namespace DuckClicker
         private DuckFeederStats _duckFeederStats;
         public DuckType duckTypeToSpawn;
 
-        private int _foodThrown = 0;
+        private long _foodThrown = 0;
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
         private TMP_Text _foodText;
         public Slider progressSlider;
-        private int _nextDuckCost = 0;
+        private long _nextDuckCost = 0;
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
         private float _autoBuyTimer;
+        [SerializeField] private int _maxThrowParticles = 30;
         
         [SerializeField] private int _cheatDucksToSpawn = 0;
         [SerializeField] private bool _cheatSpawnDucks = false;
@@ -92,20 +91,25 @@ namespace DuckClicker
 
         public void ThrowBread()
         {
-            int attemptedBreadThisThrow = Mathf.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
+            long attemptedBreadThisThrow = System.Math.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
                 (DuckAmounts.GetTotalDucks(DuckType.Magical) + 1) + 1);
-            int breadThisThrow = Mathf.Min(attemptedBreadThisThrow, (int)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+            long breadThisThrow = System.Math.Min(attemptedBreadThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
             CurrencyController.RemoveCurrency(breadThisThrow * _duckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
             var inst = Instantiate(foodPrefab);
-            inst.GetComponent<ParticleSystem>().Emit(breadThisThrow);
+            int particles;
+            if (breadThisThrow > _maxThrowParticles)
+                particles = _maxThrowParticles;
+            else
+                particles = (int) breadThisThrow;
+            inst.GetComponent<ParticleSystem>().Emit(particles);
 
             //breadParticles.Emit(breadThisThrow);
             
             _foodThrown += breadThisThrow;
             
-            while (_foodThrown >= _nextDuckCost)
+            while (_foodThrown >= _nextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {
                 _foodThrown -= _nextDuckCost;
                 SpawnDuck(AreaSettings.CurrentArea);
@@ -169,7 +173,7 @@ namespace DuckClicker
             _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
             if (_foodThrown >= _nextDuckCost)
             {
-                int newFood = _nextDuckCost - 1;
+                long newFood = _nextDuckCost - 1;
                 _foodThrown = newFood;
 
             }

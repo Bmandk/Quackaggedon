@@ -10,7 +10,7 @@ public class ClickDuckUiPopup : MonoBehaviour
     [SerializeField]
     private GameObject toDestroyWhenFxsDone;
 
-    public void SetQuacksReceievedOnClick(float amount)
+    public void SetQuacksReceievedOnClick(double amount)
     {
         quacksReceived.text = amount.ToString();
     }

@@ -18,7 +18,15 @@ namespace DuckClicker
 
         public static void Update()
         {
-            AddCurrency(System.Math.Pow(DuckAmounts.duckCounts[DuckType.Simple][1] * duckStats.simpleDuckStats.quacksPerSecond, 1 + (DuckAmounts.duckCounts[DuckType.Bread][1] * duckStats.breadDuckStats.growthMultiplier)) * Time.deltaTime);
+            // =POW(amount * qps, (POW(bonus*(1+magic*magicmult)+1,1/(bonuslimit*(1+magic*magiclimit)))))
+            long simpleDuckAmount = DuckAmounts.duckCounts[DuckType.Simple][1];
+            long breadDuckAmount = DuckAmounts.duckCounts[DuckType.Bread][1];
+            long magicalDuckAmount = DuckAmounts.duckCounts[DuckType.Magical][1];
+            
+            double magicDuck = 1 + magicalDuckAmount * duckStats.magicalDuckStats.multiplier;
+            double breadDuck = System.Math.Pow(1 + breadDuckAmount * duckStats.breadDuckStats.growthMultiplier * magicDuck, 1 / (duckStats.breadDuckStats.limitMultiplier * (1 + magicalDuckAmount * duckStats.magicalDuckStats.limitMultiplier)));
+            double quacksPerSecond = System.Math.Pow(simpleDuckAmount * duckStats.simpleDuckStats.quacksPerSecond, breadDuck);
+            AddCurrency(quacksPerSecond * Time.deltaTime); 
         }
         
         public static void AddCurrency(double amount)
@@ -26,17 +34,17 @@ namespace DuckClicker
             CurrencyAmount += amount;
         }
         
-        public static void RemoveCurrency(float amount)
+        public static void RemoveCurrency(double amount)
         {
             CurrencyAmount -= amount;
         }
         
-        public static bool CanAfford(float amount)
+        public static bool CanAfford(double amount)
         {
             return CurrencyAmount >= amount;
         }
 
-        public static void SetCurrency(float amount)
+        public static void SetCurrency(double amount)
         {
             CurrencyAmount = amount;
         }

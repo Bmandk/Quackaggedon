@@ -27,9 +27,10 @@ MonoBehaviour:
   breadDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1.49
-      growthRate: 5
-      foodCost: 2500
-    growthMultiplier: 0.25
+      growthRate: 17
+      foodCost: 2000
+    growthMultiplier: 1
+    limitMultiplier: 1.55
   lunchLadyDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1
@@ -42,9 +43,11 @@ MonoBehaviour:
       foodCost: 9999
   magicalDuckStats:
     duckFeederStats:
-      baseFoodPerDuck: 1
-      growthRate: 1
-      foodCost: 9999
+      baseFoodPerDuck: 1.49
+      growthRate: 50000
+      foodCost: 2826649818
+    multiplier: 0.6
+    limitMultiplier: 0.05
   muscleDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1

@@ -31,7 +31,7 @@ public class DuckSelector : MonoBehaviour
 
     public void Feed()
     {
-        float addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
+        double addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
         CurrencyController.AddCurrency(addAmount);
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(addAmount);
         if (_quackCoroutine == null)

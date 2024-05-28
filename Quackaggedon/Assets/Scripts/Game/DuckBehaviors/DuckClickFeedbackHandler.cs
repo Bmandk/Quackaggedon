@@ -27,7 +27,7 @@ public class DuckClickFeedbackHandler : MonoBehaviour
     [SerializeField]
     private GameObject duckClickUiFxs, duckClickCursorFx, uiParent;
 
-    public void DisplayDuckClick(float amountReceived)
+    public void DisplayDuckClick(double amountReceived)
     {
         var worldPositionOfDuck = References.Instance.mouseWorldPos;
 

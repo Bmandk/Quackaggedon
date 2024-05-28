@@ -67,7 +67,7 @@ public static class SaveManager
         
         if (saveData.TryGetValue("Currency", out JToken currency))
         {
-            CurrencyController.SetCurrency((float) currency.ToObject<float>());
+            CurrencyController.SetCurrency(currency.ToObject<double>());
         }
 
         LoadMetaSaveData(saveData);

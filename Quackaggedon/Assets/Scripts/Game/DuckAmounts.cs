@@ -2,26 +2,26 @@ using System.Collections.Generic;
 
 public static class DuckAmounts
 {
-    public static Dictionary<DuckType, int[]> duckCounts;
+    public static Dictionary<DuckType, long[]> duckCounts;
 
     public static void Reset()
     {
         int areas = 3;
-        duckCounts = new Dictionary<DuckType, int[]>
+        duckCounts = new Dictionary<DuckType, long[]>
         {
-            { DuckType.Simple, new int[areas] },
-            { DuckType.Clever, new int[areas] },
-            { DuckType.Bread, new int[areas] },
-            { DuckType.LunchLady, new int[areas] },
-            { DuckType.Chef, new int[areas] },
-            { DuckType.Magical, new int[areas] },
-            { DuckType.Muscle, new int[areas] }
+            { DuckType.Simple, new long[areas] },
+            { DuckType.Clever, new long[areas] },
+            { DuckType.Bread, new long[areas] },
+            { DuckType.LunchLady, new long[areas] },
+            { DuckType.Chef, new long[areas] },
+            { DuckType.Magical, new long[areas] },
+            { DuckType.Muscle, new long[areas] }
         };
     }
     
-    public static int GetTotalDucks()
+    public static long GetTotalDucks()
     {
-        int total = 0;
+        long total = 0;
         foreach (var duckType in duckCounts)
         {
             foreach (var area in duckType.Value)
@@ -33,9 +33,9 @@ public static class DuckAmounts
         return total;
     }
     
-    public static int GetTotalDucks(DuckType duckType)
+    public static long GetTotalDucks(DuckType duckType)
     {
-        int total = 0;
+        long total = 0;
         foreach (var area in duckCounts[duckType])
         {
             total += area;
@@ -44,9 +44,9 @@ public static class DuckAmounts
         return total;
     }
     
-    public static int GetTotalDucks(int area)
+    public static long GetTotalDucks(int area)
     {
-        int total = 0;
+        long total = 0;
         foreach (var duckType in duckCounts)
         {
             total += duckType.Value[area];

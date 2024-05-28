@@ -45,13 +45,13 @@ public class DuckStats : ScriptableObject
 [Serializable]
 public struct DuckFeederStats
 {
-    public float baseFoodPerDuck;
-    public float growthRate;
-    public int foodCost;
+    public double baseFoodPerDuck;
+    public double growthRate;
+    public long foodCost;
             
-    public int CalculateCost(int ducksSpawned)
+    public long CalculateCost(long ducksSpawned)
     {
-        return Mathf.RoundToInt(baseFoodPerDuck * Mathf.Pow(growthRate, ducksSpawned));
+        return (long)System.Math.Round(baseFoodPerDuck * Math.Pow(growthRate, ducksSpawned));
     }
 }
 
@@ -59,15 +59,16 @@ public struct DuckFeederStats
 public struct SimpleDuckStats
 {
     public DuckFeederStats duckFeederStats;
-    public float quacksPerSecond;
-    public float quacksPerClick;
+    public double quacksPerSecond;
+    public double quacksPerClick;
 }
 
 [Serializable]
 public struct BreadDuckStats
 {
     public DuckFeederStats duckFeederStats;
-    public float growthMultiplier;
+    public double growthMultiplier;
+    public double limitMultiplier;
 }
 
 [Serializable]
@@ -80,6 +81,8 @@ public struct ChefDuckStats
 public struct MagicalDuckStats
 {
     public DuckFeederStats duckFeederStats;
+    public double multiplier;
+    public double limitMultiplier;
 }
 
 [Serializable]

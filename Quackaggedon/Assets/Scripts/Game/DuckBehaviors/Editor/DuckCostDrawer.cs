@@ -30,7 +30,7 @@ public class DuckCostDrawer : PropertyDrawer
 
         for (int i = 0; i < PRE_CALCULATED_COSTS; i++)
         {
-            int cost = CalculateCost(i, baseFoodSerializedProperty.floatValue, growthRateSerializedProperty.floatValue);
+            long cost = CalculateCost(i, baseFoodSerializedProperty.floatValue, growthRateSerializedProperty.floatValue);
             TextField textField = new TextField();
             textField.value = cost.ToString();
             textField.SetEnabled(false);
@@ -58,8 +58,8 @@ public class DuckCostDrawer : PropertyDrawer
         return root;
     }
     
-    public int CalculateCost(int ducksSpawned, float baseFoodPerDuck, float growthRate)
+    public long CalculateCost(long ducksSpawned, double baseFoodPerDuck, double growthRate)
     {
-        return Mathf.RoundToInt(baseFoodPerDuck * Mathf.Pow(growthRate, ducksSpawned));
+        return (long)System.Math.Round(baseFoodPerDuck * System.Math.Pow(growthRate, ducksSpawned));
     }
 }

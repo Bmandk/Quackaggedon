@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CheatController : MonoBehaviour
 {
-    public float currencyToHaveViaCheat;
+    public double currencyToHaveViaCheat;
     public bool updateCurrencyToCheatValue;
 
     // Update is called once per frame
