@@ -101,6 +101,7 @@ namespace DuckClicker
             if (_cheatThrowAllFood)
             {
                 breadThisThrow = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
+                breadThisThrow = System.Math.Min(_nextDuckCost - _foodThrown, breadThisThrow);
             }
             #endif
             
