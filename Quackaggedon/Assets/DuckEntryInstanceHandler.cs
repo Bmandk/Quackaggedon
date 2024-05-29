@@ -1,3 +1,4 @@
+using DuckClicker;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,9 @@ public class DuckEntryInstanceHandler : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Image duckIcon;
     public TextMeshProUGUI skillText;
+    public TextMeshProUGUI breadBonus;
+    public TextMeshProUGUI quackBonus;
+    public TextMeshProUGUI duckAmount;
 
     [SerializeField]
     private Sprite hiddenDuck;
@@ -26,6 +30,10 @@ public class DuckEntryInstanceHandler : MonoBehaviour
         duckIcon.sprite = duckData.duckDisplayIcon;
         nameText.text = duckData.duckDisplayName;
         skillText.text = duckData.duckEffectDescription;
+
+        duckAmount.text = ColorLong(DuckAmounts.duckCounts[duckType][1]).ToString();
+        breadBonus.text = ColorLong(CurrencyController.GetFoodBonus(duckType)).ToString();
+        quackBonus.text = ColorDouble(CurrencyController.GetQuackBonus(duckType)).ToString();   
     }
 
     public void SetEntryToUndiscoveredDuck()
@@ -38,5 +46,29 @@ public class DuckEntryInstanceHandler : MonoBehaviour
     public void SetDuckEnumTypeTo(DuckType duckType)
     {
         duckTypeOfCard = duckType;
+    }
+
+    private string ColorDouble(double number)
+    {
+        if (number <= 1)
+        {
+            return number.ToString();
+        }
+        else
+        {
+            return $"<color=green>{number}</color>";
+        }
+    }
+
+    private string ColorLong(long number)
+    {
+        if (number <= 1)
+        {
+            return number.ToString();
+        }
+        else
+        {
+            return $"<color=green>{number}</color>";
+        }
     }
 }

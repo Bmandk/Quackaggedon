@@ -93,32 +93,32 @@ namespace DuckClicker
 
         public void ThrowBread()
         {
-            long attemptedBreadThisThrow = System.Math.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
+            long attemptedFoodCountThisThrow = System.Math.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
                 (DuckAmounts.GetTotalDucks(DuckType.Magical) + 1) + 1);
-            long breadThisThrow = System.Math.Min(attemptedBreadThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+            long actualFoodAmountThrown = System.Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
             
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
-                breadThisThrow = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
-                breadThisThrow = System.Math.Min(_nextDuckCost - _foodThrown, breadThisThrow);
+                actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
+                actualFoodAmountThrown = System.Math.Min(_nextDuckCost - _foodThrown, actualFoodAmountThrown);
             }
             #endif
             
-            CurrencyController.RemoveCurrency(breadThisThrow * _duckFeederStats.foodCost);
+            CurrencyController.RemoveCurrency(actualFoodAmountThrown * _duckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
             var inst = Instantiate(foodPrefab);
             int particles;
-            if (breadThisThrow > _maxThrowParticles)
+            if (actualFoodAmountThrown > _maxThrowParticles)
                 particles = _maxThrowParticles;
             else
-                particles = (int) breadThisThrow;
+                particles = (int) actualFoodAmountThrown;
             inst.GetComponent<ParticleSystem>().Emit(particles);
 
             //breadParticles.Emit(breadThisThrow);
             
-            _foodThrown += breadThisThrow;
+            _foodThrown += actualFoodAmountThrown;
             
             while (_foodThrown >= _nextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {

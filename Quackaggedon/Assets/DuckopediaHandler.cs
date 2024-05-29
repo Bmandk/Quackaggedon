@@ -56,19 +56,5 @@ public class DuckopediaHandler : MonoBehaviour
     {
         DeleteEntries();
         PopulateDuckopedia();
-
-        /*
-        foreach (var entry in duckEntries)
-        {
-            if (DiscoveredObjects.HasSeenDuck(entry.Key))
-            {
-                entry.Value.SetEntryToDuck(entry.Key);
-            }
-            else
-            {
-                entry.Value.SetEntryToUndiscoveredDuck();
-            }
-        }
-        */
     }
 }

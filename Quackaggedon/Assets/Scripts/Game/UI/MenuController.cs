@@ -55,6 +55,7 @@ public class MenuController : MonoBehaviour
 
     public void OpenDuckopedia()
     {
+        References.Instance.duckopediaHandler.RefreshDuckopedia();
         duckopediaUI.SetActive(true);
     }
 
