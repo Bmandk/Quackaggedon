@@ -298,6 +298,11 @@ namespace DuckClicker
 
         public void Load(Dictionary<string, JToken> saveData)
         {
+            if (gameObject.activeInHierarchy == false)
+            {
+                return;
+            }
+            
             if (saveData.TryGetValue(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name, out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
