@@ -79,25 +79,28 @@ public class IntroSceneController : MonoBehaviour
         {
             if (completedText)
             {
-                if (sceneIndex < scenes.Length)
-                    scenes[sceneIndex].SetActive(false);
-                sceneIndex++;
-                if (sceneIndex < scenes.Length)
-                    scenes[sceneIndex].SetActive(true);
+                if (sceneIndex != scenes.Length - 1)
+                {
+                    if (sceneIndex < scenes.Length)
+                        scenes[sceneIndex].SetActive(false);
+                    sceneIndex++;
+                    if (sceneIndex < scenes.Length)
+                        scenes[sceneIndex].SetActive(true);
 
-                if (sceneIndex == 6)
-                {
-                    backgroundMusicChill.SetActive(false);
-                    backgroundMusicStress.SetActive(true);
-                }
-                else if (sceneIndex == 11)
-                {
-                    backgroundMusicChill.SetActive(false);
-                    backgroundMusicEnd.SetActive(true);
-                }
-                else if (sceneIndex == 12)
-                {
-                    backgroundMusicStress.SetActive(false);
+                    if (sceneIndex == 6)
+                    {
+                        backgroundMusicChill.SetActive(false);
+                        backgroundMusicStress.SetActive(true);
+                    }
+                    else if (sceneIndex == 11)
+                    {
+                        backgroundMusicChill.SetActive(false);
+                        backgroundMusicEnd.SetActive(true);
+                    }
+                    else if (sceneIndex == 12)
+                    {
+                        backgroundMusicStress.SetActive(false);
+                    }
                 }
             }
         }
@@ -214,11 +217,11 @@ public class IntroSceneController : MonoBehaviour
             ducksLiveHereText.SetActive(true);
             return false;
         }
-        if (sceneIndex == 8 && !plantedText.activeSelf)
-        {
-            plantedText.SetActive(true);
-            return false;
-        }
+        //if (sceneIndex == 8 && !plantedText.activeSelf)
+        //{
+           // plantedText.SetActive(true);
+        //    return false;
+        //}
         else if (sceneIndex == 8)
         {
             ducksLiveHereText.SetActive(false);
@@ -300,11 +303,12 @@ public class IntroSceneController : MonoBehaviour
         {
             hasDoneFinalFade = true;
             fadeAnim.SetBool("FadeToBlack", true);
+            LoadNewGameLvl();
         }
-        else if (sceneIndex == 14)
-        {
-             LoadNewGameLvl();
-        }
+        //else if (sceneIndex == 14)
+        //{
+             //LoadNewGameLvl();
+        //}
 
         return true;
     }

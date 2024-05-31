@@ -8,4 +8,14 @@ public class ContAfterTime : MonoBehaviour
     {
         IntroSceneController.Instance.ContinueToNextScenePart();
     }
+
+    public void HideContinueButton()
+    {
+        IntroUiHandler.Instance.HideContinueButton();
+    }
+
+    public void ShowContinueButton()
+    {
+        IntroUiHandler.Instance.ShowContinueButton();
+    }
 }
