@@ -82,7 +82,6 @@ public class AudioController : MonoBehaviour
 
     private static IEnumerator FadeOutSound(float duration, AudioMixerGroup mixerGroup, string valueToChange)
     {
-        Debug.Log("doing!! OUT : " + mixerGroup);
         float elapsedTime = 0;
 
         for (float t = 0; t < duration; t += Time.deltaTime)
@@ -97,7 +96,6 @@ public class AudioController : MonoBehaviour
 
     private static IEnumerator FadeInSound(float duration, AudioMixerGroup mixerGroup, string valueToChange)
     {
-        Debug.Log("doing!! IN: " + mixerGroup);
         float elapsedTime = 0;
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
