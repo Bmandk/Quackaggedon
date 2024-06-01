@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 551624602073197795}
   - component: {fileID: 7150584319675310634}
   - component: {fileID: 5218266722691149418}
+  - component: {fileID: 5809506427822331576}
   m_Layer: 5
   m_Name: StandardUIButton
   m_TagString: Untagged
@@ -282,3 +283,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5809506427822331576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836046202856434972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8430f287754b384cb8caca7ed09c59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isContinueButton: 0
+  anim: {fileID: 5078100148625639672}
