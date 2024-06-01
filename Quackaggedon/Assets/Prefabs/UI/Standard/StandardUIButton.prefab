@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6855452306391534547}
   - component: {fileID: 551624602073197795}
   - component: {fileID: 7150584319675310634}
+  - component: {fileID: 5218266722691149418}
   m_Layer: 5
   m_Name: StandardUIButton
   m_TagString: Untagged
@@ -269,3 +270,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!225 &5218266722691149418
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836046202856434972}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
