@@ -21,10 +21,10 @@ public class DuckSelector : MonoBehaviour
     private Animator duckAnim;
     private Coroutine _quackCoroutine;
 
-    private bool isSelected;
+    //private bool isSelected;
     public void Select()
     {
-        isSelected = true;
+        //isSelected = true;
         ChangeDuckMaterial(_selectMat);
     }
 
@@ -42,7 +42,7 @@ public class DuckSelector : MonoBehaviour
     
     public void Deselect()
     {
-        isSelected = false;
+        //isSelected = false;
         ChangeDuckMaterial(_defaultMat);
         //SellButton.Instance.SetDuck(null);
     }

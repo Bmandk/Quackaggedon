@@ -75,6 +75,7 @@ namespace DuckClicker
         private void CheckAutoBuyer()
         {
             return; // Disabled for now
+            /* Commenting out so we don't get warning in editor of unreachable code 
             if (_autoBuyTimer <= 0)
             {
                 OnClick();
@@ -84,6 +85,7 @@ namespace DuckClicker
             {
                 _autoBuyTimer -= Time.deltaTime;
             }
+            */
         }
 
         public void PerformFeedingHandAnimation()
