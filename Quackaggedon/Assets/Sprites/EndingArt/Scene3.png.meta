@@ -103,9 +103,9 @@ TextureImporter:
         x: 0
         y: 2952
         width: 5000
-        height: 3147
+        height: 2204
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +126,7 @@ TextureImporter:
         width: 5000
         height: 2855
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +134,69 @@ TextureImporter:
       bones: []
       spriteID: 579a372a349235d4fba0be1434efa8d9
       internalID: 459400818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene3_2
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 5245
+        width: 729
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402d3915b675b5447b354c13e15c55a1
+      internalID: 1883250570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene3_3
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 5538
+        width: 1902
+        height: 1631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc397830a5e847439b2e574c3ebe027
+      internalID: -1236692674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene3_4
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 5823
+        width: 1617
+        height: 1346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2949b7f56dd3634eac5bca2d821ff08
+      internalID: -56512094
       vertices: []
       indices: 
       edges: []
@@ -151,6 +214,9 @@ TextureImporter:
     nameFileIdTable:
       Scene3_0: -1774109946
       Scene3_1: 459400818
+      Scene3_2: 1883250570
+      Scene3_3: -1236692674
+      Scene3_4: -56512094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
