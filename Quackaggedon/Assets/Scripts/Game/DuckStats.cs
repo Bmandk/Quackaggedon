@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DuckClicker;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "DuckStats", menuName = "DuckStats")]
 [Serializable]
@@ -81,8 +82,9 @@ public struct ChefDuckStats
 public struct MagicalDuckStats
 {
     public DuckFeederStats duckFeederStats;
-    public double multiplier;
-    public double limitMultiplier;
+    public double quackMultiplier;
+    public double quackLimitMultiplier;
+    public double cleverMultiplier;
 }
 
 [Serializable]
@@ -95,6 +97,9 @@ public struct MuscleDuckStats
 public struct CleverDuckStats
 {
     public DuckFeederStats duckFeederStats;
+    public double minFoodPerDuck;
+    public double foodAmountGrowthRate;
+    public double foodAmountMultiplier;
 }
 
 [Serializable]
