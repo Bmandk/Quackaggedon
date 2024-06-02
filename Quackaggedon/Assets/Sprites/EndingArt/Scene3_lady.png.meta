@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Scene3_lady_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3105
+        width: 5000
+        height: 2770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63db8db3960844ddc8b201b43bbe9815
+      internalID: -1876653176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene3_lady_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945
+        width: 5000
+        height: 2069
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72de0b85ce78a4e43812202d647bf4b5
+      internalID: -922742066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene3_lady_4
+      rect:
+        serializedVersion: 2
+        x: 4005
+        y: 70
+        width: 501
+        height: 715
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dde18a08d6b642309e77f68ff6abf39
+      internalID: 1448489960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scene3_lady_0: -1876653176
+      Scene3_lady_1: 910688550
+      Scene3_lady_2: -1129167053
+      Scene3_lady_3: -922742066
+      Scene3_lady_4: 1448489960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
