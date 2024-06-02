@@ -32,6 +32,8 @@ namespace DuckClicker
         private float _autoThrowTimer;
         private float _autoBuyTimer;
         [SerializeField] private int _maxThrowParticles = 30;
+
+        [SerializeField] private TMP_Text _progressText;
         
         [SerializeField] private int _cheatDucksToSpawn = 0;
         [SerializeField] private bool _cheatSpawnDucks = false;
@@ -232,7 +234,9 @@ namespace DuckClicker
             {
 
                 SetProgress(newVal);
-            } 
+            }
+            
+            _progressText.text = $"{NumberUtility.FormatNumber(_foodThrown)} / {NumberUtility.FormatNumber(_nextDuckCost)}";
         }
 
         private float _targetProgress;
