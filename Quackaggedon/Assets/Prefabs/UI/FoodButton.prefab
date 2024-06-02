@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.2096199, b: 0.115877524, a: 1}
+  m_Color: {r: 0.1321645, g: 0.46458697, b: 0.6226415, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.91372555, b: 0.67058825, a: 1}
+  m_Color: {r: 0.7973996, g: 1, b: 0.67058825, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -684,6 +684,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4656607556867390011, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656607556867390011, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1707916846, guid: 3dff0f4e6ff2bc34aac5e17e8df4945f, type: 3}
     - target: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       propertyPath: m_Name
       value: FoodButton
@@ -759,8 +767,10 @@ MonoBehaviour:
   duckTypeToSpawn: 0
   progressSlider: {fileID: 718988024342282118}
   useForAutoThrow: 1
+  _maxThrowParticles: 30
   _cheatDucksToSpawn: 0
   _cheatSpawnDucks: 0
+  _cheatThrowAllFood: 0
 --- !u!114 &823452606578813886
 MonoBehaviour:
   m_ObjectHideFlags: 0
