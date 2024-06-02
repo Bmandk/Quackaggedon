@@ -22,8 +22,11 @@ MonoBehaviour:
   cleverDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1.49
-      growthRate: 1.2
-      foodCost: 500
+      growthRate: 2.011357188
+      foodCost: 100
+    minFoodPerDuck: 1.5
+    foodAmountGrowthRate: 1.842435179
+    foodAmountMultiplier: 0.2
   breadDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1.49
@@ -46,8 +49,9 @@ MonoBehaviour:
       baseFoodPerDuck: 1.49
       growthRate: 50000
       foodCost: 2826649818
-    multiplier: 0.6
-    limitMultiplier: 0.05
+    quackMultiplier: 0.6
+    quackLimitMultiplier: 0.05
+    cleverMultiplier: 3.5
   muscleDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1
