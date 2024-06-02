@@ -37,7 +37,7 @@ public class ArmController : MonoBehaviour
 
     public void OnThrow()
     {
-        DuckFeeder.SelectedFeeder.ThrowBread();
+        DuckFeeder.SelectedFeeder.ThrowBread(true);
         AudioController.Instance.PlayThrowSound();
     }
 }

@@ -76,7 +76,7 @@ namespace DuckClicker
         {
             if (_autoBuyTimer <= 0)
             {
-                ThrowBread();
+                ThrowBread(false);
                 // POW($I$6,Z11-$J$6+$K$6*P11)+$L$6
                 long chefDucks = DuckAmounts.GetTotalDucks(DuckType.Chef);
                 long magicalDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
@@ -94,7 +94,7 @@ namespace DuckClicker
             ArmController.Instance.PerformFeedingHandAnimation();
         }
 
-        public void ThrowBread()
+        public void ThrowBread(bool useCurrency)
         {
             // =FLOOR(MAX(POW(S11,$L$6), POW($J$6,S11+$K$6*P11)*$I$6)+1)
             long cleverDucks = DuckAmounts.GetTotalDucks(DuckType.Clever);
@@ -105,18 +105,21 @@ namespace DuckClicker
                     References.Instance.duckStats.cleverDuckStats.foodAmountGrowthRate,
                     cleverDucks + magicDucks * References.Instance.duckStats.magicalDuckStats.cleverMultiplier)
                 * References.Instance.duckStats.cleverDuckStats.foodAmountMultiplier) + 1;
-            
-            long actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+            long actualFoodAmountThrown = attemptedFoodCountThisThrow;
+            if (useCurrency)
+                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
             
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
-                actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
+                if (useCurrency)
+                    actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
                 actualFoodAmountThrown = Math.Min(_nextDuckCost - _foodThrown, actualFoodAmountThrown);
             }
             #endif
             
-            CurrencyController.RemoveCurrency(actualFoodAmountThrown * _duckFeederStats.foodCost);
+            if (useCurrency)
+                CurrencyController.RemoveCurrency(actualFoodAmountThrown * _duckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
             var inst = Instantiate(foodPrefab);
@@ -187,7 +190,7 @@ namespace DuckClicker
 
         public void OnClick()
         {
-            ThrowBread();
+            ThrowBread(true);
         }
 
         public void Refresh()
