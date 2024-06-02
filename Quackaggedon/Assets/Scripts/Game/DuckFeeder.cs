@@ -95,15 +95,23 @@ namespace DuckClicker
 
         public void ThrowBread()
         {
-            long attemptedFoodCountThisThrow = System.Math.Max(1, DuckAmounts.GetTotalDucks(DuckType.Clever) *
-                (DuckAmounts.GetTotalDucks(DuckType.Magical) + 1) + 1);
-            long actualFoodAmountThrown = System.Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+            // =FLOOR(MAX(POW(S11,$L$6), POW($J$6,S11+$K$6*P11)*$I$6)+1)
+            long cleverDucks = DuckAmounts.GetTotalDucks(DuckType.Clever);
+            long magicDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
+            long attemptedFoodCountThisThrow = (long)Math.Max(
+                Math.Pow(cleverDucks, References.Instance.duckStats.cleverDuckStats.minFoodPerDuck),
+                Math.Pow(
+                    References.Instance.duckStats.cleverDuckStats.foodAmountGrowthRate,
+                    cleverDucks + magicDucks * References.Instance.duckStats.magicalDuckStats.cleverMultiplier)
+                * References.Instance.duckStats.cleverDuckStats.foodAmountMultiplier) + 1;
+            
+            long actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
             
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
                 actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
-                actualFoodAmountThrown = System.Math.Min(_nextDuckCost - _foodThrown, actualFoodAmountThrown);
+                actualFoodAmountThrown = Math.Min(_nextDuckCost - _foodThrown, actualFoodAmountThrown);
             }
             #endif
             

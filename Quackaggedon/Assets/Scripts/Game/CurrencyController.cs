@@ -30,8 +30,8 @@ namespace DuckClicker
             BreadDuckAmount = DuckAmounts.duckCounts[DuckType.Bread][1];
             MagicalDuckAmount = DuckAmounts.duckCounts[DuckType.Magical][1];
 
-            MagicDuckBenefit = 1 + MagicalDuckAmount * duckStats.magicalDuckStats.multiplier;
-            BreadDuckBenefit = System.Math.Pow(1 + BreadDuckAmount * duckStats.breadDuckStats.growthMultiplier * MagicDuckBenefit, 1 / (duckStats.breadDuckStats.limitMultiplier * (1 + MagicalDuckAmount * duckStats.magicalDuckStats.limitMultiplier)));
+            MagicDuckBenefit = 1 + MagicalDuckAmount * duckStats.magicalDuckStats.quackMultiplier;
+            BreadDuckBenefit = System.Math.Pow(1 + BreadDuckAmount * duckStats.breadDuckStats.growthMultiplier * MagicDuckBenefit, 1 / (duckStats.breadDuckStats.limitMultiplier * (1 + MagicalDuckAmount * duckStats.magicalDuckStats.quackLimitMultiplier)));
             QuacksPerSecond = System.Math.Pow(SimpleDuckAmount * duckStats.simpleDuckStats.quacksPerSecond, BreadDuckBenefit);
             AddCurrency(QuacksPerSecond * Time.deltaTime);
         }
