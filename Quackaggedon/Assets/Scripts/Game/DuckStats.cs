@@ -76,6 +76,9 @@ public struct BreadDuckStats
 public struct ChefDuckStats
 {
     public DuckFeederStats duckFeederStats;
+    public double timeGrowthRate;
+    public double amountOffset;
+    public double minTime;
 }
 
 [Serializable]
@@ -85,6 +88,7 @@ public struct MagicalDuckStats
     public double quackMultiplier;
     public double quackLimitMultiplier;
     public double cleverMultiplier;
+    public double chefMultiplier;
 }
 
 [Serializable]

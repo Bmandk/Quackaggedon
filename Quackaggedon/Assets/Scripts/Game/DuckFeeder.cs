@@ -74,18 +74,19 @@ namespace DuckClicker
 
         private void CheckAutoBuyer()
         {
-            return; // Disabled for now
-            /* Commenting out so we don't get warning in editor of unreachable code 
             if (_autoBuyTimer <= 0)
             {
-                OnClick();
-                _autoBuyTimer = 1f / Mathf.Sqrt(DuckAmounts.GetTotalDucks(DuckType.Chef));
+                ThrowBread();
+                // POW($I$6,Z11-$J$6+$K$6*P11)+$L$6
+                long chefDucks = DuckAmounts.GetTotalDucks(DuckType.Chef);
+                long magicalDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
+                ChefDuckStats chefDuckStats = References.Instance.duckStats.chefDuckStats;
+                _autoBuyTimer = (float)(Math.Pow(chefDuckStats.timeGrowthRate, chefDucks + chefDuckStats.amountOffset + magicalDucks * References.Instance.duckStats.magicalDuckStats.chefMultiplier) + chefDuckStats.minTime);
             }
             else
             {
                 _autoBuyTimer -= Time.deltaTime;
             }
-            */
         }
 
         public void PerformFeedingHandAnimation()
