@@ -41,17 +41,21 @@ MonoBehaviour:
       foodCost: 9999
   chefDuckStats:
     duckFeederStats:
-      baseFoodPerDuck: 1
-      growthRate: 1
-      foodCost: 9999
+      baseFoodPerDuck: 1.49
+      growthRate: 2
+      foodCost: 1000000
+    timeGrowthRate: 0.9
+    amountOffset: -26
+    minTime: 0.5
   magicalDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1.49
       growthRate: 50000
-      foodCost: 2826649818
+      foodCost: 3000000000
     quackMultiplier: 0.6
     quackLimitMultiplier: 0.05
     cleverMultiplier: 3.5
+    chefMultiplier: 6
   muscleDuckStats:
     duckFeederStats:
       baseFoodPerDuck: 1

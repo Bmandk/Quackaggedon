@@ -52,11 +52,13 @@ namespace DuckClicker
         {
             _duckFeederStats = References.Instance.duckStats.GetDuckFeederStats(duckTypeToSpawn);
             _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
-            _foodText.text = $"{_duckFeederStats.foodCost}";
+            _foodText.text = $"{NumberUtility.FormatNumber(_duckFeederStats.foodCost)}";
             if (selectedFromStart)
             {
                 Select();
             }
+            
+            UpdateProgress();
         }
 
         private void Update()

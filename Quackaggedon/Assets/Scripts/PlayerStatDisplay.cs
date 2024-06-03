@@ -31,7 +31,8 @@ public class PlayerStatDisplay : MonoBehaviour
 
     public void Update()
     {
-        dataText.text = @$"{String.Format("{0:0.##}", CurrencyController.QuacksPerSecond)}";
+
+        dataText.text = @$"{NumberUtility.FormatNumber(CurrencyController.QuacksPerSecond)}";
         /*
         dataText.text = @$"Quacks per second: {ColorDouble(CurrencyController.QuacksPerSecond)}
 Simple Multiplier: {ColorDouble(CurrencyController.SimpleDuckAmount)}
