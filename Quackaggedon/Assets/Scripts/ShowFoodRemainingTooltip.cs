@@ -21,7 +21,7 @@ public class ShowFoodRemainingTooltip : MonoBehaviour, IPointerExitHandler, IPoi
         var nextDuckCost = duckFeeder.NextDuckCost;
         var foodThrown = duckFeeder.FoodThrown;
         var costOfRemaingFood = foodCost * (nextDuckCost - foodThrown);
-        ToolTipController.toolTipInfo = $"{NumberUtility.FormatNumber(costOfRemaingFood)} Quacks";
+        ToolTipController.toolTipInfo = $"{NumberUtility.FormatNumber(costOfRemaingFood)} <sprite index=0>";
         ToolTipController.showToolTip = true;
     }
 }
