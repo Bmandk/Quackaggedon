@@ -71,7 +71,6 @@ public class Common : MonoBehaviour
             y = UnityEngine.Random.Range(center.y - bounds.extents.y, center.y + bounds.extents.y);
             attempt++;
         } while (!pondEdges.OverlapPoint(new Vector2(x, y)) || attempt <= 100);
-        Debug.Log("Attemps: " + attempt);
 
         return new Vector3(x, y, 0);
     }
