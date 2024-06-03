@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: aed1015bfdff39a43a7aab9f8716a8ef
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hidden_milk
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9774f917d6b88d34eab700de94f9cae7
+      internalID: 1636912263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_water
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3a4abf4f27172418b495ecabbe7efa
+      internalID: 1886768290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_oil
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 772
+        width: 155
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3d314736edf884197f253e966525b1
+      internalID: 2079951825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_coffee
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b6c70110ed3e341ad4bd9e3bc90e85
+      internalID: 247463883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_soda
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f2e43696267504d9b0300d8db4c28c
+      internalID: 1441301343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_flour
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a578fe79d7c0f40bfcf8d4e16144f8
+      internalID: -256317854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_sugar
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28b2f69666c3944382462bf40b40b2f
+      internalID: 2072898259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_salt
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 619
+        width: 155
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243e1f758ba437740b62f9f4aaea7531
+      internalID: -130088216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_cacao
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734d076cd5950bc458506796edd0696f
+      internalID: 1864410753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_spice
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 619
+        width: 155
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a0f2cb05ff9804485371d866154a5a
+      internalID: -1259065476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_berries
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cae40cb70e30854bb68aa29bd13621e
+      internalID: 1018253735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_vegetables
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e2e520ff28ac841a56eaa10070750b
+      internalID: -484561633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_mushrooms
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81701af67553344e8c0bb74afa90316
+      internalID: 1103023244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_nuts
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f421add40ce0b4191103bd5d7048b3
+      internalID: -1817997241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_beans
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36e45bd136c1fa4faf95c8f3bc809bb
+      internalID: -214513907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_sallad
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e654eebc02c428549a171b2a0196caeb
+      internalID: 2009585467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_egg
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ee45e3e4e44a5429ab7b102c54302e
+      internalID: 216436850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_butter
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b0fdbf9ac9b1e4191f1b5008070e98
+      internalID: 352763332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_cheese
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb9e9333e5cbe1428c4ae45bac1e68b
+      internalID: 1357157043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_gold
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d16fb671cde5546997817b4529dd0f
+      internalID: -927435162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_pickle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377bd0afdfd975e4a8e4ea8b6a1d5d79
+      internalID: 500302510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_saffron
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7380ac7eec965f84a8e780851e22e7b0
+      internalID: -456059858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_onion
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530df821dbb376b4b9fd6f5da0e10fd4
+      internalID: -1643003823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_cinnamon
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401d32cc4eeefb848ba8286df8063e0f
+      internalID: 1971686279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hidden_bread
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5720a2ba1cd76b948bdbd0a4b3a8eaa7
+      internalID: 2017386643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hidden_beans: -214513907
+      hidden_berries: 1018253735
+      hidden_bread: 2017386643
+      hidden_butter: 352763332
+      hidden_cacao: 1864410753
+      hidden_cheese: 1357157043
+      hidden_cinnamon: 1971686279
+      hidden_coffee: 247463883
+      hidden_egg: 216436850
+      hidden_flour: -256317854
+      hidden_gold: -927435162
+      hidden_milk: 1636912263
+      hidden_mushrooms: 1103023244
+      hidden_nuts: -1817997241
+      hidden_oil: 2079951825
+      hidden_onion: -1643003823
+      hidden_pickle: 500302510
+      hidden_saffron: -456059858
+      hidden_sallad: 2009585467
+      hidden_salt: -130088216
+      hidden_soda: 1441301343
+      hidden_spice: -1259065476
+      hidden_sugar: 2072898259
+      hidden_vegetables: -484561633
+      hidden_water: 1886768290
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

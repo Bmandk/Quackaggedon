@@ -95,7 +95,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Scene9_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3484
+        width: 5000
+        height: 2655
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df40abf5a4bdfd48a06fc6e6eeda072
+      internalID: -700854903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene9_1_1
+      rect:
+        serializedVersion: 2
+        x: 3634
+        y: 7
+        width: 1309
+        height: 3411
+      alignment: 9
+      pivot: {x: 0.50562733, y: 0.08968627}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eee3dcf8fb74da44b62ef4f8c43673f
+      internalID: 1968407185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene9_1_2
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 52
+        width: 989
+        height: 952
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2fdaf432ef36d4b9dd8e078f52d796
+      internalID: -828726475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene9_1_3
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 110
+        width: 290
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2927809363356734baf3040169272e43
+      internalID: -773766579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene9_1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 544
+        height: 662
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853828bd3fe67ac4bac09168d917edc7
+      internalID: 1502563913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +211,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scene9_1_0: -700854903
+      Scene9_1_1: 1968407185
+      Scene9_1_2: -828726475
+      Scene9_1_3: -773766579
+      Scene9_1_4: 1502563913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

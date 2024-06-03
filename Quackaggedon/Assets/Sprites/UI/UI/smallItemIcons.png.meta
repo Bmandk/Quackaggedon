@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: 14f92b4183e096e4884c2445a8082824
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ItemIcon_Milk
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b7a7b616726ee48b1829856c17cdf9
+      internalID: 1753634712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Water
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 772
+        width: 155
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9ffdf1d33222543957e85cca4cdf71
+      internalID: -554840986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Oil
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090a105c7384b9b4681a47302452cc09
+      internalID: 30738651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Coffee
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2263a65be3a8dee438e3da013bc60d94
+      internalID: 1177881592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Soda
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 771.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c77c953688c2f479d4a48b60b45f63
+      internalID: 15541080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Flour
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958099337ca02f9449d233fe1e779900
+      internalID: -1464747497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Sugar
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 619
+        width: 155
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e416f6737681b42ad45c3a91ae0a4c
+      internalID: 1018225266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Salt
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279f7e45a7718244dba51bb37ec9a6ba
+      internalID: 1707015054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Cocoa
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df63cf83ab2a5174784cfd0668f43e53
+      internalID: 120813830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Spice
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 617.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183c3b7ad628d8b4ea0b67f0b0253ed0
+      internalID: -1550724099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Berries
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3232f5e3e15fad40acf759506d37720
+      internalID: -896552371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Vegetables
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e30882f4128e1b4ca005e97a9f62ada
+      internalID: -1952513114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Mushrooms
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6972484f5a0b6874d956c95b7e09a440
+      internalID: 859634077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Nuts
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44fbc03dc13de54997204e51f29f571
+      internalID: 523117061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Beans
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 463.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89273bd893598764b9231b8b9ea9d627
+      internalID: -76619657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Sallad
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2daf8d1543d45cb418db8c0181f09fb5
+      internalID: 489811011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Egg
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35a17ae4e3d9794fb8280da6d2566a9
+      internalID: 632290808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Butter
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6042d8eec5e2cc04bbbdf9f5129aa71c
+      internalID: 1704311740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Cheese
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 309.6667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f431d817aaea7748b5b5aef452eddda
+      internalID: -162860996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Gold
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 310
+        width: 157
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fcbead0ca413a42b07ce9b209e0ecb
+      internalID: 1669394936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Pickles
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aac2a6a7ed17e947ab2853d8e19f22c
+      internalID: -2107211548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Saffron
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de6f930a87834b448b65d550c3c37ff
+      internalID: 1401739294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Onion
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027ba930e6c3569448bc839f7c78f0d0
+      internalID: 175873165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Cinnamon
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 155.66667
+        width: 154.6
+        height: 154.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2547744978c26e9429d7d7d6c089e305
+      internalID: -2067855981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemIcon_Bread
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 156
+        width: 156
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f0c7d6a20668e47885c1c8d6e7cc2f
+      internalID: -1992918543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ItemIcon_Beans: -76619657
+      ItemIcon_Berries: -896552371
+      ItemIcon_Bread: -1992918543
+      ItemIcon_Butter: 1704311740
+      ItemIcon_Cheese: -162860996
+      ItemIcon_Cinnamon: -2067855981
+      ItemIcon_Cocoa: 120813830
+      ItemIcon_Coffee: 1177881592
+      ItemIcon_Egg: 632290808
+      ItemIcon_Flour: -1464747497
+      ItemIcon_Gold: 1669394936
+      ItemIcon_Milk: 1753634712
+      ItemIcon_Mushrooms: 859634077
+      ItemIcon_Nuts: 523117061
+      ItemIcon_Oil: 30738651
+      ItemIcon_Onion: 175873165
+      ItemIcon_Pickles: -2107211548
+      ItemIcon_Saffron: 1401739294
+      ItemIcon_Sallad: 489811011
+      ItemIcon_Salt: 1707015054
+      ItemIcon_Soda: 15541080
+      ItemIcon_Spice: -1550724099
+      ItemIcon_Sugar: 1018225266
+      ItemIcon_Vegetables: -1952513114
+      ItemIcon_Water: -554840986
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
