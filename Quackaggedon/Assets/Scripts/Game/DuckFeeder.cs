@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using TMPro;
@@ -39,6 +40,7 @@ namespace DuckClicker
         [SerializeField] private bool _cheatSpawnDucks = false;
         [SerializeField] private bool _cheatThrowAllFood = false;
 
+        [SerializeField] private Animator _animator;
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -232,10 +234,10 @@ namespace DuckClicker
             }
             else
             {
-
                 SetProgress(newVal);
             }
-            
+
+            _animator.SetTrigger("Pulse");
             _progressText.text = $"{NumberUtility.FormatNumber(_foodThrown)} / {NumberUtility.FormatNumber(_nextDuckCost)}";
         }
 
@@ -269,7 +271,9 @@ namespace DuckClicker
                 _lerpingProgress = false;
             }
             if (!_lerpingProgress)
+            {
                 _progressLerp = StartCoroutine(LerpProgress());
+            }
         }
 
         private IEnumerator LerpProgress()
@@ -297,8 +301,11 @@ namespace DuckClicker
             {
                 _timeScale += Time.deltaTime * _fillSpeed;
                 progressSlider.value = Mathf.Lerp(startHealth, 1, _timeScale);
+
                 yield return null;
             }
+
+            _animator.SetTrigger("Fill");
             progressSlider.value = 0;
             _lerpingProgress = false;
         }
