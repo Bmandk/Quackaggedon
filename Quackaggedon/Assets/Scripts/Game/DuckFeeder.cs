@@ -19,40 +19,41 @@ namespace DuckClicker
         public int breadPerThrow = 1;
         public bool selectedFromStart = false;
 
-        private DuckFeederStats _duckFeederStats;
+        public DuckFeederStats DuckFeederStats { get; private set; }
         public DuckType duckTypeToSpawn;
 
-        private long _foodThrown = 0;
+        public long FoodThrown { get; private set; }
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
-        private TMP_Text _foodText;
         public Slider progressSlider;
-        private long _nextDuckCost = 0;
+        public long NextDuckCost { get; private set; }
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
         private float _autoBuyTimer;
         [SerializeField] private int _maxThrowParticles = 30;
 
         [SerializeField] private TMP_Text _progressText;
+        [SerializeField] private TMP_Text _foodPriceText;
         
         [SerializeField] private int _cheatDucksToSpawn = 0;
         [SerializeField] private bool _cheatSpawnDucks = false;
         [SerializeField] private bool _cheatThrowAllFood = false;
 
         [SerializeField] private Animator _animator;
+        
+
         private void Awake()
         {
             _button = GetComponent<Button>();
-            _foodText = GetComponentInChildren<TMP_Text>();
             _duckSpawner = FindObjectOfType<DuckSpawner>();
         }
 
         private void Start()
         {
-            _duckFeederStats = References.Instance.duckStats.GetDuckFeederStats(duckTypeToSpawn);
-            _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
-            _foodText.text = $"{NumberUtility.FormatNumber(_duckFeederStats.foodCost)}";
+            DuckFeederStats = References.Instance.duckStats.GetDuckFeederStats(duckTypeToSpawn);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
+            _foodPriceText.text = $"{NumberUtility.FormatNumber(DuckFeederStats.foodCost)}";
             if (selectedFromStart)
             {
                 Select();
@@ -63,7 +64,7 @@ namespace DuckClicker
 
         private void Update()
         {
-            _button.interactable = CurrencyController.CanAfford(_duckFeederStats.foodCost);
+            _button.interactable = CurrencyController.CanAfford(DuckFeederStats.foodCost);
             
             if (useForAutoThrow && DuckAmounts.duckCounts[DuckType.Chef][AreaSettings.CurrentArea.AreaIndex] > 0)
                 CheckAutoBuyer();
@@ -113,19 +114,19 @@ namespace DuckClicker
                 * References.Instance.duckStats.cleverDuckStats.foodAmountMultiplier) + 1;
             long actualFoodAmountThrown = attemptedFoodCountThisThrow;
             if (useCurrency)
-                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost);
+                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
             
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
                 if (useCurrency)
-                    actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / _duckFeederStats.foodCost;
-                actualFoodAmountThrown = Math.Min(_nextDuckCost - _foodThrown, actualFoodAmountThrown);
+                    actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost;
+                actualFoodAmountThrown = Math.Min(NextDuckCost - FoodThrown, actualFoodAmountThrown);
             }
             #endif
             
             if (useCurrency)
-                CurrencyController.RemoveCurrency(actualFoodAmountThrown * _duckFeederStats.foodCost);
+                CurrencyController.RemoveCurrency(actualFoodAmountThrown * DuckFeederStats.foodCost);
             
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
             var inst = Instantiate(foodPrefab);
@@ -138,11 +139,11 @@ namespace DuckClicker
 
             //breadParticles.Emit(breadThisThrow);
             
-            _foodThrown += actualFoodAmountThrown;
+            FoodThrown += actualFoodAmountThrown;
             
-            while (_foodThrown >= _nextDuckCost) // _nextDuckCost is calculated in SpawnDuck
+            while (FoodThrown >= NextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {
-                _foodThrown -= _nextDuckCost;
+                FoodThrown -= NextDuckCost;
                 SpawnDuck(AreaSettings.CurrentArea);
             }
             
@@ -154,7 +155,7 @@ namespace DuckClicker
             DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
             DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]++;
             _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
-            _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
 
             PlayFancyRevealIfFirstTimeSpawn();
         }
@@ -191,7 +192,7 @@ namespace DuckClicker
             SelectedFeeder = this;
             _button.interactable = false;
             
-            _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
         }
 
         public void OnClick()
@@ -201,11 +202,11 @@ namespace DuckClicker
 
         public void Refresh()
         {
-            _nextDuckCost = _duckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
-            if (_foodThrown >= _nextDuckCost)
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
+            if (FoodThrown >= NextDuckCost)
             {
-                long newFood = _nextDuckCost - 1;
-                _foodThrown = newFood;
+                long newFood = NextDuckCost - 1;
+                FoodThrown = newFood;
 
             }
             UpdateProgress();
@@ -229,7 +230,7 @@ namespace DuckClicker
         
         private void UpdateProgress()
         {
-            var newVal = (float)_foodThrown / _nextDuckCost;
+            var newVal = (float)FoodThrown / NextDuckCost;
             if (newVal == 0)
             {
                 FinishThisProgressLevel();
@@ -240,7 +241,7 @@ namespace DuckClicker
             }
 
             _animator.SetTrigger("Pulse");
-            _progressText.text = $"{NumberUtility.FormatNumber(_foodThrown)} / {NumberUtility.FormatNumber(_nextDuckCost)}";
+            _progressText.text = $"{NumberUtility.FormatNumber(FoodThrown)} / {NumberUtility.FormatNumber(NextDuckCost)}";
         }
 
         private float _targetProgress;
@@ -317,7 +318,7 @@ namespace DuckClicker
             var duckData = new Dictionary<string, JToken>
             {
                 {"ducksSpawned", new JArray(DuckAmounts.duckCounts[duckTypeToSpawn])},
-                {"foodThrown", _foodThrown}
+                {"foodThrown", FoodThrown}
             };
 
             saveData[References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name] = JObject.FromObject(duckData);
@@ -333,7 +334,7 @@ namespace DuckClicker
             if (saveData.TryGetValue(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name, out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
-                _foodThrown = (int) duckFeederData["foodThrown"];
+                FoodThrown = (int) duckFeederData["foodThrown"];
 
                 List<AreaSettings> areaSettings = FindObjectsOfType<AreaSettings>().ToList();
                 
