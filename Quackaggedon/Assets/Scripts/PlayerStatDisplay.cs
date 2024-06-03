@@ -1,4 +1,5 @@
 using DuckClicker;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,7 +31,7 @@ public class PlayerStatDisplay : MonoBehaviour
 
     public void Update()
     {
-        dataText.text = @$"{CurrencyController.QuacksPerSecond}";
+        dataText.text = @$"{String.Format("{0:0.##}", CurrencyController.QuacksPerSecond)}";
         /*
         dataText.text = @$"Quacks per second: {ColorDouble(CurrencyController.QuacksPerSecond)}
 Simple Multiplier: {ColorDouble(CurrencyController.SimpleDuckAmount)}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3dff0f4e6ff2bc34aac5e17e8df4945f
+guid: 254f88675c65ab14192f33e91768ef36
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttonOutline
+      name: buttonOutlineWhite
       rect:
         serializedVersion: 2
         x: 3
@@ -106,19 +106,19 @@ TextureImporter:
         height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 23, z: 24, w: 25}
+      border: {x: 24, y: 24, z: 25, w: 24}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8ab9d17e8a1b0f41b4cbb4595a09e8c
-      internalID: 711278604
+      spriteID: 25b9c3fc8e5112b46acc55a66eff94f2
+      internalID: 1498084522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttonIdle
+      name: buttonOutlineDark
       rect:
         serializedVersion: 2
         x: 85
@@ -127,19 +127,19 @@ TextureImporter:
         height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 22, z: 25, w: 24}
+      border: {x: 23, y: 25, z: 25, w: 25}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf6dc6cbf053a1e47b8145de94569e67
-      internalID: -1707916846
+      spriteID: 97f3ff5ec8c26094bbf8155101a9f1f7
+      internalID: 1784807238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ButtonHovered
+      name: buttonWhite
       rect:
         serializedVersion: 2
         x: 167
@@ -148,61 +148,19 @@ TextureImporter:
         height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 23, y: 22, z: 23, w: 23}
+      border: {x: 23, y: 25, z: 24, w: 25}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e59cf0822823ea4f9594f6b28f7e461
-      internalID: -1932502087
+      spriteID: 6efac57b67108554e81680526f8ee0d3
+      internalID: 118597384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ButtonDisabled
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 92
-        width: 78
-        height: 77
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 25, z: 26, w: 25}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 030d7feb91548c2419b7b500fb629bf6
-      internalID: -826705461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonClicked
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 92
-        width: 77
-        height: 77
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 24, y: 24, z: 24, w: 24}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5971c57f23abb84892ca5719b567dce
-      internalID: 148728756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boxOutline
+      name: boxOutlineWhite
       rect:
         serializedVersion: 2
         x: 3
@@ -211,40 +169,40 @@ TextureImporter:
         height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 32, y: 32, z: 32, w: 32}
+      border: {x: 31, y: 30, z: 31, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db86f558c1360764bb985cfd5f220de0
-      internalID: 295191495
+      spriteID: c61db8b5b52cb7e47920fd37b5d55c41
+      internalID: 1594820775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boxDefault
+      name: boxOutlineDark
       rect:
         serializedVersion: 2
         x: 85
         y: 11
-        width: 75
-        height: 74
+        width: 74
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 32, z: 32, w: 31}
+      border: {x: 31, y: 31, z: 31, w: 31}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fbf0d80920b2a846a512d3e3f5aa814
-      internalID: 1821062260
+      spriteID: 97ae1b29f2951984aa71e56c99725f00
+      internalID: -2028758511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boxDarker
+      name: boxWhite
       rect:
         serializedVersion: 2
         x: 167
@@ -253,55 +211,13 @@ TextureImporter:
         height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 32, y: 32, z: 32, w: 32}
+      border: {x: 31, y: 32, z: 32, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3bb5576dbf19449987e90d5a9ba12a
-      internalID: 1214342386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boxDarkOutline
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 10
-        width: 75
-        height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 31, z: 32, w: 31}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 875823a6b6c7ba0469f80fa39719c0c4
-      internalID: -842836940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttonDarkOutline
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 10
-        width: 77
-        height: 77
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 26, y: 25, z: 24, w: 25}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7d62d88f4e31f64aad0f9aed463075f
-      internalID: -346872834
+      spriteID: 058282ad3118ee94e83563d5b8d19d32
+      internalID: -2146123746
       vertices: []
       indices: 
       edges: []
@@ -317,16 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ButtonClicked: 148728756
-      ButtonDisabled: -826705461
-      ButtonHovered: -1932502087
-      boxDarkOutline: -842836940
-      boxDarker: 1214342386
-      boxDefault: 1821062260
-      boxOutline: 295191495
-      buttonDarkOutline: -346872834
-      buttonIdle: -1707916846
-      buttonOutline: 711278604
+      boxOutlineDark: -2028758511
+      boxOutlineWhite: 1594820775
+      boxWhite: -2146123746
+      buttonOutlineDark: 1784807238
+      buttonOutlineWhite: 1498084522
+      buttonWhite: 118597384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
