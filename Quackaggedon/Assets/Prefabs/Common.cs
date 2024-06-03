@@ -34,11 +34,15 @@ public class Common : MonoBehaviour
     //public Material defaultMat;
     //public Material highlightMat;
 
+    public Collider2D pondEdges;
+
     public float duckRelaxSpeed;
     public float duckGetFoodSpeed;
 
-    public Vector2 RandomPos(Vector3 currentPos)
+    public Vector2 GetRandomPositionWithinPond(Vector3 currentPos)
     {
+        return PointInArea();
+        /*
         var minX = (currentPos.x - maxDistToSwim) < left.transform.position.x ? left.transform.position.x : (currentPos.x - maxDistToSwim);
         var maxX = (currentPos.x + maxDistToSwim) > right.transform.position.x ? right.transform.position.x : (currentPos.x + maxDistToSwim);
 
@@ -50,9 +54,28 @@ public class Common : MonoBehaviour
 
         Vector2 randomPos = new Vector2(moveToX, moveToY);
         return randomPos;
-
-
+        */
     }
+
+    public Vector3 PointInArea()
+    {
+        var bounds = pondEdges.bounds;
+        var center = bounds.center;
+
+        float x = 0;
+        float y = 0;
+        int attempt = 0;
+        do
+        {
+            x = UnityEngine.Random.Range(center.x - bounds.extents.x, center.x + bounds.extents.x);
+            y = UnityEngine.Random.Range(center.y - bounds.extents.y, center.y + bounds.extents.y);
+            attempt++;
+        } while (!pondEdges.OverlapPoint(new Vector2(x, y)) || attempt <= 100);
+        Debug.Log("Attemps: " + attempt);
+
+        return new Vector3(x, y, 0);
+    }
+
 
     public Vector2 GetRandomPosInScene()
     {

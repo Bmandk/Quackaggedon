@@ -17,7 +17,7 @@ public class DuckMovementHandler : MonoBehaviour
 
     private void Start()
     {
-        randomPosition = Common.Instance.RandomPos(transform.position);
+        randomPosition = Common.Instance.GetRandomPositionWithinPond(transform.position);
     }
 
     // Update is called once per frame
@@ -36,9 +36,10 @@ public class DuckMovementHandler : MonoBehaviour
     public void SmoothRandomMovement()
     {
         float distance = Vector2.Distance(transform.position, randomPosition);
+        var speedModifier = (distance + Random.RandomRange(0,2))/ 3;
 
         // Smoothly decelerate as the duck gets closer to the target
-        float speed = Mathf.Lerp(minSwimSpeed, maxSwimSpeed, distance / decelerationRadius);
+        float speed = Mathf.Lerp(minSwimSpeed, maxSwimSpeed, distance / decelerationRadius) * speedModifier;
         speed = Mathf.Clamp(speed, minSwimSpeed, maxSwimSpeed);
 
         if (distance < 0.5f)
@@ -58,7 +59,7 @@ public class DuckMovementHandler : MonoBehaviour
         isWaiting = true;
         float waitTime = Random.Range(minWaitTime, maxWaitTime);
         yield return new WaitForSeconds(waitTime);
-        randomPosition = Common.Instance.RandomPos(transform.position);
+        randomPosition = Common.Instance.GetRandomPositionWithinPond(transform.position);
         duckAnim.SetTrigger("Flip");
         isWaiting = false;
     }
