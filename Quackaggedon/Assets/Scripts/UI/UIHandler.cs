@@ -39,7 +39,7 @@ public class UIHandler : MonoBehaviour
     private Coroutine revealC;
     public void ShowRevealUI(DuckData duckToShow)
     {
-        revealDuckName.text = duckToShow.duckDisplayName;
+        revealDuckName.text = $"<wave a=0.1>{duckToShow.duckDisplayName}</wave>";
         revealDuckSkillText.text = duckToShow.duckEffectDescription;
         revealDuckIcon.sprite = duckToShow.duckDisplayIcon;
         revealCanvasGroup.alpha = 0;
