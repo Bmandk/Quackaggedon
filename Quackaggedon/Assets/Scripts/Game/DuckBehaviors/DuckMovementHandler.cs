@@ -36,7 +36,7 @@ public class DuckMovementHandler : MonoBehaviour
     public void SmoothRandomMovement()
     {
         float distance = Vector2.Distance(transform.position, randomPosition);
-        var speedModifier = (distance + Random.RandomRange(0,2))/ 3;
+        var speedModifier = (distance + UnityEngine.Random.Range(0,2))/ 3;
 
         // Smoothly decelerate as the duck gets closer to the target
         float speed = Mathf.Lerp(minSwimSpeed, maxSwimSpeed, distance / decelerationRadius) * speedModifier;

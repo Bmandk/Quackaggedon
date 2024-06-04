@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
         Intro,
         GameScene,
         WinScreen,
+        End,
     }
 
     public static string GetSceneName(Scene scene)
@@ -32,6 +33,7 @@ public class SceneLoader : MonoBehaviour
         { Scene.Intro, "Intro" },
         { Scene.GameScene, "DuckClickerScene" },
         { Scene.WinScreen, "WinScreen" },
+        { Scene.End, "End" },
     };
 
     public void LoadNewScene(Scene sceneToLoad, Scene sceneToUnload, AudioMixerGroup audioToSilence = null)
