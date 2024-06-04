@@ -180,6 +180,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: LeftEye
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1596
+        width: 138
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5586813, y: 0.40974936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a29ae990235e34986e767db09576be
+      internalID: -1389446938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightEye
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1590
+        width: 159
+        height: 153
+      alignment: 9
+      pivot: {x: 0.550931, y: 0.43951136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb26b2754b1cdb240b62849c9e96031a
+      internalID: 663002273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -191,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      LeftEye: -155728930
+      RightEye: 1430116940
       Scene6_0: 2095326541
       Scene6_1: -1613955701
       Scene6_2: -1141400689
-      Scene6_3: -155728930
       Scene6_4: -318568854
-      Scene6_5: 1430116940
       Scene6_6: 1880874415
       Scene6_7: 1856254499
   mipmapLimitGroupName: 
