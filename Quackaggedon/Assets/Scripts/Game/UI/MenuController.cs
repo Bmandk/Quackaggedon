@@ -63,4 +63,9 @@ public class MenuController : MonoBehaviour
     {
         duckopediaUI.SetActive(false);
     }
+    
+    public void ToggleWindowedMode()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }
