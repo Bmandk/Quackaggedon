@@ -42,7 +42,10 @@ namespace DuckClicker
 
         [SerializeField] private Animator _animator;
         
-
+        private List<SpawnDuckEvent> _spawnDuckEvents = new List<SpawnDuckEvent>();
+        private int clicksSinceLastSpawn = 0;
+        private int autoClicksSinceLastSpawn = 0;
+        
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -103,6 +106,15 @@ namespace DuckClicker
 
         public void ThrowBread(bool useCurrency)
         {
+            if (useCurrency)
+            {
+                clicksSinceLastSpawn++;
+            }
+            else
+            {
+                autoClicksSinceLastSpawn++;
+            }
+            
             // =FLOOR(MAX(POW(S11,$L$6), POW($J$6,S11+$K$6*P11)*$I$6)+1)
             long cleverDucks = DuckAmounts.GetTotalDucks(DuckType.Clever);
             long magicDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
@@ -140,14 +152,21 @@ namespace DuckClicker
             //breadParticles.Emit(breadThisThrow);
             
             FoodThrown += actualFoodAmountThrown;
+            int ducksSpawned = 0;
             
             while (FoodThrown >= NextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {
                 FoodThrown -= NextDuckCost;
                 SpawnDuck(AreaSettings.CurrentArea);
+                ducksSpawned++;
             }
             
             UpdateProgress();
+            
+            if (ducksSpawned > 0)
+            {
+                SaveManager.Save();
+            }
         }
 
         private void SpawnDuck(AreaSettings area)
@@ -158,6 +177,16 @@ namespace DuckClicker
             NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
 
             PlayFancyRevealIfFirstTimeSpawn();
+            
+            _spawnDuckEvents.Add(new SpawnDuckEvent
+            {
+                clicksToSpawn = clicksSinceLastSpawn,
+                autoClicksToSpawn = autoClicksSinceLastSpawn,
+                timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            });
+            
+            clicksSinceLastSpawn = 0;
+            autoClicksSinceLastSpawn = 0;
         }
 
         private void PlayFancyRevealIfFirstTimeSpawn()
@@ -318,10 +347,11 @@ namespace DuckClicker
             var duckData = new Dictionary<string, JToken>
             {
                 {"ducksSpawned", new JArray(DuckAmounts.duckCounts[duckTypeToSpawn])},
-                {"foodThrown", FoodThrown}
+                {"foodThrown", FoodThrown},
+                {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)}
             };
 
-            saveData[References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name] = JObject.FromObject(duckData);
+            saveData[duckTypeToSpawn.ToString()] = JObject.FromObject(duckData);
         }
 
         public void Load(Dictionary<string, JToken> saveData)
@@ -331,7 +361,7 @@ namespace DuckClicker
                 return;
             }
             
-            if (saveData.TryGetValue(References.Instance.GetDuckData(duckTypeToSpawn).duckPrefab.name, out JToken data))
+            if (saveData.TryGetValue(duckTypeToSpawn.ToString(), out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
                 FoodThrown = (int) duckFeederData["foodThrown"];
@@ -351,8 +381,21 @@ namespace DuckClicker
                     }
                 }
                 
+                if (duckFeederData.TryGetValue("spawnDuckEvents", out JToken throwFoodEventsData))
+                {
+                    _spawnDuckEvents = throwFoodEventsData.ToObject<List<SpawnDuckEvent>>();
+                }
+                
                 UpdateProgress();
             }
         }
+    }
+
+    [Serializable]
+    public struct SpawnDuckEvent
+    {
+        public int clicksToSpawn;
+        public int autoClicksToSpawn;
+        public string timestamp;
     }
 }
