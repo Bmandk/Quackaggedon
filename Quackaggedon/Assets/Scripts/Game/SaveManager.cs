@@ -112,7 +112,7 @@ public static class SaveManager
     
     public static bool DoesSaveExist()
     {
-        return PlayerPrefs.HasKey("SaveData");
+        return System.IO.File.Exists(GetSavePath());
     }
 
     #if UNITY_EDITOR
