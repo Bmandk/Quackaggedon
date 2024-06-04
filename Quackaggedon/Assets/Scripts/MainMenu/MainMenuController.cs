@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,14 @@ public class MainMenuController : MonoBehaviour
     public SceneLoader sceneHandler;
     public AudioMixerGroup mixerGroup;
     public GameObject warningMenu;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        }
+    }
 
     public void OpenWarningMenu()
     {
