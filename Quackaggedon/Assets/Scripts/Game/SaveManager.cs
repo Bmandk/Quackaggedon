@@ -53,19 +53,20 @@ public static class SaveManager
         }
 
         string json = JsonConvert.SerializeObject(saveData, Formatting.None);
-        Debug.Log("Saving data: " + json);
-        PlayerPrefs.SetString("SaveData", json);
-        PlayerPrefs.Save();
+        var howManyBytes = json.Length * sizeof(char);
+        Debug.Log($"Saving data ({howManyBytes}: {json}");
+        System.IO.File.WriteAllText(GetSavePath(), json);
     }
     
     public static void Load()
     {
-        if (!PlayerPrefs.HasKey("SaveData"))
+        if (!System.IO.File.Exists(GetSavePath()))
         {
             return;
         }
         
-        string json = PlayerPrefs.GetString("SaveData");
+        string json = System.IO.File.ReadAllText(GetSavePath());
+        
         Debug.Log("Loading data: " + json);
         JObject jObject = JObject.Parse(json);
         Dictionary<string, JToken> saveData = jObject.ToObject<Dictionary<string, JToken>>();
@@ -85,6 +86,11 @@ public static class SaveManager
         }
     }
     
+    public static string GetSavePath()
+    {
+        return Application.persistentDataPath + "/save.json";
+    }
+    
     private static IEnumerable<ISaveable> GetRunDataPersistanceObjects()
     {
         IEnumerable<ISaveable> dataPersistanceObjects =
@@ -98,8 +104,10 @@ public static class SaveManager
     #endif
     public static void DeleteSave()
     {
-        PlayerPrefs.DeleteKey("SaveData");
-        PlayerPrefs.Save();
+        if (System.IO.File.Exists(GetSavePath()))
+        {
+            System.IO.File.Delete(GetSavePath());
+        }
     }
     
     public static bool DoesSaveExist()
