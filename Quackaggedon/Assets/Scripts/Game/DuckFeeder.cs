@@ -172,27 +172,33 @@ namespace DuckClicker
         private void SpawnDuck(AreaSettings area)
         {
             DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
-            DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]++;
-            _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
-            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
-
-            PlayFancyRevealIfFirstTimeSpawn();
-            
-            _spawnDuckEvents.Add(new SpawnDuckEvent
+            if (duckTypeSpawning.duckType != DuckType.Muscle)
             {
-                clicksToSpawn = clicksSinceLastSpawn,
-                autoClicksToSpawn = autoClicksSinceLastSpawn,
-                timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
-            });
-            
-            clicksSinceLastSpawn = 0;
-            autoClicksSinceLastSpawn = 0;
+                DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]++;
+                _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
+                NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
+
+                PlayFancyRevealIfFirstTimeSpawn();
+
+                _spawnDuckEvents.Add(new SpawnDuckEvent
+                {
+                    clicksToSpawn = clicksSinceLastSpawn,
+                    autoClicksToSpawn = autoClicksSinceLastSpawn,
+                    timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                });
+
+                clicksSinceLastSpawn = 0;
+                autoClicksSinceLastSpawn = 0;
+            } else
+            {
+                EndStarter.Instance.StartEnd();
+            }
         }
 
         private void PlayFancyRevealIfFirstTimeSpawn()
         {
             DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
-            if (DiscoveredObjects.DuckTypesSeen.Contains(duckTypeSpawning.duckType))
+            if (DiscoveredObjects.DuckTypesSeen.Contains(duckTypeSpawning.duckType) || duckTypeSpawning.duckType == DuckType.Muscle)
             {
                 return;
             }
