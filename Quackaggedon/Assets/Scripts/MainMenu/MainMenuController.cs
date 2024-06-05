@@ -11,6 +11,8 @@ public class MainMenuController : MonoBehaviour
     public SceneLoader sceneHandler;
     public AudioMixerGroup mixerGroup;
     public GameObject warningMenu;
+    public GameObject settingsMenu;
+    public GameObject creditsMenu;
 
     private void Awake()
     {
@@ -61,4 +63,23 @@ public class MainMenuController : MonoBehaviour
         sceneHandler.LoadNewScene(level, SceneLoader.Scene.MainMenu, soundToSilence);
     }
 
+    public void OpenSettings()
+    {
+        settingsMenu.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
+    }
+
+    public void OpenCredits()
+    {
+        creditsMenu.SetActive(true);
+    }
+
+    public void CloseCredits()
+    {
+        creditsMenu.SetActive(false);
+    }
 }
