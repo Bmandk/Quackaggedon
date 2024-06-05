@@ -35,7 +35,7 @@ public class EndStarter : MonoBehaviour
 
     private void StartCameraShake()
     {
-        camShake.Shake(4, 1);
+        StartCoroutine(camShake.Shake(4, 0.5f));
      //   throw new NotImplementedException();
     }
 }
