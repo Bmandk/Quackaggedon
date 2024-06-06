@@ -1254,6 +1254,10 @@ PrefabInstance:
       propertyPath: _maxThrowParticles
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+      propertyPath: _foodAmountOffset.y
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1798278184349133842, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}

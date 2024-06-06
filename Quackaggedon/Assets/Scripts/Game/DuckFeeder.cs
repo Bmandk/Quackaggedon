@@ -48,6 +48,7 @@ namespace DuckClicker
         private int _parentIndex;
         [SerializeField] private GameObject _foodAmountPrefab;
         private Canvas _canvas;
+        [SerializeField] private Vector3 _foodAmountOffset;
         
         private void Awake()
         {
@@ -145,7 +146,7 @@ namespace DuckClicker
                 CurrencyController.RemoveCurrency(actualFoodAmountThrown * DuckFeederStats.foodCost);
 
             int particles;
-            GameObject foodAmount = Instantiate(_foodAmountPrefab, transform.position, Quaternion.identity, _canvas.transform);
+            GameObject foodAmount = Instantiate(_foodAmountPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
             foodAmount.GetComponent<ClickDuckUiPopup>().SetQuacksReceievedOnClick(actualFoodAmountThrown);
             
             if (actualFoodAmountThrown > _maxThrowParticles)
