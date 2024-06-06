@@ -46,12 +46,15 @@ namespace DuckClicker
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
         private int _parentIndex;
+        [SerializeField] private GameObject _foodAmountPrefab;
+        private Canvas _canvas;
         
         private void Awake()
         {
             _button = GetComponent<Button>();
             _duckSpawner = FindObjectOfType<DuckSpawner>();
 
+            _canvas = GetComponentInParent<Canvas>();
             var parent = transform.parent;
             _parentIndex = parent.GetSiblingIndex();
             parent.gameObject.SetActive(_parentIndex == 0);
@@ -142,6 +145,9 @@ namespace DuckClicker
                 CurrencyController.RemoveCurrency(actualFoodAmountThrown * DuckFeederStats.foodCost);
 
             int particles;
+            GameObject foodAmount = Instantiate(_foodAmountPrefab, transform.position, Quaternion.identity, _canvas.transform);
+            foodAmount.GetComponent<ClickDuckUiPopup>().SetQuacksReceievedOnClick(actualFoodAmountThrown);
+            
             if (actualFoodAmountThrown > _maxThrowParticles)
                 particles = _maxThrowParticles;
             else
