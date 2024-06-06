@@ -271,6 +271,9 @@ namespace DuckClicker
         
         private void UpdateProgress()
         {
+            if (gameObject.activeInHierarchy == false)
+                return;
+            
             var newVal = (float)FoodThrown / NextDuckCost;
             if (newVal == 0)
             {
@@ -360,7 +363,8 @@ namespace DuckClicker
             {
                 {"ducksSpawned", new JArray(DuckAmounts.duckCounts[duckTypeToSpawn])},
                 {"foodThrown", FoodThrown},
-                {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)}
+                {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)},
+                {"isRevealed", transform.parent.gameObject.activeSelf}
             };
 
             saveData[duckTypeToSpawn.ToString()] = JObject.FromObject(duckData);
@@ -368,11 +372,6 @@ namespace DuckClicker
 
         public void Load(Dictionary<string, JToken> saveData)
         {
-            if (gameObject.activeInHierarchy == false)
-            {
-                return;
-            }
-            
             if (saveData.TryGetValue(duckTypeToSpawn.ToString(), out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
@@ -396,6 +395,11 @@ namespace DuckClicker
                 if (duckFeederData.TryGetValue("spawnDuckEvents", out JToken throwFoodEventsData))
                 {
                     _spawnDuckEvents = throwFoodEventsData.ToObject<List<SpawnDuckEvent>>();
+                }
+                
+                if (duckFeederData.TryGetValue("isRevealed", out JToken isRevealed))
+                {
+                    transform.parent.gameObject.SetActive(isRevealed.ToObject<bool>());
                 }
                 
                 UpdateProgress();
