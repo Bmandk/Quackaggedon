@@ -12,8 +12,11 @@ public class DuckMovementHandler : MonoBehaviour
     public float decelerationRadius = 2.0f;  // The radius within which the duck starts decelerating
     public float minWaitTime = 0.5f;  // Minimum wait time before changing position
     public float maxWaitTime = 2.0f;  // Maximum wait time before changing position
+    public float stopTimeAfterClick = 0.5f;  // Time to stop after being clicked
 
     private bool isWaiting = false;
+    [HideInInspector]
+    public float lastClickTime = 0;
 
     private void Start()
     {
@@ -23,7 +26,7 @@ public class DuckMovementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isWaiting)
+        if (!isWaiting && Time.timeSinceLevelLoad - lastClickTime > stopTimeAfterClick)
         {
             duckAnim.SetBool("Swim", true);
             SmoothRandomMovement();

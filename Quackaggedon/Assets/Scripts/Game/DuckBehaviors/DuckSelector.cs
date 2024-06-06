@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DuckClicker;
 using UnityEngine;
@@ -22,6 +23,13 @@ public class DuckSelector : MonoBehaviour
     private Coroutine _quackCoroutine;
     [SerializeField]
     private double _quacksPerClick;
+    
+    private DuckMovementHandler _duckMovementHandler;
+
+    private void Awake()
+    {
+        _duckMovementHandler = GetComponent<DuckMovementHandler>();
+    }
 
     //private bool isSelected;
     public void Select()
@@ -34,6 +42,7 @@ public class DuckSelector : MonoBehaviour
     public void Feed()
     {
         CurrencyController.AddCurrency(_quacksPerClick);
+        _duckMovementHandler.lastClickTime = Time.timeSinceLevelLoad;
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(_quacksPerClick);
         if (_quackCoroutine == null)
         {

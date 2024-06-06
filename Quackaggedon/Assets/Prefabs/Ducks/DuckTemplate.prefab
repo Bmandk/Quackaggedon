@@ -1080,6 +1080,8 @@ MonoBehaviour:
   decelerationRadius: 2
   minWaitTime: 0.5
   maxWaitTime: 2
+  stopTimeAfterClick: 1
+  lastClickTime: 0
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0
