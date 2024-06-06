@@ -91,7 +91,7 @@ namespace DuckClicker
         {
             if (_autoBuyTimer <= 0)
             {
-                ThrowBread(false);
+                ThrowBread(false, false);
                 // POW($I$6,Z11-$J$6+$K$6*P11)+$L$6
                 long chefDucks = DuckAmounts.GetTotalDucks(DuckType.Chef);
                 long magicalDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
@@ -105,7 +105,7 @@ namespace DuckClicker
         }
 
 
-        public void ThrowBread(bool useCurrency)
+        public void ThrowBread(bool useCurrency, bool throwFromHand)
         {
             if (useCurrency)
             {
@@ -147,8 +147,8 @@ namespace DuckClicker
             else
                 particles = (int)actualFoodAmountThrown;
 
-            //ThrowFoodParticles(particles);
-            ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
+            if (throwFromHand)
+                ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
@@ -237,7 +237,7 @@ namespace DuckClicker
 
         public void OnClick()
         {
-            ThrowBread(true);
+            ThrowBread(true, true);
         }
 
         public void Refresh()
