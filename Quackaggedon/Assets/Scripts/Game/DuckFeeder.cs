@@ -149,6 +149,8 @@ namespace DuckClicker
 
             if (throwFromHand)
                 ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
+            else //in this case the particles will be spawned for the chef duck 
+                ThrowFoodParticles(particles);
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
