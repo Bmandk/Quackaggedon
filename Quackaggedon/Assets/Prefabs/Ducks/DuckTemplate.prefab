@@ -1059,6 +1059,7 @@ MonoBehaviour:
   - {fileID: 3568773770112852827}
   - {fileID: 764586853497813262}
   duckAnim: {fileID: 864956059973319289}
+  _quacksPerClick: 1
 --- !u!114 &2330681344349673124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1080,8 @@ MonoBehaviour:
   decelerationRadius: 2
   minWaitTime: 0.5
   maxWaitTime: 2
+  stopTimeAfterClick: 1
+  lastClickTime: 0
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,11 +45,16 @@ namespace DuckClicker
         private List<SpawnDuckEvent> _spawnDuckEvents = new List<SpawnDuckEvent>();
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
-                
+        private int _parentIndex;
+        
         private void Awake()
         {
             _button = GetComponent<Button>();
             _duckSpawner = FindObjectOfType<DuckSpawner>();
+
+            var parent = transform.parent;
+            _parentIndex = parent.GetSiblingIndex();
+            parent.gameObject.SetActive(_parentIndex == 0);
         }
 
         private void Start()
@@ -203,17 +208,16 @@ namespace DuckClicker
             {
                 return;
             }
-            else
-            {
-                DiscoveredObjects.DuckTypesSeen.Add(duckTypeSpawning.duckType);
-                References.Instance.duckopediaHandler.RefreshDuckopedia();
-                StartCoroutine(RevealAfterDelay(1f, duckTypeSpawning));
-            }
+
+            DiscoveredObjects.DuckTypesSeen.Add(duckTypeSpawning.duckType);
+            References.Instance.duckopediaHandler.RefreshDuckopedia();
+            StartCoroutine(RevealAfterDelay(1f, duckTypeSpawning));
         }
 
         IEnumerator RevealAfterDelay(float delay, DuckData duckData)
         {
             yield return new WaitForSeconds(delay);
+            transform.parent.parent.GetChild(_parentIndex + 1).gameObject.SetActive(true);
             UIHandler.Instance.ShowRevealUI(duckData);
             AudioController.Instance.PlayRevealSounds();
         }

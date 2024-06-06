@@ -93,6 +93,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 485111888139877661, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: _quacksPerClick
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 485111888139877661, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: _duckSprites.Array.size
       value: 10
       objectReference: {fileID: 0}
