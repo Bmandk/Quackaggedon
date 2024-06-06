@@ -20,6 +20,8 @@ public class DuckSelector : MonoBehaviour
     [SerializeField]
     private Animator duckAnim;
     private Coroutine _quackCoroutine;
+    [SerializeField]
+    private double _quacksPerClick;
 
     //private bool isSelected;
     public void Select()
@@ -31,9 +33,8 @@ public class DuckSelector : MonoBehaviour
 
     public void Feed()
     {
-        double addAmount = References.Instance.duckStats.simpleDuckStats.quacksPerClick;
-        CurrencyController.AddCurrency(addAmount);
-        DuckClickFeedbackHandler.Instance.DisplayDuckClick(addAmount);
+        CurrencyController.AddCurrency(_quacksPerClick);
+        DuckClickFeedbackHandler.Instance.DisplayDuckClick(_quacksPerClick);
         if (_quackCoroutine == null)
         {
             _quackCoroutine = StartCoroutine(QuackThenDelay());

@@ -269,6 +269,10 @@ PrefabInstance:
       value: 7.619068e-34
       objectReference: {fileID: 0}
     - target: {fileID: 485111888139877661, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: _quacksPerClick
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 485111888139877661, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: _duckSprites.Array.size
       value: 12
       objectReference: {fileID: 0}
