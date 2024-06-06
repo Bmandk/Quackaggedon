@@ -49,6 +49,9 @@ public class References : MonoBehaviour
     public DuckopediaHandler duckopediaHandler; 
 
     public ArmHandler armHandler;   
+
+    public Transform particleParent;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;

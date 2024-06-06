@@ -45,7 +45,7 @@ namespace DuckClicker
         private List<SpawnDuckEvent> _spawnDuckEvents = new List<SpawnDuckEvent>();
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
-        
+                
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -99,14 +99,9 @@ namespace DuckClicker
             }
         }
 
-        public void PerformFeedingHandAnimation()
-        {
-            ArmController.Instance.PerformFeedingHandAnimation();
-        }
 
         public void ThrowBread(bool useCurrency)
         {
-            PerformFeedingHandAnimation();
             if (useCurrency)
             {
                 clicksSinceLastSpawn++;
@@ -140,18 +135,16 @@ namespace DuckClicker
             
             if (useCurrency)
                 CurrencyController.RemoveCurrency(actualFoodAmountThrown * DuckFeederStats.foodCost);
-            
-            var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
-            var inst = Instantiate(foodPrefab);
+
             int particles;
             if (actualFoodAmountThrown > _maxThrowParticles)
                 particles = _maxThrowParticles;
             else
-                particles = (int) actualFoodAmountThrown;
-            inst.GetComponent<ParticleSystem>().Emit(particles);
+                particles = (int)actualFoodAmountThrown;
 
-            //breadParticles.Emit(breadThisThrow);
-            
+            //ThrowFoodParticles(particles);
+            ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
+
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
             
@@ -168,6 +161,13 @@ namespace DuckClicker
             {
                 SaveManager.Save();
             }
+        }
+
+        public void ThrowFoodParticles(int particles)
+        {
+            var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
+            var inst = Instantiate(foodPrefab, ArmController.Instance.handPosition.position, foodPrefab.transform.rotation, References.Instance.particleParent);
+            inst.GetComponent<ParticleSystem>().Emit(particles);
         }
 
         private void SpawnDuck(AreaSettings area)
@@ -252,7 +252,6 @@ namespace DuckClicker
         {
             SelectedFeeder = null;
             _button.interactable = true;
-            //PerformFeedingHandAnimation(false);
         }
         
         /*public void BuyFood()

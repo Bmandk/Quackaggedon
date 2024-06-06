@@ -329,7 +329,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4202446234433870568, guid: 22cd5c53e462f01499758fc9ee2349f2, type: 2}
   m_audioClip: {fileID: 8300000, guid: a2687c5b17abdd540852e98c99656513, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.353
+  m_Volume: 0.189
   m_Pitch: 0.95
   Loop: 1
   Mute: 0
@@ -561,6 +561,38 @@ MonoBehaviour:
   expandSellUI: {fileID: 0}
   sceneLoader: {fileID: 603980461062514749}
   duckopediaUI: {fileID: 0}
+--- !u!1 &1565944703731388191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7930263143055161552}
+  m_Layer: 0
+  m_Name: Parents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7930263143055161552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565944703731388191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9074759335165469060}
+  m_Father: {fileID: 8530518058844679403}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124229843094157948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1353,7 @@ MonoBehaviour:
   mouseController: {fileID: 244709025473921349}
   duckopediaHandler: {fileID: 8349604638811565219}
   armHandler: {fileID: 0}
+  particleParent: {fileID: 9074759335165469060}
 --- !u!1 &6732153866289293210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,6 +1640,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3279856004340566087}
+  - {fileID: 7930263143055161552}
   - {fileID: 8706655580003153458}
   - {fileID: 8534191849655145160}
   - {fileID: 3858701151556514772}
@@ -1622,6 +1656,37 @@ Transform:
   - {fileID: 1297968641881496909}
   - {fileID: 208256405989489656}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7386738033955699409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9074759335165469060}
+  m_Layer: 0
+  m_Name: ParticleParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9074759335165469060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386738033955699409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7930263143055161552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7399404638500352724
 GameObject:
