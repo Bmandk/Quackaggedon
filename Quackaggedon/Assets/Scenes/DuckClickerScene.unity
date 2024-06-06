@@ -17999,10 +17999,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2064317869}
-    - target: {fileID: 2123208931898807112, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
-      propertyPath: _cheatDucksToSpawn
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2207589433501864018, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18294,6 +18290,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8067259102430140869, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
+    - {fileID: 3413166806691510482, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7700321575499117751, guid: 1ef607e9c998a4fcbac1629f34d4511e, type: 3}
       insertIndex: 0
@@ -18364,6 +18361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1030168522892200711, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 4228561162349265501, guid: 5f843e3ac77f445e1a0600515cbdb6bd, type: 3}
       propertyPath: m_Name
       value: Environment
