@@ -12,7 +12,7 @@ public class ClickDuckUiPopup : MonoBehaviour
 
     public void SetQuacksReceievedOnClick(double amount)
     {
-        quacksReceived.text = amount.ToString();
+        quacksReceived.text = NumberUtility.FormatNumber(amount);
     }
 
     public void DestroyUponCompletion()
