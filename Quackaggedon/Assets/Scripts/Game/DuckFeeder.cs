@@ -106,6 +106,7 @@ namespace DuckClicker
 
         public void ThrowBread(bool useCurrency)
         {
+            PerformFeedingHandAnimation();
             if (useCurrency)
             {
                 clicksSinceLastSpawn++;

@@ -8,26 +8,23 @@ public class ArmHandler : MonoBehaviour
     private Vector3 mousePosition;
     public float offset;
     public float maxY;
-    public static ArmHandler Instance;
+    public float minY;
 
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
+    //public static bool isThrowing;
 
     // Update is called once per frame
     void Update()
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector3 newPos = new Vector3(mousePosition.x, Mathf.Min(mousePosition.y + offset, maxY), 0);
-        transform.position = newPos;
+        float yMax = Mathf.Min(mousePosition.y + offset);
+        float yProper = Mathf.Max(minY, yMax);
+        Vector3 newPos = new Vector3(mousePosition.x, Mathf.Min(-0.96f, yProper, maxY), 0);
+
+        // if (isThrowing)
+        transform.position = newPos;//new Vector3(newPos.x, -0.96f, 0);
+       // else
+       //     transform.position = newPos;
     }
 
 }

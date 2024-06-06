@@ -37,7 +37,7 @@ public class AreaSettings : MonoBehaviour
         if (isStartingArea)
         {
             _startSizeReference = CameraSize;
-            _startArmOffsetReference = ArmHandler.Instance.offset;
+            //_startArmOffsetReference = ArmHandler.Instance.offset;
             SelectArea();
         }
     }
@@ -50,13 +50,15 @@ public class AreaSettings : MonoBehaviour
     
     public void SelectArea()
     {
+        /*
         CurrentArea = this;
         Camera.main.orthographicSize = CameraSize;
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         //ArmController.Instance.transform.parent.position = new Vector3(transform.position.x, -CameraSize, 0);
-        ArmHandler.Instance.transform.localScale = Vector3.one * (CameraSize / _startSizeReference);
-        ArmHandler.Instance.offset = _startArmOffsetReference * (CameraSize / _startSizeReference);
+        References.Instance.armHandler.transform.localScale = Vector3.one * (CameraSize / _startSizeReference);
+        References.Instance.armHandler.offset = _startArmOffsetReference * (CameraSize / _startSizeReference);
         if (DuckFeeder.SelectedFeeder != null)
             DuckFeeder.SelectedFeeder.Refresh();
+        */
     }
 }
