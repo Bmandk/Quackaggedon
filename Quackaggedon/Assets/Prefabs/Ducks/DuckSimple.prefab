@@ -85,6 +85,10 @@ PrefabInstance:
       value: Simple Duck
       objectReference: {fileID: 0}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayMiniIcon
+      value: 
+      objectReference: {fileID: -1504142410, guid: 7b8adce976274264d850b857ff5951ba, type: 3}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
       value: It quacks!
       objectReference: {fileID: 0}

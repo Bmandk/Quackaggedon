@@ -9,7 +9,9 @@ public class CookbookEntry : MonoBehaviour
     public FoodType entryFoodType;
 
     public Image foodIcon;
+    public TooltipDisplayFoodtype tooltipDisplayFoodtype;
     public Image cookbookIcon;
+    public TooltipDisplayDuck TooltipDisplayDuck;
 
     public TextMeshProUGUI handThrown;
     public TextMeshProUGUI costFoodHandThrown;
@@ -25,7 +27,14 @@ public class CookbookEntry : MonoBehaviour
         duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(foodType));
         totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(foodType));
 
+        FoodData entryFoodData = References.Instance.GetFoodData(foodType);
+        DuckData entryDuckDataeUnlocked = References.Instance.GetDuckData(DuckUnlockData.GetWhichDuckFoodUnlocks(foodType));
 
+        foodIcon.sprite = entryFoodData.foodIconRevealed;
+        cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniIcon;
+
+        TooltipDisplayDuck.SetToDuck(entryDuckDataeUnlocked.duckType);
+        tooltipDisplayFoodtype.SetToFood(foodType);
 
     }
 }

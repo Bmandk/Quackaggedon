@@ -142,6 +142,28 @@ public static class SaveManager
         {
             saveData.Add($"DuckRevealed{i}", (int)DiscoveredObjects.DuckTypesSeen[i]);
         }
+
+        var handThrow = PlayerFoodStats.FoodThrownByHand.ToArray();
+        for (int i = 0; i < handThrow.Length; i++)
+        {
+            saveData.Add($"HandHasThrownEnum{i}", handThrow[i].Value);
+            saveData.Add($"HandHasThrown{i}", handThrow[i].Value);
+        }
+
+        for (int i = 0; i < PlayerFoodStats.FoodThrownByDuck.Count; i++)
+        {
+
+        }
+
+        for (int i = 0; i < PlayerFoodStats.CostOfFoodThrownByHand.Count; i++)
+        {
+
+        }
+
+        for (int i = 0; i < PlayerFoodStats.TotalFoodThrown.Count; i++)
+        {
+
+        }
     }
 
     private static void LoadMetaSaveData(Dictionary<string, JToken> saveData)

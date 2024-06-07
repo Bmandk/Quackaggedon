@@ -168,7 +168,7 @@ namespace DuckClicker
             }
             else //in this case the particles will be spawned for the chef duck 
             {
-                ThrowFoodParticles(particles);
+                ThrowFoodParticles(particles, throwFromHand);
 
                 GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
                 foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
@@ -177,8 +177,6 @@ namespace DuckClicker
                 PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
             }
             PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
-            
-            ThrowFoodParticles(particles, throwFromHand);
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
@@ -190,7 +188,6 @@ namespace DuckClicker
                 ducksSpawned++;
             }
 
-            UpdateCookbookStats();
             UpdateProgress();
             
             if (ducksSpawned > 0)
@@ -291,11 +288,6 @@ namespace DuckClicker
             }
 
             UpdateProgress();
-        }
-
-        private void UpdateCookbookStats()
-        {
-            References.Instance.cookbookController.RefreshCookbook();
         }
 
         public void Deselect()

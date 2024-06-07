@@ -813,6 +813,10 @@ PrefabInstance:
       value: Magical Duck
       objectReference: {fileID: 0}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayMiniIcon
+      value: 
+      objectReference: {fileID: -1454838760, guid: 7b8adce976274264d850b857ff5951ba, type: 3}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
       value: The magical princess duck uses her magic to boost all other ducks
       objectReference: {fileID: 0}

@@ -12,6 +12,7 @@ public class DuckData : MonoBehaviour
     [TextArea(5, 20)]
     public string duckEffectDescription;
     public Sprite duckDisplayIcon;
+    public Sprite duckDisplayMiniIcon;
     public GameObject duckPrefab;
 
     public static List<Transform> chefDucks;

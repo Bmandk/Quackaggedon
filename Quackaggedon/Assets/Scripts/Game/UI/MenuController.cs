@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     public GameObject expandSellUI;
     public SceneLoader sceneLoader;
     public GameObject duckopediaUI;
+    public GameObject cookbookUI;
 
     public void OpenSellMenu()
     {
@@ -67,5 +68,18 @@ public class MenuController : MonoBehaviour
     public void ToggleWindowedMode()
     {
         Screen.fullScreen = !Screen.fullScreen;
+    }
+
+    public void OpenCookbookUI()
+    {
+        Time.timeScale = 0;
+        References.Instance.cookbookController.RefreshCookbook();
+        cookbookUI.SetActive(true);
+    }
+
+    public void CloseCookBookUi()
+    {
+        Time.timeScale = 1;
+        cookbookUI.SetActive(false);
     }
 }
