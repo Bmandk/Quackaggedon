@@ -193,6 +193,10 @@ PrefabInstance:
       value: Giga Duck
       objectReference: {fileID: 0}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayMiniIcon
+      value: 
+      objectReference: {fileID: 1572110550, guid: 7b8adce976274264d850b857ff5951ba, type: 3}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
       value: Finally, the legendary Giga Duck!
       objectReference: {fileID: 0}
@@ -245,4 +249,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0917d591d84ac3a1de425526089f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTime: 5
