@@ -1247,6 +1247,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5233835748401328133}
     - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+      propertyPath: _foodAmountPrefab
+      value: 
+      objectReference: {fileID: 3387289164939346826, guid: e60a2ae5adfa5134abdfeddc3c273cca, type: 3}
+    - target: {fileID: 8148401171133978323, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
       propertyPath: _cheatThrowAllFood
       value: 0
       objectReference: {fileID: 0}

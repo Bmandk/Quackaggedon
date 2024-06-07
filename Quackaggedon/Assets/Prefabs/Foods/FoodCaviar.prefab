@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1593656846170135679
+--- !u!1001 &847742940816866878
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,20 +10,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -316661588078610622, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: foodType
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -316661588078610622, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: foodIconHidden
       value: 
-      objectReference: {fileID: -1643003823, guid: 0285e4494ced67144871ff3eb11814e8, type: 3}
+      objectReference: {fileID: 1410235179, guid: 560914f2839b97f45b9a9be09433de9e, type: 3}
     - target: {fileID: -316661588078610622, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: foodTooltipInfo
-      value: Onion
+      value: Gourmet Cavias
       objectReference: {fileID: 0}
     - target: {fileID: -316661588078610622, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: foodIconRevealed
       value: 
-      objectReference: {fileID: 175873165, guid: ba35167779df26f48a19e024b13d76ef, type: 3}
+      objectReference: {fileID: 1410235179, guid: 8a3c1a3087ebfd54585e6717703f089b, type: 3}
     - target: {fileID: 541341543565580549, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.76
@@ -67,10 +67,10 @@ PrefabInstance:
     - target: {fileID: 6462159456596468169, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 175873165, guid: ba35167779df26f48a19e024b13d76ef, type: 3}
+      objectReference: {fileID: 1410235179, guid: 8a3c1a3087ebfd54585e6717703f089b, type: 3}
     - target: {fileID: 6633974704694013357, guid: 00506a2fb09e86a4d9bccf83b2af42e3, type: 3}
       propertyPath: m_Name
-      value: FoodOnion
+      value: FoodCaviar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

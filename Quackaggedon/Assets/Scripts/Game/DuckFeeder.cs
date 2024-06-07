@@ -140,24 +140,29 @@ namespace DuckClicker
                     actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost;
                 actualFoodAmountThrown = Math.Min(NextDuckCost - FoodThrown, actualFoodAmountThrown);
             }
-            #endif
-            
+#endif
+
+            var costOfFood = actualFoodAmountThrown * DuckFeederStats.foodCost;
             if (useCurrency)
-                CurrencyController.RemoveCurrency(actualFoodAmountThrown * DuckFeederStats.foodCost);
+                CurrencyController.RemoveCurrency(costOfFood);
 
             int particles;
             GameObject foodAmount = Instantiate(_foodAmountPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
-            foodAmount.GetComponent<ClickDuckUiPopup>().SetQuacksReceievedOnClick(actualFoodAmountThrown);
             
-            if (actualFoodAmountThrown > _maxThrowParticles)
+            if (actualFoodAmountThrown > _maxThrowParticles) 
                 particles = _maxThrowParticles;
             else
                 particles = (int)actualFoodAmountThrown;
 
             if (throwFromHand)
+            {
                 ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
+                foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownOnClick(actualFoodAmountThrown, foodToThrow, costOfFood);
+            }
             else //in this case the particles will be spawned for the chef duck 
+            {
                 ThrowFoodParticles(particles);
+            }
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
