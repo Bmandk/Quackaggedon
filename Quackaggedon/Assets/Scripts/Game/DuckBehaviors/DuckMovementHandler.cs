@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DuckMovementHandler : MonoBehaviour
 {
@@ -13,10 +15,13 @@ public class DuckMovementHandler : MonoBehaviour
     public float minWaitTime = 0.5f;  // Minimum wait time before changing position
     public float maxWaitTime = 2.0f;  // Maximum wait time before changing position
     public float stopTimeAfterClick = 0.5f;  // Time to stop after being clicked
+    public float forcefieldRadius = 1.0f;
+    public float forcefieldMover;
+    public float forcefieldMultiplier;
 
     private bool isWaiting = false;
-    [HideInInspector]
-    public float lastClickTime = 0;
+    public static float lastClickTime = 0;
+    public static Transform lastClickedDuck; 
 
     private void Start()
     {
@@ -26,8 +31,24 @@ public class DuckMovementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isWaiting && Time.timeSinceLevelLoad - lastClickTime > stopTimeAfterClick)
+        if (lastClickedDuck != null &&
+            lastClickedDuck != transform &&
+            Time.timeSinceLevelLoad - lastClickTime < stopTimeAfterClick)
         {
+            float distance = Vector2.Distance(transform.position, lastClickedDuck.position);
+            if (distance < forcefieldRadius)
+            {
+                Vector2 dir = (transform.position - lastClickedDuck.position).normalized;
+                float force = (1 / (distance + forcefieldMover) * forcefieldMultiplier) - forcefieldMover;
+                transform.position += (Vector3)dir * (Time.deltaTime * force);
+            }
+        }
+        
+        if (!isWaiting && lastClickedDuck != transform)
+        {
+            if (Time.timeSinceLevelLoad - lastClickTime > stopTimeAfterClick)
+                lastClickedDuck = null;
+            
             duckAnim.SetBool("Swim", true);
             SmoothRandomMovement();
         } else

@@ -1081,7 +1081,9 @@ MonoBehaviour:
   minWaitTime: 0.5
   maxWaitTime: 2
   stopTimeAfterClick: 1
-  lastClickTime: 0
+  forcefieldRadius: 2
+  forcefieldMover: 0
+  forcefieldMultiplier: 1
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0

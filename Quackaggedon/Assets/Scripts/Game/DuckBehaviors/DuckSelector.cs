@@ -42,7 +42,8 @@ public class DuckSelector : MonoBehaviour
     public void Feed()
     {
         CurrencyController.AddCurrency(_quacksPerClick);
-        _duckMovementHandler.lastClickTime = Time.timeSinceLevelLoad;
+        DuckMovementHandler.lastClickedDuck = transform;
+        DuckMovementHandler.lastClickTime = Time.timeSinceLevelLoad;
         DuckClickFeedbackHandler.Instance.DisplayDuckClick(_quacksPerClick);
         if (_quackCoroutine == null)
         {
