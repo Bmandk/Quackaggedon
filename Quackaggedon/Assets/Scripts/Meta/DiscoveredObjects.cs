@@ -11,7 +11,7 @@ public static class DiscoveredObjects
 
     public static void Reset()
     {
-        DuckTypesSeen = new List<DuckType>() { DuckType.Simple };
+        DuckTypesSeen = new List<DuckType>();
         FoodTypesSeen = new List<FoodType>() { FoodType.SimpleSeeds };
     }
 
