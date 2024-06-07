@@ -11,6 +11,7 @@ namespace DuckClicker
             DuckAmounts.Reset();
             CurrencyController.Reset();
             DiscoveredObjects.Reset();
+            PlayerFoodStats.Reset();
         }
 
         private void Start()

@@ -20,7 +20,7 @@ namespace DuckClicker
         public bool selectedFromStart = false;
 
         public DuckFeederStats DuckFeederStats { get; private set; }
-        public DuckType duckTypeToSpawn;
+        private DuckType _duckTypeToSpawn;
 
         public long FoodThrown { get; private set; }
         private DuckSpawner _duckSpawner;
@@ -46,12 +46,14 @@ namespace DuckClicker
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
         private int _parentIndex;
-        [SerializeField] private GameObject _foodAmountPrefab;
+        [SerializeField] private GameObject _foodAmountHandPrefab;
+        [SerializeField] private GameObject _foodAmountChefPrefab;
         private Canvas _canvas;
         [SerializeField] private Vector3 _foodAmountOffset;
         
         private void Awake()
         {
+            _duckTypeToSpawn = DuckUnlockData.GetWhichDuckFoodUnlocks(foodToThrow);
             _button = GetComponent<Button>();
             _duckSpawner = FindObjectOfType<DuckSpawner>();
 
@@ -63,7 +65,7 @@ namespace DuckClicker
 
         private void Start()
         {
-            DuckFeederStats = References.Instance.duckStats.GetDuckFeederStats(duckTypeToSpawn);
+            DuckFeederStats = References.Instance.duckStats.GetDuckFeederStats(_duckTypeToSpawn);
             NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
             _foodPriceText.text = $"{NumberUtility.FormatNumber(DuckFeederStats.foodCost)}";
             if (selectedFromStart)
@@ -147,7 +149,6 @@ namespace DuckClicker
                 CurrencyController.RemoveCurrency(costOfFood);
 
             int particles;
-            GameObject foodAmount = Instantiate(_foodAmountPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
             
             if (actualFoodAmountThrown > _maxThrowParticles) 
                 particles = _maxThrowParticles;
@@ -156,13 +157,25 @@ namespace DuckClicker
 
             if (throwFromHand)
             {
+                GameObject foodAmount = Instantiate(_foodAmountHandPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
                 ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
                 foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownOnClick(actualFoodAmountThrown, foodToThrow, costOfFood);
+
+                //Handle player food stats across tracking across for whole playthrough
+                PlayerFoodStats.AddTotalCostOfFoodThrownByHand(foodToThrow,costOfFood);
+                PlayerFoodStats.AddHandThrownFood(foodToThrow, actualFoodAmountThrown);
             }
             else //in this case the particles will be spawned for the chef duck 
             {
                 ThrowFoodParticles(particles);
+
+                GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
+                foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
+
+                //Handle player food stats across tracking across for whole playthrough
+                PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
             }
+            PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
@@ -173,7 +186,8 @@ namespace DuckClicker
                 SpawnDuck(AreaSettings.CurrentArea);
                 ducksSpawned++;
             }
-            
+
+            UpdateCookbookStats();
             UpdateProgress();
             
             if (ducksSpawned > 0)
@@ -191,12 +205,12 @@ namespace DuckClicker
 
         private void SpawnDuck(AreaSettings area)
         {
-            DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
+            DuckData duckTypeSpawning = References.Instance.GetDuckData(_duckTypeToSpawn);
             if (duckTypeSpawning.duckType != DuckType.Muscle)
             {
-                DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]++;
+                DuckAmounts.duckCounts[_duckTypeToSpawn][area.AreaIndex]++;
                 _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
-                NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][area.AreaIndex]);
+                NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][area.AreaIndex]);
 
                 PlayFancyRevealIfFirstTimeSpawn();
 
@@ -217,7 +231,7 @@ namespace DuckClicker
 
         private void PlayFancyRevealIfFirstTimeSpawn()
         {
-            DuckData duckTypeSpawning = References.Instance.GetDuckData(duckTypeToSpawn);
+            DuckData duckTypeSpawning = References.Instance.GetDuckData(_duckTypeToSpawn);
             if (DiscoveredObjects.DuckTypesSeen.Contains(duckTypeSpawning.duckType) || duckTypeSpawning.duckType == DuckType.Muscle)
             {
                 return;
@@ -231,9 +245,18 @@ namespace DuckClicker
         IEnumerator RevealAfterDelay(float delay, DuckData duckData)
         {
             yield return new WaitForSeconds(delay);
-            transform.parent.parent.GetChild(_parentIndex + 1).gameObject.SetActive(true);
+            RevealNewUnlockedFoodButton();
             UIHandler.Instance.ShowRevealUI(duckData);
             AudioController.Instance.PlayRevealSounds();
+        }
+
+        private void RevealNewUnlockedFoodButton()
+        {
+            //Make sure to log that new food has now been discovered by player
+            DiscoveredObjects.AddSeenFood(foodToThrow);
+            DiscoveredObjects.AddSeenFood(DuckUnlockData.GetFoodUnlockedAfterThisOne(foodToThrow));
+            
+            transform.parent.parent.GetChild(_parentIndex + 1).gameObject.SetActive(true);
         }
 
         public void Select()
@@ -246,7 +269,7 @@ namespace DuckClicker
             SelectedFeeder = this;
             _button.interactable = false;
             
-            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
         }
 
         public void OnClick()
@@ -256,30 +279,26 @@ namespace DuckClicker
 
         public void Refresh()
         {
-            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
             if (FoodThrown >= NextDuckCost)
             {
                 long newFood = NextDuckCost - 1;
                 FoodThrown = newFood;
-
             }
+
             UpdateProgress();
         }
-        
+
+        private void UpdateCookbookStats()
+        {
+            References.Instance.cookbookController.RefreshCookbook();
+        }
+
         public void Deselect()
         {
             SelectedFeeder = null;
             _button.interactable = true;
         }
-        
-        /*public void BuyFood()
-        {
-            if (CurrencyController.CanAfford(_duckFeederStats.foodCost))
-            {
-                CurrencyController.RemoveCurrency(_duckFeederStats.foodCost);
-                foodAmount++;
-            }
-        }*/
         
         private void UpdateProgress()
         {
@@ -373,18 +392,18 @@ namespace DuckClicker
         {
             var duckData = new Dictionary<string, JToken>
             {
-                {"ducksSpawned", new JArray(DuckAmounts.duckCounts[duckTypeToSpawn])},
+                {"ducksSpawned", new JArray(DuckAmounts.duckCounts[_duckTypeToSpawn])},
                 {"foodThrown", FoodThrown},
                 {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)},
                 {"isRevealed", transform.parent.gameObject.activeSelf}
             };
 
-            saveData[duckTypeToSpawn.ToString()] = JObject.FromObject(duckData);
+            saveData[_duckTypeToSpawn.ToString()] = JObject.FromObject(duckData);
         }
 
         public void Load(Dictionary<string, JToken> saveData)
         {
-            if (saveData.TryGetValue(duckTypeToSpawn.ToString(), out JToken data))
+            if (saveData.TryGetValue(_duckTypeToSpawn.ToString(), out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
                 FoodThrown = (int) duckFeederData["foodThrown"];

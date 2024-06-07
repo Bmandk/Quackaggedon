@@ -27,6 +27,12 @@ public class ClickDuckUiPopup : MonoBehaviour
         quacksSpentText.text = NumberUtility.FormatNumber(quacksSpent);
     }
 
+    public void SetFoodThrownByChef(double amountThrown, FoodType foodThrown)
+    {
+        foodIcon.sprite = References.Instance.GetFoodData(foodThrown).foodIconRevealed;
+        quacksReceived.text = NumberUtility.FormatNumber(amountThrown);
+    }
+
     public void DestroyUponCompletion()
     {
         Destroy(toDestroyWhenFxsDone.gameObject);

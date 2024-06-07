@@ -468,7 +468,6 @@ MonoBehaviour:
   foodToThrow: 0
   breadPerThrow: 1
   selectedFromStart: 1
-  duckTypeToSpawn: 0
   progressSlider: {fileID: 0}
   useForAutoThrow: 1
   _maxThrowParticles: 30
@@ -478,7 +477,9 @@ MonoBehaviour:
   _cheatSpawnDucks: 0
   _cheatThrowAllFood: 0
   _animator: {fileID: 0}
-  _foodAmountPrefab: {fileID: 8755027209695903013, guid: 6c47598bfda99264d95d54abfde40ee8, type: 3}
+  _foodAmountHandPrefab: {fileID: 3387289164939346826, guid: e60a2ae5adfa5134abdfeddc3c273cca, type: 3}
+  _foodAmountChefPrefab: {fileID: 3387289164939346826, guid: 0a14c3926b9d32e4c9362b09542ee6eb, type: 3}
+  _foodAmountOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &5620112780153615829
 MonoBehaviour:
   m_ObjectHideFlags: 0
