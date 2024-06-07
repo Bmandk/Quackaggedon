@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce2c324886d844beca62e2dbe1843ec7
+guid: 3989808492b05094584dccfb9e89bb6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,70 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Pond_Fish_Downwards_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 694
-        width: 180
-        height: 367
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4025e9ecfe0af434e8db1b35bbe004e8
-      internalID: -815419674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pond_Fish_Downwards_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 354
-        width: 180
-        height: 340
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 440f682c2c37244799836b9efca1c03e
-      internalID: 333835316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pond_Fish_Downwards_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1.3333435
-        width: 180
-        height: 353.66666
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fed2212869ba4009b6c93b96157cb80
-      internalID: -2137122323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -169,10 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Pond_Fish_Downwards_0: -815419674
-      Pond_Fish_Downwards_1: 333835316
-      Pond_Fish_Downwards_2: -2137122323
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
