@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
     public GameObject duckopediaUI;
     public GameObject cookbookUI;
 
+    public Animator quackStatsAnimator;
+
     public void OpenSellMenu()
     {
         MouseController.selectingDucks = true;
@@ -81,5 +83,11 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1;
         cookbookUI.SetActive(false);
+    }
+
+    public void PulseQuackStats()
+    {
+        quackStatsAnimator.SetBool("Retrigger2",true);
+        quackStatsAnimator.SetTrigger("Pulse");
     }
 }

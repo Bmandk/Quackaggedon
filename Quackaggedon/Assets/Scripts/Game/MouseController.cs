@@ -42,6 +42,7 @@ namespace DuckClicker
                 DuckSelector duckSelector = hit.collider.GetComponentInParent<DuckSelector>();
                 if (Input.GetMouseButtonDown(0) && duckSelector != null)
                 {
+                    References.Instance.menuController.PulseQuackStats();
                     duckSelector.Feed();
                 }
             }
