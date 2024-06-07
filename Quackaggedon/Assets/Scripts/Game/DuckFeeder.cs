@@ -278,8 +278,10 @@ namespace DuckClicker
         IEnumerator RevealAfterDelay(float delay, DuckData duckData)
         {
             yield return new WaitForSeconds(delay);
-            RevealNewUnlockedFoodButton();
+
+            RevealHandler.Instance.AddActionToAfterReveal(() => RevealNewUnlockedFoodButton());
             RevealHandler.Instance.ShowRevealUI(duckData);
+
             AudioController.Instance.PlayRevealSounds();
         }
 

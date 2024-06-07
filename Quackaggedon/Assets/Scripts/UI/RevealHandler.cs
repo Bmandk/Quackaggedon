@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -43,6 +44,12 @@ public class RevealHandler : MonoBehaviour
     private static DuckType duckBeingRevealed;
 
     private Coroutine revealC;
+
+    private Action ToDoAfter;
+    public void AddActionToAfterReveal(Action ToDoAfter)
+    { 
+        this.ToDoAfter = ToDoAfter;
+    }
     public void ShowRevealUI(DuckData duckToShow)
     {
         duckBeingRevealed = duckToShow.duckType;
@@ -117,8 +124,18 @@ public class RevealHandler : MonoBehaviour
         }
 
         canvasGroup.alpha = to;
+
+        yield return new WaitForSeconds(1);
+
         canvasGroup.gameObject.SetActive(false);
+        if (ToDoAfter != null)
+        {
+            ToDoAfter.Invoke();
+            AudioController.Instance.PlayRevealNewFoodButtonSound();
+        }
+
         References.Instance.sceneDataHolder.EquipAllDucksWithUpgrade(duckBeingRevealed);
+
         revealUi.SetActive(false);
     }
 }

@@ -35,10 +35,15 @@ public class AudioController : MonoBehaviour
     private AudioSource _revealSoundAS, _revealBackgroundAS;
 
     [SerializeField]
-    private AudioSource _equipmentTingAS;
+    private AudioSource _equipmentTingAS, revealNewFoodButtonAS;
 
     [SerializeField]
     private AudioMixerGroup _backgroundMixer, _revealMixer;
+
+    public void PlayRevealNewFoodButtonSound()
+    {
+        revealNewFoodButtonAS.Play();
+    }
 
     public void PlayEquipPingSound()
     {
