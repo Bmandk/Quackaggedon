@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class UIHandler : MonoBehaviour
+public class RevealHandler : MonoBehaviour
 {
-    private static UIHandler _instance;
+    private static RevealHandler _instance;
 
-    public static UIHandler Instance
+    public static RevealHandler Instance
     {
         get { return _instance; }
     }
@@ -36,14 +36,44 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     private CanvasGroup revealCanvasGroup;
 
+
+    [SerializeField]
+    private GameObject cleverBoon, magicBoon, breadBoon, chefBoon;
+
+    private static DuckType duckBeingRevealed;
+
     private Coroutine revealC;
     public void ShowRevealUI(DuckData duckToShow)
     {
+        duckBeingRevealed = duckToShow.duckType;
+
         revealDuckName.text = $"<wave a=0.1>{duckToShow.duckDisplayName}</wave>";
         revealDuckSkillText.text = duckToShow.duckEffectDescription;
         revealDuckIcon.sprite = duckToShow.duckDisplayIcon;
         revealCanvasGroup.alpha = 0;
-       
+
+        cleverBoon.SetActive(false);
+        magicBoon.SetActive(false);
+        breadBoon.SetActive(false);
+        chefBoon.SetActive(false);
+        switch (duckToShow.duckType)
+        {
+            case DuckType.Chef:
+                chefBoon.SetActive(true);
+                break;
+            case DuckType.Bread:
+                breadBoon.SetActive(true);
+                break;
+            case DuckType.Magical:
+                magicBoon.SetActive(true);
+                break;
+            case DuckType.Clever:
+                cleverBoon.SetActive(true);
+                break;
+            default:
+                break;
+        }
+
         revealUi.SetActive(true);
 
         if (revealC != null)
@@ -88,6 +118,7 @@ public class UIHandler : MonoBehaviour
 
         canvasGroup.alpha = to;
         canvasGroup.gameObject.SetActive(false);
+        References.Instance.sceneDataHolder.EquipAllDucksWithUpgrade(duckBeingRevealed);
         revealUi.SetActive(false);
     }
 }

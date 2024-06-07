@@ -14,6 +14,7 @@ public class DuckData : MonoBehaviour
     public Sprite duckDisplayIcon;
     public Sprite duckDisplayMiniIcon;
     public GameObject duckPrefab;
+    public GameObject duckInstance;
 
     public static List<Transform> chefDucks;
 

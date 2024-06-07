@@ -56,6 +56,8 @@ public class References : MonoBehaviour
 
     public MenuController menuController;
 
+    public SceneDataHolder sceneDataHolder;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;

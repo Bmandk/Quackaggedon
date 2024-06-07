@@ -35,7 +35,15 @@ public class AudioController : MonoBehaviour
     private AudioSource _revealSoundAS, _revealBackgroundAS;
 
     [SerializeField]
+    private AudioSource _equipmentTingAS;
+
+    [SerializeField]
     private AudioMixerGroup _backgroundMixer, _revealMixer;
+
+    public void PlayEquipPingSound()
+    {
+        _equipmentTingAS.Play();
+    }
 
     public void PlayThrowSound()
     {

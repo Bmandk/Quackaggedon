@@ -210,7 +210,15 @@ namespace DuckClicker
             if (duckTypeSpawning.duckType != DuckType.Muscle)
             {
                 DuckAmounts.duckCounts[_duckTypeToSpawn][area.AreaIndex]++;
-                _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
+
+                GameObject spawnedDuckData = _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
+                if (duckTypeSpawning.duckType == DuckType.Simple)
+                {
+                    spawnedDuckData.GetComponent<SimpleDuckEquipment>().EnableCorrectVisualOnSpawn();
+                }
+
+                References.Instance.sceneDataHolder.StoreDuckData(spawnedDuckData);
+
                 NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][area.AreaIndex]);
 
                 PlayFancyRevealIfFirstTimeSpawn();
@@ -247,7 +255,7 @@ namespace DuckClicker
         {
             yield return new WaitForSeconds(delay);
             RevealNewUnlockedFoodButton();
-            UIHandler.Instance.ShowRevealUI(duckData);
+            RevealHandler.Instance.ShowRevealUI(duckData);
             AudioController.Instance.PlayRevealSounds();
         }
 
