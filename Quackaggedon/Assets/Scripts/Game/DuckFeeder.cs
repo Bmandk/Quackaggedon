@@ -402,7 +402,7 @@ namespace DuckClicker
             if (saveData.TryGetValue(_duckTypeToSpawn.ToString(), out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
-                FoodThrown = (int) duckFeederData["foodThrown"];
+                FoodThrown = (long) duckFeederData["foodThrown"];
 
                 List<AreaSettings> areaSettings = FindObjectsOfType<AreaSettings>().ToList();
                 
