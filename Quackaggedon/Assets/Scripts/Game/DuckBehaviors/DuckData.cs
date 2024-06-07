@@ -14,6 +14,8 @@ public class DuckData : MonoBehaviour
     public Sprite duckDisplayIcon;
     public GameObject duckPrefab;
 
+    public static List<Transform> chefDucks;
+
     private void OnDestroy()
     {
         DuckAmounts.duckCounts[duckType][AreaSettings.CurrentArea.AreaIndex]--;
@@ -21,6 +23,22 @@ public class DuckData : MonoBehaviour
         foreach (DuckFeeder duckFeeder in FindObjectsOfType<DuckFeeder>())
         {
             duckFeeder.Refresh();
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (duckType == DuckType.Chef)
+        {
+            chefDucks.Add(transform);
+        }
+    }
+    
+    private void OnDisable()
+    {
+        if (duckType == DuckType.Chef)
+        {
+            chefDucks.Remove(transform);
         }
     }
 }

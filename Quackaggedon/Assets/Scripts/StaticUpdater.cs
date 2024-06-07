@@ -11,6 +11,7 @@ namespace DuckClicker
             DuckAmounts.Reset();
             CurrencyController.Reset();
             DiscoveredObjects.Reset();
+            DuckData.chefDucks = new System.Collections.Generic.List<Transform>();
         }
 
         private void Start()
