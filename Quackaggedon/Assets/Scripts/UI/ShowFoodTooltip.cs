@@ -15,9 +15,15 @@ public class ShowFoodTooltip : MonoBehaviour, IPointerExitHandler, IPointerEnter
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
-        string toolText = References.Instance.GetFoodData(duckFeeder.foodToThrow).foodTooltipInfo;
-        ToolTipController.toolTipInfo = toolText;
+        if (DiscoveredObjects.HasAffordedFood(duckFeeder.foodToThrow))
+        {
+            string toolText = References.Instance.GetFoodData(duckFeeder.foodToThrow).foodTooltipInfo;
+            ToolTipController.toolTipInfo = toolText;
+        }
+        else
+        {
+            ToolTipController.toolTipInfo = "???";
+        }
         ToolTipController.showToolTip = true;
     }
 }

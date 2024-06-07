@@ -175,6 +175,12 @@ public static class SaveManager
             saveData.Add($"TotalGoodThrownEnum{i}", (int)totalFoodThrown[i].Key);
             saveData.Add($"TotalFoodThrown{i}", totalFoodThrown[i].Value);
         }
+
+        saveData.Add("FoodTypesAfforded", DiscoveredObjects.FoodTypesAfforded.Count);
+        for (int i = 0; i < DiscoveredObjects.FoodTypesAfforded.Count; i++)
+        {
+            saveData.Add($"FoodTypesAfforded{i}", (int)DiscoveredObjects.FoodTypesAfforded[i]);
+        }
     }
 
     private static void LoadMetaSaveData(Dictionary<string, JToken> saveData)
@@ -239,6 +245,15 @@ public static class SaveManager
                 saveData.TryGetValue($"TotalFoodThrown{i}", out JToken totalFoodThrownAmount);
 
                 PlayerFoodStats.AddToTotalFoodThrown((FoodType)totalFoodThrownEnum.ToObject<int>(), (double)totalFoodThrownAmount);
+            }
+        }
+
+        if (saveData.TryGetValue("FoodTypesAfforded", out JToken foodTypesAffordedCount))
+        {
+            for (int i = 0; i < foodTypesAffordedCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"FoodTypesAfforded{i}", out JToken foodTypesAffordedValue);
+                DiscoveredObjects.AddAffordedFood((FoodType)foodTypesAffordedValue.ToObject<int>());
             }
         }
     }

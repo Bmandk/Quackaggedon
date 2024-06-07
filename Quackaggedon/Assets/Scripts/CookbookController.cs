@@ -22,10 +22,11 @@ public class CookbookController : MonoBehaviour
         }
 
         // Add new updated buttons
-        foreach (var foodTypeDiscovered in DiscoveredObjects.FoodTypesSeen)
+        foreach (var duckTypeDiscovered in DiscoveredObjects.DuckTypesSeen)
         {
+            FoodType food = DuckUnlockData.GetWhichFoodsNeededToUnlockDuck(duckTypeDiscovered);
             var inst = Instantiate(cookbookEntry, cookBookBtnParent);
-            inst.GetComponent<CookbookEntry>().UpdateCookbookEntryValues(foodTypeDiscovered);
+            inst.GetComponent<CookbookEntry>().UpdateCookbookEntryValues(food);
         }
     }
 }

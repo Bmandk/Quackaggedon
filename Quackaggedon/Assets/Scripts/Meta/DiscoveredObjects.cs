@@ -9,10 +9,26 @@ public static class DiscoveredObjects
     public static List<DuckType> DuckTypesSeen { get; private set; }
     public static List<FoodType> FoodTypesSeen { get; private set; }
 
+    public static List<FoodType> FoodTypesAfforded { get; private set; }
+
     public static void Reset()
     {
         DuckTypesSeen = new List<DuckType>();
         FoodTypesSeen = new List<FoodType>() { FoodType.SimpleSeeds };
+        FoodTypesAfforded = new List<FoodType>() { FoodType.SimpleSeeds };
+    }
+
+    public static void AddAffordedFood(FoodType type)
+    {
+        if (FoodTypesAfforded.Contains(type))
+            return;
+        else
+            FoodTypesAfforded.Add(type);
+    }
+
+    public static bool HasAffordedFood(FoodType type) 
+    {
+        return FoodTypesAfforded.Contains(type);
     }
 
     public static void AddSeenDuck(DuckType type)

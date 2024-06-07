@@ -27,6 +27,12 @@ namespace DuckClicker
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
+
+        [SerializeField]
+        private Image _buttonIcon;
+        [SerializeField]
+        private Color colorHiddenIcon;
+
         public Slider progressSlider;
         public long NextDuckCost { get; private set; }
         [SerializeField] private bool useForAutoThrow;
@@ -79,7 +85,25 @@ namespace DuckClicker
 
         private void Update()
         {
-            _button.interactable = CurrencyController.CanAfford(DuckFeederStats.foodCost);
+            var CanAfford = CurrencyController.CanAfford(DuckFeederStats.foodCost);
+            if (DiscoveredObjects.HasAffordedFood(foodToThrow))
+            {
+                _button.interactable = CanAfford;
+            }
+            else
+            {
+                if (CanAfford) 
+                {
+                    DiscoveredObjects.AddAffordedFood(foodToThrow);
+                    _buttonIcon.sprite = References.Instance.GetFoodData(foodToThrow).foodIconRevealed;
+                    _buttonIcon.color = Color.white;
+                } 
+                else
+                {
+                    _buttonIcon.sprite = References.Instance.GetFoodData(foodToThrow).foodIconHidden;
+                    _buttonIcon.color = colorHiddenIcon;
+                }
+            }
             
             if (useForAutoThrow && DuckAmounts.duckCounts[DuckType.Chef][AreaSettings.CurrentArea.AreaIndex] > 0)
                 CheckAutoBuyer();
