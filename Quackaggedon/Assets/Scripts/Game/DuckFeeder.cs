@@ -10,6 +10,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace DuckClicker
 {
@@ -176,6 +177,8 @@ namespace DuckClicker
                 PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
             }
             PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
+            
+            ThrowFoodParticles(particles, throwFromHand);
 
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
@@ -196,10 +199,11 @@ namespace DuckClicker
             }
         }
 
-        public void ThrowFoodParticles(int particles)
+        public void ThrowFoodParticles(int particles, bool isFromHand)
         {
+            Vector3 position = isFromHand ? ArmController.Instance.handPosition.position : DuckData.chefDucks[Random.Range(0, DuckData.chefDucks.Count)].transform.position;
             var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
-            var inst = Instantiate(foodPrefab, ArmController.Instance.handPosition.position, foodPrefab.transform.rotation, References.Instance.particleParent);
+            var inst = Instantiate(foodPrefab, position, foodPrefab.transform.rotation, References.Instance.particleParent);
             inst.GetComponent<ParticleSystem>().Emit(particles);
         }
 
