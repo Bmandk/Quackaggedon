@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.UIElements;
 
 #if UNITY_EDITOR
 [InitializeOnLoad]
@@ -144,25 +145,35 @@ public static class SaveManager
         }
 
         var handThrow = PlayerFoodStats.FoodThrownByHand.ToArray();
+        saveData.Add("HandThrowCount", PlayerFoodStats.FoodThrownByHand.Count);
         for (int i = 0; i < handThrow.Length; i++)
         {
-            saveData.Add($"HandHasThrownEnum{i}", handThrow[i].Value);
+            saveData.Add($"HandHasThrownEnum{i}", (int) handThrow[i].Key);
             saveData.Add($"HandHasThrown{i}", handThrow[i].Value);
         }
 
-        for (int i = 0; i < PlayerFoodStats.FoodThrownByDuck.Count; i++)
+        var duckThrow = PlayerFoodStats.FoodThrownByDuck.ToArray();
+        saveData.Add("DuckThrowCount", PlayerFoodStats.FoodThrownByDuck.Count);
+        for (int i = 0; i < duckThrow.Length; i++)
         {
-
+            saveData.Add($"DuckHasThrownEnum{i}", (int)duckThrow[i].Key);
+            saveData.Add($"DuckHasThrown{i}", duckThrow[i].Value);
         }
 
-        for (int i = 0; i < PlayerFoodStats.CostOfFoodThrownByHand.Count; i++)
+        var costOfFoodThrown = PlayerFoodStats.CostOfFoodThrownByHand.ToArray();
+        saveData.Add("CostOfFoodThrownCount", PlayerFoodStats.CostOfFoodThrownByHand.Count);
+        for (int i = 0; i < costOfFoodThrown.Length; i++)
         {
-
+            saveData.Add($"CostOfFoodThrownEnum{i}", (int)costOfFoodThrown[i].Key);
+            saveData.Add($"CostOfFoodThrown{i}", costOfFoodThrown[i].Value);
         }
 
-        for (int i = 0; i < PlayerFoodStats.TotalFoodThrown.Count; i++)
+        var totalFoodThrown = PlayerFoodStats.TotalFoodThrown.ToArray();
+        saveData.Add("TotalFoodThrownCount", PlayerFoodStats.TotalFoodThrown.Count);
+        for (int i = 0; i < totalFoodThrown.Length; i++)
         {
-
+            saveData.Add($"TotalGoodThrownEnum{i}", (int)totalFoodThrown[i].Key);
+            saveData.Add($"TotalFoodThrown{i}", totalFoodThrown[i].Value);
         }
     }
 
@@ -183,6 +194,51 @@ public static class SaveManager
             {
                 saveData.TryGetValue($"DuckRevealed{i}", out JToken duckValue);
                 DiscoveredObjects.AddSeenDuck((DuckType)duckValue.ToObject<int>());
+            }
+        }
+
+
+        if (saveData.TryGetValue("HandThrowCount", out JToken handThrowCount))
+        {
+            for (int i = 0; i < (int)handThrowCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"HandHasThrownEnum{i}", out JToken handValueEnum);
+                saveData.TryGetValue($"HandHasThrown{i}", out JToken handValue);
+
+                PlayerFoodStats.AddHandThrownFood((FoodType)handValueEnum.ToObject<int>(), (double)handValue);
+            }
+        }
+
+        if (saveData.TryGetValue("DuckThrowCount", out JToken duckThrowCount))
+        {
+            for (int i = 0; i < (int)duckThrowCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"DuckHasThrownEnum{i}", out JToken duckValueEnum);
+                saveData.TryGetValue($"DuckHasThrown{i}", out JToken duckValue);
+
+                PlayerFoodStats.AddDuckThrownFood((FoodType)duckValueEnum.ToObject<int>(), (double)duckValue);
+            }
+        }
+
+        if (saveData.TryGetValue("CostOfFoodThrownCount", out JToken costOfFoodCount))
+        {
+            for (int i = 0; i < (int)costOfFoodCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"CostOfFoodThrownEnum{i}", out JToken costFoodEnum);
+                saveData.TryGetValue($"CostOfFoodThrown{i}", out JToken costFoodValue);
+
+                PlayerFoodStats.AddTotalCostOfFoodThrownByHand((FoodType)costFoodEnum.ToObject<int>(), (double)costFoodValue);
+            }
+        }
+
+        if (saveData.TryGetValue("TotalFoodThrownCount", out JToken totalFoodThrownCount))
+        {
+            for (int i = 0; i < (int)totalFoodThrownCount.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"TotalGoodThrownEnum{i}", out JToken totalFoodThrownEnum);
+                saveData.TryGetValue($"TotalFoodThrown{i}", out JToken totalFoodThrownAmount);
+
+                PlayerFoodStats.AddToTotalFoodThrown((FoodType)totalFoodThrownEnum.ToObject<int>(), (double)totalFoodThrownAmount);
             }
         }
     }
