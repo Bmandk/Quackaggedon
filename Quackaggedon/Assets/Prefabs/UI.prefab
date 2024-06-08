@@ -700,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COOKBOOK
+  m_text: STATS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 103e7f62b3991a44d95d37a356fd5365, type: 2}
   m_sharedMaterial: {fileID: 4305332805412004263, guid: 103e7f62b3991a44d95d37a356fd5365, type: 2}
@@ -15271,7 +15271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145593932431303252}
   m_Layer: 5
-  m_Name: Cookbook
+  m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19658,7 +19658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       propertyPath: m_Name
-      value: OpenCookbook
+      value: OpenStats
       objectReference: {fileID: 0}
     - target: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       propertyPath: m_IsActive
@@ -19716,7 +19716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e03ca3f595104428d2064c911d4296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toolTipText: Cookbook
+  _toolTipText: Stats
 --- !u!224 &4640214699961901084 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165983630017019179, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
@@ -20590,7 +20590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       propertyPath: m_Name
-      value: OpenDuckopedia (1)
+      value: OpenDuckopedia
       objectReference: {fileID: 0}
     - target: {fileID: 5181252774748586275, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
