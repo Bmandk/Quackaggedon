@@ -18,11 +18,13 @@ public class MenuController : MonoBehaviour
 
     public void OpenHutUI()
     {
+        Time.timeScale = 0;
         hutUI.SetActive(true);
     }
 
     public void CloseHutUI()
     {
+        Time.timeScale = 1;
         hutUI.SetActive(false);
     }
 
