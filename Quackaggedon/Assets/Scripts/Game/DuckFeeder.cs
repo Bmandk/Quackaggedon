@@ -242,6 +242,7 @@ namespace DuckClicker
 
             GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
             foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
+            foodAmount.transform.position = References.Instance.mainCam.WorldToScreenPoint(randomChefPos + new Vector3(0, 0.2f, 0));
 
             //Handle player food stats across tracking across for whole playthrough
             PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
