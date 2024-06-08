@@ -58,11 +58,11 @@ public static class SaveManager
         System.IO.File.WriteAllText(GetSavePath(), json);
     }
 
-    public static void Load()
+    public static bool Load()
     {
         if (!System.IO.File.Exists(GetSavePath()))
         {
-            return;
+            return false;
         }
 
         string json = System.IO.File.ReadAllText(GetSavePath());
@@ -84,6 +84,7 @@ public static class SaveManager
         {
             dataPersistanceObject.Load(saveData);
         }
+        return true;
     }
 
     public static string GetSavePath()

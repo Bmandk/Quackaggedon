@@ -35,10 +35,34 @@ public class AudioController : MonoBehaviour
     private AudioSource _revealSoundAS, _revealBackgroundAS;
 
     [SerializeField]
+    private AudioSource broom, cleanShimmer, TrashSwoosh, TrashSlosh, bloopSound, backgroundMusicAS;
+
+    [SerializeField]
     private AudioSource _equipmentTingAS, revealNewFoodButtonAS;
 
     [SerializeField]
     private AudioMixerGroup _backgroundMixer, _revealMixer;
+
+
+    public void DisableBackgroundMusic()
+    {
+        backgroundMusicAS.gameObject.SetActive(false);
+    }
+
+    public void EnableBackgroundMusic() 
+    {
+        backgroundMusicAS.gameObject.SetActive(true);
+    }
+
+    public void PlayCleanShimmer()
+    {
+        cleanShimmer.Play();
+    }
+    public void PlayBroom() { broom.Play(); }
+    public void PlayTrashSwoosh() { TrashSwoosh.Play(); }
+    public void PlayTrashSlosh() { TrashSlosh.Play(); }
+
+    public void PlayBloopSound() { bloopSound.Play(); }
 
     public void PlayRevealNewFoodButtonSound()
     {

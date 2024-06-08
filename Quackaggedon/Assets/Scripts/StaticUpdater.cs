@@ -18,7 +18,15 @@ namespace DuckClicker
         private void Start()
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("DuckClickerScene"));
-            SaveManager.Load();
+            bool loadedSave = SaveManager.Load();
+            if (loadedSave) 
+            {
+                CleanPoolHandler.Instance.DisableDirt();
+            }
+            else
+            {
+                CleanPoolHandler.Instance.EnableDirt();
+            }
         }
 
         private void Update()

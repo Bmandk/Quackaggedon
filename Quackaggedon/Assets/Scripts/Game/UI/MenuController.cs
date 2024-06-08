@@ -13,6 +13,25 @@ public class MenuController : MonoBehaviour
 
     public Animator quackStatsAnimator;
 
+    public GameObject[] uiToBeDisabledUponDirt;
+
+    public void DisableUiForDirtInteraction()
+    {
+        foreach (var ui in uiToBeDisabledUponDirt) 
+        {
+            ui.SetActive(false);
+        }
+    }
+
+    public void EnabbleUiForDirtInteraction()
+    {
+        AudioController.Instance.PlayBloopSound();
+        foreach (var ui in uiToBeDisabledUponDirt)
+        {
+            ui.SetActive(true);
+        }
+    }
+
     public void OpenSellMenu()
     {
         MouseController.selectingDucks = true;
