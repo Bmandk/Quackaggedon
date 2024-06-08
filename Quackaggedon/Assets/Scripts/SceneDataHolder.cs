@@ -16,6 +16,17 @@ public class SceneDataHolder : MonoBehaviour
             allDucksInScene.Add(duckData.GetComponent<DuckData>().duckType, new List<GameObject>() { duckData });
     }
 
+    public void MakeAllChefsSendIngredientToCookingChef(Vector3 mainChef, FoodType foodToSend)
+    {
+        if (allDucksInScene.ContainsKey(DuckType.Chef))
+        {
+            foreach (var chef in allDucksInScene[DuckType.Chef])
+            {
+                chef.GetComponent<FlyFoodToCookingChef>().StartMovingIngredient(mainChef, foodToSend);
+            }
+        }
+    }
+
     public void EquipAllDucksWithUpgrade(DuckType duckType)
     {
         switch (duckType)

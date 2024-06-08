@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
@@ -187,24 +188,24 @@ namespace DuckClicker
                 foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownOnClick(actualFoodAmountThrown, foodToThrow, costOfFood);
 
                 //Handle player food stats across tracking across for whole playthrough
-                PlayerFoodStats.AddTotalCostOfFoodThrownByHand(foodToThrow,costOfFood);
+                PlayerFoodStats.AddTotalCostOfFoodThrownByHand(foodToThrow, costOfFood);
                 PlayerFoodStats.AddHandThrownFood(foodToThrow, actualFoodAmountThrown);
+                UpdateStatsAndSpawnDuck(actualFoodAmountThrown);
             }
             else //in this case the particles will be spawned for the chef duck 
             {
-                ThrowFoodParticles(particles, throwFromHand);
+                ChefServeFood(particles, actualFoodAmountThrown, throwFromHand);
 
-                GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
-                foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
 
-                //Handle player food stats across tracking across for whole playthrough
-                PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
             }
-            PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
+        }
 
+        private void UpdateStatsAndSpawnDuck(long actualFoodAmountThrown)
+        {
+            PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
             FoodThrown += actualFoodAmountThrown;
             int ducksSpawned = 0;
-            
+
             while (FoodThrown >= NextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {
                 FoodThrown -= NextDuckCost;
@@ -213,20 +214,42 @@ namespace DuckClicker
             }
 
             UpdateProgress();
-            
+
             if (ducksSpawned > 0)
             {
                 SaveManager.Save();
             }
         }
 
-        public void ThrowFoodParticles(int particles, bool isFromHand)
+        public void ChefServeFood(int particles, long actualFoodAmountThrown, bool isFromHand)
         {
-            Vector3 position = isFromHand ? ArmController.Instance.handPosition.position : DuckData.chefDucks[Random.Range(0, DuckData.chefDucks.Count)].transform.position;
-            var foodPrefab = References.Instance.GetFoodData(foodToThrow).foodPrefab;
-            var inst = Instantiate(foodPrefab, position, foodPrefab.transform.rotation, References.Instance.particleParent);
-            inst.GetComponent<ParticleSystem>().Emit(particles);
+            var randomChefPos = DuckData.chefDucks[Random.Range(0, DuckData.chefDucks.Count)].transform.position + new Vector3(0,1.2f,0);
+
+            ChefPotHandler.Amount potLevel = particles < (_maxThrowParticles * 0.4f) ? ChefPotHandler.Amount.LittleFood : particles < (_maxThrowParticles * 0.75f) ? ChefPotHandler.Amount.MediumFood : ChefPotHandler.Amount.MuchFood;
+
+            References.Instance.sceneDataHolder.MakeAllChefsSendIngredientToCookingChef(randomChefPos,foodToThrow);
+
+            StartCoroutine(WaitSomeThenPot(potLevel,randomChefPos,actualFoodAmountThrown)); 
+
+
         }
+
+        IEnumerator WaitSomeThenPot(ChefPotHandler.Amount potLevel, Vector3 randomChefPos, long actualFoodAmountThrown)
+        {
+            yield return new WaitForSeconds(0.4f);
+
+            References.Instance.chefPotHandler.ShowChefPot(foodToThrow, potLevel, randomChefPos);
+
+            GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
+            foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
+
+            //Handle player food stats across tracking across for whole playthrough
+            PlayerFoodStats.AddDuckThrownFood(foodToThrow, actualFoodAmountThrown);
+            UpdateStatsAndSpawnDuck(actualFoodAmountThrown);
+
+
+        }
+
 
         private void SpawnDuck(AreaSettings area)
         {

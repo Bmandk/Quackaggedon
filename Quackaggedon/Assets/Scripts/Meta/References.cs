@@ -58,6 +58,8 @@ public class References : MonoBehaviour
 
     public SceneDataHolder sceneDataHolder;
 
+    public ChefPotHandler chefPotHandler;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;

@@ -83,4 +83,11 @@ public class Common : MonoBehaviour
 
         return new Vector2(moveToX, moveToY);
     }
+
+    public Vector3 GetCanvasPosFromWorldPos(Vector3 worldPos)
+    {
+        //Vector2 screenPosition = RectTransformUtility.WorldToScreenPoint(References.Instance.mainCam, worldPos);
+        //return localCanvasPosition;
+        return Vector3.zero;
+    }
 }

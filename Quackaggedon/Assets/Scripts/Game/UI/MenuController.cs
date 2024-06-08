@@ -10,14 +10,25 @@ public class MenuController : MonoBehaviour
     public SceneLoader sceneLoader;
     public GameObject duckopediaUI;
     public GameObject cookbookUI;
+    public GameObject hutUI;
 
     public Animator quackStatsAnimator;
 
     public GameObject[] uiToBeDisabledUponDirt;
 
+    public void OpenHutUI()
+    {
+        hutUI.SetActive(true);
+    }
+
+    public void CloseHutUI()
+    {
+        hutUI.SetActive(false);
+    }
+
     public void DisableUiForDirtInteraction()
     {
-        foreach (var ui in uiToBeDisabledUponDirt) 
+        foreach (var ui in uiToBeDisabledUponDirt)
         {
             ui.SetActive(false);
         }
@@ -85,7 +96,7 @@ public class MenuController : MonoBehaviour
     {
         duckopediaUI.SetActive(false);
     }
-    
+
     public void ToggleWindowedMode()
     {
         Screen.fullScreen = !Screen.fullScreen;
@@ -106,7 +117,7 @@ public class MenuController : MonoBehaviour
 
     public void PulseQuackStats()
     {
-        quackStatsAnimator.SetBool("Retrigger2",true);
+        quackStatsAnimator.SetBool("Retrigger2", true);
         quackStatsAnimator.SetTrigger("Pulse");
     }
 }

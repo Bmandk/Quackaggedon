@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc8b5ae5716fa1c49a447908ee0236a5
+guid: 4af3dd93ee8922a44a4a109eb876f9b9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,49 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: FlyingWings_0
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 95
-        width: 145
-        height: 336
-      alignment: 9
-      pivot: {x: 0.4512224, y: 0.150571}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eee7ba40756a2346b98a9cc2e1c0af6
-      internalID: -1810452410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FlyingWings_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 53
-        width: 304
-        height: 486
-      alignment: 9
-      pivot: {x: 0.5209393, y: 0.120165475}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0994bd6314688714281cf8903a54f7e9
-      internalID: -1875173520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,9 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      FlyingWings_0: -1810452410
-      FlyingWings_1: -1875173520
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
