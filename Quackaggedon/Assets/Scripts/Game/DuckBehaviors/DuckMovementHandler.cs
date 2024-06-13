@@ -21,11 +21,17 @@ public class DuckMovementHandler : MonoBehaviour
 
     private bool isWaiting = false;
     public static float lastClickTime = 0;
-    public static Transform lastClickedDuck; 
+    public static Transform lastClickedDuck;
 
     private void Start()
     {
         randomPosition = Common.Instance.GetRandomPositionWithinPond(transform.position);
+        //InvokeRepeating(nameof(Quack), 1, 1);
+    }
+
+    private void Quack()
+    {
+        duckAnim.SetTrigger("Quack");
     }
 
     // Update is called once per frame
