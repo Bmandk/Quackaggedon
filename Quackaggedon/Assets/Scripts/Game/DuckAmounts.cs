@@ -3,6 +3,7 @@ using System.Collections.Generic;
 public static class DuckAmounts
 {
     public static Dictionary<DuckType, long[]> duckCounts;
+    public static Dictionary<DuckType, int> hutAmounts;
 
     public static void Reset()
     {
@@ -16,6 +17,17 @@ public static class DuckAmounts
             { DuckType.Chef, new long[areas] },
             { DuckType.Magical, new long[areas] },
             { DuckType.Muscle, new long[areas] }
+        };
+        
+        hutAmounts = new Dictionary<DuckType, int>
+        {
+            { DuckType.Simple, 0 },
+            { DuckType.Clever, 0 },
+            { DuckType.Bread, 0 },
+            { DuckType.LunchLady, 0 },
+            { DuckType.Chef, 0 },
+            { DuckType.Magical, 0 },
+            { DuckType.Muscle, 0 }
         };
     }
     
@@ -53,5 +65,22 @@ public static class DuckAmounts
         }
 
         return total;
+    }
+    
+    public static long GetTotalDucksInPond()
+    {
+        long total = 0;
+
+        foreach (var duckTypeList in DuckData.duckObjects)
+        {
+            total += duckTypeList.Value.Count;
+        }
+        
+        return total;
+    }
+    
+    public static long GetTotalDucksInPond(DuckType duckType)
+    {
+        return DuckData.duckObjects[duckType].Count;
     }
 }

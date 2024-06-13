@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +12,16 @@ namespace DuckClicker
             CurrencyController.Reset();
             DiscoveredObjects.Reset();
             PlayerFoodStats.Reset();
-            DuckData.chefDucks = new System.Collections.Generic.List<Transform>();
+            DuckData.duckObjects = new Dictionary<DuckType, List<DuckData>>
+            {
+                { DuckType.Simple, new List<DuckData>() },
+                { DuckType.Clever, new List<DuckData>() },
+                { DuckType.Bread, new List<DuckData>() },
+                { DuckType.LunchLady, new List<DuckData>() },
+                { DuckType.Chef, new List<DuckData>() },
+                { DuckType.Magical, new List<DuckData>() },
+                { DuckType.Muscle, new List<DuckData>() }
+            };
         }
 
         private void Start()

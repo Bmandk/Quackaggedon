@@ -374,7 +374,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chefPotUi: {fileID: 0}
-  allFoodIcons: []
+  allFoodIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   littleFood: {fileID: 0}
   mediumFood: {fileID: 0}
   muchFood: {fileID: 0}
@@ -548,6 +566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 1
+  maxDucksInPond: 40
+  minDucksPerType: 1
 --- !u!1 &604933875587241709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1187,7 @@ MonoBehaviour:
   sceneLoader: {fileID: 603980461062514749}
   duckopediaUI: {fileID: 0}
   cookbookUI: {fileID: 0}
+  hutUI: {fileID: 0}
   quackStatsAnimator: {fileID: 0}
   uiToBeDisabledUponDirt:
   - {fileID: 0}
@@ -3021,7 +3042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5520a18f2f5f88841b41f3543e6fa4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgesUI: {fileID: 0}
 --- !u!1 &6081087098602144754
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3111,7 @@ MonoBehaviour:
   cookbookController: {fileID: 477469970004648198}
   menuController: {fileID: 3588286516714791421}
   sceneDataHolder: {fileID: 5989395130041465690}
+  chefPotHandler: {fileID: 8555911163768649592}
 --- !u!1 &6265874323670082511
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,34 +13,31 @@ public class DuckData : MonoBehaviour
     public string duckEffectDescription;
     public Sprite duckDisplayIcon;
     public Sprite duckDisplayMiniIcon;
+    
+    /*    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠠⠄⠒⠐⠈⠉⠉⠉⠉⠁⠂⠐⠢⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⡠⠐⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡉⠒⢄⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⢀⠔⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⠿⣿⣶⡀⠈⠢⡀⠀⠀⠀⠀
+        ⠀⠀⠀⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⠟⠉⠀⠀⠈⠿⠇⠀⠀⠘⢄⠀⠀⠀
+        ⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀
+        ⠀⠰⠁⠀⠀⠀⠀⣠⣾⣿⠿⣿⣶⣤⣤⣴⡶⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀
+        ⠀⡇⠀⠀⠀⠀⠀⠿⠋⠀⢀⣠⣍⡉⠉⠉⠀⠀⠀⠀⠀⠀⣴⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀
+        ⢠⠁⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠘⡆
+        ⢸⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠐⡇
+        ⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃
+        ⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡿⠀
+        ⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣞⠃⠀
+        ⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⢀⣞⠏⠀⠀
+        ⠀⠀⠀⠘⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠉⠋⠉⠉⠉⠙⠉⠁⠀⠀⠀⠀⠀⠀⠀⡤⡫⠁⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠑⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢴⡫⠊⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠈⠒⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⣴⠮⠓⠁⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠒⠒⠶⠲⠶⠶⠶⠮⠙⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀*/
     public GameObject duckPrefab;
     public GameObject duckInstance;
 
-    public static List<Transform> chefDucks;
+    public static Dictionary<DuckType, List<DuckData>> duckObjects;
 
-    private void OnDestroy()
+    private void Awake()
     {
-        DuckAmounts.duckCounts[duckType][AreaSettings.CurrentArea.AreaIndex]--;
-        
-        foreach (DuckFeeder duckFeeder in FindObjectsOfType<DuckFeeder>())
-        {
-            duckFeeder.Refresh();
-        }
-    }
-
-    private void OnEnable()
-    {
-        if (duckType == DuckType.Chef)
-        {
-            chefDucks.Add(transform);
-        }
-    }
-    
-    private void OnDisable()
-    {
-        if (duckType == DuckType.Chef)
-        {
-            chefDucks.Remove(transform);
-        }
+        duckObjects[duckType].Add(this);
     }
 }

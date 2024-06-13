@@ -18,13 +18,11 @@ public class MenuController : MonoBehaviour
 
     public void OpenHutUI()
     {
-        Time.timeScale = 0;
         hutUI.SetActive(true);
     }
 
     public void CloseHutUI()
     {
-        Time.timeScale = 1;
         hutUI.SetActive(false);
     }
 
@@ -48,14 +46,12 @@ public class MenuController : MonoBehaviour
     public void OpenSellMenu()
     {
         MouseController.selectingDucks = true;
-        Time.timeScale = 0;
         expandSellUI.SetActive(true);
     }
 
     public void CloseSellMenu()
     {
         MouseController.selectingDucks = false;
-        Time.timeScale = 1;
         expandSellUI.SetActive(false);
     }
 
@@ -106,14 +102,12 @@ public class MenuController : MonoBehaviour
 
     public void OpenCookbookUI()
     {
-        Time.timeScale = 0;
         References.Instance.cookbookController.RefreshCookbook();
         cookbookUI.SetActive(true);
     }
 
     public void CloseCookBookUi()
     {
-        Time.timeScale = 1;
         cookbookUI.SetActive(false);
     }
 

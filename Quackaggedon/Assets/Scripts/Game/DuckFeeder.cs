@@ -218,7 +218,7 @@ namespace DuckClicker
 
         public void ChefServeFood(int particles, long actualFoodAmountThrown, bool isFromHand)
         {
-            var randomChefPos = DuckData.chefDucks[Random.Range(0, DuckData.chefDucks.Count)].transform.position + new Vector3(0,1.2f,0);
+            var randomChefPos = DuckData.duckObjects[DuckType.Chef][Random.Range(0, DuckData.duckObjects[DuckType.Chef].Count)].transform.position + new Vector3(0,1.2f,0);
 
             ChefPotHandler.Amount potLevel = particles < (_maxThrowParticles * 0.4f) ? ChefPotHandler.Amount.LittleFood : particles < (_maxThrowParticles * 0.75f) ? ChefPotHandler.Amount.MediumFood : ChefPotHandler.Amount.MuchFood;
 
