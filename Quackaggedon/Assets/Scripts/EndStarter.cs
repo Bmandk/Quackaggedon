@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EndStarter : MonoBehaviour
 {
+    public static bool hasPlayerFinishedGame;
     private static EndStarter _instance;
     public CameraShake camShake;
 

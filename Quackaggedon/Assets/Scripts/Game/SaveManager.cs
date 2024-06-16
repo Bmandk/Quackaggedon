@@ -43,6 +43,7 @@ public static class SaveManager
         Dictionary<string, JToken> saveData = new Dictionary<string, JToken>();
 
         saveData.Add("Currency", CurrencyController.CurrencyAmount);
+        saveData.Add("PlayerFinishedGame", EndStarter.hasPlayerFinishedGame);
         SaveMetaSaveData(saveData);
 
         IEnumerable<ISaveable> dataPersistanceObjects = GetRunDataPersistanceObjects();
@@ -74,6 +75,10 @@ public static class SaveManager
         if (saveData.TryGetValue("Currency", out JToken currency))
         {
             CurrencyController.SetCurrency(currency.ToObject<double>());
+        }
+        if (saveData.TryGetValue("PlayerFinishedGame", out JToken playerFinishedGame))
+        {
+            EndStarter.hasPlayerFinishedGame = playerFinishedGame.ToObject<bool>();
         }
 
         LoadMetaSaveData(saveData);
@@ -258,7 +263,55 @@ public static class SaveManager
             }
         }
     }
+
+    /*
+    public static void SaveThatPlayerFinishedGame()
+    {
+        Dictionary<string, JToken> finishedGameData = new Dictionary<string, JToken>
+        {
+            { "PlayerFinishedGame", true }
+        };
+
+
+        string loadedJson = System.IO.File.ReadAllText(GetSavePath());
+
+        JObject jObject = JObject.Parse(loadedJson);
+        Dictionary<string, JToken> alreadySavedData = jObject.ToObject<Dictionary<string, JToken>>();
+
+        if (!alreadySavedData.ContainsKey("PlayerFinishedGame"))
+            alreadySavedData.Add("PlayerFinishedGame", true);
+
+        Debug.Log("Saving data portion: " + "PlayerFinishedGame - " + true);
+
+        string json = JsonConvert.SerializeObject(alreadySavedData, Formatting.None);
+        var howManyBytes = json.Length * sizeof(char);
+        Debug.Log($"Saving portion data ({howManyBytes}: {json}");
+        System.IO.File.WriteAllText(GetSavePath(), json);
+    }
+    */
+
+    public static bool DidPlayerFinishGame()
+    {
+        if (!System.IO.File.Exists(GetSavePath()))
+        {
+            return false;
+        }
+
+        string json = System.IO.File.ReadAllText(GetSavePath());
+
+        Debug.Log("Loading data: " + json);
+        JObject jObject = JObject.Parse(json);
+        Dictionary<string, JToken> saveData = jObject.ToObject<Dictionary<string, JToken>>();
+
+        if (saveData.TryGetValue("PlayerFinishedGame", out JToken finishedGame))
+        {
+            return finishedGame.ToObject<bool>();
+        }
+
+        return false;
+    }
 }
+
 
 public interface ISaveable
 {

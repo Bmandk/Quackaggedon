@@ -14,6 +14,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject creditsMenu;
 
+    public GameObject gigiaDuckInCredits;
+
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Volume"))
@@ -75,6 +77,11 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenCredits()
     {
+        if (SaveManager.DidPlayerFinishGame())
+            gigiaDuckInCredits.SetActive(true);
+        else 
+            gigiaDuckInCredits.SetActive(false);
+
         creditsMenu.SetActive(true);
     }
 

@@ -277,6 +277,7 @@ namespace DuckClicker
                 autoClicksSinceLastSpawn = 0;
             } else
             {
+                EndStarter.hasPlayerFinishedGame = true;
                 EndStarter.Instance.StartEnd();
             }
         }
