@@ -102,10 +102,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 191
+        width: 191.5
         height: 191
-      alignment: 9
-      pivot: {x: 0.49087396, y: 0.9711388}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -113,6 +113,27 @@ TextureImporter:
       bones: []
       spriteID: 9e18d65453594a14cb68e30e80992450
       internalID: 894377636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuacksEmoji_1
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 191.5
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5642f25bf4fc21943bc4225c0d932a1e
+      internalID: 81198641
       vertices: []
       indices: 
       edges: []
@@ -129,6 +150,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       QuacksEmoji_0: 894377636
+      QuacksEmoji_1: 81198641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

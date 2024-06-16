@@ -389,6 +389,9 @@ namespace DuckClicker
         {
             _timeScale = 0;
 
+
+            progressSlider.value = 0;
+            
             if (_progressLerp != null)
             {
                 StopCoroutine(_progressLerp);
@@ -396,6 +399,7 @@ namespace DuckClicker
             }
             if (!_lerpingProgress)
                 _progressLerp = StartCoroutine(LerpProgressToFinish());
+            
         }
 
         public void SetProgress(float progress)
@@ -403,6 +407,9 @@ namespace DuckClicker
             _targetProgress = progress;
             _timeScale = 0;
 
+            progressSlider.value = _targetProgress;
+
+            
             if (_progressLerp != null)
             {
                 StopCoroutine(_progressLerp);
@@ -412,6 +419,7 @@ namespace DuckClicker
             {
                 _progressLerp = StartCoroutine(LerpProgress());
             }
+            
         }
 
         private IEnumerator LerpProgress()
