@@ -24,16 +24,6 @@ public class Common : MonoBehaviour
     public float maxDistToSwim;
     public float maxDistanceToFood;
 
-    public GameObject left;
-    public GameObject right;
-    public GameObject upper;
-    public GameObject bottom;
-
-    //public Camera mainCam;
-
-    //public Material defaultMat;
-    //public Material highlightMat;
-
     public Collider2D pondEdges;
 
     public float duckRelaxSpeed;
@@ -73,15 +63,6 @@ public class Common : MonoBehaviour
         } while (!pondEdges.OverlapPoint(new Vector2(x, y)) || attempt <= 100);
 
         return new Vector3(x, y, 0);
-    }
-
-
-    public Vector2 GetRandomPosInScene()
-    {
-        float moveToX = UnityEngine.Random.Range(left.transform.position.x + 1, right.transform.position.x - 1);
-        float moveToY = UnityEngine.Random.Range(bottom.transform.position.y + 1, upper.transform.position.y - 1);
-
-        return new Vector2(moveToX, moveToY);
     }
 
     public Vector3 GetCanvasPosFromWorldPos(Vector3 worldPos)
