@@ -56,7 +56,7 @@ public class RevealHandler : MonoBehaviour
 
         revealDuckName.text = $"<wave a=0.1>{duckToShow.duckDisplayName}</wave>";
         revealDuckSkillText.text = duckToShow.duckEffectDescription;
-        revealDuckIcon.sprite = duckToShow.duckDisplayIcon;
+        revealDuckIcon.sprite = duckToShow.duckDisplayIconRevealed;
         revealCanvasGroup.alpha = 0;
 
         cleverBoon.SetActive(false);

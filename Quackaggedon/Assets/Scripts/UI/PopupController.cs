@@ -15,7 +15,7 @@ public class PopupController : MonoBehaviour
 
     public void DisplayDuck(DuckData duckData)
     {
-        _displayDuckIcon.sprite = duckData.duckDisplayIcon;
+        _displayDuckIcon.sprite = duckData.duckDisplayIconRevealed;
         _displayDuckText.text = duckData.duckDisplayName;
         
         _displayDuckUi.SetActive(true);

@@ -22,7 +22,6 @@ public class OnHoverClickPlayAnim : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("aaaah");
         GetComponent<Animator>().SetTrigger("Click");
     }
 }

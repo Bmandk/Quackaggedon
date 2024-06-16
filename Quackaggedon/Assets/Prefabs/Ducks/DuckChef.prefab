@@ -607,6 +607,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1767304802, guid: 7b8adce976274264d850b857ff5951ba, type: 3}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayIconHidden
+      value: 
+      objectReference: {fileID: 1731627473, guid: 546b69ead45a39e459f731bd9b208f58, type: 3}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
       value: Tired of giving food to simple ducks? The chef produces seeds for you
       objectReference: {fileID: 0}
@@ -620,6 +624,10 @@ PrefabInstance:
         Throws {1} seeds every
         {0} seconds.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDisplayIconRevealed
+      value: 
+      objectReference: {fileID: 1731627473, guid: 88797474a3ef7b040b9747997e374178, type: 3}
     - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.a
       value: 1

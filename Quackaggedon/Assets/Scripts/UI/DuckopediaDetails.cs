@@ -19,7 +19,7 @@ public class DuckopediaDetails : MonoBehaviour
 
         var duckData = References.Instance.GetDuckData(duckType);
 
-        duckIcon.sprite = duckData.duckDisplayIcon;
+        duckIcon.sprite = duckData.duckDisplayIconRevealed;
         nameText.text = duckData.duckDisplayName;
 
         // Duck descriptions have arguments supplied by this list

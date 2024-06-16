@@ -92,9 +92,14 @@ public class References : MonoBehaviour
     private Dictionary<DuckType, DuckData> allDuckData = new Dictionary<DuckType, DuckData>();
     private Dictionary<FoodType, FoodData> allFoodData = new Dictionary<FoodType, FoodData>();
 
-    public Dictionary<DuckType, DuckData> GetAllDuckData()
+    public List<DuckData> GetAllDuckDataInOrder()
     {
-        return allDuckData;
+        var list = new List<DuckData>();  
+        foreach (var duck in duckPrefabs)
+        {
+            list.Add(duck.GetComponent<DuckData>());
+        }
+        return list;
     }
 
     public DuckData GetDuckData(DuckType duckType)

@@ -18,7 +18,12 @@ public class DuckEntryInstanceHandler : MonoBehaviour
     private string hiddenName = "Undiscovered duck";
     private string hiddenSkill = "Unknown skill";
 
+    public Color hiddenDuckColor;
+    public Color revealedDuckColor = Color.white;
+
     public DuckType duckTypeOfCard;
+
+    public Button button;
 
     public void SetEntryToDuck(DuckType duckType)
     {
@@ -26,7 +31,8 @@ public class DuckEntryInstanceHandler : MonoBehaviour
 
         var duckData = References.Instance.GetDuckData(duckType);
 
-        duckIcon.sprite = duckData.duckDisplayIcon;
+        duckIcon.sprite = duckData.duckDisplayIconRevealed;
+        duckIcon.color = revealedDuckColor;
         nameText.text = duckData.duckDisplayName;
         skillText.text = duckData.duckEffectDescription;
 
@@ -37,11 +43,17 @@ public class DuckEntryInstanceHandler : MonoBehaviour
         detailsButton.interactable = true;
     }
 
-    public void SetEntryToUndiscoveredDuck()
+    public void SetEntryToUndiscoveredDuck(DuckType duckType)
     {
-        duckIcon.sprite = hiddenDuck;
+        var duckData = References.Instance.GetDuckData(duckType);
+
+        duckIcon.sprite = duckData.duckDisplayIconHidden;
+        duckIcon.color = hiddenDuckColor;
+
         nameText.text = hiddenName;
-        skillText.text = hiddenSkill;
+        skillText.text = hiddenSkill;        
+
+        button.interactable = false;
     }
 
     public void SetDuckEnumTypeTo(DuckType duckType)

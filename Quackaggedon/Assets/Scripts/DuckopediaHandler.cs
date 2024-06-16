@@ -39,15 +39,16 @@ public class DuckopediaHandler : MonoBehaviour
             duckEntries.Add(discoveredDuck, entry);
         }
 
-        var ducks = References.Instance.GetAllDuckData();
+        var ducks = References.Instance.GetAllDuckDataInOrder();
 
-        foreach (var duck in ducks)
+        foreach (DuckData duck in ducks)
         {
-            if (!duckEntries.ContainsKey(duck.Key))
+            if (!duckEntries.ContainsKey(duck.duckType))
             {
                 var inst = Instantiate(duckEntryPrefab, duckEntryParent);
                 DuckEntryInstanceHandler entry = inst.GetComponent<DuckEntryInstanceHandler>();
-                duckEntries.Add(duck.Key, entry);
+                entry.SetEntryToUndiscoveredDuck(duck.duckType);
+                duckEntries.Add(duck.duckType, entry);
             }
         }
     }
