@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleWindowed : MonoBehaviour
 {
+    public static bool isWindow;
     private void Start()
     {
         this.GetComponent<Toggle>().isOn = !Screen.fullScreen;
@@ -12,5 +13,7 @@ public class ToggleWindowed : MonoBehaviour
     public void ToggleWindowedMode()
     {
         Screen.fullScreen = !this.GetComponent<Toggle>().isOn;
+        isWindow = Screen.fullScreen;
+        //Screen.SetResolution(ResolutionHandler.GetSavedWidthHeightOfScreen())
     }
 }

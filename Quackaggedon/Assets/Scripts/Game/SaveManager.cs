@@ -43,7 +43,13 @@ public static class SaveManager
         Dictionary<string, JToken> saveData = new Dictionary<string, JToken>();
 
         saveData.Add("Currency", CurrencyController.CurrencyAmount);
+
+        saveData.Add("Windowed", ToggleWindowed.isWindow);
+        saveData.Add("screenHeight", ResolutionHandler.screenHeight);
+        saveData.Add("screenWidth", ResolutionHandler.screenWidth);
+
         saveData.Add("PlayerFinishedGame", EndStarter.hasPlayerFinishedGame);
+
         SaveMetaSaveData(saveData);
 
         IEnumerable<ISaveable> dataPersistanceObjects = GetRunDataPersistanceObjects();
@@ -76,9 +82,25 @@ public static class SaveManager
         {
             CurrencyController.SetCurrency(currency.ToObject<double>());
         }
+
         if (saveData.TryGetValue("PlayerFinishedGame", out JToken playerFinishedGame))
         {
             EndStarter.hasPlayerFinishedGame = playerFinishedGame.ToObject<bool>();
+        }
+
+        if (saveData.TryGetValue("Windowed", out JToken windowed))
+        {
+            ToggleWindowed.isWindow = windowed.ToObject<bool>();
+        }
+
+        if (saveData.TryGetValue("screenHeight", out JToken screenHeight))
+        {
+            ResolutionHandler.screenHeight = screenHeight.ToObject<int>();
+        }
+
+        if (saveData.TryGetValue("screenWidth", out JToken screenWidth))
+        {
+            ResolutionHandler.screenWidth = screenWidth.ToObject<int>();
         }
 
         LoadMetaSaveData(saveData);
@@ -154,7 +176,7 @@ public static class SaveManager
         saveData.Add("HandThrowCount", PlayerFoodStats.FoodThrownByHand.Count);
         for (int i = 0; i < handThrow.Length; i++)
         {
-            saveData.Add($"HandHasThrownEnum{i}", (int) handThrow[i].Key);
+            saveData.Add($"HandHasThrownEnum{i}", (int)handThrow[i].Key);
             saveData.Add($"HandHasThrown{i}", handThrow[i].Value);
         }
 
@@ -264,31 +286,55 @@ public static class SaveManager
         }
     }
 
-    /*
-    public static void SaveThatPlayerFinishedGame()
+
+    public static void SaveScreenSettings()
     {
-        Dictionary<string, JToken> finishedGameData = new Dictionary<string, JToken>
-        {
-            { "PlayerFinishedGame", true }
-        };
-
-
         string loadedJson = System.IO.File.ReadAllText(GetSavePath());
 
         JObject jObject = JObject.Parse(loadedJson);
         Dictionary<string, JToken> alreadySavedData = jObject.ToObject<Dictionary<string, JToken>>();
 
-        if (!alreadySavedData.ContainsKey("PlayerFinishedGame"))
-            alreadySavedData.Add("PlayerFinishedGame", true);
-
-        Debug.Log("Saving data portion: " + "PlayerFinishedGame - " + true);
+        AddDataPoint("Windowed", ToggleWindowed.isWindow, alreadySavedData);
+        AddDataPoint("screenHeight", ResolutionHandler.screenHeight, alreadySavedData);
+        AddDataPoint("screenWidth", ResolutionHandler.screenWidth, alreadySavedData);
 
         string json = JsonConvert.SerializeObject(alreadySavedData, Formatting.None);
         var howManyBytes = json.Length * sizeof(char);
-        Debug.Log($"Saving portion data ({howManyBytes}: {json}");
         System.IO.File.WriteAllText(GetSavePath(), json);
+        Debug.Log("Saving screen settings" + json);
     }
-    */
+
+    public static (int, int) GetScreenWidthHeight()
+    {
+        if (!System.IO.File.Exists(GetSavePath()))
+        {
+            return (-1, -1);
+        }
+
+        string json = System.IO.File.ReadAllText(GetSavePath());
+
+        JObject jObject = JObject.Parse(json);
+        Dictionary<string, JToken> saveData = jObject.ToObject<Dictionary<string, JToken>>();
+
+        if (saveData.TryGetValue("screenHeight", out JToken height) && (saveData.TryGetValue("screenWidth", out JToken width)))
+        {
+
+            return (width.ToObject<int>(), height.ToObject<int>());
+        }
+        return (-1, -1);
+    }
+
+    private static void AddDataPoint(string key, JToken value, Dictionary<string, JToken> alreadySavedData)
+    {
+        if (alreadySavedData.ContainsKey(key))
+        {
+            alreadySavedData[key] = value;
+        }
+        else
+        {
+            alreadySavedData.Add(key, value);
+        }
+    }
 
     public static bool DidPlayerFinishGame()
     {
