@@ -20,7 +20,6 @@ public class HutDuckIconSetter : MonoBehaviour
         else 
         {
             duckImage.color = hiddenColor;
-            Debug.Log(References.Instance.GetDuckData(duckType).duckDisplayMiniHidden);
             duckImage.sprite = References.Instance.GetDuckData(duckType).duckDisplayMiniHidden;
         }
     }

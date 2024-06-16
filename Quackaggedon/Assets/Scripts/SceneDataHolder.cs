@@ -1,3 +1,4 @@
+using DuckClicker;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +8,8 @@ using UnityEngine;
 public class SceneDataHolder : MonoBehaviour
 {
     private Dictionary<DuckType, List<GameObject>> allDucksInScene = new Dictionary<DuckType, List<GameObject>>();
+    public GameObject duckTickUi;
+    public Transform duckTickUiParent;
 
     public void StoreDuckData(GameObject duckData)
     {
@@ -23,6 +26,22 @@ public class SceneDataHolder : MonoBehaviour
             foreach (var chef in allDucksInScene[DuckType.Chef])
             {
                 chef.GetComponent<FlyFoodToCookingChef>().StartMovingIngredient(mainChef, foodToSend);
+            }
+        }
+    }
+
+    public void MakeAllDucksEmitTick()
+    {
+        if (allDucksInScene.ContainsKey(DuckType.Simple))
+        {
+            foreach (var simpleDuck in allDucksInScene[DuckType.Simple])
+            {
+                if (simpleDuck != null)
+                {
+                    var inst = Instantiate(duckTickUi, duckTickUiParent);
+                    inst.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, simpleDuck.transform.TransformPoint(Vector3.zero));
+                    inst.GetComponent<ClickDuckUiPopup>().SetQuacksReceievedOnClick(CurrencyController.QuacksPerSecond);
+                }
             }
         }
     }
