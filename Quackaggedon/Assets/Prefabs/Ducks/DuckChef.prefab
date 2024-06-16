@@ -608,7 +608,17 @@ PrefabInstance:
       objectReference: {fileID: -1767304802, guid: 7b8adce976274264d850b857ff5951ba, type: 3}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckEffectDescription
-      value: Tired of giving food to simple ducks? The chef produces bread for you
+      value: Tired of giving food to simple ducks? The chef produces seeds for you
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDetailsDescription
+      value: 'The chef duck will automatically throw simple seeds continuously, which
+        will attract more simple ducks. The amount is affected by clever ducks, and
+        more chef ducks will throw seeds faster.
+
+
+        Throws {1} seeds every
+        {0} seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.a

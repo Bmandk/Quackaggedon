@@ -59,6 +59,8 @@ public class References : MonoBehaviour
     public SceneDataHolder sceneDataHolder;
 
     public ChefPotHandler chefPotHandler;
+    
+    public DuckopediaDetails duckopediaDetails;
 
     private void Update()
     {
