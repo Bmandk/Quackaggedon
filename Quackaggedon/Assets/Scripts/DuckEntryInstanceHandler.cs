@@ -10,9 +10,8 @@ public class DuckEntryInstanceHandler : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Image duckIcon;
     public TextMeshProUGUI skillText;
-    public TextMeshProUGUI breadBonus;
-    public TextMeshProUGUI quackBonus;
     public TextMeshProUGUI duckAmount;
+    public Button detailsButton;
 
     [SerializeField]
     private Sprite hiddenDuck;
@@ -32,8 +31,10 @@ public class DuckEntryInstanceHandler : MonoBehaviour
         skillText.text = duckData.duckEffectDescription;
 
         duckAmount.text = ColorLong(DuckAmounts.duckCounts[duckType][1]).ToString();
-        breadBonus.text = ColorLong(CurrencyController.GetFoodBonus(duckType)).ToString();
-        quackBonus.text = ColorDouble(CurrencyController.GetQuackBonus(duckType)).ToString();   
+        /*breadBonus.text = ColorLong(CurrencyController.GetFoodBonus(duckType)).ToString();
+        quackBonus.text = ColorDouble(CurrencyController.GetQuackBonus(duckType)).ToString();*/   
+        
+        detailsButton.interactable = true;
     }
 
     public void SetEntryToUndiscoveredDuck()
@@ -70,5 +71,10 @@ public class DuckEntryInstanceHandler : MonoBehaviour
         {
             return $"<color=green>{number}</color>";
         }
+    }
+
+    public void OpenDetails()
+    {
+        References.Instance.duckopediaDetails.SetEntryToDuck(duckTypeOfCard);
     }
 }

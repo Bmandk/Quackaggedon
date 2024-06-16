@@ -820,6 +820,22 @@ PrefabInstance:
       propertyPath: duckEffectDescription
       value: The magical princess duck uses her magic to boost all other ducks
       objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDetailsDescription
+      value: 'The magical princess duck gives boosts to all the other effects.
+
+
+        Simple
+        and bread ducks are boosted so each simple duck produces {0} quacks per second
+
+        Clever
+        ducks throw {1} food per click
+
+        Chef ducks throws {1} food every
+        {2} seconds
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Color.a
       value: 1

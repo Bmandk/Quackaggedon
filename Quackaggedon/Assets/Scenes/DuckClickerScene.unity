@@ -2984,6 +2984,10 @@ PrefabInstance:
       propertyPath: armHandler
       value: 
       objectReference: {fileID: 1956213473609436673}
+    - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: duckopediaDetails
+      value: 
+      objectReference: {fileID: 5784505566381791161}
     - target: {fileID: 7346384535348893236, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: uiParent
       value: 
@@ -4051,6 +4055,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0627b4e06f564574084369c30fe0b28d, type: 3}
+--- !u!114 &5784505566381791161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6048612870516403887, guid: 137507953ca4584448658a001b513638, type: 3}
+  m_PrefabInstance: {fileID: 2418060469239988481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631ae9b36290804418d30da4cea3b0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5887221754798726890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8174164427405885875, guid: 137507953ca4584448658a001b513638, type: 3}

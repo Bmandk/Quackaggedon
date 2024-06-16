@@ -5773,6 +5773,15 @@ PrefabInstance:
       propertyPath: duckEffectDescription
       value: It quacks!
       objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: duckDetailsDescription
+      value: 'The simple duck gives you a base of 1 quacks every second.
+
+
+        Each
+        simple duck currently produces {0} quacks per second, for a total of {1}
+        quacks per second.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7728361238407215716, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -11,6 +11,8 @@ public class DuckData : MonoBehaviour
     public string duckDisplayName;
     [TextArea(5, 20)]
     public string duckEffectDescription;
+    [TextArea(5, 20)]
+    public string duckDetailsDescription;
     public Sprite duckDisplayIcon;
     public Sprite duckDisplayMiniIcon;
     

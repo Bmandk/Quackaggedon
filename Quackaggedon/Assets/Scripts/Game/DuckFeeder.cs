@@ -54,6 +54,12 @@ namespace DuckClicker
         private Canvas _canvas;
         [SerializeField] private Vector3 _foodAmountOffset;
         
+        // Used for duckopedia details
+        public static float ChefDuckTimer;
+        public static float MagicalChefDuckBonus;
+        public static float CleverDuckAmount;
+        public static float MagicalCleverDuckBonus;
+        
         private void Awake()
         {
             _duckTypeToSpawn = DuckUnlockData.GetWhichDuckFoodUnlocks(foodToThrow);
@@ -124,6 +130,9 @@ namespace DuckClicker
                 long magicalDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
                 ChefDuckStats chefDuckStats = References.Instance.duckStats.chefDuckStats;
                 _autoBuyTimer = (float)(Math.Pow(chefDuckStats.timeGrowthRate, chefDucks + chefDuckStats.amountOffset + magicalDucks * References.Instance.duckStats.magicalDuckStats.chefMultiplier) + chefDuckStats.minTime);
+                ChefDuckTimer = _autoBuyTimer;
+                magicalDucks = 0;
+                MagicalChefDuckBonus = (float)(Math.Pow(chefDuckStats.timeGrowthRate, chefDucks + chefDuckStats.amountOffset + magicalDucks * References.Instance.duckStats.magicalDuckStats.chefMultiplier) + chefDuckStats.minTime) - _autoBuyTimer;
             }
             else
             {
@@ -152,6 +161,7 @@ namespace DuckClicker
                     References.Instance.duckStats.cleverDuckStats.foodAmountGrowthRate,
                     cleverDucks + magicDucks * References.Instance.duckStats.magicalDuckStats.cleverMultiplier)
                 * References.Instance.duckStats.cleverDuckStats.foodAmountMultiplier) + 1;
+            CleverDuckAmount = attemptedFoodCountThisThrow;
             long actualFoodAmountThrown = attemptedFoodCountThisThrow;
             if (useCurrency)
                 actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
