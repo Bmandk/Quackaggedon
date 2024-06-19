@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,17 +20,15 @@ public class StatsEntry : MonoBehaviour
     public TextMeshProUGUI totalFoodThrown;
     public TextMeshProUGUI totalTimesDuckClicked;
 
-    public void UpdateCookbookEntryValues(FoodType foodType)
+    private void Update()
     {
-        entryFoodType = foodType;
+        handThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownByHand(entryFoodType));
+        costFoodHandThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotaCostOfFoodThrownByHand(entryFoodType));
+        duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(entryFoodType));
+        totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(entryFoodType));
 
-        handThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownByHand(foodType));
-        costFoodHandThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotaCostOfFoodThrownByHand(foodType));
-        duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(foodType));
-        totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(foodType));
-
-        FoodData entryFoodData = References.Instance.GetFoodData(foodType);
-        DuckData entryDuckDataeUnlocked = References.Instance.GetDuckData(DuckUnlockData.GetWhichDuckFoodUnlocks(foodType));
+        FoodData entryFoodData = References.Instance.GetFoodData(entryFoodType);
+        DuckData entryDuckDataeUnlocked = References.Instance.GetDuckData(DuckUnlockData.GetWhichDuckFoodUnlocks(entryFoodType));
 
         totalTimesDuckClicked.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(entryDuckDataeUnlocked.duckType));
 
@@ -37,7 +36,11 @@ public class StatsEntry : MonoBehaviour
         cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniIcon;
 
         TooltipDisplayDuck.SetToDuck(entryDuckDataeUnlocked.duckType);
-        tooltipDisplayFoodtype.SetToFood(foodType);
+        tooltipDisplayFoodtype.SetToFood(entryFoodType);
+    }
 
+    public void UpdateCookbookEntryValues(FoodType foodType)
+    {
+        entryFoodType = foodType;
     }
 }
