@@ -9,6 +9,7 @@ public class MainMenuOnDuckHoverQuack : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        animator.SetTrigger("Quack");
+        if (!MainMenuController.Instance.creditsMenu.activeSelf)
+            animator.SetTrigger("Quack");
     }
 }

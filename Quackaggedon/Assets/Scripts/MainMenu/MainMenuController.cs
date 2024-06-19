@@ -7,6 +7,30 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    private static MainMenuController _instance;
+
+    public static MainMenuController Instance
+    {
+        get { return _instance; }
+    }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        }
+    }
+
     public Animator animator;
     public SceneLoader sceneHandler;
     public AudioMixerGroup mixerGroup;
@@ -15,14 +39,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject creditsMenu;
 
     public GameObject gigiaDuckInCredits;
-
-    private void Awake()
-    {
-        if (PlayerPrefs.HasKey("Volume"))
-        {
-            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
-        }
-    }
 
     public void OpenWarningMenu()
     {
