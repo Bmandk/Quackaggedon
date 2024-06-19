@@ -88,6 +88,12 @@ public class MenuController : MonoBehaviour
         SaveManager.Save();
         sceneLoader.LoadNewScene(SceneLoader.Scene.MainMenu, SceneLoader.Scene.GameScene);
     }
+    
+    public void QuitToDesktop()
+    {
+        SaveManager.Save();
+        Application.Quit();
+    }
 
     public void OpenDuckopedia()
     {
