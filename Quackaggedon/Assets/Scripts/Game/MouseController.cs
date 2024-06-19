@@ -30,7 +30,8 @@ namespace DuckClicker
             }
             else
             {
-                FeedDucksOnClick(hit);
+                if (!References.Instance.menuController.IsBlockingUiOpen())
+                    FeedDucksOnClick(hit);
             }
         }
 

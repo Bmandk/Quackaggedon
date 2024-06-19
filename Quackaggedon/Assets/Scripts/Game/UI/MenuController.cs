@@ -16,6 +16,11 @@ public class MenuController : MonoBehaviour
 
     public GameObject[] uiToBeDisabledUponDirt;
 
+    public bool IsBlockingUiOpen()
+    {
+        return (menuUI.activeSelf || duckopediaUI.activeSelf || cookbookUI.activeSelf || hutUI.activeSelf);
+    }
+
     public void OpenHutUI()
     {
         hutUI.SetActive(true);
