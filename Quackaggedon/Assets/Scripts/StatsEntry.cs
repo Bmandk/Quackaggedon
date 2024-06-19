@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CookbookEntry : MonoBehaviour
+public class StatsEntry : MonoBehaviour
 {
     public FoodType entryFoodType;
 
@@ -17,6 +17,7 @@ public class CookbookEntry : MonoBehaviour
     public TextMeshProUGUI costFoodHandThrown;
     public TextMeshProUGUI duckThrown;
     public TextMeshProUGUI totalFoodThrown;
+    public TextMeshProUGUI totalTimesDuckClicked;
 
     public void UpdateCookbookEntryValues(FoodType foodType)
     {
@@ -29,6 +30,8 @@ public class CookbookEntry : MonoBehaviour
 
         FoodData entryFoodData = References.Instance.GetFoodData(foodType);
         DuckData entryDuckDataeUnlocked = References.Instance.GetDuckData(DuckUnlockData.GetWhichDuckFoodUnlocks(foodType));
+
+        totalTimesDuckClicked.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(entryDuckDataeUnlocked.duckType));
 
         foodIcon.sprite = entryFoodData.foodIconRevealed;
         cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniIcon;

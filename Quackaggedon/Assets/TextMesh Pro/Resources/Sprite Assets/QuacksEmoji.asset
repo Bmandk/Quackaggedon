@@ -106,6 +106,18 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: Quack_Raindbow
     m_HashCode: 1130804248
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 11
+    m_Scale: 1
+    m_Name: QuacksEmoji_0
+    m_HashCode: 419602741
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 12
+    m_Scale: 1
+    m_Name: QuacksEmoji_1
+    m_HashCode: 419602740
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -283,6 +295,38 @@ MonoBehaviour:
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: 1019430855, guid: f04b4821429e2d441bcae7fca90d91af, type: 3}
+  - m_Index: 11
+    m_Metrics:
+      m_Width: 200
+      m_Height: 200
+      m_HorizontalBearingX: -100
+      m_HorizontalBearingY: 100
+      m_HorizontalAdvance: 200
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 200
+      m_Height: 200
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 894377636, guid: f04b4821429e2d441bcae7fca90d91af, type: 3}
+  - m_Index: 12
+    m_Metrics:
+      m_Width: 200
+      m_Height: 200
+      m_HorizontalBearingX: -100
+      m_HorizontalBearingY: 100
+      m_HorizontalAdvance: 200
+    m_GlyphRect:
+      m_X: 200
+      m_Y: 0
+      m_Width: 200
+      m_Height: 200
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 81198641, guid: f04b4821429e2d441bcae7fca90d91af, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
 --- !u!21 &4217964210090243104

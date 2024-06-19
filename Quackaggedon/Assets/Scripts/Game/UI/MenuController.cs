@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour
 
     public bool IsBlockingUiOpen()
     {
-        return (menuUI.activeSelf || duckopediaUI.activeSelf || cookbookUI.activeSelf || hutUI.activeSelf);
+        return (menuUI.activeSelf || duckopediaUI.activeSelf || cookbookUI.activeSelf || hutUI.activeSelf || RevealHandler.revealIsActive);
     }
 
     public void OpenHutUI()

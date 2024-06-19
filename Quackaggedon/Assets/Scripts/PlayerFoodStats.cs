@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public static class PlayerFoodStats
@@ -9,12 +10,35 @@ public static class PlayerFoodStats
     public static Dictionary<FoodType, double> CostOfFoodThrownByHand { get; private set; }
     public static Dictionary<FoodType, double> TotalFoodThrown { get; private set; }
 
+    public static Dictionary<DuckType, double> TotalTimesDuckClicked { get; private set; }
+
     public static void Reset()
     {
         FoodThrownByHand = new Dictionary<FoodType, double>();
         FoodThrownByDuck = new Dictionary<FoodType, double>();
         CostOfFoodThrownByHand = new Dictionary<FoodType, double>();
         TotalFoodThrown = new Dictionary<FoodType, double>();
+        TotalTimesDuckClicked = new Dictionary<DuckType, double>();
+    }
+
+    public static void AddTimesDuckClicked(DuckType duckType, double amount)
+    {
+        if (TotalTimesDuckClicked.ContainsKey(duckType))
+        {
+            TotalTimesDuckClicked[duckType] += amount;
+        }
+        else
+        {
+            TotalTimesDuckClicked.Add(duckType, amount);
+        }
+    }
+
+    public static double GetTimesDuckClicked(DuckType duckType)
+    {
+        if (TotalTimesDuckClicked.ContainsKey(duckType))
+            return (TotalTimesDuckClicked[duckType]);
+        else 
+            return 0;
     }
 
     public static void AddToTotalFoodThrown(FoodType foodType, double amountThrown)

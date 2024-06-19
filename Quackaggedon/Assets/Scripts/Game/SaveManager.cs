@@ -185,6 +185,14 @@ public static class SaveManager
             saveData.Add($"TotalFoodThrown{i}", totalFoodThrown[i].Value);
         }
 
+        var totalTimesDuckClicked = PlayerFoodStats.TotalTimesDuckClicked.ToArray();
+        saveData.Add("TotalTimesDuckClickedCount", PlayerFoodStats.TotalTimesDuckClicked.Count);
+        for (int i = 0; i < totalTimesDuckClicked.Length; i++)
+        {
+            saveData.Add($"TotalTimesDuckClickedEnum{i}", (int)totalTimesDuckClicked[i].Key);
+            saveData.Add($"TotalTimesDuckClicked{i}", totalTimesDuckClicked[i].Value);
+        }
+
         saveData.Add("FoodTypesAfforded", DiscoveredObjects.FoodTypesAfforded.Count);
         for (int i = 0; i < DiscoveredObjects.FoodTypesAfforded.Count; i++)
         {
@@ -254,6 +262,17 @@ public static class SaveManager
                 saveData.TryGetValue($"TotalFoodThrown{i}", out JToken totalFoodThrownAmount);
 
                 PlayerFoodStats.AddToTotalFoodThrown((FoodType)totalFoodThrownEnum.ToObject<int>(), (double)totalFoodThrownAmount);
+            }
+        }
+
+        if (saveData.TryGetValue("TotalTimesDuckClickedCount", out JToken totalTimesDuckClicked))
+        {
+            for (int i = 0; i < (int)totalTimesDuckClicked.ToObject<int>(); i++)
+            {
+                saveData.TryGetValue($"TotalTimesDuckClickedEnum{i}", out JToken totalTimesDuckClickedEnum);
+                saveData.TryGetValue($"TotalTimesDuckClicked{i}", out JToken totalTimesDuckClickedAmount);
+
+                PlayerFoodStats.AddTimesDuckClicked((DuckType)totalTimesDuckClickedEnum.ToObject<int>(), (double)totalTimesDuckClickedAmount);
             }
         }
 

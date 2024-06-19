@@ -44,6 +44,7 @@ namespace DuckClicker
                 if (Input.GetMouseButtonDown(0) && duckSelector != null)
                 {
                     References.Instance.menuController.PulseQuackStats();
+                    PlayerFoodStats.AddTimesDuckClicked(duckSelector.transform.gameObject.GetComponent<DuckData>().duckType,1);
                     duckSelector.Feed();
                 }
             }

@@ -52,7 +52,7 @@ public class References : MonoBehaviour
 
     public Transform particleParent;
 
-    public CookbookController cookbookController;
+    public StatsController cookbookController;
 
     public MenuController menuController;
 

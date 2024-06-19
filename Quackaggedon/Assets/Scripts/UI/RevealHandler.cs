@@ -41,17 +41,23 @@ public class RevealHandler : MonoBehaviour
     [SerializeField]
     private GameObject cleverBoon, magicBoon, breadBoon, chefBoon;
 
+    public static bool revealIsActive = false;
+
     private static DuckType duckBeingRevealed;
 
     private Coroutine revealC;
 
     private Action ToDoAfter;
+
+    private bool pressedCloseReveal = false;
+
     public void AddActionToAfterReveal(Action ToDoAfter)
     { 
         this.ToDoAfter = ToDoAfter;
     }
     public void ShowRevealUI(DuckData duckToShow)
     {
+        revealIsActive = true;
         duckBeingRevealed = duckToShow.duckType;
 
         revealDuckName.text = $"<wave a=0.1>{duckToShow.duckDisplayName}</wave>";
@@ -90,11 +96,15 @@ public class RevealHandler : MonoBehaviour
 
     public void CloseRevealUI()
     {
-        if (revealC != null)
-            StopCoroutine(revealC);
+        if (!pressedCloseReveal)
+        {
+            pressedCloseReveal = true;
+            if (revealC != null)
+                StopCoroutine(revealC);
 
-        revealC = StartCoroutine(FadeOutCanvasGroup(1, 0, 0.5f, revealCanvasGroup));
-        AudioController.Instance.PlayRegularGameSound();
+            revealC = StartCoroutine(FadeOutCanvasGroup(1, 0, 0.5f, revealCanvasGroup));
+            AudioController.Instance.PlayRegularGameSound();
+        }
     }
 
     private IEnumerator FadeInCanvasGroup(float from, float to, float duration, CanvasGroup canvasGroup)
@@ -136,6 +146,8 @@ public class RevealHandler : MonoBehaviour
 
         References.Instance.sceneDataHolder.EquipAllDucksWithUpgrade(duckBeingRevealed);
 
+        revealIsActive = false;
+        pressedCloseReveal = false;
         revealUi.SetActive(false);
     }
 }

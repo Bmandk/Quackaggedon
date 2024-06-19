@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 6248982637363619145}
   - component: {fileID: 477469970004648198}
   m_Layer: 0
-  m_Name: CookbookController
+  m_Name: StatsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4946,6 +4946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669b464e437c527469ca961f59340761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duckTickUi: {fileID: 0}
+  duckTickUiParent: {fileID: 0}
 --- !u!1001 &7479343992832076929
 PrefabInstance:
   m_ObjectHideFlags: 0

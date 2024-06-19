@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookbookController : MonoBehaviour
+public class StatsController : MonoBehaviour
 {
     [SerializeField]
     private GameObject cookbookUI;
@@ -26,7 +26,7 @@ public class CookbookController : MonoBehaviour
         {
             FoodType food = DuckUnlockData.GetWhichFoodsNeededToUnlockDuck(duckTypeDiscovered);
             var inst = Instantiate(cookbookEntry, cookBookBtnParent);
-            inst.GetComponent<CookbookEntry>().UpdateCookbookEntryValues(food);
+            inst.GetComponent<StatsEntry>().UpdateCookbookEntryValues(food);
         }
     }
 }
