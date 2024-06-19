@@ -162,6 +162,9 @@ namespace DuckClicker
                     cleverDucks + magicDucks * References.Instance.duckStats.magicalDuckStats.cleverMultiplier)
                 * References.Instance.duckStats.cleverDuckStats.foodAmountMultiplier) + 1;
             CleverDuckAmount = attemptedFoodCountThisThrow;
+            
+            // Don't overspend food
+            attemptedFoodCountThisThrow = Math.Min(attemptedFoodCountThisThrow, NextDuckCost - FoodThrown); 
             long actualFoodAmountThrown = attemptedFoodCountThisThrow;
             if (useCurrency)
                 actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
