@@ -44,10 +44,6 @@ public static class SaveManager
 
         saveData.Add("Currency", CurrencyController.CurrencyAmount);
 
-        saveData.Add("Windowed", ToggleWindowed.isWindow);
-        saveData.Add("screenHeight", ResolutionHandler.screenHeight);
-        saveData.Add("screenWidth", ResolutionHandler.screenWidth);
-
         saveData.Add("PlayerFinishedGame", EndStarter.hasPlayerFinishedGame);
 
         SaveMetaSaveData(saveData);
@@ -86,21 +82,6 @@ public static class SaveManager
         if (saveData.TryGetValue("PlayerFinishedGame", out JToken playerFinishedGame))
         {
             EndStarter.hasPlayerFinishedGame = playerFinishedGame.ToObject<bool>();
-        }
-
-        if (saveData.TryGetValue("Windowed", out JToken windowed))
-        {
-            ToggleWindowed.isWindow = windowed.ToObject<bool>();
-        }
-
-        if (saveData.TryGetValue("screenHeight", out JToken screenHeight))
-        {
-            ResolutionHandler.screenHeight = screenHeight.ToObject<int>();
-        }
-
-        if (saveData.TryGetValue("screenWidth", out JToken screenWidth))
-        {
-            ResolutionHandler.screenWidth = screenWidth.ToObject<int>();
         }
 
         LoadMetaSaveData(saveData);
@@ -289,39 +270,24 @@ public static class SaveManager
 
     public static void SaveScreenSettings()
     {
-        string loadedJson = System.IO.File.ReadAllText(GetSavePath());
+        PlayerPrefs.SetInt("Windowed", (ToggleWindowed.isWindow ? 1 : 0));
+        PlayerPrefs.SetInt("ScreenHeight", ResolutionHandler.screenHeight);
+        PlayerPrefs.SetInt("ScreenWidth", ResolutionHandler.screenWidth);
 
-        JObject jObject = JObject.Parse(loadedJson);
-        Dictionary<string, JToken> alreadySavedData = jObject.ToObject<Dictionary<string, JToken>>();
 
-        AddDataPoint("Windowed", ToggleWindowed.isWindow, alreadySavedData);
-        AddDataPoint("screenHeight", ResolutionHandler.screenHeight, alreadySavedData);
-        AddDataPoint("screenWidth", ResolutionHandler.screenWidth, alreadySavedData);
-
-        string json = JsonConvert.SerializeObject(alreadySavedData, Formatting.None);
-        var howManyBytes = json.Length * sizeof(char);
-        System.IO.File.WriteAllText(GetSavePath(), json);
-        Debug.Log("Saving screen settings" + json);
+        bool isWindowed = (PlayerPrefs.GetInt("Windowed") != 0);
     }
 
     public static (int, int) GetScreenWidthHeight()
     {
-        if (!System.IO.File.Exists(GetSavePath()))
+        if (PlayerPrefs.HasKey("ScreenHeight"))
+        {
+            return (PlayerPrefs.GetInt("ScreenWidth"), PlayerPrefs.GetInt("ScreenHeight"));
+        }
+        else
         {
             return (-1, -1);
         }
-
-        string json = System.IO.File.ReadAllText(GetSavePath());
-
-        JObject jObject = JObject.Parse(json);
-        Dictionary<string, JToken> saveData = jObject.ToObject<Dictionary<string, JToken>>();
-
-        if (saveData.TryGetValue("screenHeight", out JToken height) && (saveData.TryGetValue("screenWidth", out JToken width)))
-        {
-
-            return (width.ToObject<int>(), height.ToObject<int>());
-        }
-        return (-1, -1);
     }
 
     private static void AddDataPoint(string key, JToken value, Dictionary<string, JToken> alreadySavedData)
