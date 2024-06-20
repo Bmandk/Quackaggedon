@@ -191,7 +191,7 @@ namespace DuckClicker
 
             if (throwFromHand)
             {
-                GameObject foodAmount = Instantiate(_foodAmountHandPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
+                GameObject foodAmount = Instantiate(_foodAmountHandPrefab, transform.position + _foodAmountOffset, Quaternion.identity, References.Instance.menuController.incEffectParent);
                 ArmController.Instance.PerformFeedingHandAnimation(particles, foodToThrow);
                 foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownOnClick(actualFoodAmountThrown, foodToThrow, costOfFood);
 
@@ -248,7 +248,7 @@ namespace DuckClicker
 
             References.Instance.chefPotHandler.ShowChefPot(foodToThrow, potLevel, randomChefPos);
 
-            GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity, _canvas.transform);
+            GameObject foodAmount = Instantiate(_foodAmountChefPrefab, transform.position + _foodAmountOffset, Quaternion.identity,References.Instance.menuController.incEffectParent);
             foodAmount.GetComponent<ClickDuckUiPopup>().SetFoodThrownByChef(actualFoodAmountThrown, foodToThrow);
             foodAmount.transform.position = References.Instance.mainCam.WorldToScreenPoint(randomChefPos + new Vector3(0, 0.2f, 0));
 

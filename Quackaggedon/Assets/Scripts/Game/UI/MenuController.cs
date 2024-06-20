@@ -11,6 +11,7 @@ public class MenuController : MonoBehaviour
     public GameObject duckopediaUI;
     public GameObject cookbookUI;
     public GameObject hutUI;
+    public Transform incEffectParent;
 
     public Animator quackStatsAnimator;
 
