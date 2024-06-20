@@ -46,6 +46,20 @@ public class SceneDataHolder : MonoBehaviour
         }
     }
 
+    public void PulseAllCleverDucks()
+    {
+        if (allDucksInScene.ContainsKey(DuckType.Clever))
+        {
+            foreach (var cleverDuck in allDucksInScene[DuckType.Clever])
+            {
+                if (cleverDuck != null)
+                {
+                    cleverDuck.GetComponent<DuckSelector>().duckAnim.SetTrigger("Pulse");
+                }
+            }
+        }
+    }
+
     public void EquipAllDucksWithUpgrade(DuckType duckType)
     {
         switch (duckType)
