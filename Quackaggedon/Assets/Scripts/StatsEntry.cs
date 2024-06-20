@@ -20,6 +20,7 @@ public class StatsEntry : MonoBehaviour
     public TextMeshProUGUI duckThrown;
     public TextMeshProUGUI totalFoodThrown;
     public TextMeshProUGUI totalTimesDuckClicked;
+    public TextMeshProUGUI clickEarnings;
 
     private bool _discovered = false;
 
@@ -31,7 +32,7 @@ public class StatsEntry : MonoBehaviour
 
     public Image coinIcon;
 
-    public TooltipEarnedByClickedDuck tooltipEarnedByClickedDuck;
+    //public TooltipEarnedByClickedDuck tooltipEarnedByClickedDuck;
 
     private void Update()
     {
@@ -42,6 +43,7 @@ public class StatsEntry : MonoBehaviour
             duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(entryFoodType));
             totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(entryFoodType));
             totalTimesDuckClicked.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(duckType));
+            clickEarnings.text = $"<sprite name=QuacksEmoji_1> {NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(duckType) * References.Instance.GetDuckData(duckType).quacksPerClick)}";
         }
     }
 
@@ -58,7 +60,7 @@ public class StatsEntry : MonoBehaviour
         TooltipDisplayDuck.SetToDuck(entryDuckDataeUnlocked.duckType);
         tooltipDisplayFoodtype.SetToFood(entryFoodType);
 
-        tooltipEarnedByClickedDuck.duckType = duckType;
+        //tooltipEarnedByClickedDuck.duckType = duckType;
 
         if (_discovered)
         {
@@ -81,6 +83,7 @@ public class StatsEntry : MonoBehaviour
             duckThrown.text = "-----";
             totalFoodThrown.text = "-----";
             totalTimesDuckClicked.text = "-----";
+            clickEarnings.text = "-----";
 
             foodIcon.sprite = entryFoodData.foodIconHidden;
             cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniHidden;
