@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ToolTipDisplayDuckIfDiscovered : MonoBehaviour
+public class ToolTipDisplayDuckIfDiscovered : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     public DuckType duckType;
 
