@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TooltipDisplayDuck : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
+public class TooltipEarnedByClickedDuck : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     public DuckType duckType;
 
@@ -22,12 +22,14 @@ public class TooltipDisplayDuck : MonoBehaviour, IPointerExitHandler, IPointerEn
     {
         if (DiscoveredObjects.HasSeenDuck(duckType))
         {
-            ToolTipController.toolTipInfo = References.Instance.GetDuckData(duckType).duckDisplayName;
+            ToolTipController.toolTipInfo = $"Total earnings clicking duck: <sprite name=QuacksEmoji_1> {NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(duckType) * References.Instance.GetDuckData(duckType).quacksPerClick)}";
+            ToolTipController.showToolTip = true;
         }
         else
         {
-            ToolTipController.toolTipInfo = "???";
+            ToolTipController.toolTipInfo = "";
+            ToolTipController.showToolTip = false;
         }
-        ToolTipController.showToolTip = true;
+
     }
 }

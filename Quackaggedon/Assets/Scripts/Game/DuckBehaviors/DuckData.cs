@@ -43,6 +43,8 @@ public class DuckData : MonoBehaviour
 
     public static Dictionary<DuckType, List<DuckData>> duckObjects;
 
+    public double quacksPerClick;
+
     private void Awake()
     {
         duckObjects[duckType].Add(this);

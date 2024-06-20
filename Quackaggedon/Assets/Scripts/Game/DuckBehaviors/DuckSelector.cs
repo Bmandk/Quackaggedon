@@ -21,13 +21,14 @@ public class DuckSelector : MonoBehaviour
     [SerializeField]
     private Animator duckAnim;
     private Coroutine _quackCoroutine;
-    [SerializeField]
+
     private double _quacksPerClick;
     
     private DuckMovementHandler _duckMovementHandler;
 
     private void Awake()
     {
+        _quacksPerClick = transform.GetComponent<DuckData>().quacksPerClick;
         _duckMovementHandler = GetComponent<DuckMovementHandler>();
     }
 

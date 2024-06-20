@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class StatsEntry : MonoBehaviour
 {
     public FoodType entryFoodType;
+    public DuckType duckType;
 
     public Image foodIcon;
     public TooltipDisplayFoodtype tooltipDisplayFoodtype;
@@ -20,27 +21,78 @@ public class StatsEntry : MonoBehaviour
     public TextMeshProUGUI totalFoodThrown;
     public TextMeshProUGUI totalTimesDuckClicked;
 
+    private bool _discovered = false;
+
+    public Color hiddenIconColor;
+    public Color revealedBoxColor;
+    public Color hiddenCoinColor;
+
+    public Image[] boxImages;
+
+    public Image coinIcon;
+
+    public TooltipEarnedByClickedDuck tooltipEarnedByClickedDuck;
+
     private void Update()
     {
-        handThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownByHand(entryFoodType));
-        costFoodHandThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotaCostOfFoodThrownByHand(entryFoodType));
-        duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(entryFoodType));
-        totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(entryFoodType));
+        if (_discovered)
+        {
+            handThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownByHand(entryFoodType));
+            costFoodHandThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotaCostOfFoodThrownByHand(entryFoodType));
+            duckThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownBDuck(entryFoodType));
+            totalFoodThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTotalFoodThrown(entryFoodType));
+            totalTimesDuckClicked.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(duckType));
+        }
+    }
+
+    public void SetStatusType(FoodType foodType, bool discovered)
+    {
+        entryFoodType = foodType;
+        _discovered = discovered;
 
         FoodData entryFoodData = References.Instance.GetFoodData(entryFoodType);
         DuckData entryDuckDataeUnlocked = References.Instance.GetDuckData(DuckUnlockData.GetWhichDuckFoodUnlocks(entryFoodType));
 
-        totalTimesDuckClicked.text = NumberUtility.FormatNumber(PlayerFoodStats.GetTimesDuckClicked(entryDuckDataeUnlocked.duckType));
-
-        foodIcon.sprite = entryFoodData.foodIconRevealed;
-        cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniIcon;
+        this.duckType = entryDuckDataeUnlocked.duckType;
 
         TooltipDisplayDuck.SetToDuck(entryDuckDataeUnlocked.duckType);
         tooltipDisplayFoodtype.SetToFood(entryFoodType);
-    }
 
-    public void UpdateCookbookEntryValues(FoodType foodType)
-    {
-        entryFoodType = foodType;
+        tooltipEarnedByClickedDuck.duckType = duckType;
+
+        if (_discovered)
+        {
+            foodIcon.color = Color.white;
+            cookbookIcon.color = Color.white;
+            foreach (var box in boxImages)
+            {
+                box.color = revealedBoxColor;
+            }
+
+            foodIcon.sprite = entryFoodData.foodIconRevealed;
+            cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniIcon;
+
+            coinIcon.color = Color.white;
+        }
+        else
+        {
+            handThrown.text = "-----";
+            costFoodHandThrown.text = "-----";
+            duckThrown.text = "-----";
+            totalFoodThrown.text = "-----";
+            totalTimesDuckClicked.text = "-----";
+
+            foodIcon.sprite = entryFoodData.foodIconHidden;
+            cookbookIcon.sprite = entryDuckDataeUnlocked.duckDisplayMiniHidden;
+            foodIcon.color = hiddenIconColor;
+            cookbookIcon.color = hiddenIconColor;
+
+            foreach (var box in boxImages)
+            {
+                box.color = hiddenIconColor;
+            }
+
+            coinIcon.color = hiddenCoinColor;
+        }
     }
 }

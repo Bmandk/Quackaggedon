@@ -43,15 +43,16 @@ public class ToolTipController : MonoBehaviour
         if (showToolTip)
         {
             EnableCorrectToolTipSide();
-            toolTip.SetActive(true);
+            toolTip.GetComponent<CanvasGroup>().alpha = 1;
         }
         else
         {
-            toolTip.SetActive(false);
+            toolTip_UL.GetComponent<CanvasGroup>().alpha = 0; 
+            toolTip_UR.GetComponent<CanvasGroup>().alpha = 0;
+            toolTip_LL.GetComponent<CanvasGroup>().alpha = 0;
+            toolTip_LR.GetComponent<CanvasGroup>().alpha = 0;
+            toolTip.GetComponent<CanvasGroup>().alpha = 0;
         }
-
-
-
     }
 
 
@@ -60,10 +61,10 @@ public class ToolTipController : MonoBehaviour
     {
         var position = Input.mousePosition;
 
-        toolTip_UL.SetActive(false);
-        toolTip_UR.SetActive(false);
-        toolTip_LL.SetActive(false);
-        toolTip_LR.SetActive(false);
+        toolTip_UL.GetComponent<CanvasGroup>().alpha = 0;
+        toolTip_UR.GetComponent<CanvasGroup>().alpha = 0;
+        toolTip_LL.GetComponent<CanvasGroup>().alpha = 0;
+        toolTip_LR.GetComponent<CanvasGroup>().alpha = 0;
 
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
@@ -73,19 +74,19 @@ public class ToolTipController : MonoBehaviour
 
         if (isLeft && isUpper)
         {
-            toolTip_LR.SetActive(true);
+            toolTip_LR.GetComponent<CanvasGroup>().alpha = 1;
         }
         else if (isLeft && !isUpper)
         {
-            toolTip_UR.SetActive(true);
+            toolTip_UR.GetComponent<CanvasGroup>().alpha = 1;
         }
         else if (!isLeft && isUpper)
         {
-            toolTip_LL.SetActive(true);
+            toolTip_LL.GetComponent<CanvasGroup>().alpha = 1;
         }
         else
         {
-            toolTip_UL.SetActive(true);
+            toolTip_UL.GetComponent<CanvasGroup>().alpha = 1;
         }
     }
 }

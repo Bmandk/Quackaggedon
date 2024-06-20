@@ -805,6 +805,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: quacksPerClick
+      value: 100000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayIcon
       value: 
       objectReference: {fileID: 957902997, guid: 88797474a3ef7b040b9747997e374178, type: 3}

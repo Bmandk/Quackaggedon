@@ -5758,6 +5758,10 @@ PrefabInstance:
       value: DuckSimple
       objectReference: {fileID: 0}
     - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: quacksPerClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694124237500641161, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: duckDisplayIcon
       value: 
       objectReference: {fileID: 1725673300, guid: 88797474a3ef7b040b9747997e374178, type: 3}

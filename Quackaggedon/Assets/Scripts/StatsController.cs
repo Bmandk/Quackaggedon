@@ -26,7 +26,20 @@ public class StatsController : MonoBehaviour
         {
             FoodType food = DuckUnlockData.GetWhichFoodsNeededToUnlockDuck(duckTypeDiscovered);
             var inst = Instantiate(cookbookEntry, cookBookBtnParent);
-            inst.GetComponent<StatsEntry>().UpdateCookbookEntryValues(food);
+            inst.GetComponent<StatsEntry>().SetStatusType(food, true);
+        }
+
+        var ducks = References.Instance.GetAllDuckDataInOrder();
+
+        foreach (DuckData duck in ducks)
+        {
+            if (!DiscoveredObjects.HasSeenDuck(duck.duckType))
+            {
+                FoodType food = DuckUnlockData.GetWhichFoodsNeededToUnlockDuck(duck.duckType);
+                var inst = Instantiate(cookbookEntry, cookBookBtnParent);
+                DuckEntryInstanceHandler entry = inst.GetComponent<DuckEntryInstanceHandler>();
+                inst.GetComponent<StatsEntry>().SetStatusType(food, false);
+            }
         }
     }
 }

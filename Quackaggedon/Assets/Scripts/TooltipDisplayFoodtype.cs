@@ -20,8 +20,14 @@ public class TooltipDisplayFoodtype : MonoBehaviour, IPointerExitHandler, IPoint
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
-        ToolTipController.toolTipInfo = References.Instance.GetFoodData(foodType).foodTooltipInfo;
+        if (DiscoveredObjects.HasSeenFood(foodType)) 
+        {
+            ToolTipController.toolTipInfo = References.Instance.GetFoodData(foodType).foodTooltipInfo;
+        }
+        else
+        {
+            ToolTipController.toolTipInfo = "???";
+        }
         ToolTipController.showToolTip = true;
     }
 }
