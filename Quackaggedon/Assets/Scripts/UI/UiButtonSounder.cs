@@ -14,7 +14,7 @@ public class UiButtonSounder : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (uiSoundAS.isActiveAndEnabled)// && button.interactable)
+        if (uiSoundAS.isActiveAndEnabled && button.interactable)
         {
             uiSoundAS.clip = uiClickSound;
             uiSoundAS.Play();

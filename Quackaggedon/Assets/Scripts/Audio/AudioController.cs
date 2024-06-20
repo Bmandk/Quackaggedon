@@ -43,6 +43,14 @@ public class AudioController : MonoBehaviour
     [SerializeField]
     private AudioMixerGroup _backgroundMixer, _revealMixer;
 
+    public AudioSource coinSound;
+
+    public void PlayCoinSound()
+    {
+
+        coinSound.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        coinSound.Play();
+    }
 
     public void DisableBackgroundMusic()
     {

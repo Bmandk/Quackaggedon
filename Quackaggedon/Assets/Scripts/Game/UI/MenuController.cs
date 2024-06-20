@@ -17,6 +17,16 @@ public class MenuController : MonoBehaviour
 
     public GameObject[] uiToBeDisabledUponDirt;
 
+    public void PlayNotEnoughCoinAnim()
+    {
+        quackStatsAnimator.SetTrigger("Invalid");
+    }
+
+    public void PlayCoinPulseAnim()
+    {
+        quackStatsAnimator.SetTrigger("Pulse");
+    }
+
     public bool IsBlockingUiOpen()
     {
         return (menuUI.activeSelf || duckopediaUI.activeSelf || cookbookUI.activeSelf || hutUI.activeSelf || RevealHandler.revealIsActive);
@@ -125,7 +135,6 @@ public class MenuController : MonoBehaviour
 
     public void PulseQuackStats()
     {
-        quackStatsAnimator.SetBool("Retrigger2", true);
         quackStatsAnimator.SetTrigger("Pulse");
     }
 }

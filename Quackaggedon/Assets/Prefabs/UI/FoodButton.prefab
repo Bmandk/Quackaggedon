@@ -447,6 +447,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5620112780153615829}
+    - targetCorrespondingSourceObject: {fileID: 4836046202856434972, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1643096125755107329}
   m_SourcePrefab: {fileID: 100100000, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}
 --- !u!1 &785112130185656089 stripped
 GameObject:
@@ -468,6 +471,8 @@ MonoBehaviour:
   foodToThrow: 0
   breadPerThrow: 1
   selectedFromStart: 1
+  _buttonIcon: {fileID: 0}
+  colorHiddenIcon: {r: 0, g: 0, b: 0, a: 0}
   progressSlider: {fileID: 0}
   useForAutoThrow: 1
   _maxThrowParticles: 30
@@ -493,6 +498,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckFeeder: {fileID: 8148401171133978323}
+--- !u!114 &1643096125755107329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785112130185656089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a135a30315f134ab5aedab21c6601a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6338622506249430830 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165983630017019179, guid: 332aedc57ab8e8a428a1e664c5744718, type: 3}

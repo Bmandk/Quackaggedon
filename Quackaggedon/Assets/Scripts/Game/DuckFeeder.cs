@@ -43,7 +43,7 @@ namespace DuckClicker
         [SerializeField] private bool _cheatSpawnDucks = false;
         [SerializeField] private bool _cheatThrowAllFood = false;
 
-        [SerializeField] private Animator _animator;
+        [SerializeField] private Animator _sliderAnimator;
         
         private List<SpawnDuckEvent> _spawnDuckEvents = new List<SpawnDuckEvent>();
         private int clicksSinceLastSpawn = 0;
@@ -104,6 +104,8 @@ namespace DuckClicker
                 {
                     _buttonIcon.sprite = References.Instance.GetFoodData(foodToThrow).foodIconHidden;
                     _buttonIcon.color = colorHiddenIcon;
+                    _button.interactable = false;
+
                 }
             }
             
@@ -378,7 +380,7 @@ namespace DuckClicker
                 SetProgress(newVal);
             }
 
-            _animator.SetTrigger("Pulse");
+            _sliderAnimator.SetTrigger("Pulse");
             _progressText.text = $"{NumberUtility.FormatNumber(FoodThrown)} / {NumberUtility.FormatNumber(NextDuckCost)}";
         }
 
@@ -454,7 +456,7 @@ namespace DuckClicker
                 yield return null;
             }
 
-            _animator.SetTrigger("Fill");
+            _sliderAnimator.SetTrigger("Fill");
             progressSlider.value = 0;
             _lerpingProgress = false;
         }
