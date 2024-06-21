@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,10 +24,23 @@ public class DuckMovementHandler : MonoBehaviour
     public static float lastClickTime = 0;
     public static Transform lastClickedDuck;
 
+
+    public bool flyingToHut;
+    private bool startedFlying;
+
+    private Vector3 targetPosition; // The target position in world space
+    private float moveDuration = 2.5f; // Duration to move
+    private float elapsedTime = 0f; // Track time elapsed
+
     private void Start()
     {
         randomPosition = Common.Instance.GetRandomPositionWithinPond(transform.position);
         //InvokeRepeating(nameof(Quack), 1, 1);
+
+        // Convert the UI position to world space position
+        var hutUI = References.Instance.menuController.hutButtonFlyPoint;
+        //Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, hutUI.position);
+        //RectTransformUtility.ScreenPointToWorldPointInRectangle(hutUI, screenPoint, Camera.main, out targetPosition);
     }
 
     private void Quack()
@@ -37,36 +51,66 @@ public class DuckMovementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastClickedDuck != null &&
+        if (!flyingToHut && !startedFlying)
+        {
+            if (lastClickedDuck != null &&
             lastClickedDuck != transform &&
             Time.timeSinceLevelLoad - lastClickTime < stopTimeAfterClick)
-        {
-            float distance = Vector2.Distance(transform.position, lastClickedDuck.position);
-            if (distance < forcefieldRadius)
             {
-                Vector2 dir = (transform.position - lastClickedDuck.position).normalized;
-                float force = (1 / (distance + forcefieldMover) * forcefieldMultiplier) - forcefieldMover;
-                transform.position += (Vector3)dir * (Time.deltaTime * force);
+                float distance = Vector2.Distance(transform.position, lastClickedDuck.position);
+                if (distance < forcefieldRadius)
+                {
+                    Vector2 dir = (transform.position - lastClickedDuck.position).normalized;
+                    float force = (1 / (distance + forcefieldMover) * forcefieldMultiplier) - forcefieldMover;
+                    transform.position += (Vector3)dir * (Time.deltaTime * force);
+                }
+            }
+
+            if (!isWaiting && lastClickedDuck != transform)
+            {
+                if (Time.timeSinceLevelLoad - lastClickTime > stopTimeAfterClick)
+                    lastClickedDuck = null;
+
+                duckAnim.SetBool("Swim", true);
+                SmoothRandomMovement();
+            }
+            else
+            {
+                duckAnim.SetBool("Swim", false);
             }
         }
-        
-        if (!isWaiting && lastClickedDuck != transform)
+        else if (flyingToHut && !startedFlying)
         {
-            if (Time.timeSinceLevelLoad - lastClickTime > stopTimeAfterClick)
-                lastClickedDuck = null;
-            
-            duckAnim.SetBool("Swim", true);
-            SmoothRandomMovement();
-        } else
+            startedFlying = true;
+            StopAllCoroutines();
+            duckAnim.SetBool("Fly", true);
+            duckHolder.transform.localScale = new Vector3(-1, 1, 1);
+            Debug.Log("Flying!");
+        } 
+        else if (startedFlying)
         {
-            duckAnim.SetBool("Swim", false);
+            if (elapsedTime < moveDuration)
+            {
+                // Calculate the interpolation factor
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / moveDuration;
+
+                // Linearly interpolate the position of the GameObject towards the target
+                transform.position = Vector3.Lerp(transform.position, Camera.main.ScreenToWorldPoint(References.Instance.menuController.hutButtonFlyPoint.position), t);
+
+                // Check if the GameObject has reached the target position
+                if (t >= 1.0f)
+                {
+                    Destroy(gameObject); // Destroy the GameObject once it reaches the target
+                }
+            }
         }
     }
 
     public void SmoothRandomMovement()
     {
         float distance = Vector2.Distance(transform.position, randomPosition);
-        var speedModifier = (distance + UnityEngine.Random.Range(0,2))/ 3;
+        var speedModifier = (distance + UnityEngine.Random.Range(0, 2)) / 3;
 
         // Smoothly decelerate as the duck gets closer to the target
         float speed = Mathf.Lerp(minSwimSpeed, maxSwimSpeed, distance / decelerationRadius) * speedModifier;
@@ -82,6 +126,11 @@ public class DuckMovementHandler : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, randomPosition, speed * Time.deltaTime);
             FlipToMovementDirection(dir);
         }
+    }
+
+    public void FlyToHut()
+    {
+        flyingToHut = true;
     }
 
     private IEnumerator WaitAndChangePosition()

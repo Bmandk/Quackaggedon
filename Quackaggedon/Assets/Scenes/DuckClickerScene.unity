@@ -865,6 +865,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2770550279647785546, guid: 137507953ca4584448658a001b513638, type: 3}
   m_PrefabInstance: {fileID: 2418060469239988481}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1162439655 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7449102434197264782, guid: 137507953ca4584448658a001b513638, type: 3}
+  m_PrefabInstance: {fileID: 2418060469239988481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165699370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1492,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 159567957121005153, guid: 0627b4e06f564574084369c30fe0b28d, type: 3}
   m_PrefabInstance: {fileID: 5603847933262381217}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &2082880633 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1719631665258459968, guid: 137507953ca4584448658a001b513638, type: 3}
+  m_PrefabInstance: {fileID: 2418060469239988481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084664646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2012961766864432983, guid: 137507953ca4584448658a001b513638, type: 3}
@@ -1643,6 +1653,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 652208768}
     - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: hutButtonUi
+      value: 
+      objectReference: {fileID: 1162439655}
+    - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: duckopediaUI
       value: 
       objectReference: {fileID: 5887221754798726890}
@@ -1658,6 +1672,10 @@ PrefabInstance:
       propertyPath: coinStatAnimator
       value: 
       objectReference: {fileID: 2418060469239988482}
+    - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: hutButtonFlyPoint
+      value: 
+      objectReference: {fileID: 2082880633}
     - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: quackStatsAnimator
       value: 
@@ -2055,6 +2073,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1304616904884453666, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1425311831777251514, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2427,6 +2449,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 766760697}
+    - target: {fileID: 7618445289013289920, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7619779604519690245, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

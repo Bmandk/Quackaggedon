@@ -5977,6 +5977,8 @@ MonoBehaviour:
   footR: {fileID: 7751585916449585453}
   beakClosed: {fileID: 2714306895312779788}
   beakOpened: {fileID: 7362833504817014758}
+  wingL: {fileID: 5601346162879718215}
+  wingR: {fileID: 6743406606799084605}
 --- !u!212 &4524408527837166190 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7267704866713133080, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
@@ -5995,6 +5997,16 @@ Transform:
 --- !u!4 &5448677449828500481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1263375977491111543, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+  m_PrefabInstance: {fileID: 6491374296662481526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5601346162879718215 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1706305912468830513, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+  m_PrefabInstance: {fileID: 6491374296662481526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6743406606799084605 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 540601362197710411, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
   m_PrefabInstance: {fileID: 6491374296662481526}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &7101138742721554663 stripped

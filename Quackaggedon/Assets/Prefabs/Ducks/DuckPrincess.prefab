@@ -552,6 +552,18 @@ PrefabInstance:
       propertyPath: _duckSprites.Array.data[14]
       value: 
       objectReference: {fileID: 5794649568304061434}
+    - target: {fileID: 540601362197710411, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 540601362197710411, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 540601362197710411, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
     - target: {fileID: 898568649438607827, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_labelHash
       value: 2.3246205e-32
@@ -563,6 +575,18 @@ PrefabInstance:
     - target: {fileID: 898568649438607827, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_CategoryHash
       value: 1.2684659e-34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706305912468830513, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706305912468830513, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706305912468830513, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
       objectReference: {fileID: 0}
     - target: {fileID: 1940285089012801968, guid: d0e51ac50465153438c014a3659cfd82, type: 3}
       propertyPath: m_labelHash

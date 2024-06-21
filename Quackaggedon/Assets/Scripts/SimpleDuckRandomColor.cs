@@ -9,7 +9,7 @@ public class SimpleDuckRandomColor : MonoBehaviour
     public Color[] beakColor;
 
     [SerializeField]
-    private SpriteRenderer head, neck, body, footL, footR, beakClosed, beakOpened;
+    private SpriteRenderer head, neck, body, footL, footR, beakClosed, beakOpened, wingL, wingR;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,8 @@ public class SimpleDuckRandomColor : MonoBehaviour
         head.color = bodyColor[randomIndex];
         neck.color = bodyColor[randomIndex];
         body.color = bodyColor[randomIndex];
+        wingL.color = bodyColor[randomIndex];
+        wingR.color = bodyColor[randomIndex];
 
         footL.color = beakColor[randomIndex];
         footR.color = beakColor[randomIndex];
