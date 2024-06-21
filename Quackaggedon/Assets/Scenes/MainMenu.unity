@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.418}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 45}
+  m_AnchoredPosition: {x: -158, y: 74.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35682721
@@ -19823,7 +19823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 154.674}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: 45}
+  m_AnchoredPosition: {x: 135, y: 75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1231404984
@@ -20909,7 +20909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374, y: -409}
+  m_AnchoredPosition: {x: 374, y: -419}
   m_SizeDelta: {x: 624.43, y: 88.5791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426872268
@@ -21596,9 +21596,9 @@ RectTransform:
   - {fileID: 1956555579}
   m_Father: {fileID: 55572933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -41.398438, y: 37.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 37, y: 37.5}
   m_SizeDelta: {x: 54.68396, y: 54.343994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1512859754
@@ -23746,8 +23746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -266}
-  m_SizeDelta: {x: 603.351, y: 200.962}
+  m_AnchoredPosition: {x: 332, y: -272}
+  m_SizeDelta: {x: 603.351, y: 223.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847840285
 MonoBehaviour:
@@ -25062,7 +25062,10 @@ MonoBehaviour:
 
     Jonathan Hertz
 
-    Miro'
+    Miro
+
+    Free online sound
+    artists!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c37869eff74bfb54fa238aaccf2c2a06, type: 2}
   m_sharedMaterial: {fileID: 4305332805412004263, guid: c37869eff74bfb54fa238aaccf2c2a06, type: 2}

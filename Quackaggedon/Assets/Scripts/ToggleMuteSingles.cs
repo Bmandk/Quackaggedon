@@ -48,7 +48,7 @@ public class ToggleMuteSingles : MonoBehaviour
             setVolume = PlayerPrefs.GetFloat("Volume");
         }
 
-        if (!muteToggle.isOn && setVolume == 0)
+        if (!muteToggle.isOn && setVolume <= 0.05f)
         {
             AudioListener.volume = 0.6f;
         }
