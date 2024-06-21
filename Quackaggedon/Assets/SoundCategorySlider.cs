@@ -12,10 +12,16 @@ public class SoundCategorySlider : MonoBehaviour
     public Toggle toggleToEffect;
 
     public AudioMixer masterMixer;
+
+    public Color unmuteColor;
+    public Color muteColor;
+
+    public Image fill;
+
     public enum SoundCategory
     {
-        Music,
-        Effects,
+        MusicSound,
+        EffectsSound,
     }
     private void Awake()
     {
@@ -27,21 +33,41 @@ public class SoundCategorySlider : MonoBehaviour
         }
     }
 
-    public void OnValueChanged()
+    public void SetFillColorUnmute()
     {
-        
-        // Get the slider value (0 to 1)
-        float sliderValue = GetComponent<Slider>().value;
+        fill.color = unmuteColor;
+    }
 
-        float volumeDb = GetVolumeDb(sliderValue);
+    public void SetFillColorMute()
+    {
+        fill.color = muteColor; 
+    }
+
+    public void SetAudioToSmallValue()
+    {
+        OnValueChanged(0.05f);
+        GetComponent<Slider>().value = 0.05f;
+    }
+
+    public void OnValueChanged(float value)
+    {
+        float volumeDb = GetVolumeDb(value);
 
         SetVolume(volumeDb);
 
-        PlayerPrefs.SetFloat(soundCategory.ToString(), sliderValue);
-        
+        PlayerPrefs.SetFloat(soundCategory.ToString(), value);
+
+        if (value == 0)
+        {
+            toggleToEffect.isOn = true;
+        }
+        else 
+        {
+            toggleToEffect.isOn = false;
+        }
     }
 
-    private static float GetVolumeDb(float sliderValue)
+    public static float GetVolumeDb(float sliderValue)
     {
         // Convert the slider value (0 to 1) to a logarithmic dB value (-80 to 0)
         return Mathf.Lerp(-80, 0, Mathf.Pow(sliderValue, 0.08f));
@@ -51,10 +77,10 @@ public class SoundCategorySlider : MonoBehaviour
     {
         switch (soundCategory)
         {
-            case SoundCategory.Music:
+            case SoundCategory.MusicSound:
                 masterMixer.SetFloat("MusicVol", volumeDb);
                 break;
-            case SoundCategory.Effects:
+            case SoundCategory.EffectsSound:
                 masterMixer.SetFloat("EffectsVol", volumeDb);
                 break;
             default:

@@ -445,6 +445,51 @@ MonoBehaviour:
   cookbookUI: {fileID: 0}
   cookBookBtnParent: {fileID: 0}
   cookbookEntry: {fileID: 3328159676060913957, guid: 8ca6ad5d1b48e924f86125916088dc52, type: 3}
+--- !u!1 &313281589319471378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5270228653945529529}
+  - component: {fileID: 8135465015877727067}
+  m_Layer: 0
+  m_Name: VolumeSceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5270228653945529529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313281589319471378}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4438532952008320068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8135465015877727067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313281589319471378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2902f70e1f3616043b88bab00020e097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
 --- !u!1 &323650681891340110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3516,7 @@ Transform:
   - {fileID: 1297968641881496909}
   - {fileID: 208256405989489656}
   - {fileID: 4617042056559569834}
+  - {fileID: 5270228653945529529}
   m_Father: {fileID: 8530518058844679403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6732153866289293210

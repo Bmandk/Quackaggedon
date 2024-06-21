@@ -1223,6 +1223,7 @@ MonoBehaviour:
   duckDisplayMiniHidden: {fileID: 0}
   duckPrefab: {fileID: 7365654089787025506}
   duckInstance: {fileID: 7365654089787025506}
+  quacksPerClick: 0
 --- !u!114 &7258025461571551465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,7 +1266,6 @@ MonoBehaviour:
   - {fileID: 3568773770112852827}
   - {fileID: 764586853497813262}
   duckAnim: {fileID: 864956059973319289}
-  _quacksPerClick: 1
 --- !u!114 &2330681344349673124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1597,7 @@ AudioSource:
   m_GameObject: {fileID: 8316368633490572245}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -209439206495382651, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
   m_audioClip: {fileID: 8300000, guid: 036b068fbefd3e84596264a3eeaf7613, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.333
@@ -1776,6 +1776,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1088175675618203017}
     m_Modifications:
+    - target: {fileID: 116925108777467058, guid: 5cfbcef4fb783a3408d02f82d611378e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -209439206495382651, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
     - target: {fileID: 1602995982307679083, guid: 5cfbcef4fb783a3408d02f82d611378e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.27000004

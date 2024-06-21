@@ -2466,6 +2466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661341185509337632}
   - component: {fileID: 8530676609582856282}
+  - component: {fileID: 6496776913978660185}
   m_Layer: 5
   m_Name: SoundToggle
   m_TagString: Untagged
@@ -2540,10 +2541,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ToggleMute, Assembly-CSharp
+      - m_Target: {fileID: 6496776913978660185}
+        m_TargetAssemblyTypeName: ToggleCategoryMute, Assembly-CSharp
         m_MethodName: OnValueChanged
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2552,7 +2553,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &6496776913978660185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774096324825367281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc9e19faf0b5d74bad032174d8d8c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundCategory: 1
+  muteToggle: {fileID: 8530676609582856282}
+  soundSlider: {fileID: 8040705629119078005}
+  masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
 --- !u!1 &818182554563703083
 GameObject:
   m_ObjectHideFlags: 0
@@ -14918,6 +14935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3917034328375662585}
   - component: {fileID: 3429244623944235236}
+  - component: {fileID: 1530839542943634077}
   m_Layer: 5
   m_Name: MusicToggle
   m_TagString: Untagged
@@ -14992,10 +15010,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ToggleMute, Assembly-CSharp
+      - m_Target: {fileID: 1530839542943634077}
+        m_TargetAssemblyTypeName: ToggleCategoryMute, Assembly-CSharp
         m_MethodName: OnValueChanged
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15004,7 +15022,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &1530839542943634077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525634158407834954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc9e19faf0b5d74bad032174d8d8c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundCategory: 0
+  muteToggle: {fileID: 3429244623944235236}
+  soundSlider: {fileID: 5340815101905525964}
+  masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
 --- !u!1 &4552001687458905829
 GameObject:
   m_ObjectHideFlags: 0
@@ -22545,7 +22579,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &7607177109896739235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32866,7 +32900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319855870797215654, guid: b3abb97b1a88b4079b91a4c2f33a6c1d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319855870797215654, guid: b3abb97b1a88b4079b91a4c2f33a6c1d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -33172,6 +33206,9 @@ MonoBehaviour:
   soundCategory: 0
   toggleToEffect: {fileID: 3429244623944235236}
   masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
+  unmuteColor: {r: 0.9019608, g: 0.9607843, b: 1, a: 1}
+  muteColor: {r: 0.20784314, g: 0.5137255, b: 0.7176471, a: 1}
+  fill: {fileID: 1067300102597859168}
 --- !u!224 &4374730232027862188 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9008614156591481303, guid: b3abb97b1a88b4079b91a4c2f33a6c1d, type: 3}
@@ -33534,6 +33571,9 @@ MonoBehaviour:
   soundCategory: 1
   toggleToEffect: {fileID: 8530676609582856282}
   masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
+  unmuteColor: {r: 0.9019608, g: 0.9607843, b: 1, a: 1}
+  muteColor: {r: 0.20784314, g: 0.5137255, b: 0.7176471, a: 1}
+  fill: {fileID: 1059628922280843770}
 --- !u!224 &4381273299665820214 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9008614156591481303, guid: b3abb97b1a88b4079b91a4c2f33a6c1d, type: 3}
