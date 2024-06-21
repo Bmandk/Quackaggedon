@@ -75,11 +75,16 @@ namespace DuckClicker
 
         private void MoveDuckToHut(DuckType duckType)
         {
-            Debug.Log($"Moving duck of type {duckType} to hut");
             DuckData duckData = DuckData.duckObjects[duckType][0];
+            duckData.GetComponent<DuckMovementHandler>().FlyToHut(() => AddDuckToHutAndDestroy(duckType,duckData));
+
+        }
+
+        private void AddDuckToHutAndDestroy(DuckType duckType, DuckData duckData)
+        {
+            Debug.Log($"Moving duck of type {duckType} to hut");
             Destroy(duckData.gameObject);
             DuckData.duckObjects[duckType].Remove(duckData);
-            
             DuckAmounts.hutAmounts[duckType]++;
         }
     }

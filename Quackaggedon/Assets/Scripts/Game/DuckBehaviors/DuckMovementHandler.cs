@@ -27,6 +27,7 @@ public class DuckMovementHandler : MonoBehaviour
 
     public bool flyingToHut;
     private bool startedFlying;
+    private Action toDoAfterFlown;
 
     private Vector3 targetPosition; // The target position in world space
     private float moveDuration = 3.5f; // Duration to move
@@ -113,12 +114,7 @@ public class DuckMovementHandler : MonoBehaviour
                 if (Vector3.Distance(transform.position, towards) < 0.7f)
                 {
                     References.Instance.menuController.BigPulseHutButton();
-                    Destroy(gameObject); // Destroy the GameObject once it reaches the target
-                }
-
-                // Check if the GameObject has reached the target position
-                if (t >= 1.0f)
-                {
+                    toDoAfterFlown.Invoke();
                     Destroy(gameObject); // Destroy the GameObject once it reaches the target
                 }
             }
@@ -146,9 +142,10 @@ public class DuckMovementHandler : MonoBehaviour
         }
     }
 
-    public void FlyToHut()
+    public void FlyToHut(Action ToDoAfterFlown)
     {
         flyingToHut = true;
+        toDoAfterFlown = ToDoAfterFlown;
     }
 
     private IEnumerator WaitAndChangePosition()
