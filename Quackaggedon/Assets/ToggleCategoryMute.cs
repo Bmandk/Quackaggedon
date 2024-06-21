@@ -24,10 +24,10 @@ public class ToggleCategoryMute : MonoBehaviour
         switch (soundCategory)
         {
             case SoundCategory.MusicSound:
-                masterMixer.SetFloat("MusicVol", volumeDb);
+                masterMixer.SetFloat("MusicMuter", volumeDb);
                 break;
             case SoundCategory.EffectsSound:
-                masterMixer.SetFloat("EffectsVol", volumeDb);
+                masterMixer.SetFloat("EffectsMuter", volumeDb);
                 break;
             default:
                 break;
@@ -66,6 +66,9 @@ public class ToggleCategoryMute : MonoBehaviour
 
     public void OnValueChanged(bool value)
     {
+        if (value) 
+        { 
+        }
         PlayerPrefs.SetInt($"SoundMuted{soundCategory}", value ? 1 : 0);
 
         RefreshVolume();
