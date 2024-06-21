@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleMute : MonoBehaviour
+public class MainMenuToggleMute : MonoBehaviour
 {
     public Toggle muteToggle;
+    public Slider audioSlider;
 
-    public Toggle[] affectAllTogglesInScene;
-
-    public AudioSlider soundSlider; 
     private void Awake()
     {
-        RefreshVolume();
+        muteToggle.isOn = false;
+        OnValueChanged();
     }
 
     private void RefreshVolume()
@@ -33,26 +32,11 @@ public class ToggleMute : MonoBehaviour
                 AudioListener.volume = 0;
             }
         }
-
-        if (muteToggle.isOn) 
-        {
-            soundSlider.SetFillColorMute();
-        }
-        else
-        {
-            soundSlider.SetFillColorUnmute();
-        }
     }
 
     public void OnValueChanged()
     {
         PlayerPrefs.SetInt("SoundMuted", muteToggle.isOn ? 1 : 0);
-
-        foreach (var item in affectAllTogglesInScene)
-        {
-            item.isOn = muteToggle.isOn;
-        }
-
         RefreshVolume();
 
         float setVolume = 0;
@@ -63,7 +47,7 @@ public class ToggleMute : MonoBehaviour
 
         if (!muteToggle.isOn && setVolume == 0)
         {
-            soundSlider.SetAudioToSmallValue();
+            AudioListener.volume = 0.6f;
         }
     }
 }

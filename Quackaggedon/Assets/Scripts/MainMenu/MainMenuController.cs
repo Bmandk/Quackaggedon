@@ -25,10 +25,10 @@ public class MainMenuController : MonoBehaviour
         {
             _instance = this;
         }
-        if (PlayerPrefs.HasKey("Volume"))
-        {
-            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
-        }
+        //if (PlayerPrefs.HasKey("Volume"))
+        //{
+        //    AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        //}
     }
 
     public Animator animator;
