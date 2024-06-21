@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DuckClicker;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -60,8 +61,29 @@ public class RevealHandler : MonoBehaviour
         revealIsActive = true;
         duckBeingRevealed = duckToShow.duckType;
 
+        string bonusText = "";
+
+        switch (duckBeingRevealed)
+        {
+            case DuckType.Simple:
+                bonusText = $"\n<sprite index=0>/s: {CurrencyController.BeforeSimpleDuck} -> {CurrencyController.AfterSimpleDuck}";
+                break;
+            case DuckType.Clever:
+                bonusText = $"\nFood thrown: 1 -> 2";
+                break;
+            case DuckType.Bread:
+                bonusText = $"\n<sprite index=0>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeBreadDuck)} -> {NumberUtility.FormatNumber(CurrencyController.AfterBreadDuck)}";
+                break;
+            case DuckType.Chef:
+                bonusText = $"\nThrows food every 14 seconds";
+                break;
+            case DuckType.Magical:
+                bonusText = $"\n<sprite index=0>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeMagicalDuck)} -> {NumberUtility.FormatNumber(CurrencyController.AfterMagicalDuck)} and more!";
+                break;
+        }
+
         revealDuckName.text = $"<wave a=0.1>{duckToShow.duckDisplayName}</wave>";
-        revealDuckSkillText.text = duckToShow.duckEffectDescription;
+        revealDuckSkillText.text = duckToShow.duckEffectDescription + bonusText;
         revealDuckIcon.sprite = duckToShow.duckDisplayIconRevealed;
         revealCanvasGroup.alpha = 0;
 

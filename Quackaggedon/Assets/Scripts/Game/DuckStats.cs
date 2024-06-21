@@ -48,7 +48,7 @@ public struct DuckFeederStats
 {
     public double baseFoodPerDuck;
     public double growthRate;
-    public long foodCost;
+    public double foodCost;
             
     public long CalculateCost(long ducksSpawned)
     {
