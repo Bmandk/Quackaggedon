@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class DuckAnimationEvents : MonoBehaviour
 {
+    public void PlayWingFlap()
+    {
+        AudioController.Instance.PlayWingFlap();
+    }
+
     public void PlayRandomQuack()
     {
         if (Time.timeSinceLevelLoad > 1f)

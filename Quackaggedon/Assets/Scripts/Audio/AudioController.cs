@@ -45,6 +45,14 @@ public class AudioController : MonoBehaviour
 
     public AudioSource coinSound;
 
+    public AudioSource wingFlap;
+
+    public void PlayWingFlap()
+    {
+        wingFlap.pitch = UnityEngine.Random.Range(1f, 1.2f);
+        wingFlap.Play();
+    }
+
     public void PlayCoinSound()
     {
 

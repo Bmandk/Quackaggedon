@@ -1351,6 +1351,11 @@ Transform:
   - {fileID: 2026117174}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1777328240 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4495096898659676150, guid: 137507953ca4584448658a001b513638, type: 3}
+  m_PrefabInstance: {fileID: 2418060469239988481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1855421967 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2842446813535170063, guid: 0627b4e06f564574084369c30fe0b28d, type: 3}
@@ -1680,6 +1685,10 @@ PrefabInstance:
       propertyPath: quackStatsAnimator
       value: 
       objectReference: {fileID: 2418060469239988482}
+    - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: hutButtonSpecilAnim
+      value: 
+      objectReference: {fileID: 1777328240}
     - target: {fileID: 3588286516714791421, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: uiToBeDisabledUponDirt.Array.data[0]
       value: 
@@ -2353,6 +2362,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6274290638112811164, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274290638112811164, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274290638112811164, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274290638112811164, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6539892884781417738, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2411,22 +2436,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338382333338473331, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449102434197264782, guid: 137507953ca4584448658a001b513638, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449102434197264782, guid: 137507953ca4584448658a001b513638, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449102434197264782, guid: 137507953ca4584448658a001b513638, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449102434197264782, guid: 137507953ca4584448658a001b513638, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7523104877187674712, guid: 137507953ca4584448658a001b513638, type: 3}

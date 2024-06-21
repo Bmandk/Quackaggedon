@@ -13,12 +13,18 @@ public class MenuController : MonoBehaviour
     public GameObject hutUI;
 
     public RectTransform hutButtonFlyPoint;
+    public Animator hutButtonSpecilAnim;
 
     public Transform incEffectParent;
 
     public Animator quackStatsAnimator;
 
     public GameObject[] uiToBeDisabledUponDirt;
+
+    public void BigPulseHutButton()
+    {
+        hutButtonSpecilAnim.SetTrigger("BigPulse");
+    }
 
     public void PlayNotEnoughCoinAnim()
     {
