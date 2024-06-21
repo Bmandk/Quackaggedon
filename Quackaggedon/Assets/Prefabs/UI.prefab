@@ -29777,6 +29777,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4810366154864538946}
     m_Modifications:
+    - target: {fileID: 110802639609114815, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+      propertyPath: buttonAnim
+      value: 
+      objectReference: {fileID: 3565673396997092159}
     - target: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -29893,6 +29897,11 @@ PrefabInstance:
 --- !u!224 &3286001660719852645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+  m_PrefabInstance: {fileID: 3007943150916860284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3565673396997092159 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1784988184676239939, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
   m_PrefabInstance: {fileID: 3007943150916860284}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3048350332931476596
@@ -35328,6 +35337,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4810366154864538946}
     m_Modifications:
+    - target: {fileID: 110802639609114815, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+      propertyPath: buttonAnim
+      value: 
+      objectReference: {fileID: 8396565747473132802}
     - target: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -35456,6 +35469,11 @@ PrefabInstance:
 --- !u!224 &7523104877187674712 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+  m_PrefabInstance: {fileID: 7801102363564746561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8396565747473132802 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1784988184676239939, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
   m_PrefabInstance: {fileID: 7801102363564746561}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8099087886667384450
@@ -35943,6 +35961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4810366154864538946}
     m_Modifications:
+    - target: {fileID: 110802639609114815, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+      propertyPath: buttonAnim
+      value: 
+      objectReference: {fileID: 7965182617646729830}
     - target: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -36048,6 +36070,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+--- !u!95 &7965182617646729830 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1784988184676239939, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}
+  m_PrefabInstance: {fileID: 8525188923630452773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8244942383539393852 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 298474810805785881, guid: c091fd748ed88e54e8fe6ed7325380b6, type: 3}

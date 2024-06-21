@@ -1237,6 +1237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandardUIButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1643096125755107329, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+      propertyPath: buttonAnim
+      value: 
+      objectReference: {fileID: 1784988184676239939}
     - target: {fileID: 1798278184349133842, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1400,6 +1404,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+--- !u!95 &1784988184676239939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1117271053916312317, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}
+  m_PrefabInstance: {fileID: 1676699506993240254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4662240220612968336 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6338622506249430830, guid: ae8033a4c52d1834c8619e3f90adb7a3, type: 3}

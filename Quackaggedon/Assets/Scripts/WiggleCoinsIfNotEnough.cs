@@ -8,11 +8,12 @@ using UnityEngine.UI;
 
 public class WiggleCoinsIfNotEnough : MonoBehaviour, IPointerDownHandler
 {
-
+    public Animator buttonAnim;
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!GetComponent<Button>().interactable)
         {
+            buttonAnim.SetTrigger("Invalid");
             References.Instance.menuController.PlayNotEnoughCoinAnim();
         }
         else
