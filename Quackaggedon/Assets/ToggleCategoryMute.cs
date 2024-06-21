@@ -66,8 +66,13 @@ public class ToggleCategoryMute : MonoBehaviour
 
     public void OnValueChanged(bool value)
     {
-        if (value) 
-        { 
+        if (value)
+        {
+            SaveMuteValue(soundCategory, -80);
+        }
+        else 
+        {
+            SaveMuteValue(soundCategory, 0);
         }
         PlayerPrefs.SetInt($"SoundMuted{soundCategory}", value ? 1 : 0);
 
@@ -76,30 +81,45 @@ public class ToggleCategoryMute : MonoBehaviour
         SetSliderToCorrectValue(soundCategory);
     }
 
+    private void SaveMuteValue(SoundCategorySlider.SoundCategory soundCategory, float value)
+    {
+        switch (soundCategory)
+        {
+            case SoundCategory.MusicSound:
+                PlayerPrefs.SetFloat("MusicVol", value);
+                break;
+            case SoundCategory.EffectsSound:
+                PlayerPrefs.SetFloat("EffectsVol", value);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void SetSliderToCorrectValue(SoundCategorySlider.SoundCategory soundCategory)
     {
         if (soundCategory == SoundCategory.EffectsSound) 
         {
-            float setEffectsVolume = 0;
+            float setEffectsVolume = -80;
             if (PlayerPrefs.HasKey("EffectsVol"))
             {
                 setEffectsVolume = PlayerPrefs.GetFloat("EffectsVol");
             }
 
-            if (!muteToggle.isOn && setEffectsVolume == 0)
+            if (!muteToggle.isOn && setEffectsVolume == -80)
             {
                 soundSlider.SetAudioToSmallValue();
             }
         }
         else if (soundCategory == SoundCategory.MusicSound)
         {
-            float setMusicVolume = 0;
+            float setMusicVolume = -80;
             if (PlayerPrefs.HasKey("MusicVol"))
             {
                 setMusicVolume = PlayerPrefs.GetFloat("MusicVol");
             }
 
-            if (!muteToggle.isOn && setMusicVolume == 0)
+            if (!muteToggle.isOn && setMusicVolume == -80)
             {
                 soundSlider.SetAudioToSmallValue();
             }
