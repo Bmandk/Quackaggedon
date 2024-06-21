@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 7258025461571551465}
   - component: {fileID: 485111888139877661}
   - component: {fileID: 2330681344349673124}
+  - component: {fileID: 1771985356958161288}
   m_Layer: 6
   m_Name: DuckTemplate
   m_TagString: Duck
@@ -1290,6 +1291,20 @@ MonoBehaviour:
   forcefieldRadius: 3
   forcefieldMover: 0
   forcefieldMultiplier: 1.5
+  flyingToHut: 0
+  sortingGroup: {fileID: 1771985356958161288}
+--- !u!210 &1771985356958161288
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365654089787025506}
+  m_Enabled: 0
+  m_SortingLayerID: -947204347
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &7571399224012105678
 GameObject:
   m_ObjectHideFlags: 0

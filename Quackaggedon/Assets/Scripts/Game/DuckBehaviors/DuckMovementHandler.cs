@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 public class DuckMovementHandler : MonoBehaviour
@@ -32,6 +33,8 @@ public class DuckMovementHandler : MonoBehaviour
     private Vector3 targetPosition; // The target position in world space
     private float moveDuration = 3.5f; // Duration to move
     private float elapsedTime = 0f; // Track time elapsed
+
+    public SortingGroup sortingGroup;
 
     private void Start()
     {
@@ -145,6 +148,7 @@ public class DuckMovementHandler : MonoBehaviour
     public void FlyToHut(Action ToDoAfterFlown)
     {
         flyingToHut = true;
+        sortingGroup.enabled = true;
         toDoAfterFlown = ToDoAfterFlown;
     }
 

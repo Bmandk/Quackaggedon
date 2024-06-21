@@ -76,11 +76,14 @@ namespace DuckClicker
         private void MoveDuckToHut(DuckType duckType)
         {
             DuckData duckData = DuckData.duckObjects[duckType][0];
-            duckData.GetComponent<DuckMovementHandler>().FlyToHut(() => AddDuckToHutAndDestroy(duckType,duckData));
+            // The Action sent to the FlyToHut-method below
+            // will be run RIGHT after the duck has flown INTO the hut-icon
+            // that is when the AfterFlyAnimationAddDuckToHutAndDestroy will be run.
+            duckData.GetComponent<DuckMovementHandler>().FlyToHut(() => AfterFlyAnimationAddDuckToHutAndDestroy(duckType,duckData));
 
         }
 
-        private void AddDuckToHutAndDestroy(DuckType duckType, DuckData duckData)
+        private void AfterFlyAnimationAddDuckToHutAndDestroy(DuckType duckType, DuckData duckData)
         {
             Debug.Log($"Moving duck of type {duckType} to hut");
             Destroy(duckData.gameObject);

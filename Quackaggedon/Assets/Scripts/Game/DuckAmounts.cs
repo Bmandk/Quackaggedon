@@ -78,6 +78,17 @@ public static class DuckAmounts
         
         return total;
     }
+
+    public static long GetTotalDucksInHut()
+    {
+        long total = 0;
+
+        foreach (var hutDuck in hutAmounts)
+        {
+            total += hutDuck.Value;
+        }
+        return total;
+    }
     
     public static long GetTotalDucksInPond(DuckType duckType)
     {
