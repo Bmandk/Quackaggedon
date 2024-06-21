@@ -9,9 +9,19 @@ namespace DuckClicker
         public int maxDucksInPond = 100;
         public int minDucksPerType = 1;
 
-        public GameObject SpawnDuck(GameObject duckPrefab, AreaSettings areaSettings)
+        public GameObject SpawnDuck(GameObject duckPrefab, AreaSettings areaSettings, bool loadingFromSave)
         {
             GameObject duck = GameObject.Instantiate(duckPrefab);
+
+            if (loadingFromSave)
+            {
+                duck.GetComponent<DuckMovementHandler>().duckAnim.SetBool("LoadFromSave", true);
+            } 
+            else
+            {
+                duck.GetComponent<DuckMovementHandler>().duckAnim.SetBool("SpawnAtRuntime", true);
+            }
+
             Vector3 spawnPoint = Common.Instance.PointInArea();
             duck.transform.position = spawnPoint;
 

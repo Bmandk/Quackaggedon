@@ -121,7 +121,7 @@ namespace DuckClicker
                 _cheatSpawnDucks = false;
                 for (int i = 0; i < _cheatDucksToSpawn; i++)
                 {
-                    SpawnDuck(AreaSettings.CurrentArea);
+                    SpawnDuck(AreaSettings.CurrentArea, false);
                 }
             }
         }
@@ -228,7 +228,7 @@ namespace DuckClicker
             while (FoodThrown >= NextDuckCost) // _nextDuckCost is calculated in SpawnDuck
             {
                 FoodThrown -= NextDuckCost;
-                SpawnDuck(AreaSettings.CurrentArea);
+                SpawnDuck(AreaSettings.CurrentArea, false);
                 ducksSpawned++;
             }
 
@@ -271,14 +271,14 @@ namespace DuckClicker
         }
 
 
-        private void SpawnDuck(AreaSettings area)
+        private void SpawnDuck(AreaSettings area, bool loadingFromSave)
         {
             DuckData duckTypeSpawning = References.Instance.GetDuckData(_duckTypeToSpawn);
             if (duckTypeSpawning.duckType != DuckType.Muscle)
             {
                 DuckAmounts.duckCounts[_duckTypeToSpawn][area.AreaIndex]++;
 
-                GameObject spawnedDuckData = _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area);
+                GameObject spawnedDuckData = _duckSpawner.SpawnDuck(duckTypeSpawning.duckPrefab, area, loadingFromSave);
                 if (duckTypeSpawning.duckType == DuckType.Simple)
                 {
                     spawnedDuckData.GetComponent<SimpleDuckEquipment>().EnableCorrectVisualOnSpawn();
@@ -500,7 +500,7 @@ namespace DuckClicker
                         int ducksSpawnedCount = ducksSpawnedDataArray.Length > i ? ducksSpawnedDataArray[areaSettings[i].AreaIndex] : 0;
                         for (int j = 0; j < ducksSpawnedCount; j++)
                         {
-                            SpawnDuck(areaSettings[i]);
+                            SpawnDuck(areaSettings[i], true);
                         }
                     }
                 }
