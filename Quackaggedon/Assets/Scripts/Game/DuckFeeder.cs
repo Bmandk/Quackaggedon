@@ -60,6 +60,10 @@ namespace DuckClicker
         public static float CleverDuckAmount;
         public static float MagicalCleverDuckBonus;
         
+        // Used for popup reveals
+        private static bool _didShowCleverDuck;
+        private static bool _didShowChefDuck;
+        
         private void Awake()
         {
             _duckTypeToSpawn = DuckUnlockData.GetWhichDuckFoodUnlocks(foodToThrow);
@@ -174,13 +178,13 @@ namespace DuckClicker
             attemptedFoodCountThisThrow = Math.Min(attemptedFoodCountThisThrow, NextDuckCost - FoodThrown); 
             long actualFoodAmountThrown = attemptedFoodCountThisThrow;
             if (useCurrency)
-                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
+                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)(CurrencyController.CurrencyAmount / DuckFeederStats.foodCost));
             
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
                 if (useCurrency)
-                    actualFoodAmountThrown = (long)CurrencyController.CurrencyAmount / DuckFeederStats.foodCost;
+                    actualFoodAmountThrown = (long)(CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
                 actualFoodAmountThrown = Math.Min(NextDuckCost - FoodThrown, actualFoodAmountThrown);
             }
 #endif
