@@ -149,7 +149,7 @@ namespace DuckClicker
 
         public void ThrowBread(bool useCurrency, bool throwFromHand)
         {
-            //if (DuckUnlockData.GetWhichDuckFoodUnlocks(foodToThrow) == DuckType.Clever)
+            if (throwFromHand)
             {
                 References.Instance.sceneDataHolder.PulseAllCleverDucks();
             }
