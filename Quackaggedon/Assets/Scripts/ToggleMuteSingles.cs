@@ -9,8 +9,12 @@ public class ToggleMuteSingles : MonoBehaviour
 
     private void Awake()
     {
-        muteToggle.isOn = false;
-        OnValueChanged();
+        if (PlayerPrefs.HasKey("SoundMuted"))
+        {
+            muteToggle.isOn = PlayerPrefs.GetInt("SoundMuted") == 1 ? true : false;
+        }
+        //muteToggle.isOn = false;
+        //OnValueChanged();
     }
 
     private void RefreshVolume()
