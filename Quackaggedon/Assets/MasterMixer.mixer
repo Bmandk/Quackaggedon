@@ -14,6 +14,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-7565096778632083808
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 48f369f40880dbc418f630b73736fa04
+  m_EffectName: Attenuation
+  m_MixLevel: c56b9b499185c1943a6c11bad010a370
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-6909955596969451667
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -81,6 +95,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-790488162016082901
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Reveal
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: cee7cc850b93b7a459016f699768bc68
+  m_Children: []
+  m_Volume: 3a19a3a29a134c5478b16e6819b8123b
+  m_Pitch: 9bbc8f53e8f1fef4db3649b908eccc33
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7565096778632083808}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-508455074179564754
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -104,7 +137,8 @@ AudioMixerGroupController:
   m_Name: Effects
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b6b8d2ac02b76d44d91cece61f697713
-  m_Children: []
+  m_Children:
+  - {fileID: -790488162016082901}
   m_Volume: 5af6bfb6249bcf64f874048d46da2db3
   m_Pitch: 0d2defdcec525aa49adab9019cf0df13
   m_Send: 00000000000000000000000000000000
@@ -138,6 +172,8 @@ AudioMixerController:
     name: MusicVol
   - guid: 9dafebf06b41e0644b7a1a82d61aca82
     name: MusicMuter
+  - guid: 3a19a3a29a134c5478b16e6819b8123b
+    name: RevealVolume
   m_AudioMixerGroupViews:
   - guids:
     - 2b9feed5abebef441a30e04b9b92cccd
@@ -145,6 +181,7 @@ AudioMixerController:
     - 9b4c6faa8a8d8ff459d69430afd455ec
     - 34f9b7089a66fa7449f6263cfbad04e8
     - 7cba27d3beb7b8f47b9a8b703c206e8b
+    - cee7cc850b93b7a459016f699768bc68
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}

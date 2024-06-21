@@ -66,19 +66,19 @@ public class RevealHandler : MonoBehaviour
         switch (duckBeingRevealed)
         {
             case DuckType.Simple:
-                bonusText = $"\n<sprite index=0>/s: {CurrencyController.BeforeSimpleDuck} -> {CurrencyController.AfterSimpleDuck}";
+                bonusText = $"\n<sprite name=QuacksEmoji_1>/s: {CurrencyController.BeforeSimpleDuck} -> <color=#10FF00>{CurrencyController.AfterSimpleDuck}</color>";
                 break;
             case DuckType.Clever:
-                bonusText = $"\nFood thrown: 1 -> 2";
+                bonusText = $"\nFood thrown: 1 -> <color=#10FF00>2</color>";
                 break;
             case DuckType.Bread:
-                bonusText = $"\n<sprite index=0>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeBreadDuck)} -> {NumberUtility.FormatNumber(CurrencyController.AfterBreadDuck)}";
+                bonusText = $"\n<sprite name=QuacksEmoji_1>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeBreadDuck)} -> <color=#10FF00>{NumberUtility.FormatNumber(CurrencyController.AfterBreadDuck)}</color>";
                 break;
             case DuckType.Chef:
-                bonusText = $"\nThrows food every 14 seconds";
+                bonusText = $"\nThrows food every <color=#10FF00>14</color> seconds";
                 break;
             case DuckType.Magical:
-                bonusText = $"\n<sprite index=0>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeMagicalDuck)} -> {NumberUtility.FormatNumber(CurrencyController.AfterMagicalDuck)} and more!";
+                bonusText = $"\n<sprite name=QuacksEmoji_1>/s: {NumberUtility.FormatNumber(CurrencyController.BeforeMagicalDuck)} -> <color=#10FF00>{NumberUtility.FormatNumber(CurrencyController.AfterMagicalDuck)} and more</color>!";
                 break;
         }
 
