@@ -25,11 +25,24 @@ public class DuckSelector : MonoBehaviour
     private double _quacksPerClick;
     
     private DuckMovementHandler _duckMovementHandler;
+    private DuckData _duckData;
+    
+    private bool _isTutorialActive;
 
     private void Awake()
     {
         _quacksPerClick = transform.GetComponent<DuckData>().quacksPerClick;
         _duckMovementHandler = GetComponent<DuckMovementHandler>();
+        _duckData = GetComponent<DuckData>();
+    }
+    
+    private void Start()
+    {
+        if (_duckData.duckType == DuckType.Simple && DuckAmounts.GetTotalDucks(DuckType.Simple) == 1)
+        {
+            TutorialController.ShowTutorialArrowUI(transform, new Vector2(0, 100), TutorialArrowDirection.Down, 1, true);
+            _isTutorialActive = true;
+        }
     }
 
     //private bool isSelected;
@@ -42,6 +55,11 @@ public class DuckSelector : MonoBehaviour
 
     public void Feed()
     {
+        if (_isTutorialActive)
+        {
+            TutorialController.HideTutorialArrow();
+            _isTutorialActive = false;
+        }
         CurrencyController.AddCurrency(_quacksPerClick);
         DuckMovementHandler.lastClickedDuck = transform;
         DuckMovementHandler.lastClickTime = Time.timeSinceLevelLoad;

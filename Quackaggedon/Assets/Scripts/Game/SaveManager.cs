@@ -45,6 +45,8 @@ public static class SaveManager
         saveData.Add("Currency", CurrencyController.CurrencyAmount);
 
         saveData.Add("PlayerFinishedGame", EndStarter.hasPlayerFinishedGame);
+        
+        saveData.Add("tutorialIndex", TutorialController.TutorialIndex);
 
         SaveMetaSaveData(saveData);
 
@@ -82,6 +84,11 @@ public static class SaveManager
         if (saveData.TryGetValue("PlayerFinishedGame", out JToken playerFinishedGame))
         {
             EndStarter.hasPlayerFinishedGame = playerFinishedGame.ToObject<bool>();
+        }
+        
+        if (saveData.TryGetValue("tutorialIndex", out JToken tutorialIndex))
+        {
+            TutorialController.TutorialIndex = tutorialIndex.ToObject<int>();
         }
 
         LoadMetaSaveData(saveData);

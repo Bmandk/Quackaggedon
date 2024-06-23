@@ -353,6 +353,11 @@ namespace DuckClicker
 
         public void OnClick()
         {
+            if (_duckTypeToSpawn == DuckType.Simple && DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex] == 0)
+            {
+                TutorialController.HideTutorialArrow();
+            }
+            
             ThrowBread(true, true);
         }
 

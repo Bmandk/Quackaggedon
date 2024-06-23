@@ -61,6 +61,7 @@ public class References : MonoBehaviour
     public ChefPotHandler chefPotHandler;
     
     public DuckopediaDetails duckopediaDetails;
+    public GameObject tutorialArrowPrefab;
 
     private void Update()
     {

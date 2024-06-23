@@ -12,6 +12,7 @@ namespace DuckClicker
             CurrencyController.Reset();
             DiscoveredObjects.Reset();
             PlayerFoodStats.Reset();
+            TutorialController.Reset();
             DuckData.duckObjects = new Dictionary<DuckType, List<DuckData>>
             {
                 { DuckType.Simple, new List<DuckData>() },
