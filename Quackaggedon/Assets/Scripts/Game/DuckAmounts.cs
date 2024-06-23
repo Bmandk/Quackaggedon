@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public static class DuckAmounts
 {
     public static Dictionary<DuckType, long[]> duckCounts;
-    public static Dictionary<DuckType, int> hutAmounts;
+    public static Dictionary<DuckType, long> hutAmounts;
 
     public static void Reset()
     {
@@ -19,7 +19,7 @@ public static class DuckAmounts
             { DuckType.Muscle, new long[areas] }
         };
         
-        hutAmounts = new Dictionary<DuckType, int>
+        hutAmounts = new Dictionary<DuckType, long>
         {
             { DuckType.Simple, 0 },
             { DuckType.Clever, 0 },

@@ -480,6 +480,7 @@ namespace DuckClicker
             var duckData = new Dictionary<string, JToken>
             {
                 {"ducksSpawned", new JArray(DuckAmounts.duckCounts[_duckTypeToSpawn])},
+                {"ducksInHut", DuckAmounts.hutAmounts[_duckTypeToSpawn]},
                 {"foodThrown", FoodThrown},
                 {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)},
                 {"isRevealed", transform.parent.gameObject.activeSelf}
@@ -497,17 +498,23 @@ namespace DuckClicker
 
                 List<AreaSettings> areaSettings = FindObjectsOfType<AreaSettings>().ToList();
                 
+                if (duckFeederData.TryGetValue("ducksInHut", out JToken ducksInHutData))
+                {
+                    DuckAmounts.hutAmounts[_duckTypeToSpawn] = ducksInHutData.ToObject<long>();
+                }
+                
                 if (duckFeederData.TryGetValue("ducksSpawned", out JToken ducksSpawnedData))
                 {
-                    int[] ducksSpawnedDataArray = ducksSpawnedData.ToObject<int[]>();
+                    long[] ducksSpawnedDataArray = ducksSpawnedData.ToObject<long[]>();
                     for (int i = 0; i < areaSettings.Count; i++)
                     {
-                        int ducksSpawnedCount = ducksSpawnedDataArray.Length > i ? ducksSpawnedDataArray[areaSettings[i].AreaIndex] : 0;
-                        for (int j = 0; j < ducksSpawnedCount; j++)
+                        long ducksSpawnedCount = ducksSpawnedDataArray.Length > i ? ducksSpawnedDataArray[areaSettings[i].AreaIndex] : 0;
+                        for (int j = 0; j < ducksSpawnedCount - DuckAmounts.hutAmounts[_duckTypeToSpawn]; j++)
                         {
                             SpawnDuck(areaSettings[i], true);
                         }
                     }
+                    DuckAmounts.duckCounts[_duckTypeToSpawn] = ducksSpawnedDataArray;
                 }
                 
                 if (duckFeederData.TryGetValue("spawnDuckEvents", out JToken throwFoodEventsData))
