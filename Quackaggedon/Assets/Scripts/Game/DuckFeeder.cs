@@ -395,7 +395,7 @@ namespace DuckClicker
             }
 
             _sliderAnimator.SetTrigger("Pulse");
-            _progressText.text = $"{NumberUtility.FormatNumber(FoodThrown)} / {NumberUtility.FormatNumber(NextDuckCost)}";
+            _progressText.text = $"{NumberUtility.FormatNumber(FoodThrown)}/{NumberUtility.FormatNumber(NextDuckCost)}";
         }
 
         private float _targetProgress;
