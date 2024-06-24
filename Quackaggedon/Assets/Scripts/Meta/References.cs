@@ -66,6 +66,7 @@ public class References : MonoBehaviour
     public Texture2D defaultCursor;
     public Texture2D hoverInteractibleCursor;
     public Texture2D hoverDuckCursor;
+    public Texture2D clickDuckCursor;
 
     private void Update()
     {

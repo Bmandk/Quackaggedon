@@ -12,6 +12,16 @@ public class ChangeCursorOnDuckHover : MonoBehaviour
         Cursor.SetCursor(References.Instance.hoverDuckCursor, hotSpot, cursorMode);
     }
 
+    void OnMouseDown()
+    {
+        Cursor.SetCursor(References.Instance.clickDuckCursor, hotSpot, cursorMode);
+    }
+
+    private void OnMouseUp()
+    {
+        Cursor.SetCursor(References.Instance.hoverDuckCursor, hotSpot, cursorMode);
+    }
+
     void OnMouseExit()
     {
         // Pass 'null' to the texture parameter to use the default system cursor.
