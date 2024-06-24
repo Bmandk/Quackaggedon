@@ -402,9 +402,6 @@ namespace DuckClicker
         public void FinishThisProgressLevel()
         {
             _timeScale = 0;
-
-
-            progressSlider.value = 0;
             
             if (_progressLerp != null)
             {
@@ -420,9 +417,6 @@ namespace DuckClicker
         {
             _targetProgress = (float)progress;
             _timeScale = 0;
-
-            progressSlider.value = _targetProgress;
-
             
             if (_progressLerp != null)
             {
