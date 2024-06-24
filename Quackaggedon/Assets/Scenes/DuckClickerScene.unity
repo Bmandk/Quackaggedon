@@ -1514,9 +1514,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1956213473609436673}
     - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: bb8eb04a454293449bb9ed5183d1d6d5, type: 3}
+    - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: hoverDuckCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: d54df376d1271ac4db17d70a81556d05, type: 3}
+    - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: duckopediaDetails
       value: 
       objectReference: {fileID: 5784505566381791161}
+    - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: hoverInteractibleCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 92aefaa292b5db445825279368b88676, type: 3}
     - target: {fileID: 7346384535348893236, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: uiParent
       value: 
@@ -2099,6 +2111,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 766760697}
+    - target: {fileID: 7618445289013289920, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7619779604519690245, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2158,6 +2174,10 @@ PrefabInstance:
     - target: {fileID: 8244942383539393852, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338059346911462564, guid: 137507953ca4584448658a001b513638, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8479419077080191263, guid: 137507953ca4584448658a001b513638, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

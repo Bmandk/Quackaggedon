@@ -63,6 +63,10 @@ public class References : MonoBehaviour
     public DuckopediaDetails duckopediaDetails;
     public GameObject tutorialArrowPrefab;
 
+    public Texture2D defaultCursor;
+    public Texture2D hoverInteractibleCursor;
+    public Texture2D hoverDuckCursor;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;
