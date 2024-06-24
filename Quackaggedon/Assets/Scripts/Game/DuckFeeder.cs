@@ -45,7 +45,6 @@ namespace DuckClicker
 
         [SerializeField] private Animator _sliderAnimator;
         
-        private List<SpawnDuckEvent> _spawnDuckEvents = new List<SpawnDuckEvent>();
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
         private int _parentIndex;
@@ -292,13 +291,6 @@ namespace DuckClicker
 
                 PlayFancyRevealIfFirstTimeSpawn();
 
-                _spawnDuckEvents.Add(new SpawnDuckEvent
-                {
-                    clicksToSpawn = clicksSinceLastSpawn,
-                    autoClicksToSpawn = autoClicksSinceLastSpawn,
-                    timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
-                });
-
                 clicksSinceLastSpawn = 0;
                 autoClicksSinceLastSpawn = 0;
             } else
@@ -484,7 +476,6 @@ namespace DuckClicker
                 {"ducksSpawned", new JArray(DuckAmounts.duckCounts[_duckTypeToSpawn])},
                 {"ducksInHut", DuckAmounts.hutAmounts[_duckTypeToSpawn]},
                 {"foodThrown", FoodThrown},
-                {"spawnDuckEvents", JArray.FromObject(_spawnDuckEvents)},
                 {"isRevealed", transform.parent.gameObject.activeSelf}
             };
 
@@ -519,11 +510,6 @@ namespace DuckClicker
                     DuckAmounts.duckCounts[_duckTypeToSpawn] = ducksSpawnedDataArray;
                 }
                 
-                if (duckFeederData.TryGetValue("spawnDuckEvents", out JToken throwFoodEventsData))
-                {
-                    _spawnDuckEvents = throwFoodEventsData.ToObject<List<SpawnDuckEvent>>();
-                }
-                
                 if (duckFeederData.TryGetValue("isRevealed", out JToken isRevealed))
                 {
                     transform.parent.gameObject.SetActive(isRevealed.ToObject<bool>());
@@ -532,13 +518,5 @@ namespace DuckClicker
                 UpdateProgress();
             }
         }
-    }
-
-    [Serializable]
-    public struct SpawnDuckEvent
-    {
-        public int clicksToSpawn;
-        public int autoClicksToSpawn;
-        public string timestamp;
     }
 }
