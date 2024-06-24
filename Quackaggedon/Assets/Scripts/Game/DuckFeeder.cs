@@ -73,12 +73,13 @@ namespace DuckClicker
             var parent = transform.parent;
             _parentIndex = parent.GetSiblingIndex();
             parent.gameObject.SetActive(_parentIndex == 0);
+
+            DuckFeederStats = References.Instance.duckStats.GetDuckFeederStats(_duckTypeToSpawn);
+            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
         }
 
         private void Start()
         {
-            DuckFeederStats = References.Instance.duckStats.GetDuckFeederStats(_duckTypeToSpawn);
-            NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[DuckType.Simple][AreaSettings.CurrentArea.AreaIndex]);
             _foodPriceText.text = $"{NumberUtility.FormatNumber(DuckFeederStats.foodCost)}";
             if (selectedFromStart)
             {
