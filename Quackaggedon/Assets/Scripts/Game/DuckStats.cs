@@ -50,9 +50,9 @@ public struct DuckFeederStats
     public double growthRate;
     public double foodCost;
             
-    public long CalculateCost(long ducksSpawned)
+    public double CalculateCost(long ducksSpawned)
     {
-        return (long)System.Math.Round(baseFoodPerDuck * Math.Pow(growthRate, ducksSpawned));
+        return System.Math.Round(baseFoodPerDuck * Math.Pow(growthRate, ducksSpawned));
     }
 }
 

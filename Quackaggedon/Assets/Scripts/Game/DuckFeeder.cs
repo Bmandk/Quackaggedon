@@ -19,7 +19,7 @@ namespace DuckClicker
         public DuckFeederStats DuckFeederStats { get; private set; }
         private DuckType _duckTypeToSpawn;
 
-        public long FoodThrown { get; private set; }
+        public double FoodThrown { get; private set; }
         private DuckSpawner _duckSpawner;
         public static DuckFeeder SelectedFeeder { get; private set; }
         private Button _button;
@@ -30,7 +30,7 @@ namespace DuckClicker
         private Color colorHiddenIcon;
 
         public Slider progressSlider;
-        public long NextDuckCost { get; private set; }
+        public double NextDuckCost { get; private set; }
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
         private float _autoBuyTimer;
@@ -57,7 +57,7 @@ namespace DuckClicker
         // Used for duckopedia details
         public static float ChefDuckTimer;
         public static float MagicalChefDuckBonus;
-        public static float CleverDuckAmount;
+        public static double CleverDuckAmount;
         public static float MagicalCleverDuckBonus;
         
         // Used for popup reveals
@@ -166,7 +166,7 @@ namespace DuckClicker
             // =FLOOR(MAX(POW(S11,$L$6), POW($J$6,S11+$K$6*P11)*$I$6)+1)
             long cleverDucks = DuckAmounts.GetTotalDucks(DuckType.Clever);
             long magicDucks = DuckAmounts.GetTotalDucks(DuckType.Magical);
-            long attemptedFoodCountThisThrow = (long)Math.Max(
+            double attemptedFoodCountThisThrow = Math.Max(
                 Math.Pow(cleverDucks, References.Instance.duckStats.cleverDuckStats.minFoodPerDuck),
                 Math.Pow(
                     References.Instance.duckStats.cleverDuckStats.foodAmountGrowthRate,
@@ -176,18 +176,20 @@ namespace DuckClicker
             
             // Don't overspend food
             attemptedFoodCountThisThrow = Math.Min(attemptedFoodCountThisThrow, NextDuckCost - FoodThrown); 
-            long actualFoodAmountThrown = attemptedFoodCountThisThrow;
+            double actualFoodAmountThrown = attemptedFoodCountThisThrow;
             if (useCurrency)
-                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, (long)(CurrencyController.CurrencyAmount / DuckFeederStats.foodCost));
+                actualFoodAmountThrown = Math.Min(attemptedFoodCountThisThrow, CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
             
-            #if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (_cheatThrowAllFood)
             {
                 if (useCurrency)
-                    actualFoodAmountThrown = (long)(CurrencyController.CurrencyAmount / DuckFeederStats.foodCost);
+                    actualFoodAmountThrown = CurrencyController.CurrencyAmount / DuckFeederStats.foodCost;
                 actualFoodAmountThrown = Math.Min(NextDuckCost - FoodThrown, actualFoodAmountThrown);
             }
 #endif
+            
+            actualFoodAmountThrown = Math.Floor(actualFoodAmountThrown);
 
             var costOfFood = actualFoodAmountThrown * DuckFeederStats.foodCost;
             if (useCurrency)
@@ -219,7 +221,7 @@ namespace DuckClicker
             }
         }
 
-        private void UpdateStatsAndSpawnDuck(long actualFoodAmountThrown)
+        private void UpdateStatsAndSpawnDuck(double actualFoodAmountThrown)
         {
             PlayerFoodStats.AddToTotalFoodThrown(foodToThrow, actualFoodAmountThrown);
             FoodThrown += actualFoodAmountThrown;
@@ -240,7 +242,7 @@ namespace DuckClicker
             }
         }
 
-        public void ChefServeFood(int particles, long actualFoodAmountThrown, bool isFromHand)
+        public void ChefServeFood(int particles, double actualFoodAmountThrown, bool isFromHand)
         {
             var randomChefPos = DuckData.duckObjects[DuckType.Chef][Random.Range(0, DuckData.duckObjects[DuckType.Chef].Count)].transform.position + new Vector3(0,1.2f,0);
 
@@ -253,7 +255,7 @@ namespace DuckClicker
 
         }
 
-        IEnumerator WaitSomeThenPot(ChefPotHandler.Amount potLevel, Vector3 randomChefPos, long actualFoodAmountThrown)
+        IEnumerator WaitSomeThenPot(ChefPotHandler.Amount potLevel, Vector3 randomChefPos, double actualFoodAmountThrown)
         {
             yield return new WaitForSeconds(0.4f);
 
@@ -366,7 +368,7 @@ namespace DuckClicker
             NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
             if (FoodThrown >= NextDuckCost)
             {
-                long newFood = NextDuckCost - 1;
+                double newFood = NextDuckCost - 1;
                 FoodThrown = newFood;
             }
 
@@ -384,7 +386,7 @@ namespace DuckClicker
             if (gameObject.activeInHierarchy == false)
                 return;
             
-            var newVal = (float)FoodThrown / NextDuckCost;
+            var newVal = FoodThrown / NextDuckCost;
             if (newVal == 0)
             {
                 FinishThisProgressLevel();
@@ -421,9 +423,9 @@ namespace DuckClicker
             
         }
 
-        public void SetProgress(float progress)
+        public void SetProgress(double progress)
         {
-            _targetProgress = progress;
+            _targetProgress = (float)progress;
             _timeScale = 0;
 
             progressSlider.value = _targetProgress;
@@ -494,7 +496,7 @@ namespace DuckClicker
             if (saveData.TryGetValue(_duckTypeToSpawn.ToString(), out JToken data))
             {
                 Dictionary<string, JToken> duckFeederData = data.ToObject<Dictionary<string, JToken>>();
-                FoodThrown = (long) duckFeederData["foodThrown"];
+                FoodThrown = (double) duckFeederData["foodThrown"];
 
                 List<AreaSettings> areaSettings = FindObjectsOfType<AreaSettings>().ToList();
                 
