@@ -2345,6 +2345,8 @@ Transform:
   m_Children:
   - {fileID: 5088687490766254952}
   - {fileID: 6695147357065099524}
+  - {fileID: 3333491187682087144}
+  - {fileID: 1635736524748844854}
   m_Father: {fileID: 8530518058844679403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4516683651693143199
@@ -2542,6 +2544,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5035329194798400601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635736524748844854}
+  - component: {fileID: 3741119210489269178}
+  m_Layer: 0
+  m_Name: AudioCategorySetOnLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635736524748844854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035329194798400601}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1715733608261778461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3741119210489269178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035329194798400601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e38097c0cba4a242b68d0020f6a437d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 1609d2f9163aa9943abbd24c190ff477, type: 2}
 --- !u!1 &5076747280469957383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3418,10 @@ MonoBehaviour:
   chefPotHandler: {fileID: 8555911163768649592}
   duckopediaDetails: {fileID: 0}
   tutorialArrowPrefab: {fileID: 244596968866192137, guid: 4a4e591dd43cc6845acb550ecb09ce35, type: 3}
+  defaultCursor: {fileID: 0}
+  hoverInteractibleCursor: {fileID: 0}
+  hoverDuckCursor: {fileID: 0}
+  clickDuckCursor: {fileID: 0}
 --- !u!1 &6265874323670082511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,7 +3902,6 @@ Transform:
   - {fileID: 4438532952008320068}
   - {fileID: 1715733608261778461}
   - {fileID: 6231088725953104394}
-  - {fileID: 3333491187682087144}
   - {fileID: 4509024490211804814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5431,7 +5481,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8530518058844679403}
+    m_TransformParent: {fileID: 1715733608261778461}
     m_Modifications:
     - target: {fileID: 8828081840091672797, guid: 6456d334ff102954198af5811534b9f8, type: 3}
       propertyPath: m_LocalPosition.x
