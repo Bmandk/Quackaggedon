@@ -44,6 +44,8 @@ public class DuckData : MonoBehaviour
     public static Dictionary<DuckType, List<DuckData>> duckObjects;
 
     public double quacksPerClick;
+    
+    public string AchievementName;
 
     private void Awake()
     {

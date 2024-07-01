@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DuckClicker;
+using Steamworks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -114,6 +115,13 @@ public class RevealHandler : MonoBehaviour
         if (revealC != null)
             StopCoroutine(revealC);
         revealC = StartCoroutine(FadeInCanvasGroup(0, 1, 0.5f, revealCanvasGroup));
+        
+        SteamUserStats.GetAchievement(duckToShow.AchievementName, out bool achieved);
+        if (duckToShow.AchievementName != "" && !achieved)
+        {
+            SteamUserStats.SetAchievement(duckToShow.AchievementName);
+            SteamUserStats.StoreStats();
+        }
     }
 
     public void CloseRevealUI()
