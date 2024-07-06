@@ -13,6 +13,7 @@ namespace DuckClicker
             DiscoveredObjects.Reset();
             PlayerFoodStats.Reset();
             TutorialController.Reset();
+            HutRevealController.ResetHutValues();
             DuckData.duckObjects = new Dictionary<DuckType, List<DuckData>>
             {
                 { DuckType.Simple, new List<DuckData>() },

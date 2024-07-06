@@ -48,6 +48,12 @@ public static class SaveManager
         
         saveData.Add("tutorialIndex", TutorialController.TutorialIndex);
 
+        saveData.Add("revealedLvl1Hut", HutRevealController.revealedLvl1);
+        saveData.Add("revealedLvl2Hut", HutRevealController.revealedLvl2);
+        saveData.Add("revealedLvl3Hut", HutRevealController.revealedLvl3);
+        saveData.Add("duckIconsThatShouldBeRevealed", HutRevealController.duckIconsThatShouldBeRevealed);
+        saveData.Add("amountOfDuckIconsAlreadyRevealed", HutRevealController.amountOfDuckIconsAlreadyRevealed);
+
         SaveMetaSaveData(saveData);
 
         IEnumerable<ISaveable> dataPersistanceObjects = GetRunDataPersistanceObjects();
@@ -89,6 +95,31 @@ public static class SaveManager
         if (saveData.TryGetValue("tutorialIndex", out JToken tutorialIndex))
         {
             TutorialController.TutorialIndex = tutorialIndex.ToObject<int>();
+        }
+
+        if (saveData.TryGetValue("revealedLvl1Hut", out JToken revealedLvl1Hut))
+        {
+            HutRevealController.revealedLvl1 = revealedLvl1Hut.ToObject<bool>();
+        }
+
+        if (saveData.TryGetValue("revealedLvl2Hut", out JToken revealedLvl2Hut))
+        {
+            HutRevealController.revealedLvl2 = revealedLvl2Hut.ToObject<bool>();
+        }
+
+        if (saveData.TryGetValue("revealedLv13Hut", out JToken revealedLvl3Hut))
+        {
+            HutRevealController.revealedLvl3 = revealedLvl3Hut.ToObject<bool>();
+        }
+
+        if (saveData.TryGetValue("duckIconsThatShouldBeRevealed", out JToken duckIconsThatShouldBeRevealed))
+        {
+            HutRevealController.duckIconsThatShouldBeRevealed = duckIconsThatShouldBeRevealed.ToObject<int>();
+        }
+
+        if (saveData.TryGetValue("amountOfDuckIconsAlreadyRevealed", out JToken amountOfDuckIconsAlreadyRevealed))
+        {
+            HutRevealController.amountOfDuckIconsAlreadyRevealed = amountOfDuckIconsAlreadyRevealed.ToObject<int>();
         }
 
         LoadMetaSaveData(saveData);

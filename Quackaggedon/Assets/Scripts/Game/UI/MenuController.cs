@@ -2,6 +2,7 @@ using DuckClicker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -43,12 +44,12 @@ public class MenuController : MonoBehaviour
 
     public void OpenHutUI()
     {
-        hutUI.SetActive(true);
+        References.Instance.hutRevealController.RevealHutContentsCorrectly();
     }
 
     public void CloseHutUI()
     {
-        hutUI.SetActive(false);
+        References.Instance.hutRevealController.CloseHutUI();
     }
 
     public void DisableUiForDirtInteraction()

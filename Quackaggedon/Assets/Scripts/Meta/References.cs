@@ -68,6 +68,8 @@ public class References : MonoBehaviour
     public Texture2D hoverDuckCursor;
     public Texture2D clickDuckCursor;
 
+    public HutRevealController hutRevealController;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;
