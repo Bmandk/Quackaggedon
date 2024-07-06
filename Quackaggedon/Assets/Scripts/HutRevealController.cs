@@ -8,9 +8,10 @@ public class HutRevealController : MonoBehaviour
 {
     public GameObject hutUI;
 
-    public static float level1HutDuckAmount = 60;
-    public static float level2HutDuckAmount = 120;
-    public static float level3HutDuckAmount = 200;
+    public static float level1HutDuckPercentage = 0.3f;
+    public static float level2HutDuckPercentage = 0.6f;
+    public static float level3HutDuckPercentage = 1f;
+    public static float maxLevelDuckAmount = 140;
 
     public GameObject[] duckIconsOnHut;
     public CanvasGroup roofDirty;
@@ -45,7 +46,7 @@ public class HutRevealController : MonoBehaviour
     public void RevealHutContentsCorrectly()
     {
         ducksSavedToHut = (int)DuckAmounts.GetTotalDucksInHut();
-        duckIconsThatShouldBeRevealed = (int) (Mathf.Min((ducksSavedToHut / level3HutDuckAmount),1) * duckIconsOnHut.Length);
+        duckIconsThatShouldBeRevealed = (int) (Mathf.Min((ducksSavedToHut / maxLevelDuckAmount),1) * duckIconsOnHut.Length);
 
         RevealDucks();
         RevealCleanHutParts();
@@ -70,7 +71,7 @@ public class HutRevealController : MonoBehaviour
         else
         {
             groundDirty.alpha = 1;
-            if (ducksSavedToHut >= level1HutDuckAmount)
+            if (ducksSavedToHut >= (level1HutDuckPercentage * maxLevelDuckAmount))
             {
                 StartCoroutine(SlowRevealClean(groundDirty,0.6f));
                 StartCoroutine(GlowHutPart(groundGlow));
@@ -85,7 +86,7 @@ public class HutRevealController : MonoBehaviour
         else
         {
             wallDirty.alpha = 1;
-            if (ducksSavedToHut >= level2HutDuckAmount)
+            if (ducksSavedToHut >= (level2HutDuckPercentage*maxLevelDuckAmount))
             {
                 StartCoroutine(SlowRevealClean(wallDirty, 0.6f));
                 StartCoroutine(GlowHutPart(wallGlow));
@@ -100,7 +101,7 @@ public class HutRevealController : MonoBehaviour
         else
         {
             roofDirty.alpha = 1;
-            if (ducksSavedToHut >= level3HutDuckAmount)
+            if (ducksSavedToHut >= (level3HutDuckPercentage * maxLevelDuckAmount))
             {
                 StartCoroutine(SlowRevealClean(roofDirty, 0.6f));
                 StartCoroutine(GlowHutPart(roofGlow));
