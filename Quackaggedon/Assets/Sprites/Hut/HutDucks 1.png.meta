@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: 2022a4201e7f735438397f4478299c76
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HutDucks_0
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1565
+        width: 181
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ca2cfaa584436449d10ff430758b79
+      internalID: -869605685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_1
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1600
+        width: 169
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db849568b417004f85619213233a171
+      internalID: -1132081032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_2
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1597
+        width: 145
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef3c4dfff06fa14ca86a5faeef9989d
+      internalID: 401845451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_3
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1696
+        width: 156
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1214128957cf34247a6cef8d07630ea9
+      internalID: -1131022941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_4
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 1624
+        width: 182
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dce6494420206409c600d30752bceb
+      internalID: 1683049042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_5
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1658
+        width: 170
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c0d083188beda409e61600c33e3b53
+      internalID: 1362515682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_6
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 1659
+        width: 143
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4f06122b6948b43b85e3e7100d5468
+      internalID: 1623209628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1531
+        width: 156
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88521a3bf6c4fb4398982470930e0d8
+      internalID: -1828993313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1371
+        width: 137
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c68daafa3aa8140bef606492365a10
+      internalID: 1525760678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_9
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1402
+        width: 116
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8a9ef69adaf084b9c149be8b159a6c
+      internalID: -184038851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_10
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 1450
+        width: 132
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72641cd533381774b892b05df14613e6
+      internalID: 91601752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_11
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1459
+        width: 117
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e6cefde69c3ec4c94674af96a8fbcf
+      internalID: -296890997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_12
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 1507
+        width: 134
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d2e93916309af4788e6d6e0d49b630
+      internalID: -562533267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_13
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1290
+        width: 181
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3391944ef1110ff4d92aba6bffbad0a2
+      internalID: -101174002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_14
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1248
+        width: 146
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcde3486740f58b40842853dba82f457
+      internalID: 1262306767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_15
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1235
+        width: 137
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794b1a0aaa04333428ff024310e765dc
+      internalID: 1183241410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_16
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1184
+        width: 139
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718f64679011d914e923897da8bf9c69
+      internalID: 1141021406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_17
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1349
+        width: 179
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4cc4db1c2a169544bec7d5ca1cc26e4
+      internalID: 2113921649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_18
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 1306
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fb9f140a1389448875f2a15b7a4c30
+      internalID: 357948991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_19
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1293
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9202273023d1649b17aa5c243b5677
+      internalID: 861314994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_20
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 1223
+        width: 144
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0595d604616b7d4cb20fe487dcccd4f
+      internalID: 1403113673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_21
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 1242
+        width: 139
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456b06909fcf8174dad36763b8e72e6f
+      internalID: -1140077137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_22
+      rect:
+        serializedVersion: 2
+        x: 2911
+        y: 1245
+        width: 137
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc7498c494be1747bcfe13f4a695d4a
+      internalID: 604462704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_23
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1165
+        width: 145
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391cc535f3f8f3641a0e705ca2dca2ff
+      internalID: 729187423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_24
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 895
+        width: 157
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0697a26152939154a86d4f93d87c2e10
+      internalID: -733181054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_25
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 911
+        width: 181
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ed1fc8393ba224ab6643c52ac16717
+      internalID: -359455963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_26
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 946
+        width: 169
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9314e3568bf5ea4b82d7680aa5a7ab4
+      internalID: -1570948097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_27
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 956
+        width: 145
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9588dd5c781b7845a1203ec044218d8
+      internalID: -1037409222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_28
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 880
+        width: 180
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38d826f4d44e8f4190feb4d9ab78277
+      internalID: 1460877402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_29
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 916
+        width: 170
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1790f816e98e74ea71a88d9fdf19dc
+      internalID: 1502913590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_30
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 962
+        width: 137
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42670ab9f05193479a949c42d8cfa04
+      internalID: -773912550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_31
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 991
+        width: 157
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e113f7234a1208e4888bdc078ba00487
+      internalID: 647563570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_32
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 636
+        width: 181
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edd104b326ac6f449f8ed0bbc93b690
+      internalID: -919428456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_33
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 716
+        width: 137
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573e6557845208d428639e2bf4185728
+      internalID: 1942557812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_34
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 748
+        width: 116
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde11b0c51fd5cf4dad57d47007315b3
+      internalID: 229663784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_35
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 796
+        width: 132
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59990b46405253e4b9bd5077f235fc45
+      internalID: -1550264659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_36
+      rect:
+        serializedVersion: 2
+        x: 2682
+        y: 716
+        width: 115
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2028e942e860d5d4f961a725967dda76
+      internalID: -754875210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_37
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 729
+        width: 144
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0730a6206fd6fd14f90e711983866a1d
+      internalID: 1105297253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_38
+      rect:
+        serializedVersion: 2
+        x: 3039
+        y: 708
+        width: 135
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060d7623eb5012d46b09a2df1d9ab7f4
+      internalID: 1140828769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_39
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 594
+        width: 146
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44de4dc7c6df0584d99b92245d9c90a0
+      internalID: -1676028620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_40
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 581
+        width: 137
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5c0a98927c415499d2ca2885f89773
+      internalID: -11510705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_41
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 511
+        width: 145
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b631695bd713414d8ed86ed8752c8ed
+      internalID: -1643912361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_42
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 530
+        width: 139
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a243c4118883894690049d6f23d168b
+      internalID: 1394204881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_43
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 605
+        width: 179
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5601d88f0dedcd44a86b539af440582
+      internalID: -1682207421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_44
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 562
+        width: 144
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8dae7bf9f8c994aa762009ceeb751c
+      internalID: 2009522168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_45
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 549
+        width: 138
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6044ae7c22025458a2245991a0d715
+      internalID: -1260232213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_46
+      rect:
+        serializedVersion: 2
+        x: 2445
+        y: 481
+        width: 144
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e75e85e11e12054dba6a5246217f50c
+      internalID: 1587146011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_47
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 498
+        width: 137
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f5cfd2cb59c444f922563ea6209ce0
+      internalID: 1594319018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_48
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 412
+        width: 159
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8957f48eb7f8e48aa811e75370b492
+      internalID: 893636787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_49
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 294
+        width: 152
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13454444f1a67f4aaaead17bdd6de39
+      internalID: 959494918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HutDucks_50
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 196
+        width: 131
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698e8c67a87addd4a945f40363e06d8e
+      internalID: -1970604752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      HutDucks_0: -869605685
+      HutDucks_1: -1132081032
+      HutDucks_10: 91601752
+      HutDucks_11: -296890997
+      HutDucks_12: -562533267
+      HutDucks_13: -101174002
+      HutDucks_14: 1262306767
+      HutDucks_15: 1183241410
+      HutDucks_16: 1141021406
+      HutDucks_17: 2113921649
+      HutDucks_18: 357948991
+      HutDucks_19: 861314994
+      HutDucks_2: 401845451
+      HutDucks_20: 1403113673
+      HutDucks_21: -1140077137
+      HutDucks_22: 604462704
+      HutDucks_23: 729187423
+      HutDucks_24: -733181054
+      HutDucks_25: -359455963
+      HutDucks_26: -1570948097
+      HutDucks_27: -1037409222
+      HutDucks_28: 1460877402
+      HutDucks_29: 1502913590
+      HutDucks_3: -1131022941
+      HutDucks_30: -773912550
+      HutDucks_31: 647563570
+      HutDucks_32: -919428456
+      HutDucks_33: 1942557812
+      HutDucks_34: 229663784
+      HutDucks_35: -1550264659
+      HutDucks_36: -754875210
+      HutDucks_37: 1105297253
+      HutDucks_38: 1140828769
+      HutDucks_39: -1676028620
+      HutDucks_4: 1683049042
+      HutDucks_40: -11510705
+      HutDucks_41: -1643912361
+      HutDucks_42: 1394204881
+      HutDucks_43: -1682207421
+      HutDucks_44: 2009522168
+      HutDucks_45: -1260232213
+      HutDucks_46: 1587146011
+      HutDucks_47: 1594319018
+      HutDucks_48: 893636787
+      HutDucks_49: 959494918
+      HutDucks_5: 1362515682
+      HutDucks_50: -1970604752
+      HutDucks_6: 1623209628
+      HutDucks_7: -1828993313
+      HutDucks_8: 1525760678
+      HutDucks_9: -184038851
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
