@@ -19,7 +19,8 @@ public class DuckAmountInHutUpdater : MonoBehaviour
     {
         if (AreaSettings.CurrentArea != null)
         {
-            text.text = $"{DuckAmounts.GetTotalDucksInHut()}/{HutRevealController.maxLevelDuckAmount}";
+            //text.text = $"{DuckAmounts.GetTotalDucksInHut()}/{HutRevealController.maxLevelDuckAmount}";
+            text.text = $"{DuckAmounts.GetTotalDucksInHut()}";
             slider.value = Mathf.Min(1, DuckAmounts.GetTotalDucksInHut()/HutRevealController.maxLevelDuckAmount);
         }
 

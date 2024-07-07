@@ -54,7 +54,7 @@ public class RevealHandler : MonoBehaviour
     private bool pressedCloseReveal = false;
 
     public void AddActionToAfterReveal(Action ToDoAfter)
-    { 
+    {
         this.ToDoAfter = ToDoAfter;
     }
     public void ShowRevealUI(DuckData duckToShow)
@@ -115,13 +115,21 @@ public class RevealHandler : MonoBehaviour
         if (revealC != null)
             StopCoroutine(revealC);
         revealC = StartCoroutine(FadeInCanvasGroup(0, 1, 0.5f, revealCanvasGroup));
-        
+
+        RefreshSteamAchievments(duckToShow);
+    }
+
+    private static void RefreshSteamAchievments(DuckData duckToShow)
+    {
+
         SteamUserStats.GetAchievement(duckToShow.AchievementName, out bool achieved);
+
         if (duckToShow.AchievementName != "" && !achieved)
         {
             SteamUserStats.SetAchievement(duckToShow.AchievementName);
             SteamUserStats.StoreStats();
         }
+
     }
 
     public void CloseRevealUI()

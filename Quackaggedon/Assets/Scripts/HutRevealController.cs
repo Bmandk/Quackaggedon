@@ -11,7 +11,7 @@ public class HutRevealController : MonoBehaviour
     public static float level1HutDuckPercentage = 0.3f;
     public static float level2HutDuckPercentage = 0.6f;
     public static float level3HutDuckPercentage = 1f;
-    public static float maxLevelDuckAmount = 140;
+    public static float maxLevelDuckAmount = 260;
 
     public GameObject[] duckIconsOnHut;
     public CanvasGroup roofDirty;
@@ -35,6 +35,9 @@ public class HutRevealController : MonoBehaviour
     private float waitUntilRevealUpdate = 0.6f;
     private float flashRevealTime = 0.2f;
 
+    public HutAnimSetValues animSetValues;
+    public HutSliderAnim hutSliderAnim;
+
     public static void ResetHutValues()
     {
         revealedLvl1 = false;
@@ -47,7 +50,16 @@ public class HutRevealController : MonoBehaviour
     public void RevealHutContentsCorrectly()
     {
         ducksSavedToHut = (int)DuckAmounts.GetTotalDucksInHut();
-        duckIconsThatShouldBeRevealed = (int) (Mathf.Min((ducksSavedToHut / maxLevelDuckAmount),1) * duckIconsOnHut.Length);
+        int duckIconsToShow = (int)(Mathf.Min((ducksSavedToHut / maxLevelDuckAmount), 1) * duckIconsOnHut.Length);
+
+        if (duckIconsToShow == 0 && ducksSavedToHut > 0)
+        {
+            duckIconsThatShouldBeRevealed = 1;
+        }
+        else
+        {
+            duckIconsThatShouldBeRevealed = duckIconsToShow;
+        }
 
         RevealDucks();
         RevealCleanHutParts();
@@ -65,48 +77,56 @@ public class HutRevealController : MonoBehaviour
 
     private void RevealCleanHutParts()
     {
-        if (revealedLvl1)
+        if (!revealedLvl1)
         {
-            groundDirty.alpha = 0;
-        }
-        else
-        {
-            groundDirty.alpha = 1;
             if (ducksSavedToHut >= (level1HutDuckPercentage * maxLevelDuckAmount))
             {
-                StartCoroutine(SlowRevealClean(groundDirty,0.6f));
-                StartCoroutine(GlowHutPart(groundGlow));
+                RevealLevel1();
                 revealedLvl1 = true;
+            }
+        } 
+        else
+        {
+            if (hutUI.activeSelf) 
+            {
+                animSetValues.SetGroundToCleaned();
+                animSetValues.SetLibraryToShown();
+                animSetValues.SetPillowToShown();
             }
         }
 
-        if (revealedLvl2) 
+        if (!revealedLvl2) 
         {
-            wallDirty.alpha = 0;
-        }
-        else
-        {
-            wallDirty.alpha = 1;
             if (ducksSavedToHut >= (level2HutDuckPercentage*maxLevelDuckAmount))
             {
-                StartCoroutine(SlowRevealClean(wallDirty, 0.6f));
-                StartCoroutine(GlowHutPart(wallGlow));
+                RevealLevel2();
                 revealedLvl2 = true;
             }
         }
-
-        if (revealedLvl3)
+        else
         {
-            roofDirty.alpha = 0;
+            if (hutUI.activeSelf)
+            {
+                animSetValues.SetWallToCleaned();
+                animSetValues.SetTVToShown();
+            }
+        }
+
+        if (!revealedLvl3)
+        {
+            if (ducksSavedToHut >= (level3HutDuckPercentage * maxLevelDuckAmount))
+            {
+                RevealLevel3();
+                revealedLvl3 = true;
+            }
         }
         else
         {
-            roofDirty.alpha = 1;
-            if (ducksSavedToHut >= (level3HutDuckPercentage * maxLevelDuckAmount))
+            if (hutUI.activeSelf)
             {
-                StartCoroutine(SlowRevealClean(roofDirty, 0.6f));
-                StartCoroutine(GlowHutPart(roofGlow));
-                revealedLvl3 = true;
+                animSetValues.SetRoofToCleaned();
+                animSetValues.SetMagicalCircleToShown();
+                animSetValues.SetShroomsToShown();
             }
         }
     }
@@ -116,6 +136,7 @@ public class HutRevealController : MonoBehaviour
         StartCoroutine(DisplayDucksCorrectly(duckIconsThatShouldBeRevealed));
     }
 
+    /*
     private IEnumerator SlowRevealClean(CanvasGroup cv, float fadeDuration)
     {
         yield return new WaitForSeconds(waitUntilRevealUpdate);
@@ -128,6 +149,7 @@ public class HutRevealController : MonoBehaviour
             yield return null;
         }
     }
+    */
 
     IEnumerator DisplayDucksCorrectly(int ducksToReveal)
     {
@@ -169,6 +191,7 @@ public class HutRevealController : MonoBehaviour
         amountOfDuckIconsAlreadyRevealed = ducksToReveal;
     }
 
+    /*
     IEnumerator GlowHutPart(GameObject glowOj)
     {
         yield return new WaitForSeconds(waitUntilRevealUpdate);
@@ -180,9 +203,52 @@ public class HutRevealController : MonoBehaviour
 
         glowOj.SetActive(false);
     }
+    */
 
     public void CloseHutUI()
     {
         hutUI.SetActive(false);
     }
+
+    private void RevealLevel1()
+    {
+        hutSliderAnim.PulseSlider();
+        StartCoroutine(Reveal1());
+    }
+
+    private void RevealLevel2()
+    {
+        hutSliderAnim.PulseSlider();
+        StartCoroutine(Reveal2());
+    }
+
+    public void RevealLevel3()
+    {
+        hutSliderAnim.PulseSlider();
+        StartCoroutine(Reveal3());
+    }
+
+    private IEnumerator Reveal1()
+    {
+        yield return new WaitForSeconds(waitUntilRevealUpdate);
+        animSetValues.CleanGround();
+        animSetValues.ShowLibrary();
+        animSetValues.ShowPillow();
+    }
+
+    private IEnumerator Reveal2()
+    {
+        yield return new WaitForSeconds(waitUntilRevealUpdate);
+        animSetValues.CleanWall();
+        animSetValues.ShowTV();
+    }
+
+    private IEnumerator Reveal3()
+    {
+        yield return new WaitForSeconds(waitUntilRevealUpdate);
+        animSetValues.CleanRoof();
+        animSetValues.ShowMagicCircle();
+        animSetValues.ShowShrooms();
+    }
+
 }

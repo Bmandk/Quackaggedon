@@ -47,6 +47,13 @@ public class AudioController : MonoBehaviour
 
     public AudioSource wingFlap;
 
+    public AudioSource miniPop;
+
+    public void PlayMiniPop()
+    {
+        miniPop.Play();
+    }
+
     public void PlayWingFlap()
     {
         wingFlap.pitch = UnityEngine.Random.Range(1f, 1.2f);
