@@ -9,6 +9,8 @@ public class DuckAmountInHutUpdater : MonoBehaviour
     private TMP_Text text;
     public Slider slider;
 
+    private long prevValue;
+
     private void Awake()
     {
         text = GetComponent<TMP_Text>();
@@ -20,7 +22,16 @@ public class DuckAmountInHutUpdater : MonoBehaviour
         if (AreaSettings.CurrentArea != null)
         {
             //text.text = $"{DuckAmounts.GetTotalDucksInHut()}/{HutRevealController.maxLevelDuckAmount}";
-            text.text = $"{DuckAmounts.GetTotalDucksInHut()}";
+            var duckHutAmount = DuckAmounts.GetTotalDucksInHut();
+
+            if (prevValue != duckHutAmount) 
+            {
+                References.Instance.hutSliderAnim.PulseSlider();
+            }
+
+            prevValue = duckHutAmount;
+
+            text.text = $"{duckHutAmount}";
             slider.value = Mathf.Min(1, DuckAmounts.GetTotalDucksInHut()/HutRevealController.maxLevelDuckAmount);
         }
 

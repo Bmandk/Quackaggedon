@@ -70,6 +70,8 @@ public class References : MonoBehaviour
 
     public HutRevealController hutRevealController;
 
+    public HutSliderAnim hutSliderAnim;
+
     private void Update()
     {
         var screenPoint = Input.mousePosition;
