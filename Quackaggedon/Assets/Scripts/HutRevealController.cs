@@ -33,6 +33,7 @@ public class HutRevealController : MonoBehaviour
     private int ducksSavedToHut;
     public static int duckIconsThatShouldBeRevealed;
     private float waitUntilRevealUpdate = 0.6f;
+    private float flashRevealTime = 0.2f;
 
     public static void ResetHutValues()
     {
@@ -157,7 +158,7 @@ public class HutRevealController : MonoBehaviour
             duckIconsOnHut[i].gameObject.SetActive(true);
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(flashRevealTime);
 
         for (int i = amountOfDuckIconsAlreadyRevealed; i < ducksToReveal; i++)
         {
@@ -175,7 +176,7 @@ public class HutRevealController : MonoBehaviour
         AudioController.Instance.PlayBloopSound();
         glowOj.SetActive(true);
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(flashRevealTime);
 
         glowOj.SetActive(false);
     }
