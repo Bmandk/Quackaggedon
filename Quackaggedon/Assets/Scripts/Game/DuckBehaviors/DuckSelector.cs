@@ -104,9 +104,10 @@ public class DuckSelector : MonoBehaviour
     {
         duckAnim.SetBool("Happy", true);
         duckAnim.SetTrigger("Quack");
-        ArmController.Instance.armAnimator.SetBool("Pet",true);
+        ArmController.Instance.armAnimator.SetTrigger("Pet2");
+        //ArmController.Instance.armAnimator.SetBool("Pet",true);
         yield return new WaitForSeconds(0.05f);
-        ArmController.Instance.armAnimator.SetBool("Pet", false);
+        //ArmController.Instance.armAnimator.SetBool("Pet", false);
         duckAnim.SetBool("Happy", false);
         _quackCoroutine = null;
     }
