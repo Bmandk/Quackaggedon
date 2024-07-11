@@ -29,21 +29,23 @@ namespace DuckClicker
         [SerializeField]
         private Color colorHiddenIcon;
 
-        public Slider progressSlider;
+        //public Slider progressSlider;
         public double NextDuckCost { get; private set; }
         [SerializeField] private bool useForAutoThrow;
         private float _autoThrowTimer;
         private float _autoBuyTimer;
         [SerializeField] private int _maxThrowParticles = 30;
 
-        [SerializeField] private TMP_Text _progressText;
+        public FoodSliderAnimator foodSliderAnimator;
+
+        //[SerializeField] private TMP_Text _progressText;
         [SerializeField] private TMP_Text _foodPriceText;
         
         [SerializeField] private int _cheatDucksToSpawn = 0;
         [SerializeField] private bool _cheatSpawnDucks = false;
         [SerializeField] private bool _cheatThrowAllFood = false;
 
-        [SerializeField] private Animator _sliderAnimator;
+        //[SerializeField] private Animator _sliderAnimator;
         
         private int clicksSinceLastSpawn = 0;
         private int autoClicksSinceLastSpawn = 0;
@@ -85,8 +87,8 @@ namespace DuckClicker
             {
                 Select();
             }
-            
-            UpdateProgress();
+
+            foodSliderAnimator.UpdateSliderProgress();
         }
 
         private void Update()
@@ -234,7 +236,7 @@ namespace DuckClicker
                 ducksSpawned++;
             }
 
-            UpdateProgress();
+            foodSliderAnimator.UpdateSliderProgress();
 
             if (ducksSpawned > 0)
             {
@@ -365,7 +367,7 @@ namespace DuckClicker
                 FoodThrown = newFood;
             }
 
-            UpdateProgress();
+            foodSliderAnimator.UpdateSliderProgress();
         }
 
         public void Deselect()
@@ -374,95 +376,6 @@ namespace DuckClicker
             _button.interactable = true;
         }
         
-        private void UpdateProgress()
-        {
-            if (gameObject.activeInHierarchy == false)
-                return;
-            
-            var newVal = FoodThrown / NextDuckCost;
-            if (newVal == 0)
-            {
-                FinishThisProgressLevel();
-            }
-            else
-            {
-                SetProgress(newVal);
-            }
-
-            _sliderAnimator.SetTrigger("Pulse");
-            _progressText.text = $"{NumberUtility.FormatNumber(FoodThrown)}/{NumberUtility.FormatNumber(NextDuckCost)}";
-        }
-
-        private float _targetProgress;
-        private float _timeScale = 0;
-        private bool _lerpingProgress = false;
-        private float _fillSpeed = 3;
-        private Coroutine _progressLerp;
-
-        public void FinishThisProgressLevel()
-        {
-            _timeScale = 0;
-            
-            if (_progressLerp != null)
-            {
-                StopCoroutine(_progressLerp);
-                _lerpingProgress = false;
-            }
-            if (!_lerpingProgress)
-                _progressLerp = StartCoroutine(LerpProgressToFinish());
-            
-        }
-
-        public void SetProgress(double progress)
-        {
-            _targetProgress = (float)progress;
-            _timeScale = 0;
-            
-            if (_progressLerp != null)
-            {
-                StopCoroutine(_progressLerp);
-                _lerpingProgress = false;
-            }
-            if (!_lerpingProgress)
-            {
-                _progressLerp = StartCoroutine(LerpProgress());
-            }
-            
-        }
-
-        private IEnumerator LerpProgress()
-        {
-            float startHealth = progressSlider.value;
-
-            _lerpingProgress = true;
-
-            while (_timeScale < 1)
-            {
-                _timeScale += Time.deltaTime * _fillSpeed;
-                progressSlider.value = Mathf.Lerp(startHealth, _targetProgress, _timeScale);
-                yield return null;
-            }
-            _lerpingProgress = false;
-        }
-
-        private IEnumerator LerpProgressToFinish()
-        {
-            float startHealth = progressSlider.value;
-
-            _lerpingProgress = true;
-
-            while (_timeScale < 1)
-            {
-                _timeScale += Time.deltaTime * _fillSpeed;
-                progressSlider.value = Mathf.Lerp(startHealth, 1, _timeScale);
-
-                yield return null;
-            }
-
-            _sliderAnimator.SetTrigger("Fill");
-            progressSlider.value = 0;
-            _lerpingProgress = false;
-        }
 
         public void Save(Dictionary<string, JToken> saveData)
         {
@@ -509,8 +422,8 @@ namespace DuckClicker
                 {
                     transform.parent.gameObject.SetActive(isRevealed.ToObject<bool>());
                 }
-                
-                UpdateProgress();
+
+                foodSliderAnimator.UpdateSliderProgress();
             }
         }
     }
