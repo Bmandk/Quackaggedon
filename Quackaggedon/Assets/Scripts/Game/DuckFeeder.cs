@@ -64,6 +64,8 @@ namespace DuckClicker
         // Used for popup reveals
         private static bool _didShowCleverDuck;
         private static bool _didShowChefDuck;
+
+        public ExpSlider expSlider;
         
         private void Awake()
         {
@@ -88,7 +90,8 @@ namespace DuckClicker
                 Select();
             }
 
-            foodSliderAnimator.UpdateSliderProgress();
+            //expSlider.AddExperience(PlayerFoodStats.GetTotalFoodThrown(foodToThrow));
+            //foodSliderAnimator.UpdateSliderProgress();
         }
 
         private void Update()
@@ -236,7 +239,8 @@ namespace DuckClicker
                 ducksSpawned++;
             }
 
-            foodSliderAnimator.UpdateSliderProgress();
+            expSlider.AddExperience(actualFoodAmountThrown);
+            //foodSliderAnimator.UpdateSliderProgress();
 
             if (ducksSpawned > 0)
             {
@@ -358,6 +362,7 @@ namespace DuckClicker
             ThrowBread(true, true);
         }
 
+        
         public void Refresh()
         {
             NextDuckCost = DuckFeederStats.CalculateCost(DuckAmounts.duckCounts[_duckTypeToSpawn][AreaSettings.CurrentArea.AreaIndex]);
@@ -369,6 +374,7 @@ namespace DuckClicker
 
             foodSliderAnimator.UpdateSliderProgress();
         }
+        
 
         public void Deselect()
         {
@@ -423,7 +429,8 @@ namespace DuckClicker
                     transform.parent.gameObject.SetActive(isRevealed.ToObject<bool>());
                 }
 
-                foodSliderAnimator.UpdateSliderProgress();
+                expSlider.AddExperience(PlayerFoodStats.GetTotalFoodThrown(foodToThrow));
+                //foodSliderAnimator.UpdateSliderProgress();
             }
         }
     }

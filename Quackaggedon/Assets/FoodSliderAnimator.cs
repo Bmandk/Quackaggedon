@@ -18,14 +18,15 @@ public class FoodSliderAnimator : MonoBehaviour
         if (gameObject.activeInHierarchy == false)
             return;
 
-        var newVal = duckFeeder.FoodThrown / duckFeeder.NextDuckCost;
-        if (newVal == 0)
+        var newValueToDisplay = duckFeeder.FoodThrown / duckFeeder.NextDuckCost;
+
+        if (newValueToDisplay == 0)
         {
             FinishThisProgressLevel();
         }
         else
         {
-            SetProgress(newVal);
+            SetProgress(newValueToDisplay);
         }
 
         _sliderAnimator.SetTrigger("Pulse");
