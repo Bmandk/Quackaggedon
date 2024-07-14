@@ -102,6 +102,9 @@ namespace DuckClicker
                 AfterMagicalDuck = QuacksPerSecond;
                 _didShowMagicalDuck = true;
             }
+            
+            if (SteamManager.Initialized == false)
+                return;
 
             if (!_didShowAchievement1 && CurrencyAmount >= 1001)
             {

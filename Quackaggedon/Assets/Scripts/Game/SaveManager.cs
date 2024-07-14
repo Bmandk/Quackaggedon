@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DuckClicker;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Steamworks;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -66,7 +68,21 @@ public static class SaveManager
         string json = JsonConvert.SerializeObject(saveData, Formatting.None);
         var howManyBytes = json.Length * sizeof(char);
         Debug.Log($"Saving data ({howManyBytes}: {json}");
-        System.IO.File.WriteAllText(GetSavePath(), json);
+        string savePath = GetSavePath();
+        CreateFolderIfNecessary(System.IO.Path.GetDirectoryName(savePath));
+        System.IO.File.WriteAllText(savePath, json);
+    }
+    
+    private static bool GetSteamID(out string steamID)
+    {
+        if (SteamManager.Initialized == false)
+        {
+            steamID = "0";
+            return false;
+        }
+        var id = SteamUser.GetSteamID();
+        steamID = id.GetAccountID().ToString();
+        return id.IsValid();
     }
 
     public static bool Load()
@@ -135,7 +151,22 @@ public static class SaveManager
 
     public static string GetSavePath()
     {
-        return Application.persistentDataPath + "/save.json";
+        bool hasSteamID = GetSteamID(out string steamID);
+        
+        if (hasSteamID)
+        {
+            return Path.Combine(Application.persistentDataPath, steamID, "save.json");
+        }
+        return Path.Combine(Application.persistentDataPath, "0", "save.json");
+    }
+    
+    public static string CreateFolderIfNecessary(string path)
+    {
+        if (!System.IO.Directory.Exists(path))
+        {
+            System.IO.Directory.CreateDirectory(path);
+        }
+        return path;
     }
 
     private static IEnumerable<ISaveable> GetRunDataPersistanceObjects()
@@ -151,10 +182,7 @@ public static class SaveManager
 #endif
     public static void DeleteSave()
     {
-        if (System.IO.File.Exists(GetSavePath()))
-        {
-            System.IO.File.Delete(GetSavePath());
-        }
+        System.IO.Directory.Delete($"{Application.persistentDataPath}", true);
     }
 
     public static bool DoesSaveExist()

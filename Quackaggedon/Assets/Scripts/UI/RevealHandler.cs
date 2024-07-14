@@ -121,7 +121,9 @@ public class RevealHandler : MonoBehaviour
 
     private static void RefreshSteamAchievments(DuckData duckToShow)
     {
-
+        if (SteamManager.Initialized == false)
+            return;
+        
         SteamUserStats.GetAchievement(duckToShow.AchievementName, out bool achieved);
 
         if (duckToShow.AchievementName != "" && !achieved)
