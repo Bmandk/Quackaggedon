@@ -182,7 +182,10 @@ public static class SaveManager
 #endif
     public static void DeleteSave()
     {
-        System.IO.Directory.Delete($"{Application.persistentDataPath}", true);
+        if (System.IO.File.Exists(GetSavePath()))
+        {
+            System.IO.File.Delete(GetSavePath());
+        }
     }
 
     public static bool DoesSaveExist()
