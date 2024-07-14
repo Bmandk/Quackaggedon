@@ -1793,15 +1793,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hutUI: {fileID: 0}
-  duckIconsOnHut: []
+  duckIconsOnHut:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   roofDirty: {fileID: 0}
   wallDirty: {fileID: 0}
   groundDirty: {fileID: 0}
   roofGlow: {fileID: 0}
   wallGlow: {fileID: 0}
   groundGlow: {fileID: 0}
-  defaultMat: {fileID: 0}
-  glowMat: {fileID: 0}
+  defaultMat: {fileID: 2100000, guid: 8f175c5cde90d5d4e8930d38ee4d80fa, type: 2}
+  glowMat: {fileID: 2100000, guid: 58db078488b75bc4980f2e8f9484b80a, type: 2}
   animSetValues: {fileID: 0}
   hutSliderAnim: {fileID: 0}
 --- !u!1 &2739311664884113796
@@ -3508,11 +3541,13 @@ MonoBehaviour:
   chefPotHandler: {fileID: 8555911163768649592}
   duckopediaDetails: {fileID: 0}
   tutorialArrowPrefab: {fileID: 244596968866192137, guid: 4a4e591dd43cc6845acb550ecb09ce35, type: 3}
-  defaultCursor: {fileID: 0}
-  hoverInteractibleCursor: {fileID: 0}
-  hoverDuckCursor: {fileID: 0}
-  clickDuckCursor: {fileID: 0}
-  hutRevealController: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: bb8eb04a454293449bb9ed5183d1d6d5, type: 3}
+  hoverInteractibleCursor: {fileID: 2800000, guid: 92aefaa292b5db445825279368b88676, type: 3}
+  hoverDuckCursor: {fileID: 2800000, guid: 8f53f5ef75c701e4d9cc638364dd469c, type: 3}
+  clickDuckCursor: {fileID: 2800000, guid: 01e6aa73a72d085449ba4d5965fa7b1d, type: 3}
+  hutRevealController: {fileID: 1322583155125505941}
+  hutSliderAnim: {fileID: 0}
+  Canvas: {fileID: 0}
 --- !u!1 &6265874323670082511
 GameObject:
   m_ObjectHideFlags: 0

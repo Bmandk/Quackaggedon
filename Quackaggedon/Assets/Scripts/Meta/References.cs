@@ -71,6 +71,7 @@ public class References : MonoBehaviour
     public HutRevealController hutRevealController;
 
     public HutSliderAnim hutSliderAnim;
+    public Canvas Canvas;
 
     private void Update()
     {

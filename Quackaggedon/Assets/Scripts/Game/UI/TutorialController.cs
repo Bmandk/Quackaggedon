@@ -24,7 +24,7 @@ public static class TutorialController
     public static void Reset()
     {
         tutorialArrowPrefab = References.Instance.tutorialArrowPrefab;
-        canvasTransform = GameObject.FindObjectOfType<Canvas>().transform;
+        canvasTransform = References.Instance.Canvas.transform;
         TutorialIndex = 0;
     }
     

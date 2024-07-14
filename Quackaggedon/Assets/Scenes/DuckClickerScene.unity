@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2105,6 +2104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 2311749167728224185}
     - target: {fileID: 7194492950972616035, guid: 43771aa845de2cf42a3d49f601f5993b, type: 3}
       propertyPath: mainCam
       value: 
