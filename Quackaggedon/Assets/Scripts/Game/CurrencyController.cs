@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Steamworks;
+using UnityEngine;
 
 namespace DuckClicker
 {
@@ -26,6 +27,11 @@ namespace DuckClicker
         private static bool _didShowSimpleDuck;
         private static bool _didShowBreadDuck;
         private static bool _didShowMagicalDuck;
+
+        private static bool _didShowAchievement1 = false;
+        private static bool _didShowAchievement2 = false;
+        private static bool _didShowAchievement3 = false;
+        private static bool _didShowAchievement4 = false;
 
         public static void Reset()
         {
@@ -95,6 +101,40 @@ namespace DuckClicker
             {
                 AfterMagicalDuck = QuacksPerSecond;
                 _didShowMagicalDuck = true;
+            }
+
+            if (!_didShowAchievement1 && CurrencyAmount >= 1001)
+            {
+                CurrencyAchievement("CURRENCY_1");
+                _didShowAchievement1 = true;
+            }
+            if (!_didShowAchievement2 && CurrencyAmount >= 100000)
+            {
+                CurrencyAchievement("CURRENCY_2");
+                _didShowAchievement2 = true;
+            }
+            
+            if (!_didShowAchievement3 && CurrencyAmount >= 1000000000)
+            {
+                CurrencyAchievement("CURRENCY_3");
+                _didShowAchievement3 = true;
+            }
+            
+            if (!_didShowAchievement4 && CurrencyAmount >= 1e25)
+            {
+                CurrencyAchievement("CURRENCY_4");
+                _didShowAchievement4 = true;
+            }
+        }
+
+        private static void CurrencyAchievement(string achievement)
+        {
+            SteamUserStats.GetAchievement(achievement, out bool achieved);
+
+            if (!achieved)
+            {
+                SteamUserStats.SetAchievement(achievement);
+                SteamUserStats.StoreStats();
             }
         }
 
