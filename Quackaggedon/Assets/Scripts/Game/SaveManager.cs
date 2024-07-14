@@ -81,7 +81,7 @@ public static class SaveManager
             return false;
         }
         var id = SteamUser.GetSteamID();
-        steamID = id.GetAccountID().ToString();
+        steamID = id.ToString();
         return id.IsValid();
     }
 

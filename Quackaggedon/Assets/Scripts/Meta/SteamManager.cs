@@ -27,7 +27,7 @@ public class SteamManager : MonoBehaviour {
 	protected static SteamManager s_instance;
 	protected static SteamManager Instance {
 		get {
-			if (s_instance == null) {
+			if (s_instance == null && Application.isPlaying) {
 				return new GameObject("SteamManager").AddComponent<SteamManager>();
 			}
 			else {
