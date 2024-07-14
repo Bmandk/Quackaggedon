@@ -28,8 +28,11 @@ public class LoadingScreenHandler : MonoBehaviour
         sceneCanvasGroup.alpha = to;
 
         SceneManager.UnloadSceneAsync(SceneLoader.SceneToUnload);
-        SceneManager.LoadSceneAsync(SceneLoader.SceneToLoad, LoadSceneMode.Additive);
-        yield return new WaitForSeconds(0.5f);
+        AsyncOperation op = SceneManager.LoadSceneAsync(SceneLoader.SceneToLoad, LoadSceneMode.Additive);
+        while (!op.isDone)
+        {
+            yield return null;
+        }
         StartCoroutine(FadeOutLoadingScreen(0.5f));
 
     }

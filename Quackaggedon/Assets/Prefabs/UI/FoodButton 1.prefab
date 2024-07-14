@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00001955, y: 10.179}
+  m_AnchoredPosition: {x: -0.00001955, y: 7.4}
   m_SizeDelta: {x: 137.479, y: 20.358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8014903522162424906
@@ -333,7 +333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: 7.5}
+  m_AnchoredPosition: {x: 40, y: 11.9}
   m_SizeDelta: {x: 81.1721, y: 22.9572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &8199235322490585566
@@ -373,7 +373,7 @@ MonoBehaviour:
   duckFeeder: {fileID: 7372457323781344877}
   sliderAnimator: {fileID: 8199235322490585566}
   expText: {fileID: 2122852046348542526}
-  expSpeedMultiplier: 1
+  baseAnimationDuration: 0.8
 --- !u!1 &2726582483995187780
 GameObject:
   m_ObjectHideFlags: 0
