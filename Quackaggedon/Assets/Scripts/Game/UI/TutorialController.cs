@@ -59,7 +59,7 @@ public static class TutorialController
         tutorialArrowInstance.transform.SetSiblingIndex(6);
         TutorialArrow tutorialArrow = tutorialArrowInstance.GetComponent<TutorialArrow>();
         tutorialArrow.target = target;
-        tutorialArrow.offset = offset;
+        //tutorialArrow.offset = offset;
         tutorialArrow.isWorldPosition = isWorldPosition;
     }
     

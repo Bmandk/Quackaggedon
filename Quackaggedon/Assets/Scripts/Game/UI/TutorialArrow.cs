@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialArrow : MonoBehaviour
 {
     public Transform target;
-    public Vector2 offset;
+    //public Vector2 offset;
     public bool isWorldPosition;
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class TutorialArrow : MonoBehaviour
                 targetPos = Camera.main.WorldToScreenPoint(targetPos);
             }
 
-            transform.position = targetPos + (Vector3)offset;
+            transform.position = targetPos/* + (Vector3)offset*/;
         }
     }
 }
