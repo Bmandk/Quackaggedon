@@ -29,6 +29,11 @@ public class ToolTipDisplayDuckIfDiscovered : MonoBehaviour, IPointerExitHandler
             ToolTipController.toolTipInfo = "???";
         }
 
+        if (SaveManager.DidPlayerFinishGame() && duckType == DuckType.Muscle)
+        {
+            ToolTipController.toolTipInfo = References.Instance.GetDuckData(duckType).duckDisplayName;
+        }
+
         ToolTipController.showToolTip = true;
     }
 }

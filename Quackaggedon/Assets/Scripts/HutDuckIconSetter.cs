@@ -12,7 +12,7 @@ public class HutDuckIconSetter : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
-        if (DiscoveredObjects.HasSeenDuck(duckType))
+        if (DiscoveredObjects.HasSeenDuck(duckType) || SaveManager.DidPlayerFinishGame())
         {
             duckImage.color = Color.white;
             duckImage.sprite = References.Instance.GetDuckData(duckType).duckDisplayMiniIcon;

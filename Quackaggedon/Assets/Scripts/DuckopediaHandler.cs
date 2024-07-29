@@ -39,16 +39,28 @@ public class DuckopediaHandler : MonoBehaviour
             duckEntries.Add(discoveredDuck, entry);
         }
 
-        var ducks = References.Instance.GetAllDuckDataInOrder();
-
-        foreach (DuckData duck in ducks)
+        if (SaveManager.DidPlayerFinishGame())
         {
-            if (!duckEntries.ContainsKey(duck.duckType))
+            var inst = Instantiate(duckEntryPrefab, duckEntryParent);
+            DuckEntryInstanceHandler entry = inst.GetComponent<DuckEntryInstanceHandler>();
+
+            entry.SetEntryToDuck(DuckType.Muscle);
+            duckEntries.Add(DuckType.Muscle, entry);
+        }
+
+        if (!SaveManager.DidPlayerFinishGame())
+        {
+            var ducks = References.Instance.GetAllDuckDataInOrder();
+
+            foreach (DuckData duck in ducks)
             {
-                var inst = Instantiate(duckEntryPrefab, duckEntryParent);
-                DuckEntryInstanceHandler entry = inst.GetComponent<DuckEntryInstanceHandler>();
-                entry.SetEntryToUndiscoveredDuck(duck.duckType);
-                duckEntries.Add(duck.duckType, entry);
+                if (!duckEntries.ContainsKey(duck.duckType))
+                {
+                    var inst = Instantiate(duckEntryPrefab, duckEntryParent);
+                    DuckEntryInstanceHandler entry = inst.GetComponent<DuckEntryInstanceHandler>();
+                    entry.SetEntryToUndiscoveredDuck(duck.duckType);
+                    duckEntries.Add(duck.duckType, entry);
+                }
             }
         }
     }

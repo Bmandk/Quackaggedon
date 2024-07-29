@@ -151,7 +151,6 @@ namespace DuckClicker
             }
         }
 
-
         public void ThrowBread(bool useCurrency, bool throwFromHand)
         {
             if (throwFromHand)
@@ -197,7 +196,7 @@ namespace DuckClicker
             actualFoodAmountThrown = Math.Floor(actualFoodAmountThrown);
 
             var costOfFood = actualFoodAmountThrown * DuckFeederStats.foodCost;
-            if (useCurrency)
+            if (useCurrency && _duckTypeToSpawn != DuckType.Muscle)
                 CurrencyController.RemoveCurrency(costOfFood);
 
             int particles;

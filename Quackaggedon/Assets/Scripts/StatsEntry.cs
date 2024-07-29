@@ -36,7 +36,7 @@ public class StatsEntry : MonoBehaviour
 
     private void Update()
     {
-        if (_discovered)
+        if (_discovered && duckType != DuckType.Muscle)
         {
             handThrown.text = NumberUtility.FormatNumber(PlayerFoodStats.GetAmountOfFoodThrownByHand(entryFoodType));
             costFoodHandThrown.text = $"<sprite name=QuacksEmoji_1> {NumberUtility.FormatNumber(PlayerFoodStats.GetTotaCostOfFoodThrownByHand(entryFoodType))}";
