@@ -186,6 +186,7 @@ public static class SaveManager
         {
             System.IO.File.Delete(GetSavePath());
         }
+        EndStarter.hasPlayerFinishedGame = false;
     }
 
     public static bool DoesSaveExist()
@@ -407,7 +408,6 @@ public static class SaveManager
         {
             return finishedGame.ToObject<bool>();
         }
-
         return false;
     }
 }

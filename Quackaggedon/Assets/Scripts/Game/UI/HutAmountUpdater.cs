@@ -14,6 +14,7 @@ public class HutAmountUpdater : MonoBehaviour
 
     private void Update()
     {
+        hutAmountText.text = DuckAmounts.hutAmounts[duckType].ToString();
         if (SaveManager.DidPlayerFinishGame() && duckType == DuckType.Muscle)
             hutAmountText.text = "-";
     }
